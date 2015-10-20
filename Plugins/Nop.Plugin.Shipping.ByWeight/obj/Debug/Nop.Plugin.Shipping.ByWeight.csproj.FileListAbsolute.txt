@@ -1,0 +1,12 @@
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Views\ShippingByWeight\Configure.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Views\ShippingByWeight\EditPopup.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Views\ShippingByWeight\_CreateOrUpdate.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Views\ShippingByWeight\AddPopup.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\web.config
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Description.txt
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\logo.jpg
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Nop.Plugin.Shipping.ByWeight.dll.config
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Nop.Plugin.Shipping.ByWeight.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Shipping.ByWeight\Nop.Plugin.Shipping.ByWeight.pdb
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Shipping.ByWeight\obj\Debug\Nop.Plugin.Shipping.ByWeight.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Shipping.ByWeight\obj\Debug\Nop.Plugin.Shipping.ByWeight.pdb

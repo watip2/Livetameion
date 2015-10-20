@@ -1,0 +1,10 @@
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Views\PaymentPayPalStandard\Configure.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Views\PaymentPayPalStandard\PaymentInfo.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\web.config
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Description.txt
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\logo.jpg
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.dll.config
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.pdb
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.pdb

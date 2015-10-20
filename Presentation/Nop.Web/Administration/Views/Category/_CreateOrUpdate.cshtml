@@ -238,6 +238,15 @@
                 @Html.ValidationMessageFor(model => model.DisplayOrder)
             </td>
         </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SomeNewProperty):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.SomeNewProperty)
+                @Html.ValidationMessageFor(model => model.SomeNewProperty)
+            </td>
+        </tr>
     </table>
 }
 @helper TabSeo()

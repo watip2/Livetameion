@@ -74,6 +74,10 @@ namespace Nop.Admin.Models.Vendors
         [NopResourceDisplayName("Admin.Vendors.Fields.AssociatedCustomerEmails")]
         public IList<string> AssociatedCustomerEmails { get; set; }
 
+        // The NopResourceDisplayName provides the "key" used during localization
+        // Keep an eye out for more about localization in future blogs
+        [NopResourceDisplayName("Admin.Vendors.Fields.PhoneNumber")]
+        public string PhoneNumber { get; set; }
     }
 
     public partial class VendorLocalizedModel : ILocalizedModelLocal

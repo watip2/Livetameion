@@ -18,6 +18,10 @@ namespace Nop.Data
     {
         #region Ctor
 
+        public NopObjectContext()
+            : base("LivetameionConnString")
+        { }
+
         public NopObjectContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {

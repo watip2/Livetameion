@@ -1,0 +1,15 @@
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\bin\Debug\Nop.Plugin.Misc.TrialTracker.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\bin\Debug\Nop.Plugin.Misc.TrialTracker.pdb
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Description.txt
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\web.config
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Scripts\bootstrap.js
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Styles\bootstrap.css
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\Manage.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\_DownloadSample.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\_DownloadLink.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\NewEntry.cshtml
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Nop.Plugin.Misc.TrialTracker.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Nop.Plugin.Misc.TrialTracker.pdb
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.csprojResolveAssemblyReference.cache
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.dll
+C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.pdb
