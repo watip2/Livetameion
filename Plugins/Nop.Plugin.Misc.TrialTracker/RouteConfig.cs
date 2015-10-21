@@ -1,4 +1,4 @@
-﻿using Nop.Plugin.Misc.TrialTracker.Domain.Infrastructure;
+﻿using Nop.Plugin.Misc.TrialTracker.Infrastructure;
 using Nop.Web.Framework.Mvc.Routes;
 using System;
 using System.Collections.Generic;

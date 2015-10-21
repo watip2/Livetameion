@@ -51,6 +51,5 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Scripts\jqu
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Nop.Plugin.Misc.FacebookShop.dll.config
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Nop.Plugin.Misc.FacebookShop.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Nop.Plugin.Misc.FacebookShop.pdb
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.dll
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.pdb

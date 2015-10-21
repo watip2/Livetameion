@@ -80,8 +80,8 @@
     <Compile Include="Controllers\TrialTrackerController.cs" />
     <Compile Include="Data\TrialTrackerRecordMap.cs" />
     <Compile Include="Data\TrialTrackerRecordObjectContext.cs" />
-    <Compile Include="Domain\Infrastructure\CustomViewEngine.cs" />
-    <Compile Include="Domain\Infrastructure\DependencyRegistrar.cs" />
+    <Compile Include="Infrastructure\CustomViewEngine.cs" />
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
     <Compile Include="Domain\TrialTrackerRecord.cs" />
     <Compile Include="Domain\TrialTrackerValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nop.Plugin.Misc.TrialTracker.Domain.Infrastructure
+namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 {
     public class CustomViewEngine : ThemeableRazorViewEngine
     {
         public CustomViewEngine()
         {
-            ViewLocationFormats = new[] { "~/Plugins/Misc.TrialTracker/Views/{0}.cshtml" };
-            PartialViewLocationFormats = new[] { "~/Plugins/Misc.TrialTracker/Views/{0}.cshtml" };
+            ViewLocationFormats = new[] { "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml" };
+            PartialViewLocationFormats = new[] { "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml" };
         }
     }
 }

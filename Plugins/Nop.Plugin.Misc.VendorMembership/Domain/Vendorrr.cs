@@ -12,5 +12,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
         public int VendorrrId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
+        public bool OnMailingList { get; set; }
     }
 }

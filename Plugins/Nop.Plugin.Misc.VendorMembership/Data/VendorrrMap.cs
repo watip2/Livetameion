@@ -17,6 +17,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Data
 
             Property(v => v.Name);
             Property(v => v.Email);
+            Property(v => v.OnMailingList);
         }
     }
 }

@@ -11,8 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Nop.Web.Framework.Mvc;
 using Nop.Plugin.Misc.VendorMembership.Data;
+using Nop.Plugin.Misc.VendorMembership.Domain;
 
-namespace Nop.Plugin.Misc.VendorMembership.Domain.Infrastructure
+namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 {
     public class DependencyRegistrar : IDependencyRegistrar
     {

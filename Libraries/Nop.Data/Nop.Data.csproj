@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201510201804456_InitialMigration.Designer.cs">
       <DependentUpon>201510201804456_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510211205237_VendorModelPersonalInfoFieldsAdded.cs" />
+    <Compile Include="Migrations\201510211205237_VendorModelPersonalInfoFieldsAdded.Designer.cs">
+      <DependentUpon>201510211205237_VendorModelPersonalInfoFieldsAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="QueryableExtensions.cs" />
     <Compile Include="Extensions.cs" />
@@ -197,6 +201,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201510201804456_InitialMigration.resx">
       <DependentUpon>201510201804456_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510211205237_VendorModelPersonalInfoFieldsAdded.resx">
+      <DependentUpon>201510211205237_VendorModelPersonalInfoFieldsAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

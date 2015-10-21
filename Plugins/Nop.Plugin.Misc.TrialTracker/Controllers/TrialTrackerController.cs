@@ -31,7 +31,7 @@ namespace Nop.Plugin.Misc.TrialTracker.Controllers
             _mailingService = mailingService;
         }
 
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public ActionResult Manage()
         {
             return View();
