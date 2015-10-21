@@ -95,8 +95,6 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.pdb
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.TrialTracker.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.TrialTracker.pdb
-D:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csproj.App.config
-D:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Web.dll.config
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Web.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Web.pdb
@@ -190,5 +188,7 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\bin\pt\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\ru\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\sv\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\tr\FluentValidation.resources.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csproj.App.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.pdb

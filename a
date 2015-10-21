@@ -1,0 +1,35 @@
+[33mcommit fc5af430e8dd8485e087df187140bae337668e25[m
+Author: mhsohail <sohailx2x@yahoo.com>
+Date:   Wed Oct 21 19:11:30 2015 +0500
+
+    VendorMembershipPluginPart2Completed
+
+[33mcommit 8b53d048bdf29d9bedf0b5d2c42c08c51e27fa07[m
+Author: mhsohail <sohailx2x@yahoo.com>
+Date:   Wed Oct 21 13:33:05 2015 +0500
+
+    VendorMembershipPluginPart1Completed
+
+[33mcommit 2e155d943fe957a8e584fb86ac515a03c68b1334[m
+Author: mhsohail <sohailx2x@yahoo.com>
+Date:   Wed Oct 21 12:23:48 2015 +0500
+
+    VendorPersonalInfoAdded
+
+[33mcommit 65e9f0ec469a5c432b39ca3f31ecaef87c58fb7c[m
+Author: mhsohail <sohailx2x@yahoo.com>
+Date:   Tue Oct 20 23:16:34 2015 +0500
+
+    MigrationsEnabled
+
+[33mcommit d2c0e28ce2a17626ff6f20a7cf968bb49b4d73d0[m
+Author: mhsohail <sohailx2x@yahoo.com>
+Date:   Tue Oct 20 22:47:40 2015 +0500
+
+    Plugin_And_Core_Models_Modified
+
+[33mcommit d4bc22ad8871fe97b68003dda0a67c24c965a10a[m
+Author: mhsohail <sohailx2x@yahoo.com>
+Date:   Tue Oct 20 20:27:03 2015 +0500
+
+    initial commit
