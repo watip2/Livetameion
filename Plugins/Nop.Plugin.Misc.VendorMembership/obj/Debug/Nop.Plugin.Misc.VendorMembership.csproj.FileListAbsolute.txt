@@ -1,0 +1,7 @@
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\bin\Debug\Nop.Plugin.Misc.VendorMembership.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\bin\Debug\Nop.Plugin.Misc.VendorMembership.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.pdb

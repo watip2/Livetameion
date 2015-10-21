@@ -26,3 +26,31 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.pdb
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Index.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Layout.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\CategoryNavigation.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Category.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\ProductBox.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\HomePageProducts.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Footer.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Header.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\SearchBox.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Search.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Views\MiscFacebookShop\Configure.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\images\logo.gif
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\images\top-menu-background.png
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\images\top-menu-divider.png
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\images\top-menu-list-image-hover.png
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\images\top-menu-list-image.png
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\images\top-menu-triangle.png
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Content\styles.css
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\logo.jpg
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Scripts\jquery-1.10.2.min.js
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Nop.Plugin.Misc.FacebookShop.dll.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Nop.Plugin.Misc.FacebookShop.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.FacebookShop\Nop.Plugin.Misc.FacebookShop.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.FacebookShop\obj\Debug\Nop.Plugin.Misc.FacebookShop.pdb

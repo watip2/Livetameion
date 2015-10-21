@@ -9,3 +9,14 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\PaymentPayPalDirect\Configure.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\PaymentPayPalDirect\PaymentInfo.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\logo.jpg
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.pdb

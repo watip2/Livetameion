@@ -8,3 +8,14 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.pdb
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Views\PaymentAuthorizeNet\Configure.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Views\PaymentAuthorizeNet\PaymentInfo.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\logo.jpg
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.dll.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.pdb

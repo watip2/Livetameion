@@ -13,3 +13,16 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TrialTracker\obj\Debug\Nop.Plugin.Misc.TrialTracker.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Scripts\bootstrap.js
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Styles\bootstrap.css
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\Manage.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\_DownloadSample.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\_DownloadLink.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Views\NewEntry.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Nop.Plugin.Misc.TrialTracker.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TrialTracker\Nop.Plugin.Misc.TrialTracker.pdb

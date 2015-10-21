@@ -7,3 +7,12 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.pdb
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Views\WidgetsGoogleAnalytics\Configure.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\logo.jpg
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.dll.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.pdb

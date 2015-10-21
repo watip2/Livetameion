@@ -29,3 +29,34 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Core.Tes
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Core.Tests\obj\Debug\Nop.Core.Tests.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Core.Tests\obj\Debug\Nop.Core.Tests.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Core.Tests\obj\Debug\Nop.Core.Tests.pdb
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Core.Tests.dll.config
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Core.Tests.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Core.Tests.pdb
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Autofac.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Core.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Tests.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\nunit.framework.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Rhino.Mocks.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.Helpers.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.Mvc.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.Razor.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.WebPages.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Autofac.Integration.Mvc.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Core.pdb
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Nop.Tests.pdb
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Autofac.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\nunit.framework.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Rhino.Mocks.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.Helpers.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.Mvc.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.Razor.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.WebPages.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\bin\Debug\Autofac.Integration.Mvc.xml
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\obj\Debug\Nop.Core.Tests.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\obj\Debug\Nop.Core.Tests.dll
+D:\GitHub\Livetameion\Tests\Nop.Core.Tests\obj\Debug\Nop.Core.Tests.pdb
