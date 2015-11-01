@@ -1,5 +1,10 @@
-﻿using Nop.Core.Domain.Localization;
+﻿using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.ExtendedModels;
+using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Seo;
+using Nop.Plugin.Misc.VendorMembership.Domain;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Nop.Core.Domain.Vendors
 {
@@ -9,7 +14,7 @@ namespace Nop.Core.Domain.Vendors
         public string Password { get; set; }
         public bool EnableGoogleAnalytics { get; set; }
         public string GoogleAnalyticsAccountNumber  { get; set; }
-        public string PreferredShippingCarrier  { get; set; }
+        public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
         public string PreferredSubdomainName { get; set; }
         public string AttentionTo { get; set; }
         public string StreetAddressLine1  { get; set; }
@@ -19,5 +24,38 @@ namespace Nop.Core.Domain.Vendors
         public string StateProvince { get; set; }
         public string Country  { get; set; }
         public string LogoImage { get; set; }
+        
+        public virtual ICollection<VendorBusinessType> VendorBusinessTypes { get; set; }
+        public virtual ICollection<Test> Tests { get; set; }
+    }
+
+    public enum PreferredShippingCarrier
+    {
+        [Display(Name = "Flat Rate")]
+        FlatRate,
+
+        [Display(Name = "Free Shipping")]
+        FreeShipping,
+
+        [Display(Name = "Best Way")]
+        BestWay,
+
+        [Display(Name = "DHL (Deprecated)")]
+        DHL_Deprecated,
+
+        [Display(Name = "Federal Express")]
+        FederalExpress,
+
+        [Display(Name = "United Parcel Service")]
+        UnitedParcelService,
+
+        [Display(Name = "United States Postal Service")]
+        UnitedStatesPostalService,
+
+        [Display(Name = "DHL")]
+        DHL,
+
+        [Display(Name = "Tier Shipping")]
+        TierShipping
     }
 }

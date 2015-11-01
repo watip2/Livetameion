@@ -20,14 +20,27 @@ namespace Nop.Plugin.Misc.VendorMembership
 {
     public class VendorMembershipPlugin : BasePlugin, IAdminMenuPlugin, IConsumer<EntityDeleted<NewsLetterSubscription>>
     {
-        private VendorrrObjectContext _context;
         private IRepository<Vendorrr> _vendorrrRepo;
+
+        private VendorMembershipContext _vendorMembershipContext;
+        //private IRepository<PayoutMethod> _payoutMethodRepo;
+
+        //private IRepository<VendorPayoutMethod> _vendorPayoutMethodRepo;
+
         private ISettingService _settings;
 
-        public VendorMembershipPlugin(VendorrrObjectContext context, IRepository<Vendorrr> vendorrrRepo, ISettingService commonSettings)
+        public VendorMembershipPlugin(
+            IRepository<Vendorrr> vendorrrRepo,
+            VendorMembershipContext vendorMembershipContext,
+            //IRepository<PayoutMethod> payoutMethodRepo,
+            //IRepository<VendorPayoutMethod> vendorPayoutMethodRepo,
+            ISettingService commonSettings
+        )
         {
-            _context = context;
             _vendorrrRepo = vendorrrRepo;
+            _vendorMembershipContext = vendorMembershipContext;
+            //_payoutMethodRepo = payoutMethodRepo;
+            //_vendorPayoutMethodRepo = vendorPayoutMethodRepo;
             _settings = commonSettings;
         }
 
@@ -69,7 +82,11 @@ namespace Nop.Plugin.Misc.VendorMembership
 
         public override void Install()
         {
-            _context.Install();
+            try
+            {
+                _vendorMembershipContext.Install();
+            }
+            catch (Exception e) { }
 
             this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel", "Your Name");
             this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel.Hint", "Please provide a name.");
@@ -87,8 +104,12 @@ namespace Nop.Plugin.Misc.VendorMembership
 
         public override void Uninstall()
         {
-            _context.Uninstall();
-
+            try
+            {
+                _vendorMembershipContext.Uninstall();
+            }
+            catch (Exception e) { }
+            
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel");
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel.Hint");
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameRequired");
@@ -116,9 +137,9 @@ namespace Nop.Plugin.Misc.VendorMembership
 
         public void HandleEvent(EntityDeleted<NewsLetterSubscription> eventMessage)
         {
-            Vendorrr entity = _vendorrrRepo.Table.Where(x => x.Email == eventMessage.Entity.Email).FirstOrDefault();
-            entity.OnMailingList = false;
-            _vendorrrRepo.Update(entity);
+            //Vendorrr entity = _vendorrrRepo.Table.Where(x => x.Email == eventMessage.Entity.Email).FirstOrDefault();
+            //entity.OnMailingList = false;
+            //_vendorrrRepo.Update(entity);
         }
     }
 }

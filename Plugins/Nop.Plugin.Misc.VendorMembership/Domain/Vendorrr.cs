@@ -9,9 +9,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
 {
     public class Vendorrr : BaseEntity
     {
-        public int VendorrrId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public bool OnMailingList { get; set; }
     }
 }

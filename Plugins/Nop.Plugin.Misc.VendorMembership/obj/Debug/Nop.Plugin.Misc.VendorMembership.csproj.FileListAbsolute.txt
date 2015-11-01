@@ -71,7 +71,10 @@ D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\bin\Debug\sv\Flue
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\bin\Debug\tr\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Description.txt
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Scripts\bootstrap.js
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Styles\bootstrap.css
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Register.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Dashboard.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.csprojResolveAssemblyReference.cache

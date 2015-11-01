@@ -114,6 +114,7 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Newtonsoft.Json.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Core.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Data.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.TrialTracker.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Services.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Web.Framework.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Recaptcha.dll
@@ -157,6 +158,7 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\bin\MiniProfiler.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\MiniProfiler.Mvc.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Newtonsoft.Json.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.TrialTracker.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Recaptcha.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\RestSharp.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Net.Http.Extensions.xml

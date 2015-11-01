@@ -17,17 +17,35 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 {
     public class DependencyRegistrar : IDependencyRegistrar
     {
-        private const string CONTEXT_NAME = "nop_object_context_product_view_tracker";
-
+        private const string VENDOR_MEMBERSHIP_CONTEXT_NAME = "nop_object_context_product_view_vendor_membership";
+        
         public virtual void Register(ContainerBuilder builder, ITypeFinder typeFinder)
         {
             //data context
-            this.RegisterPluginDataContext<VendorrrObjectContext>(builder, CONTEXT_NAME);
-
+            this.RegisterPluginDataContext<VendorMembershipContext>(builder, VENDOR_MEMBERSHIP_CONTEXT_NAME);
+            
             //override required repository with our custom context
             builder.RegisterType<EfRepository<Vendorrr>>()
                 .As<IRepository<Vendorrr>>()
-                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(CONTEXT_NAME))
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<PayoutMethod>>()
+                .As<IRepository<PayoutMethod>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<Test>>()
+                .As<IRepository<Test>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<VendorPayoutMethod>>()
+                .As<IRepository<VendorPayoutMethod>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
         }
 

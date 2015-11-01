@@ -1,15 +1,19 @@
-﻿using System;
+﻿using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Vendors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 {
     public class VendorRegisterViewModel
     {
         [Display(Name="Shop Name")]
+        [Required]
         public string Name { get; set; }
 
         [Display(Name = "Email Address")]
@@ -31,12 +35,13 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public string GoogleAnalyticsAccountNumber { get; set; }
 
         [Display(Name = "Preferred Shipping Carrier")]
-        public string PreferredShippingCarrier { get; set; }
+        public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
 
         [Display(Name = "Preferred Subdomain Name")]
         public string PreferredSubdomainName { get; set; }
 
         [Display(Name = "Attention To")]
+        [Required(ErrorMessage = "This is a required field")]
         public string AttentionTo { get; set; }
 
         [Display(Name = "Street Address Line 1")]
@@ -52,6 +57,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public string City { get; set; }
 
         [Display(Name = "State/Province")]
+        [Required(ErrorMessage = "This is a required field")]
         public string StateProvince { get; set; }
 
         [Display(Name = "Country")]
@@ -59,6 +65,41 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 
         [Display(Name = "Logo Image")]
         public string LogoImage { get; set; }
+
+        /* ===== Payout Fields ===== */
+        [Display(Name = "Payout Method")]
+        public PayoutMethod PayoutMethod { get; set; }
+
+        [Display(Name = "Paypal Email")]
+        public string PaypalEmail  { get; set; }
+
+        [Display(Name = "Payout Additional Details")]
+        public string PayoutAdditionalDetails { get; set; }
+
+        [Display(Name = "Bank Name")]
+        public string BankName { get; set; }
+
+        [Display(Name = "Bank Branch Location")]
+        public string BankBranchLocation  { get; set; }
+
+        [Display(Name = "Bank Payee Name(as per account) ")]
+        public string BankPayeeName { get; set; }
+
+        [Display(Name = "Bank Account Number")]
+        public string BankAccountNumber  { get; set; }
+
+        [Display(Name = "Bank SWIFT BIC")]
+        public string BankSWIFTBIC { get; set; }
+
+        public IEnumerable<string> Countries { get; set; }
+
+        public string MembershipOptions { get; set; }
+
+        public int[] BusinessTypeIds { get; set; }
+        
+        public int[] SelectedItems { get; set; }
+
+        public List<SelectListItem> Options { get; set; }
 
         ///// <summary>
         ///// Gets or sets the description
@@ -115,5 +156,32 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         ///// Gets or sets the available customer selectable page size options
         ///// </summary>
         //public string PageSizeOptions { get; set; }
+    }
+
+    public enum PayoutMethod
+    {
+        [Display(Name = "Paypal")]
+        Paypal,
+
+        [Display(Name = "Check")]
+        Check,
+
+        [Display(Name = "Bank Transfer")]
+        BankTransfer,
+
+        [Display(Name = "Offline")]
+        Offline
+    }
+
+    public class Country
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    public enum MembershipOptions
+    {
+        [Display(Name = "Non - Profit organization ")]
+        NonProfitOrganization
     }
 }

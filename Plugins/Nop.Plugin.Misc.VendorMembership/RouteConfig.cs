@@ -25,11 +25,11 @@ namespace Nop.Plugin.Misc.TrialTracker
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
 
-            //routes.MapRoute("Plugin.Misc.TrialTracker.GetTrials",
-            //    "TrialTracker/GetTrials",
-            //    new { controller = "TrialTracker", action = "GetTrials" },
-            //    new[] { "Nop.Plugin.Misc.TrialTracker.Controllers" }
-            //);
+            routes.MapRoute("Plugin.Misc.VendorMembership.Dashboard",
+                "VendorMembership/Dashboard",
+                new { controller = "VendorMembership", action = "Dashboard" },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            );
 
             //routes.MapRoute("Plugin.Misc.TrialTracker.UpdateTrial",
             //    "TrialTracker/UpdateTrial",

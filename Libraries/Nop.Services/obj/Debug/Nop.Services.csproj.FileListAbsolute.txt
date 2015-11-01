@@ -68,8 +68,12 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Deplo
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Razor.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\UserAgentStringLibrary.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Web.Framework.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Optimization.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Recaptcha.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Core.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Data.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.xml
@@ -87,8 +91,12 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Razor.xml
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.xml
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Web.Framework.pdb
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Optimization.xml
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Recaptcha.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Debug\Nop.Services.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Debug\Nop.Services.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Debug\Nop.Services.pdb

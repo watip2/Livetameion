@@ -96,6 +96,7 @@ D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\System.Web.WebPag
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\System.Web.WebPages.Razor.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\WebActivator.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\WebGrease.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\itextsharp.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\UserAgentStringLibrary.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.GeoIP2.dll
@@ -123,6 +124,7 @@ D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\System.Web.Razor.
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\System.Web.WebPages.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\System.Web.WebPages.Razor.xml
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\itextsharp.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.GeoIP2.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.Db.xml
