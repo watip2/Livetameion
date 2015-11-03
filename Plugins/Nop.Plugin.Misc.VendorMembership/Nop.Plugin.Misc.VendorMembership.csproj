@@ -98,7 +98,10 @@
     <Compile Include="Data\VendorMembershipContext.cs" />
     <Compile Include="Domain\Paypal.cs" />
     <Compile Include="Domain\Test.cs" />
+    <Compile Include="Domain\VendorBusinessType.cs" />
+    <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Mapping\PayoutMethodMap.cs" />
+    <Compile Include="Mapping\VendorBusinessTypeMap.cs" />
     <Compile Include="Mapping\VendorPayoutMethodMap.cs" />
     <Compile Include="Mapping\TestMap.cs" />
     <Compile Include="Mapping\VendorrrMap.cs" />

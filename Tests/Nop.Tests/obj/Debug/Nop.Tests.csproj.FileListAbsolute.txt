@@ -13,6 +13,5 @@ D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\nunit.framework.dll
 D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.dll
 D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\nunit.framework.xml
 D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.xml
-D:\GitHub\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.dll
 D:\GitHub\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.pdb

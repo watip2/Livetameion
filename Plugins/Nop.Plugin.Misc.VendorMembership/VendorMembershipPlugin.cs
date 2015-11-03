@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Nop.Services.Localization;
+using Nop.Plugin.Misc.VendorMembership.Helpers;
 
 namespace Nop.Plugin.Misc.VendorMembership
 {
@@ -47,7 +48,7 @@ namespace Nop.Plugin.Misc.VendorMembership
         public void ManageSiteMap(SiteMapNode rootNode)
         {
             // if plugin is not installed, run database creation script
-            if (!this.IsPluginInstalled())
+            if (!PluginHelper.IsPluginInstalled())
             {
                 this.Install();
             }
@@ -124,16 +125,6 @@ namespace Nop.Plugin.Misc.VendorMembership
         }
 
         public override PluginDescriptor PluginDescriptor { get; set; }
-
-        public bool IsPluginInstalled()
-        {
-            var pluginFinder = Nop.Core.Infrastructure.EngineContext.Current.Resolve<IPluginFinder>();
-
-            // check plugin is installed
-            var pluginDescriptor = pluginFinder.GetPluginDescriptorBySystemName("Misc.VendorMembership");
-
-            return (pluginDescriptor != null);
-        }
 
         public void HandleEvent(EntityDeleted<NewsLetterSubscription> eventMessage)
         {

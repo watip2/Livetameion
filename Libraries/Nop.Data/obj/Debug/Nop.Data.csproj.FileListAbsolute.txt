@@ -83,6 +83,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.csprojResolveAssembl
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.Migrations.InitialMigration.resources
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.Migrations.VendorModelPersonalInfoFieldsAdded.resources
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.Migrations.Vendor_BusinessType_Map.resources
+D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.Migrations.testing.resources
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.csproj.GenerateResource.Cache
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Debug\Nop.Data.pdb

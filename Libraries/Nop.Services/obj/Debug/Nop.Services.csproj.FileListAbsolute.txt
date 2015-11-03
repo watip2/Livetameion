@@ -59,6 +59,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Microsoft.Web.Infrastruct
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Newtonsoft.Json.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Core.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Data.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\PerlRegex.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\RestSharp.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Helpers.dll
@@ -68,7 +69,6 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Deplo
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Razor.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\UserAgentStringLibrary.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Web.Framework.dll
@@ -84,6 +84,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\itextsharp.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\MaxMind.Db.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\MaxMind.GeoIP2.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\RestSharp.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Helpers.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Mvc.xml
@@ -91,7 +92,6 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Razor.xml
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Web.Framework.pdb

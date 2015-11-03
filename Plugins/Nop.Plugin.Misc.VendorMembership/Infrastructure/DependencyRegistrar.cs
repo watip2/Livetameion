@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Nop.Web.Framework.Mvc;
 using Nop.Plugin.Misc.VendorMembership.Data;
 using Nop.Plugin.Misc.VendorMembership.Domain;
+using Nop.Core.Domain.Vendors;
 
 namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 {
@@ -37,14 +38,26 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
                 .InstancePerLifetimeScope();
 
             //override required repository with our custom context
-            builder.RegisterType<EfRepository<Test>>()
-                .As<IRepository<Test>>()
-                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
-                .InstancePerLifetimeScope();
+            //builder.RegisterType<EfRepository<Test>>()
+            //    .As<IRepository<Test>>()
+            //    .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+            //    .InstancePerLifetimeScope();
 
             //override required repository with our custom context
             builder.RegisterType<EfRepository<VendorPayoutMethod>>()
                 .As<IRepository<VendorPayoutMethod>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<Vendor>>()
+                .As<IRepository<Vendor>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<Nop.Core.Domain.Catalog.Category>>()
+                .As<IRepository<Nop.Core.Domain.Catalog.Category>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
         }

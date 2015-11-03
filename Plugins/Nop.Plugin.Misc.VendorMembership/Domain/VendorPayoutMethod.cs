@@ -11,12 +11,17 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
 {
     public class VendorPayoutMethod : BaseEntity
     {
-        public int TestId { get; set; }
+        //[ForeignKey("Vendor")]
+        public int VendorId { get; set; }
+        //[ForeignKey("PayoutMethod")]
         public int PayoutMethodId { get; set; }
 
-        // Bug: this navigational creates plural table PayoutMethods
+        // this navigational creates plural table PayoutMethods
+        [ForeignKey("PayoutMethodId")]
         public virtual PayoutMethod PayoutMethod { get; set; }
-        // Bug: this navigational creates plural table Tests
-        public virtual Test Test { get; set; }
+        // this navigational creates plural table Tests
+        //public virtual Test Test { get; set; }
+        [ForeignKey("VendorId")]
+        public virtual Vendor Vendor  { get; set; }
     }
 }

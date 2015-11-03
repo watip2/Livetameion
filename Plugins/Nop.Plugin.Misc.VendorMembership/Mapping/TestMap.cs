@@ -18,9 +18,9 @@ namespace Nop.Plugin.Misc.VendorMembership.Mapping
 
             Property(v => v.Name);
 
-            this.HasMany<VendorPayoutMethod>(pm => pm.VendorPayoutMethods)
-                .WithRequired(vpm => vpm.Test)
-                .HasForeignKey(vpm => vpm.TestId).WillCascadeOnDelete(true);
+            //this.HasMany<VendorPayoutMethod>(pm => pm.VendorPayoutMethods)
+            //    .WithRequired(vpm => vpm.Test)
+            //    .HasForeignKey(vpm => vpm.TestId).WillCascadeOnDelete(true);
 
             //this.HasMany(t => t.VendorPayoutMethods)
                 //.WithMany();

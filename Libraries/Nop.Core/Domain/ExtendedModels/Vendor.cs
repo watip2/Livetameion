@@ -1,8 +1,6 @@
 ﻿using Nop.Core.Domain.Catalog;
-using Nop.Core.Domain.ExtendedModels;
 using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Seo;
-using Nop.Plugin.Misc.VendorMembership.Domain;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -25,8 +23,8 @@ namespace Nop.Core.Domain.Vendors
         public string Country  { get; set; }
         public string LogoImage { get; set; }
         
-        public virtual ICollection<VendorBusinessType> VendorBusinessTypes { get; set; }
-        public virtual ICollection<Test> Tests { get; set; }
+        public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorBusinessType> VendorBusinessTypes { get; set; }
+        public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorPayoutMethod> VendorPayoutMethods { get; set; }
     }
 
     public enum PreferredShippingCarrier

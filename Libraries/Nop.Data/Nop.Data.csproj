@@ -65,7 +65,6 @@
     <Compile Include="Mapping\Catalog\PredefinedProductAttributeValueMap.cs" />
     <Compile Include="Mapping\Common\AddressAttributeMap.cs" />
     <Compile Include="Mapping\Common\AddressAttributeValueMap.cs" />
-    <Compile Include="Mapping\CustomMapping\VendorBusinessTypeMap.cs" />
     <Compile Include="Mapping\Topics\TopicTemplateMap.cs" />
     <Compile Include="Migrations\201510201804456_InitialMigration.cs" />
     <Compile Include="Migrations\201510201804456_InitialMigration.Designer.cs">
@@ -78,6 +77,10 @@
     <Compile Include="Migrations\201510310945387_Vendor_BusinessType_Map.cs" />
     <Compile Include="Migrations\201510310945387_Vendor_BusinessType_Map.Designer.cs">
       <DependentUpon>201510310945387_Vendor_BusinessType_Map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511031552236_testing.cs" />
+    <Compile Include="Migrations\201511031552236_testing.Designer.cs">
+      <DependentUpon>201511031552236_testing.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="QueryableExtensions.cs" />
@@ -213,6 +216,12 @@
     <EmbeddedResource Include="Migrations\201510310945387_Vendor_BusinessType_Map.resx">
       <DependentUpon>201510310945387_Vendor_BusinessType_Map.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511031552236_testing.resx">
+      <DependentUpon>201511031552236_testing.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\CustomMapping\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

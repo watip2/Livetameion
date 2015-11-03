@@ -1,5 +1,4 @@
 ﻿using Nop.Core.Data;
-using Nop.Core.Domain.ExtendedModels;
 using Nop.Core.Domain.Vendors;
 using Nop.Core.Infrastructure;
 using Nop.Plugin.Misc.VendorMembership.Domain;
@@ -107,18 +106,19 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 vendor.StreetAddressLine1 = model.StreetAddressLine1;
                 vendor.StreetAddressLine2 = model.StreetAddressLine2;
                 vendor.ZipPostalCode = model.ZipPostalCode;
-
+                
                 var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
                 vendorServiceCore.InsertVendor(vendor);
                 
+                var productServiceCore = EngineContext.Current.Resolve<IProductService>();
+
                 foreach (var BusinessTypeId in model.BusinessTypeIds)
                 {
                     var vb = new VendorBusinessType();
-                    var vendorServiceExt = new VendorService(_vendorBusinessTypeRepository);
-
+                    //var vendorServiceExt = new VendorService(_vendorBusinessTypeRepository);
                     vb.VendorId = vendor.Id;
                     vb.BusinessTypeId = BusinessTypeId;
-                    vendorServiceExt.InsertVendorBusinessType(vb);
+                    //vendorServiceExt.InsertVendorBusinessType(vb);
                 }
                 
                 return RedirectToAction("Dashboard", "VendorMembership");

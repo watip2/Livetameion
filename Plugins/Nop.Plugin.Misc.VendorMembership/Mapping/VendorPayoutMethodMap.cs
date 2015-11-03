@@ -17,16 +17,16 @@ namespace Nop.Plugin.Misc.VendorMembership.Mapping
             ToTable("VendorPayoutMethods");
             HasKey(vpm => vpm.Id);
 
-            Property(vpm => vpm.TestId);
+            Property(vpm => vpm.VendorId);
             Property(vpm => vpm.PayoutMethodId);
 
             //this.HasRequired(vpm => vpm.PayoutMethod)
-            //    .WithMany()
-            //.HasForeignKey(vpm => vpm.PayoutMethodId);
+            //    .WithMany(pm => pm.VendorPayoutMethods)
+            //    .HasForeignKey(vpm => vpm.PayoutMethodId);
 
-            //this.HasRequired(vpm => vpm.Test)
-            //    .WithMany()
-            //    .HasForeignKey(vpm => vpm.TestId);
+            //this.HasRequired(vpm => vpm.Vendor)
+            //    .WithMany(v => v.VendorPayoutMethods)
+            //    .HasForeignKey(vpm => vpm.VendorId);
         }
     }
 }
