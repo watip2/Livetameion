@@ -8,6 +8,6 @@ namespace Nop.Services.Vendors
     public partial interface IVendorService
     {
         //void InsertVendorBusinessType(VendorBusinessType vb);
-        IEnumerable<Vendor> GetVendorsForSubdomainAvailability(string Subdomain);
+        Vendor GetVendorByHost(string Subdomain);
     }
 }

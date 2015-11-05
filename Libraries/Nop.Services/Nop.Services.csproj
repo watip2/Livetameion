@@ -207,7 +207,9 @@
     <Compile Include="Customers\ICustomerAttributeService.cs" />
     <Compile Include="Customers\CustomerAttributeService.cs" />
     <Compile Include="Customers\CustomerAttributeExtensions.cs" />
+    <Compile Include="ExtendedModels\IProductService.cs" />
     <Compile Include="ExtendedModels\IVendorService.cs" />
+    <Compile Include="ExtendedModels\ProductService.cs" />
     <Compile Include="ExtendedModels\VendorService.cs" />
     <Compile Include="Helpers\IUserAgentHelper.cs" />
     <Compile Include="Helpers\UserAgentHelper.cs" />

@@ -31,9 +31,22 @@ namespace Nop.Services.Vendors
         //    _vendorBusinessTypeRepository.Insert(vb);
         //}
 
-        public IEnumerable<Vendor> GetVendorsForSubdomainAvailability(string Subdomain)
+        public Vendor GetVendorByHost(string Subdomain)
         {
-            return _vendorRepository.Table.Where(v => v.PreferredSubdomainName.Contains(Subdomain)).ToList();
+            // Verify the host name.
+            if (string.IsNullOrEmpty(Subdomain))
+            {
+                throw new ArgumentNullException("Subdomain");
+            }
+
+            // If the host name has a port number, strip it out.
+            int portNumberIndex = Subdomain.LastIndexOf(':');
+            if (portNumberIndex > 0)
+            {
+                Subdomain = Subdomain.Substring(0, portNumberIndex);
+            }
+            
+            return _vendorRepository.Table.SingleOrDefault(v => v.PreferredSubdomainName.Contains(Subdomain));
         }
         #endregion
     }

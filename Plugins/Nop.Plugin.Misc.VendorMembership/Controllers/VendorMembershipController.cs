@@ -101,7 +101,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 vendor.LogoImage = model.LogoImage;
                 vendor.PhoneNumber = model.PhoneNumber;
                 vendor.PreferredShippingCarrier = model.PreferredShippingCarrier;
-                vendor.PreferredSubdomainName = model.PreferredSubdomainName;
+                vendor.PreferredSubdomainName = model.PreferredSubdomainName + ".livetameion.com";
                 vendor.StateProvince = model.StateProvince;
                 vendor.StreetAddressLine1 = model.StreetAddressLine1;
                 vendor.StreetAddressLine2 = model.StreetAddressLine2;
@@ -134,13 +134,19 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return View();
         }
 
+        [AcceptVerbs("GET")]
+        public ActionResult CreateProduct()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult CheckSubdomainAvailability(string Subdomain)
         {
             var VendorResponse = new VendorResponse();
             var VendorService = EngineContext.Current.Resolve<IVendorService>();
-            var Vendors = VendorService.GetVendorsForSubdomainAvailability(Subdomain);
-            if (Vendors.Count() > 0)
+            var Vendor = VendorService.GetVendorByHost(Subdomain);
+            if (Vendor != null)
             {
                 VendorResponse.Message = "This domain is already taken.";
             }

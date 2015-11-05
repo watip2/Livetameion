@@ -275,12 +275,10 @@
 
 <script>
     $(function () {
-
         $("#PreferredSubdomainName").keyup(function () {
             data = {
                 Subdomain: $(this).val()
             };
-
             $.post("/VendorMembership/CheckSubdomainAvailability", data, function (Response) {
                 $("#SubdomainCheckMsg").html("<p>" + Response.Message + "</p>");
             });

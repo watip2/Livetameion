@@ -20,6 +20,13 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
     {
         private const string VENDOR_MEMBERSHIP_CONTEXT_NAME = "nop_object_context_product_view_vendor_membership";
         
+        /*
+         * Don't register core models here, they should stay registered in NOP core context
+         * The below Register() mehtod is called at the following moments:
+         * 1. When application starts
+         * 2. During plugin installation
+         * 3. During plugin uninstallation
+         */
         public virtual void Register(ContainerBuilder builder, ITypeFinder typeFinder)
         {
             //data context
@@ -38,26 +45,14 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
                 .InstancePerLifetimeScope();
 
             //override required repository with our custom context
-            //builder.RegisterType<EfRepository<Test>>()
-            //    .As<IRepository<Test>>()
-            //    .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
-            //    .InstancePerLifetimeScope();
-
-            //override required repository with our custom context
             builder.RegisterType<EfRepository<VendorPayoutMethod>>()
                 .As<IRepository<VendorPayoutMethod>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
 
             //override required repository with our custom context
-            builder.RegisterType<EfRepository<Vendor>>()
-                .As<IRepository<Vendor>>()
-                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
-                .InstancePerLifetimeScope();
-
-            //override required repository with our custom context
-            builder.RegisterType<EfRepository<Nop.Core.Domain.Catalog.Category>>()
-                .As<IRepository<Nop.Core.Domain.Catalog.Category>>()
+            builder.RegisterType<EfRepository<VendorBusinessType>>()
+                .As<IRepository<VendorBusinessType>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
         }

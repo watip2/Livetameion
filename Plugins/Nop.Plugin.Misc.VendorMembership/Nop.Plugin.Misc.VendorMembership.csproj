@@ -130,7 +130,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Test\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Images\ajax-loader.gif" />
     <Content Include="Scripts\bootstrap.js">

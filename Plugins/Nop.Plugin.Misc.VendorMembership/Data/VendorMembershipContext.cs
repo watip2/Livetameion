@@ -24,6 +24,17 @@ namespace Nop.Plugin.Misc.VendorMembership.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            /*
+             * The purpose of adding the following mappings is to find the table name in database for data access,
+             * OR create table with name defined in map file. For example, if we put the following line:
+             * modelBuilder.Configurations.Add(new Nop.Data.Mapping.Vendors.VendorMap());
+             * then the context will find OR create the Vendor table in database (and this table name is used by NOP
+             * by default). If we don't put the above line, then the context will find the Vendors (plural) table,
+             * which is then defined by context itself.
+             * It means, if we want to use the default table names defined by NOP, for a core entity, then add it's
+             * core map class to this context like we did below for vendor
+             */
+            
             modelBuilder.Configurations.Add(new VendorrrMap());
             modelBuilder.Configurations.Add(new PayoutMethodMap());
             modelBuilder.Configurations.Add(new Nop.Data.Mapping.Vendors.VendorMap());
@@ -58,11 +69,19 @@ namespace Nop.Plugin.Misc.VendorMembership.Data
             modelBuilder.Ignore<Nop.Core.Domain.Orders.GiftCardUsageHistory>();
             modelBuilder.Ignore<Nop.Core.Domain.Catalog.Manufacturer>();
             modelBuilder.Ignore<Nop.Core.Domain.Orders.Order>();
+            modelBuilder.Ignore<Nop.Core.Domain.Orders.OrderNote>();
+            modelBuilder.Ignore<Nop.Core.Domain.Orders.OrderItem>();
+            modelBuilder.Ignore<Nop.Core.Domain.Vendors.Vendor>();
+            modelBuilder.Ignore<Nop.Core.Domain.Catalog.Category>();
+            modelBuilder.Ignore<Nop.Core.Domain.Shipping.Warehouse>();
+            modelBuilder.Ignore<Nop.Core.Domain.Catalog.ProductWarehouseInventory>();
+            modelBuilder.Ignore<Nop.Core.Domain.Catalog.TierPrice>();
+            modelBuilder.Ignore<Nop.Core.Domain.Directory.StateProvince>();
+            modelBuilder.Ignore<Nop.Core.Domain.Shipping.Shipment>();
+            modelBuilder.Ignore<Nop.Core.Domain.Shipping.ShipmentItem>();
 
             if (!PluginHelper.IsPluginInstalled())
             {
-                //modelBuilder.Ignore<Nop.Core.Domain.Vendors.Vendor>();
-                //modelBuilder.Ignore<Nop.Core.Domain.Catalog.Category>();
             }
             
             base.OnModelCreating(modelBuilder);
@@ -86,6 +105,19 @@ namespace Nop.Plugin.Misc.VendorMembership.Data
             this.Database.ExecuteSqlCommand(
                 "ALTER TABLE [dbo].[VendorPayoutMethods]  WITH CHECK ADD  CONSTRAINT [Vendor_VendorPayoutMethods] FOREIGN KEY([VendorId])" +
                 "REFERENCES [dbo].[Vendor] ([Id])" +
+                "ON DELETE CASCADE"
+            );
+
+            // VendorBusinessTypes.VendorId references Vendor.Id
+            this.Database.ExecuteSqlCommand(
+                "ALTER TABLE [dbo].[VendorBusinessTypes]  WITH CHECK ADD  CONSTRAINT [Vendor_VendorBusinessTypes] FOREIGN KEY([VendorId])" +
+                "REFERENCES [dbo].[Vendor] ([Id])" +
+                "ON DELETE CASCADE"
+            );
+            // VendorBusinessTypes.BusinessTypeId references Category.Id
+            this.Database.ExecuteSqlCommand(
+                "ALTER TABLE [dbo].[VendorBusinessTypes]  WITH CHECK ADD  CONSTRAINT [BusinessType_VendorBusinessTypes] FOREIGN KEY([BusinessTypeId])" +
+                "REFERENCES [dbo].[Category] ([Id])" +
                 "ON DELETE CASCADE"
             );
 
