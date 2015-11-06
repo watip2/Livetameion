@@ -137,7 +137,9 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\bin\itextsharp.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\UserAgentStringLibrary.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\EPPlus.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\ImageResizer.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\PerlRegex.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Core.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Data.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Services.pdb
@@ -176,6 +178,9 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.Razor.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\itextsharp.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\EPPlus.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\ImageResizer.xml
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\da\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\de\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\bin\es\FluentValidation.resources.dll

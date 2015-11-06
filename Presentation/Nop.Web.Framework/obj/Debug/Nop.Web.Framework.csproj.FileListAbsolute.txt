@@ -103,8 +103,10 @@ D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.GeoIP2.dl
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.Db.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\EPPlus.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\ImageResizer.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Admin.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\PerlRegex.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\RestSharp.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\AutoMapper.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Core.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Data.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Services.pdb
@@ -130,7 +132,10 @@ D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.GeoIP2.xm
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\MaxMind.Db.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\EPPlus.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\ImageResizer.xml
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\Nop.Admin.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\RestSharp.xml
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\AutoMapper.pdb
+D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\AutoMapper.xml
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\da\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\de\FluentValidation.resources.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web.Framework\bin\Debug\es\FluentValidation.resources.dll

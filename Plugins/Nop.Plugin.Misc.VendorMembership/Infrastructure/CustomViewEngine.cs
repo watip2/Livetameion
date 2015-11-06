@@ -9,10 +9,16 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 {
     public class CustomViewEngine : ThemeableRazorViewEngine
     {
+        // this constructor is executed when the application starts
         public CustomViewEngine()
         {
-            ViewLocationFormats = new[] { "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml" };
-            PartialViewLocationFormats = new[] { "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml" };
+            ViewLocationFormats = new[] {
+                "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml"
+            };
+            
+            PartialViewLocationFormats = new[] {
+                "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml"
+            };
         }
     }
 }
