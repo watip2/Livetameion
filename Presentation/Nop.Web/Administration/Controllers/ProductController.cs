@@ -924,7 +924,7 @@ namespace Nop.Admin.Controllers
             PrepareStoresMappingModel(model, null, false);
             return View(model);
         }
-        
+
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
         public ActionResult Create(ProductModel model, bool continueEditing)
         {

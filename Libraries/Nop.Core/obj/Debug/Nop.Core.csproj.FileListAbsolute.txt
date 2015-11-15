@@ -33,10 +33,11 @@ D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Razor.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Deployment.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Razor.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Data.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Web.Framework.dll
+D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Data.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Services.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Admin.dll
+D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Plugin.Misc.GroupDeals.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Optimization.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Newtonsoft.Json.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Recaptcha.dll
@@ -58,10 +59,11 @@ D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Razor.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Data.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Web.Framework.pdb
+D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Data.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Services.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Admin.pdb
+D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Plugin.Misc.GroupDeals.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Optimization.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Newtonsoft.Json.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Recaptcha.pdb
@@ -73,6 +75,5 @@ D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\ImageResizer.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\AutoMapper.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\AutoMapper.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\RestSharp.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.pdb

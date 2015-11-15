@@ -1,0 +1,66 @@
+﻿@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
+@{
+    //resources for product tags input
+    Html.AppendCssFileParts("~/Content/tagit/jquery.tagit.css");
+    Html.AppendScriptParts("~/Scripts/tag-it.min.js");
+}
+@using Nop.Core.Domain.Catalog;
+@using Nop.Services.Catalog;
+@using System.Text;
+
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Plugin.Misc.GroupDeals.ViewModels;
+
+<table class="adminContent">
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.Name):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.ShortDescription):
+        </td>
+        <td class="adminData">
+            @Html.TextAreaFor(model => model.ShortDescription, new { style = "Width: 250px; Height: 150px;" })
+            @Html.ValidationMessageFor(model => model.ShortDescription)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.FullDescription):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.FullDescription, "RichEditor")
+            @Html.ValidationMessageFor(model => model.FullDescription)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.AvailableVendors):
+        </td>
+        <td class="adminData">
+            @Html.DropDownListFor(model => model.VendorId, Model.AvailableVendors)
+            @Html.ValidationMessageFor(model => model.FullDescription)
+        </td>
+    </tr>@*
+    <tr>
+        <td colspan="2">
+            @Html.HiddenFor(model => model.Locales[item].LanguageId)
+        </td>
+    </tr>*@
+</table>

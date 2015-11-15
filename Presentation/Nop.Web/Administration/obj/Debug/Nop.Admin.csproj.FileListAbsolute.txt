@@ -5,11 +5,4 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.W
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb
-D:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.Net4.dll
-D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Views\Product\_CreateOrUpdate.cshtml
-D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.dll.config
-D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.dll
-D:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.pdb
 D:\GitHub\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
-D:\GitHub\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
-D:\GitHub\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb

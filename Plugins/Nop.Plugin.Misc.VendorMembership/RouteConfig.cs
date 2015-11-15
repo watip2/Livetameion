@@ -19,21 +19,15 @@ namespace Nop.Plugin.Misc.TrialTracker
 
         public void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute("Plugin.Misc.VendorMembership.RegisterVendor",
-                "VendorMembership/Register",
-                new { controller = "VendorMembership", action = "Register" },
+            routes.MapRoute("Plugin.Misc.VendorMembership.VendorMembershipController",
+                "VendorMembership/{action}/{id}",
+                new { controller = "VendorMembership", action = "Dashboard", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
 
-            routes.MapRoute("Plugin.Misc.VendorMembership.Dashboard",
-                "VendorMembership/Dashboard",
-                new { controller = "VendorMembership", action = "Dashboard" },
-                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
-            );
-
-            routes.MapRoute("Plugin.Misc.VendorMembership.CreateProduct",
-                "VendorMembership/CreateProduct",
-                new { controller = "VendorMembership", action = "CreateProduct" },
+            routes.MapRoute("Plugin.Misc.VendorMembership.OrdersController",
+                "VendorOrders/{action}/{id}",
+                new { controller = "VendorOrders", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
 

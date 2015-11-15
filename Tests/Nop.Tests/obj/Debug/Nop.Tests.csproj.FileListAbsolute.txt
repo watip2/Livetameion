@@ -7,11 +7,3 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Tests\bi
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.pdb
-D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\Nop.Tests.dll
-D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\Nop.Tests.pdb
-D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\nunit.framework.dll
-D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.dll
-D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\nunit.framework.xml
-D:\GitHub\Livetameion\Tests\Nop.Tests\bin\Debug\Rhino.Mocks.xml
-D:\GitHub\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.dll
-D:\GitHub\Livetameion\Tests\Nop.Tests\obj\Debug\Nop.Tests.pdb

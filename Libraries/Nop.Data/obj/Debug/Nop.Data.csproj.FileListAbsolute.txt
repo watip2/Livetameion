@@ -42,6 +42,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Autofac.Integration.Mvc.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Web.Framework.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Services.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Admin.dll
+D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Plugin.Misc.GroupDeals.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\System.Web.Razor.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\System.Web.WebPages.Razor.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\System.Web.WebPages.dll
@@ -69,6 +70,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Autofac.Integration.Mvc.xml
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Web.Framework.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Services.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Admin.pdb
+D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\Nop.Plugin.Misc.GroupDeals.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\System.Web.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\System.Web.WebPages.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Debug\System.Web.WebPages.xml

@@ -73,6 +73,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.d
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Web.Framework.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Admin.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.GroupDeals.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Optimization.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Recaptcha.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\AutoMapper.dll
@@ -98,6 +99,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.x
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Web.Framework.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Admin.pdb
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Plugin.Misc.GroupDeals.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.Optimization.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Recaptcha.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\AutoMapper.pdb

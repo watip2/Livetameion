@@ -26,3 +26,4 @@ Widgets.GoogleAnalytics
 Widgets.NivoSlider
 Misc.TrialTracker
 Misc.VendorMembership
+Misc.GroupDeals

@@ -13,11 +13,13 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
         public CustomViewEngine()
         {
             ViewLocationFormats = new[] {
-                "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml"
+                "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml"
             };
             
             PartialViewLocationFormats = new[] {
-                "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml"
+                "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml"
             };
         }
     }
