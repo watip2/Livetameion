@@ -33,7 +33,7 @@
     var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
 
     //page title
-    ViewBag.Title = T("Admin.Catalog.Products.Manage").Text;
+    ViewBag.Title = "Manage Groupdeals";
 }
 
 @using (Html.BeginForm())
@@ -42,10 +42,10 @@
     <div class="section-header">
         <div class="title">
             <img src="@Url.Content("~/Administration/Content/images/ico-catalog.png")" alt="" />
-            @T("Admin.Catalog.Products.Manage")
+            Manage Groupdeals
         </div>
         <div class="options">
-            <a href="@Url.Action("CreateProduct")" class="k-button">@T("Admin.Common.AddNew")</a>
+            <a href="@Url.Action("CreateGroupdeal")" class="k-button">@T("Admin.Common.AddNew")</a>
             <input type="submit" name="download-catalog-pdf" class="k-button" value="@T("Admin.Catalog.Products.List.DownloadPDF")" />
             <input type="submit" name="exportxml-all" class="k-button" value="@T("Admin.Common.ExportToXml.All")" />
             <input type="button" id="exportxml-selected" class="k-button" value="@T("Admin.Common.ExportToXml.Selected")" />
@@ -207,7 +207,7 @@
                                 },*@
                                 {
                                     field: "Name",
-                                    title: "@T("Admin.Catalog.Products.Fields.Name")",
+                                    title: "Name",
                                     width: 300
                                 }@*, {
                                     field: "Sku",
@@ -235,10 +235,14 @@
                                     attributes: { style: "text-align:center" },
                                     template: '<img src="@Url.Content("~/Administration/Content/images/")active-#=Published#.gif" />'
                                 }, {
+                                    field: "GroupdealStatusName",
+                                    title: "Status",
+                                    width: 100
+                                }, {
                                     field: "Id",
                                     title: "@T("Admin.Common.Edit")",
                                     width: 100,
-                                    template: '<a href="Edit/#=Id#">@T("Admin.Common.Edit")</a>'
+                                    template: '<a href="VendorGroupdeals/Edit/#=Id#">@T("Admin.Common.Edit")</a>'
                                 }
                             ]
                         } );

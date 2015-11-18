@@ -105,6 +105,7 @@
     <Compile Include="DataAccess\DependencyRegistrar.cs" />
     <Compile Include="DataAccess\EfStartUpTask.cs" />
     <Compile Include="DataAccess\GroupDealsContext.cs" />
+    <Compile Include="Enums\GroupdealStatus.cs" />
     <Compile Include="Enums\GroupDealType.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Helpers\GroupDealsHelper.cs" />

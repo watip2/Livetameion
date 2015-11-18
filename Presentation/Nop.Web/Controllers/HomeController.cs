@@ -15,6 +15,7 @@ using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
 using Nop.Plugin.Misc.GroupDeals.DataAccess;
 using Nop.Plugin.Misc.GroupDeals.ViewModels;
+using Nop.Plugin.Misc.GroupDeals.Enums;
 
 namespace Nop.Web.Controllers
 {

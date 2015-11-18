@@ -1,4 +1,5 @@
-﻿using Nop.Web.Framework.Mvc;
+﻿using Nop.Plugin.Misc.GroupDeals.Enums;
+using Nop.Web.Framework.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,14 @@ namespace Nop.Plugin.Misc.GroupDeals.ViewModels
         public string CouponCode { get; set; }
         public DateTime SpecialPriceStartDateTimeUtc { get; set; }
         public DateTime SpecialPriceEndDateTimeUtc { get; set; }
+        public int GroupdealStatusId { get; set; }
+        public GroupdealStatus GroupdealStatus
+        {
+            get { return (GroupdealStatus)this.GroupdealStatusId; }
+            set { this.GroupdealStatusId = (int)value; }
+        }
+        public string GroupdealStatusName { get; set; }
+        public string PrimaryStoreCurrencyCode { get; set; }
 
         public GroupdealPictureViewModel GroupdealPictureViewModel { get; set; }
     }

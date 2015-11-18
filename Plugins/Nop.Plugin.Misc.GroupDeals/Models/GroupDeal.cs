@@ -2,6 +2,7 @@
 using Nop.Core.Domain.Seo;
 using Nop.Core.Domain.Vendors;
 using Nop.Core.Infrastructure;
+using Nop.Plugin.Misc.GroupDeals.Enums;
 using Nop.Services.Common;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
         public string CouponCode { get; set; }
         public DateTime SpecialPriceStartDateTimeUtc { get; set; }
         public DateTime SpecialPriceEndDateTimeUtc { get; set; }
+        
         // generic attributes
         [NotMapped]
         public string Name { get; set; }
