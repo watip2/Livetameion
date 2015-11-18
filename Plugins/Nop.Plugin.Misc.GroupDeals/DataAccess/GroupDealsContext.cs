@@ -1,6 +1,8 @@
 ﻿using Nop.Core;
 using Nop.Data;
+using Nop.Plugin.Misc.GroupDeals.Helpers;
 using Nop.Plugin.Misc.GroupDeals.Maps;
+using Nop.Plugin.Misc.GroupDeals.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -94,10 +96,10 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
 
         public void Uninstall()
         {
-            var dbScript = "DROP TABLE GroupdealPictures";
+            var dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupdealPicture>(this);
             Database.ExecuteSqlCommand(dbScript);
 
-            dbScript = "DROP TABLE GroupDeals";
+            dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDeal>(this);
             Database.ExecuteSqlCommand(dbScript);
 
             SaveChanges();

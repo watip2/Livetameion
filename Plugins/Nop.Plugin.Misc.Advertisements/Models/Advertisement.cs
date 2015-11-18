@@ -13,5 +13,11 @@ namespace Nop.Plugin.Misc.Advertisements.Models
     {
         public string Name { get; set; }
         public int VendorId { get; set; }
+        public DateTime CreatedOnUtc { get; set; }
+        public DateTime UpdatedOnUtc { get; set; }
+        public bool Deleted { get; set; }
+        public bool Active { get; set; }
+        public int DisplayOrder { get; set; }
+        public string SeName { get; set; }
     }
 }

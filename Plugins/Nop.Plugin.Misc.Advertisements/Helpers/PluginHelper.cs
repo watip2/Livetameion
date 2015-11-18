@@ -13,7 +13,7 @@ namespace Nop.Plugin.Misc.Advertisements.Helpers
             var pluginFinder = Nop.Core.Infrastructure.EngineContext.Current.Resolve<Nop.Core.Plugins.IPluginFinder>();
 
             // check plugin is installed
-            var pluginDescriptor = pluginFinder.GetPluginDescriptorBySystemName("Misc.GroupDeals");
+            var pluginDescriptor = pluginFinder.GetPluginDescriptorBySystemName("Misc.Advertisements");
 
             return (pluginDescriptor != null);
         }

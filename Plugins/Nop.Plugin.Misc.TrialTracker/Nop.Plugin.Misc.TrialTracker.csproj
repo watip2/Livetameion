@@ -49,18 +49,6 @@
     <Reference Include="Nop.Admin">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Admin.dll</HintPath>
     </Reference>
-    <Reference Include="Nop.Core">
-      <HintPath>..\..\Libraries\Nop.Core\bin\Debug\Nop.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Nop.Data">
-      <HintPath>..\..\Libraries\Nop.Data\bin\Debug\Nop.Data.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Nop.Services">
-      <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Nop.Web.Framework">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Web.Framework.dll</HintPath>
       <Private>False</Private>

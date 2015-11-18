@@ -1,4 +1,5 @@
 ﻿using Nop.Core;
+using Nop.Core.Domain.Seo;
 using Nop.Core.Domain.Vendors;
 using Nop.Core.Infrastructure;
 using Nop.Services.Common;
@@ -12,7 +13,7 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.GroupDeals.Models
 {
-    public class GroupDeal : BaseEntity/*, ILocalizedEntity, ISlugSupported, IAclSupported, IStoreMappingSupported*/
+    public class GroupDeal : BaseEntity, /*ILocalizedEntity*/ ISlugSupported/*, IAclSupported, IStoreMappingSupported*/
     {
         //private ICollection<ProductCategory> _productCategories;
         //private ICollection<ProductManufacturer> _productManufacturers;
@@ -28,11 +29,16 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
         
         public DateTime CreatedOnUtc { get; set; }
         public DateTime UpdatedOnUtc { get; set; }
-        public int AttributeSetId { get; set; }
         public int VendorId { get;set; }
         public bool Deleted { get; set; }
         public bool Active { get; set; }
         public int DisplayOrder { get; set; }
+        public string SeName { get; set; }
+        public bool ShowOnHomePage { get; set; }
+        public bool Published { get; set; }
+        public string CouponCode { get; set; }
+        public DateTime SpecialPriceStartDateTimeUtc { get; set; }
+        public DateTime SpecialPriceEndDateTimeUtc { get; set; }
         // generic attributes
         [NotMapped]
         public string Name { get; set; }

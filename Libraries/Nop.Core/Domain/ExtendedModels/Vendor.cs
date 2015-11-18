@@ -23,8 +23,8 @@ namespace Nop.Core.Domain.Vendors
         public string Country  { get; set; }
         public string LogoImage { get; set; }
         
-        public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorBusinessType> VendorBusinessTypes { get; set; }
-        public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorPayoutMethod> VendorPayoutMethods { get; set; }
+        //public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorBusinessType> VendorBusinessTypes { get; set; }
+        //public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorPayoutMethod> VendorPayoutMethods { get; set; }
     }
 
     public enum PreferredShippingCarrier

@@ -333,30 +333,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     
                     //productServiceCore.InsertProduct(gc);
 
-                    var gd = new GroupDeal
-                    {
-                        AttributeSetId = 0,
-                        CreatedOnUtc = DateTime.Now,
-                        UpdatedOnUtc = DateTime.Now
-                    };
-                    _groupDealRepo.Insert(gd);
-                    var genericAttributeService = EngineContext.Current.Resolve<IGenericAttributeService>();
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.Name, "dela name");
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.AllowBackInStockSubscriptions, false);
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.AvailableStartDateTimeUtc, DateTime.Now);
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.AvailableEndDateTimeUtc, DateTime.MaxValue);
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.Country, "Pakistan");
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.StateOrProvince, "KPK");
-                    genericAttributeService.SaveAttribute(gd, GroupDealAttributes.City, "Kamra");
-
-                    var Name = gd.GetAttribute<string>(GroupDealAttributes.Name, genericAttributeService);
-                    var AllowBackInStockSubscriptions = gd.GetAttribute<bool>(GroupDealAttributes.AllowBackInStockSubscriptions, genericAttributeService);
-                    var AvailableStartDateTimeUtc = gd.GetAttribute<DateTime>(GroupDealAttributes.AvailableStartDateTimeUtc, genericAttributeService);
-                    var AvailableEndDateTimeUtc = gd.GetAttribute<DateTime>(GroupDealAttributes.AvailableEndDateTimeUtc, genericAttributeService);
-                    var Country = gd.GetAttribute<string>(GroupDealAttributes.Country, genericAttributeService);
-                    var StateOrProvince = gd.GetAttribute<string>(GroupDealAttributes.StateOrProvince, genericAttributeService);
-                    var City = gd.GetAttribute<string>(GroupDealAttributes.City, genericAttributeService);
-
                     break;
                 }
 

@@ -20,19 +20,19 @@
                         type: "json",
                         transport: {
                             read: {
-                                url: "@Html.Raw(Url.Action("ProductPictureList", "VendorMembership", new { productId = Model.Id }))",
+                                url: "@Html.Raw(Url.Action("GroupdealPictureList", "VendorGroupDeals", new { groupdealId = Model.Id }))",
                                 type: "POST",
                                 dataType: "json",
                                 data: addAntiForgeryToken
                             },
                             update: {
-                                url:"@Html.Raw(Url.Action("ProductPictureUpdate", "VendorMembership"))",
+                                url:"@Html.Raw(Url.Action("GroupdealPictureUpdate", "VendorGroupDeals"))",
                                 type: "POST",
                                 dataType: "json",
                                 data: addAntiForgeryToken
                             },
                             destroy: {
-                                url: "@Html.Raw(Url.Action("ProductPictureDelete", "VendorMembership"))",
+                                url: "@Html.Raw(Url.Action("GroupdealPictureDelete", "VendorGroupDeals"))",
                                 type: "POST",
                                 dataType: "json",
                                 data: addAntiForgeryToken
@@ -117,10 +117,10 @@
 
         $(document).ready(function () {
             $('#addProductPicture').click(function () {
-                var pictureId = $("#@Html.FieldIdFor(model => model.AddPictureModel.PictureId)").val();
-                var overrideAltAttribute = $("#@Html.FieldIdFor(model => model.AddPictureModel.OverrideAltAttribute)").val();
-                var overrideTitleAttribute = $("#@Html.FieldIdFor(model => model.AddPictureModel.OverrideTitleAttribute)").val();
-                var displayOrder = $("#@Html.FieldIdFor(model => model.AddPictureModel.DisplayOrder)").val();
+                var pictureId = $("#@Html.FieldIdFor(model => model.GroupdealPictureViewModel.PictureId)").val();
+                var overrideAltAttribute = $("#@Html.FieldIdFor(model => model.GroupdealPictureViewModel.OverrideAltAttribute)").val();
+                var overrideTitleAttribute = $("#@Html.FieldIdFor(model => model.GroupdealPictureViewModel.OverrideTitleAttribute)").val();
+                var displayOrder = $("#@Html.FieldIdFor(model => model.GroupdealPictureViewModel.DisplayOrder)").val();
 
                 if (pictureId == 0) {
                     alert('Upload picture first');
@@ -134,14 +134,14 @@
                     displayOrder: displayOrder,
                     overrideAltAttribute: overrideAltAttribute,
                     overrideTitleAttribute: overrideTitleAttribute,
-                    productId: @Model.Id
+                    groupdealId: @Model.Id
                 };
                 addAntiForgeryToken(postData);
 
                 $.ajax({
                     cache: false,
                     type: "POST",
-                    url: "@(Url.Action("ProductPictureAdd", "VendorMembership"))",
+                    url: "@(Url.Action("GroupdealPictureAdd", "VendorGroupDeals"))",
                     data: postData,
                     success: function(data) {
                         var grid = $("#productpictures-grid");
@@ -162,38 +162,38 @@
     <table class="adminContent">
         <tr>
             <td class="adminTitle">
-                @Html.NopLabelFor(model => model.AddPictureModel.PictureId):
+                @Html.NopLabelFor(model => model.GroupdealPictureViewModel.PictureId):
             </td>
             <td class="adminData">
-                @Html.EditorFor(model => model.AddPictureModel.PictureId)
-                @Html.ValidationMessageFor(model => model.AddPictureModel.PictureId)
+                @Html.EditorFor(model => model.GroupdealPictureViewModel.PictureId)
+                @Html.ValidationMessageFor(model => model.GroupdealPictureViewModel.PictureId)
             </td>
         </tr>
         <tr>
             <td class="adminTitle">
-                @Html.NopLabelFor(model => model.AddPictureModel.OverrideAltAttribute):
+                @Html.NopLabelFor(model => model.GroupdealPictureViewModel.OverrideAltAttribute):
             </td>
             <td class="adminData">
-                @Html.EditorFor(model => model.AddPictureModel.OverrideAltAttribute)
-                @Html.ValidationMessageFor(model => model.AddPictureModel.OverrideAltAttribute)
+                @Html.EditorFor(model => model.GroupdealPictureViewModel.OverrideAltAttribute)
+                @Html.ValidationMessageFor(model => model.GroupdealPictureViewModel.OverrideAltAttribute)
             </td>
         </tr>
         <tr>
             <td class="adminTitle">
-                @Html.NopLabelFor(model => model.AddPictureModel.OverrideTitleAttribute):
+                @Html.NopLabelFor(model => model.GroupdealPictureViewModel.OverrideTitleAttribute):
             </td>
             <td class="adminData">
-                @Html.EditorFor(model => model.AddPictureModel.OverrideTitleAttribute)
-                @Html.ValidationMessageFor(model => model.AddPictureModel.OverrideTitleAttribute)
+                @Html.EditorFor(model => model.GroupdealPictureViewModel.OverrideTitleAttribute)
+                @Html.ValidationMessageFor(model => model.GroupdealPictureViewModel.OverrideTitleAttribute)
             </td>
         </tr>
         <tr>
             <td class="adminTitle">
-                @Html.NopLabelFor(model => model.AddPictureModel.DisplayOrder):
+                @Html.NopLabelFor(model => model.GroupdealPictureViewModel.DisplayOrder):
             </td>
             <td class="adminData">
-                @Html.EditorFor(model => model.AddPictureModel.DisplayOrder)
-                @Html.ValidationMessageFor(model => model.AddPictureModel.DisplayOrder)
+                @Html.EditorFor(model => model.GroupdealPictureViewModel.DisplayOrder)
+                @Html.ValidationMessageFor(model => model.GroupdealPictureViewModel.DisplayOrder)
             </td>
         </tr>
         <tr>

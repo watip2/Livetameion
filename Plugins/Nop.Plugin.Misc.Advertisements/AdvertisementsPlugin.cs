@@ -88,7 +88,7 @@ namespace Nop.Plugin.Misc.Advertisements
 
         public override Core.Plugins.PluginDescriptor PluginDescriptor { get; set; }
 
-        public void Install()
+        public override void Install()
         {
             try
             {
@@ -98,7 +98,7 @@ namespace Nop.Plugin.Misc.Advertisements
             base.Install();
         }
 
-        public void Uninstall()
+        public override void Uninstall()
         {
             try
             {

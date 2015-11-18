@@ -1,6 +1,6 @@
 using Nop.Core;
 using Nop.Core.Domain.Vendors;
-using Nop.Plugin.Misc.VendorMembership.Domain;
+//using Nop.Plugin.Misc.VendorMembership.Domain;
 using System.Collections.Generic;
 
 namespace Nop.Services.Vendors

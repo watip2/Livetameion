@@ -5,7 +5,7 @@ using Nop.Core.Data;
 using Nop.Core.Domain.Vendors;
 using Nop.Services.Events;
 using System.Collections.Generic;
-using Nop.Plugin.Misc.VendorMembership.Domain;
+//using Nop.Plugin.Misc.VendorMembership.Domain;
 
 namespace Nop.Services.Vendors
 {

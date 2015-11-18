@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Nop.Plugin.Misc.Advertisements.Helpers
 {
-    class GroupDealsHelper
+    class AdsHelper
     {
         // return countries as IEnumerable<Country>
         /*

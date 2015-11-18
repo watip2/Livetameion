@@ -75,12 +75,13 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\V
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\GroupDeals\GroupDealTemplate.Simple.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\GroupDeals\Edit.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\GroupDeals\Index.cshtml
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\Edit.cshtml
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\Index.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\Inmnbdex_quick_edit.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\_CreateOrUpdate.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\_CreateOrUpdate.Info.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\_CreateOrUpdate.SEO.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\_CreateOrUpdate.Pictures.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\EditGroupdeal.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\VendorGroupDeals\Index.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Scripts\bootstrap.js
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Styles\bootstrap.css
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Register.cshtml

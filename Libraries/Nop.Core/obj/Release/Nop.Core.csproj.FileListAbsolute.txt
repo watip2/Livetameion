@@ -4,7 +4,6 @@ D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Nop.Core.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Autofac.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Autofac.Integration.Mvc.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Microsoft.Web.Infrastructure.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\System.Web.Helpers.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\System.Web.Mvc.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\System.Web.Razor.dll
@@ -54,3 +53,5 @@ D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\RestSharp.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Release\Nop.Core.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Release\Nop.Core.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Release\Nop.Core.pdb
+D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Nop.Plugin.Misc.GroupDeals.dll
+D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Release\Nop.Plugin.Misc.GroupDeals.pdb

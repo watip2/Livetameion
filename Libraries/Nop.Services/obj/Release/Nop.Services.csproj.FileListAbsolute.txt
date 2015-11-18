@@ -13,7 +13,6 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Microsoft.Web.Infrastru
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Newtonsoft.Json.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Core.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Data.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Plugin.Misc.VendorMembership.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\PerlRegex.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\RestSharp.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.Helpers.dll
@@ -60,3 +59,5 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.csprojReso
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.XmlSerializers.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Plugin.Misc.GroupDeals.dll
+D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Plugin.Misc.GroupDeals.pdb

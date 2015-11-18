@@ -6,12 +6,13 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorG
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\GroupDeals\GroupDealTemplate.Simple.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\GroupDeals\Edit.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\GroupDeals\Index.cshtml
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\Edit.cshtml
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\Index.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\Inmnbdex_quick_edit.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\_CreateOrUpdate.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\_CreateOrUpdate.Info.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\_CreateOrUpdate.SEO.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\_CreateOrUpdate.Pictures.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\EditGroupdeal.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Views\VendorGroupDeals\Index.cshtml
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.dll
 D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.pdb
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.GroupDeals\obj\Debug\Nop.Plugin.Misc.GroupDeals.csprojResolveAssemblyReference.cache

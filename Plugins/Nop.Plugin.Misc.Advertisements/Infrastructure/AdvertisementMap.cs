@@ -19,6 +19,12 @@ namespace Nop.Plugin.Misc.Advertisements.Infrastructure
 
             Property(gd => gd.Name);
             Property(gd => gd.VendorId);
+            Property(gd => gd.Active);
+            Property(gd => gd.CreatedOnUtc);
+            Property(gd => gd.Deleted);
+            Property(gd => gd.DisplayOrder);
+            Property(gd => gd.UpdatedOnUtc);
+            Property(gd => gd.SeName);
         }
     }
 }

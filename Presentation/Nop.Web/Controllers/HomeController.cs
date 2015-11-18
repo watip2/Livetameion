@@ -14,6 +14,7 @@ using Nop.Data;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
 using Nop.Plugin.Misc.GroupDeals.DataAccess;
+using Nop.Plugin.Misc.GroupDeals.ViewModels;
 
 namespace Nop.Web.Controllers
 {
@@ -66,7 +67,6 @@ namespace Nop.Web.Controllers
             var vendor = vendorService.GetVendorById(1027);
             var gd = new GroupDeal
             {
-                AttributeSetId = 0,
                 CreatedOnUtc = DateTime.Now,
                 UpdatedOnUtc = DateTime.Now,
                 Name = "Group Deal Name",
@@ -79,11 +79,20 @@ namespace Nop.Web.Controllers
                 City = "Kamra",
                 Active = true,
                 ShortDescription = "this is short description",
-                FullDescription = "this is full description"
+                FullDescription = "this is full description",
+                SeName = "se-name-" + Guid.NewGuid(),
+                ShowOnHomePage = false,
+                Published = true,
+                SpecialPriceStartDateTimeUtc = DateTime.Now,
+                SpecialPriceEndDateTimeUtc = DateTime.Parse("01-01-2016")
             };
             _groupdealService.InsertGroupDeal(gd);
+            var gg = _groupdealService.GetById(gd.Id);
+            gg.Published = false;
+            _groupdealService.UpdateGroupdeal(gg);
+            
             var deals = _groupdealService.GetAllGroupDealsByVendorId(1027);
-
+            
             //vv.PayoutMethod
             return View();
         }

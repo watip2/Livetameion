@@ -11,15 +11,18 @@ namespace Nop.Plugin.Misc.GroupDeals.ViewModels
     public class GroupDealViewModel
     {
         public int Id { get; set; }
-        public List<SelectListItem> AvailableVendors { get; set; }
         public int VendorId { get; set; }
+        public List<SelectListItem> AvailableVendors { get; set; }
         public string Name { get; set; }
         [AllowHtml]
         public string ShortDescription { get; set; }
         [AllowHtml]
         public string FullDescription { get; set; }
         public List<SelectListItem> AvailableAttributeSets { get; set; }
+        public string SeName { get; set; }
         public int AttributeSetId { get; set; }
+        public DateTime CreatedOnUtc { get; set; }
+        public DateTime UpdatedOnUtc { get; set; }
         public bool AllowBackInStockSubscriptions { get; set; }
         public DateTime AvailableStartDateTimeUtc { get; set; }
         public DateTime AvailableEndDateTimeUtc { get; set; }
@@ -35,6 +38,12 @@ namespace Nop.Plugin.Misc.GroupDeals.ViewModels
         public bool DisplayStockAvailability { get; set; }
         public bool DisplayStockQuantity { get; set; }
         public int MinStockQuantity { get; set; }
-        public GroupdealPictureViewModel AddPictureModel { get; set; }
+        public bool ShowOnHomePage { get; set; }
+        public bool Published { get; set; }
+        public string CouponCode { get; set; }
+        public DateTime SpecialPriceStartDateTimeUtc { get; set; }
+        public DateTime SpecialPriceEndDateTimeUtc { get; set; }
+
+        public GroupdealPictureViewModel GroupdealPictureViewModel { get; set; }
     }
 }

@@ -35,3 +35,4 @@ C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Data.Tes
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Data.Tests\obj\Debug\Nop.Data.Tests.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Data.Tests\obj\Debug\Nop.Data.Tests.dll
 C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Tests\Nop.Data.Tests\obj\Debug\Nop.Data.Tests.pdb
+D:\GitHub\Livetameion\Tests\Nop.Data.Tests\bin\Debug\EntityFramework.dll

@@ -11,7 +11,7 @@ namespace Nop.Core.Domain.Catalog
 {
     public partial class Category : BaseEntity, ILocalizedEntity, ISlugSupported, IAclSupported, IStoreMappingSupported
     {
-        public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorBusinessType> VendorBusinessTypes { get; set; }
-        public virtual IEnumerable<Vendor> Vendors { get; set; }
+        //public virtual ICollection<Nop.Plugin.Misc.VendorMembership.Domain.VendorBusinessType> VendorBusinessTypes { get; set; }
+        //public virtual IEnumerable<Vendor> Vendors { get; set; }
     }
 }
