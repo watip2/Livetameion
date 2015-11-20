@@ -26,3 +26,4 @@ Widgets.GoogleAnalytics
 Widgets.NivoSlider
 Misc.Advertisements
 Misc.GroupDeals
+Misc.TaxGroups

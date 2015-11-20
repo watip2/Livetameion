@@ -257,7 +257,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Controllers
         }
 
         [HttpGet]
-        [ActionName("CreateGroupdeal")]
+        [ActionName("Create")]
         public ActionResult Create()
         {
             var model = new GroupDealViewModel();
@@ -271,11 +271,11 @@ namespace Nop.Plugin.Misc.GroupDeals.Controllers
                 });
             }
             
-            return View("CreateGroupDeal", model);
+            return View("Create", model);
         }
 
         [HttpPost]
-        [ActionName("CreateGroupdeal")]
+        [ActionName("Create")]
         [ValidateAntiForgeryToken]
         public ActionResult Create(GroupDealViewModel model)
         {
@@ -296,7 +296,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Controllers
                 return RedirectToAction("Index");
             }
             
-            return View("CreateGroupDeal", model);
+            return View("Create", model);
         }
 
         [ValidateInput(false)]
