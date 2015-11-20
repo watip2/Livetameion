@@ -271,7 +271,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Controllers
                 });
             }
             
-            return View("Create", model);
+            return View("CreateGroupdeal", model);
         }
 
         [HttpPost]
@@ -296,7 +296,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Controllers
                 return RedirectToAction("Index");
             }
             
-            return View("Create", model);
+            return View("CreateGroupdeal", model);
         }
 
         [ValidateInput(false)]

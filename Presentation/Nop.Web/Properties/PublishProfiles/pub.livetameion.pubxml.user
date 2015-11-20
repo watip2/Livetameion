@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlMAe3C95rU2SNKQTNpCMPAAAAAACAAAAAAAQZgAAAAEAACAAAAA+yc3WaBOvF6z0yBnyeCloNuCWHmyRl3/4ESOuG4sNsgAAAAAOgAAAAAIAACAAAAAIUH0BMiSqX1WJwcXvitdvVawK8N0OHfTmSHu8dJTA9SAAAABKftG/DynznFg/8DQUMRUkoVbjhIb1mCtVjE71dremkEAAAACXLmkHDHdSEcu57UiapGeI85xzpsVuBHpTClrV7tskRv5dbGdSekpwV8wSMI/jS8SUjm/negeb5Yxt7SsnKnrF</EncryptedPassword>
-    <_PublishTargetUrl>D:\pub.livetameion.com</_PublishTargetUrl>
+    <_PublishTargetUrl>D:\pub.livetameion.com_test</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Administration/Content/images/1pix.gif">
@@ -4214,7 +4214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/10/2015 19:24:03</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>11/20/2015 03:43:00</publishTime>
+      <publishTime>11/20/2015 14:13:44</publishTime>
     </File>
     <File Include="license.txt">
       <publishTime>02/10/2015 19:24:05</publishTime>
@@ -4408,6 +4408,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Feed.Froogle/web.config">
       <publishTime>03/16/2015 10:13:02</publishTime>
     </File>
+    <File Include="Plugins/Misc.Advertisements/Description.txt">
+      <publishTime>11/14/2015 23:45:28</publishTime>
+    </File>
+    <File Include="Plugins/Misc.Advertisements/Nop.Plugin.Misc.Advertisements.dll">
+      <publishTime>11/20/2015 12:07:52</publishTime>
+    </File>
+    <File Include="Plugins/Misc.Advertisements/web.config">
+      <publishTime>11/14/2015 23:31:18</publishTime>
+    </File>
     <File Include="Plugins/Misc.FacebookShop/Content/images/logo.gif">
       <publishTime>02/10/2015 19:23:21</publishTime>
     </File>
@@ -4479,6 +4488,225 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Plugins/Misc.FacebookShop/web.config">
       <publishTime>02/10/2015 19:23:21</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Description.txt">
+      <publishTime>11/11/2015 20:07:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.GroupDeals.dll">
+      <publishTime>11/20/2015 12:30:35</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/GroupDeals/Edit.cshtml">
+      <publishTime>11/13/2015 11:13:31</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/GroupDeals/GroupDealTemplate.Simple.cshtml">
+      <publishTime>11/13/2015 11:13:14</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/GroupDeals/Index.cshtml">
+      <publishTime>11/13/2015 14:18:27</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/CreateGroupDeal.cshtml">
+      <publishTime>11/14/2015 12:10:59</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/EditGroupdeal.cshtml">
+      <publishTime>11/17/2015 23:58:40</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/Index.cshtml">
+      <publishTime>11/19/2015 01:02:00</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/Inmnbdex_quick_edit.cshtml">
+      <publishTime>11/18/2015 00:39:36</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/_CreateOrUpdate.cshtml">
+      <publishTime>11/14/2015 17:01:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/_CreateOrUpdate.Info.cshtml">
+      <publishTime>11/19/2015 01:59:22</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/_CreateOrUpdate.Pictures.cshtml">
+      <publishTime>11/18/2015 00:21:31</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/_CreateOrUpdate.SEO.cshtml">
+      <publishTime>11/14/2015 11:42:40</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/web.config">
+      <publishTime>11/11/2015 20:07:17</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Autofac.dll">
+      <publishTime>02/10/2015 19:24:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Autofac.Integration.Mvc.dll">
+      <publishTime>05/07/2015 11:04:27</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Autofac.Integration.Mvc.xml">
+      <publishTime>05/07/2015 11:04:27</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Autofac.xml">
+      <publishTime>02/10/2015 19:24:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/AutoMapper.dll">
+      <publishTime>02/10/2015 19:24:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/AutoMapper.xml">
+      <publishTime>02/10/2015 19:24:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/da/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/de/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Description.txt">
+      <publishTime>11/16/2015 12:51:02</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/EntityFramework.dll">
+      <publishTime>03/16/2015 10:08:38</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/EntityFramework.xml">
+      <publishTime>03/16/2015 10:08:39</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/EPPlus.dll">
+      <publishTime>05/07/2015 11:05:32</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/EPPlus.xml">
+      <publishTime>05/07/2015 11:05:32</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/es/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/fi/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/FluentValidation.dll">
+      <publishTime>06/04/2015 12:12:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/FluentValidation.xml">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/fr/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/ImageResizer.dll">
+      <publishTime>02/10/2015 19:24:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/ImageResizer.xml">
+      <publishTime>02/10/2015 19:24:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/it/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/itextsharp.dll">
+      <publishTime>05/13/2015 15:31:45</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/itextsharp.xml">
+      <publishTime>05/13/2015 15:31:45</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/ko/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/MaxMind.Db.dll">
+      <publishTime>05/21/2015 13:15:53</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/MaxMind.Db.xml">
+      <publishTime>05/21/2015 13:15:53</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/MaxMind.GeoIP2.dll">
+      <publishTime>05/21/2015 13:16:14</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/MaxMind.GeoIP2.xml">
+      <publishTime>05/21/2015 13:16:14</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/mk/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Newtonsoft.Json.dll">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Newtonsoft.Json.xml">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/nl/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Nop.Admin.dll">
+      <publishTime>11/20/2015 02:44:01</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Nop.Core.dll">
+      <publishTime>11/20/2015 02:44:27</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Nop.Data.dll">
+      <publishTime>11/20/2015 02:44:28</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Nop.Plugin.Misc.TaxGroups.dll">
+      <publishTime>11/20/2015 14:07:22</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Nop.Services.dll">
+      <publishTime>11/20/2015 02:44:30</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Nop.Web.Framework.dll">
+      <publishTime>11/20/2015 02:44:31</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/PerlRegex.dll">
+      <publishTime>02/10/2015 19:24:20</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/pl/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/pt/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/Recaptcha.dll">
+      <publishTime>02/10/2015 19:24:20</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/RestSharp.dll">
+      <publishTime>05/07/2015 11:05:33</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/RestSharp.xml">
+      <publishTime>05/07/2015 11:05:33</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/ru/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/sv/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.Mvc.dll">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.Mvc.xml">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.Optimization.dll">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.Optimization.xml">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.Razor.dll">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.Razor.xml">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.WebPages.Deployment.dll">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.WebPages.Deployment.xml">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.WebPages.dll">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/System.Web.WebPages.xml">
+      <publishTime>02/10/2015 19:24:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/tr/FluentValidation.resources.dll">
+      <publishTime>06/04/2015 12:12:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/UserAgentStringLibrary.dll">
+      <publishTime>02/10/2015 19:24:20</publishTime>
+    </File>
+    <File Include="Plugins/Misc.TaxGroups/web.config">
+      <publishTime>11/16/2015 12:51:43</publishTime>
     </File>
     <File Include="Plugins/Payments.AuthorizeNet/Description.txt">
       <publishTime>05/24/2015 14:10:49</publishTime>

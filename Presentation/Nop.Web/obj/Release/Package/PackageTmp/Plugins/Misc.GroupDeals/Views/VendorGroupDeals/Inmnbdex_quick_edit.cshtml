@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Configuration;
+
+<h1>Manage Group Deals</h1>
+<hr />
+
+<div id="groupdeals-grid"></div>
+
+<script>
+    $(document).ready(function () {
+        $("#groupdeals-grid").kendoGrid({
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "VendorGroupDeals"))",
+                        type: "POST",
+                        dataType: "json"
+                    },
+                    update: {
+                        url: "@Html.Raw(Url.Action("Edit", "VendorGroupDeals"))",
+                        type: "POST",
+                        dataType: "json"
+                    },
+                    destroy: {
+                        url: "@Html.Raw(Url.Action("Delete", "VendorGroupDeals"))",
+                        type: "POST",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors",
+                    model: {
+                        id: "Id",
+                        fields: {
+                            Name: { editable: true, type: "string" },
+                            CreatedOnUtc: { editable: true, type: "string" },
+                            UpdatedOnUtc: { editable: true, type: "string" },
+                            Country: { editable: true, type: "string" },
+                            StateOrProvince: { editable: true, type: "string" },
+                        }
+                    }
+                },
+                requestEnd: function (e) {
+                    if (e.type == "update") {
+                        this.read();
+                    }
+                },
+                error: function (e) {
+                    display_kendoui_grid_error(e);
+                    this.cancelChanges();
+                },
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            pageable: {
+                refresh: true,
+                numeric: false,
+                previousNext: false,
+                info: false
+            },
+            editable: {
+                confirmation: true,
+                mode: "inline"
+            },
+            scrollable: false,
+            columns: [{
+                field: "Name",
+                title: "Name",
+                width: 200
+            }, {
+                field: "CreatedOnUtc",
+                title: "Created On",
+                width: 150
+            }, {
+                field: "UpdatedOnUtc",
+                title: "Created On",
+                width: 150
+            }, {
+                field: "Country",
+                title: "Country",
+                width: 150
+            }, {
+                field: "StateOrProvince",
+                title: "State/Province",
+                width: 150
+            }, {
+                command: [{
+                    name: "edit",
+                    text: "@T("Admin.Common.Edit")"
+                }, {
+                    name: "destroy",
+                    text: "@T("Admin.Common.Delete")"
+                }],
+                width: 200
+            }]
+        });
+    });
+</script>

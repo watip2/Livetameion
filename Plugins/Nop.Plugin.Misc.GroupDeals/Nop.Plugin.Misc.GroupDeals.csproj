@@ -127,7 +127,7 @@
     <Compile Include="Views\CustomViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorGroupDeals\CreateGroupDeal.cshtml">
+    <Content Include="Views\VendorGroupDeals\CreateGroupdeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

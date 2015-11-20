@@ -2,7 +2,7 @@
 @{
     Layout = "_AdminLayout";
 }
-@using (Html.BeginForm("AddNew", null, FormMethod.Post, new { id = "product-form" }))
+@using (Html.BeginForm("Create", null, FormMethod.Post, new { id = "product-form" }))
 {
     @Html.AntiForgeryToken()
     <div class="section-header">
