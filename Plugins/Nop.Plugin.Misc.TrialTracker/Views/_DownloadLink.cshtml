@@ -1,0 +1,12 @@
+﻿@model Nop.Plugin.Misc.TrialTracker.Domain.TrialTrackerRecord
+@using System;
+@using Nop.Web.Framework.UI;
+
+<p>@T("Plugins.Widgets.TrialTracker.ThankYouMessage")</p>
+<a class="button-2 download-sample-button" href="@Url.RouteUrl("GetSampleDownload", new { productid = Model.ProductId })">@T("Products.DownloadSample")</a>
+
+<style>
+    #new-entry {
+        display:none;
+    }
+</style>

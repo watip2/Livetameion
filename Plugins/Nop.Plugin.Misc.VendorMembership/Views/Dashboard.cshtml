@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "_ColumnsOne.cshtml";
+}
+
+@using System;
+@using Nop.Web.Framework.UI;
+@{
+    Html.AddScriptParts(Url.Content("~/Plugins/Misc.VendorMembership/scripts/bootstrap.js"));
+    Html.AddCssFileParts(Url.Content("~/Plugins/Misc.VendorMembership/styles/bootstrap.css"));
+}
+
+<style>
+.db-link {
+    border: 1px solid;
+    height: 100px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    background-color: burlywood;
+    font-weight: bold;
+}
+</style>
+
+<div class="row">
+    <a href="@Url.Action("Index","VendorOrders")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/order1.png" /><br />Orders
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/return1.png" /><br />Returns
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/stock1.png" /><br />Stock
+    </a>
+    <a href="@Url.Action("ListProducts","VendorMembership")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/product1.png" /><br />Product Manager
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/media/wysiwyg/knofe.png" /><br />Restaurant Menu
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/select1.png" /><br />Select & Sell
+    </a>
+</div>
+<div class="row">
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/setting.png" /><br />Settings
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/promotion.png" /><br />Promotion
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/group_deal1.png" /><br />Add Group Deal
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/group_deal1.png" /><br />Group Deal
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/list1.png" /><br />List a Product
+    </a>
+    <a href="@Url.Action("Action","Controller")" class="col-xs-4 col-sm-3 db-link">
+        <img src="http://www.livetameion.com/skin/frontend/default/udropship/images2/list1.png" /><br />Invoices
+    </a>
+</div>
+<div class="row">
+    @Html.ActionLink("Advertise", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Jobs", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Default", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Apartments", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Cars", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Auction", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+</div>
+<div class="row">
+    @Html.ActionLink("Travel", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Group Deals", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Hotels", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Jobs", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Homes", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+    @Html.ActionLink("Deals", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+</div>
+<div class="row">
+    @Html.ActionLink("Products", "Action", "Controller", new { @class = "col-xs-6 col-sm-3 db-link" })
+</div>

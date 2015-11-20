@@ -1,0 +1,154 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Admin.Models.Orders;
+
+<link href="http://localhost:15536/Administration/Content/styles.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.common.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.default.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/tagit/jquery.tagit.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Scripts/fineuploader/fineuploader-4.2.2.min.css" rel="stylesheet" type="text/css" />
+
+<script src="http://localhost:15536/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/admin.common.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/kendo/2014.1.318/kendo.web.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/tag-it.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Content/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/fineuploader/jquery.fineuploader-4.2.2.min.js" type="text/javascript"></script>
+
+@model OrderModel
+@{
+    //page title
+    ViewBag.Title = T("Admin.Orders.EditOrderDetails").Text;
+}
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "order-form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="section-header">
+        <div class="title">
+            <img src="@Url.Content("~/Administration/Content/images/ico-sales.png")" alt="" />
+            @T("Admin.Orders.EditOrderDetails") - @Model.Id @Html.ActionLink("(" + T("Admin.Orders.BackToList") + ")", "List")
+        </div>
+        <div class="options">
+            @if (!Model.IsLoggedInAsVendor)
+            {
+                <a href="@Url.Action("PdfInvoice", new { orderId = Model.Id })" class="k-button">@T("Admin.Orders.PdfInvoice")</a>
+            }
+            @if (!Model.IsLoggedInAsVendor)
+            {
+                <span id="order-delete" class="k-button">@T("Admin.Common.Delete")</span>
+            }
+            <input type="submit" id="btnRefreshPage" style="display: none" />
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#btnRefreshPage').click(function () {
+                        //refresh page
+                        location.reload();
+                    });
+                });
+            </script>
+        </div>
+    </div>
+
+    @Html.ValidationSummary(false)
+
+    <div id="order-edit">
+        <ul>
+            <li @Html.RenderSelectedTabIndex(0, GetSelectedTabIndex())>
+                @T("Admin.Orders.Info")
+            </li>
+            <li @Html.RenderSelectedTabIndex(1, GetSelectedTabIndex())>
+                @T("Admin.Orders.BillingInfo")
+            </li>
+            <li @Html.RenderSelectedTabIndex(2, GetSelectedTabIndex())>
+                @T("Admin.Orders.ShippingInfo")
+            </li>
+            <li @Html.RenderSelectedTabIndex(3, GetSelectedTabIndex())>
+                @T("Admin.Orders.Products")
+            </li>
+            @if (!Model.IsLoggedInAsVendor)
+            {
+                <li @Html.RenderSelectedTabIndex(4, GetSelectedTabIndex())>
+                    @T("Admin.Orders.OrderNotes")
+                </li>
+            }
+        </ul>
+        <div>
+            @TabInfo()
+        </div>
+        <div>
+            @TabBillingInfo()
+        </div>
+        <div>
+            @TabShippingInfo()
+        </div>
+        <div>
+            @TabProducts()
+        </div>
+        @if (!Model.IsLoggedInAsVendor)
+        {
+            <div>
+                @TabOrderNotes()
+            </div>
+        }
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#order-edit").kendoTabStrip({
+                animation:  {
+                    open: {
+                        effects: "fadeIn"
+                    }
+                },
+                select: tabstrip_on_tab_select
+            });
+        });
+    </script>
+
+    {
+        //custom tabs
+        var eventMessage = new AdminTabStripCreated(this.Html, "order-edit");
+        EngineContext.Current.Resolve<IEventPublisher>().Publish(eventMessage);
+        foreach (var eventBlock in eventMessage.BlocksToRender)
+        {
+            @eventBlock
+        }
+    }
+
+
+    @*save selected tab index*@
+    <input type="hidden" id="selected-tab-index" name="selected-tab-index" value="@(GetSelectedTabIndex())">
+
+}
+@Html.DeleteConfirmation("order-delete")
+@helper TabInfo()
+{
+    @Html.Partial("_OrderDetails.Info", Model)
+}
+@helper TabBillingInfo()
+{
+    @Html.Partial("_OrderDetails.Billing", Model)
+}
+@helper TabShippingInfo()
+{
+    @Html.Partial("_OrderDetails.Shipping", Model)
+}
+@helper TabProducts()
+{
+    @Html.Partial("_OrderDetails.Products", Model)
+}
+@helper TabOrderNotes()
+{
+    @Html.Partial("_OrderDetails.Notes", Model)
+}
