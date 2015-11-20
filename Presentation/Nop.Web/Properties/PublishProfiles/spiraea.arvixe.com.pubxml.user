@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://spiraea.arvixe.com/dev.tameiontestsite.com/wwwroot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Administration/Content/images/1pix.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/active-false.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/active-true.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/admin-gvw-bg.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/admin-header-bg.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/admin-menu-bg.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ajax-loading.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ajax_loader_small.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/blue_button_bg.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/error-message.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/google-maps.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/grey_button_bg.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/grid_header_back.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-blacklist.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-catalog.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-configuration.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-customers.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-dashboard.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-help.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-help.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-news.gif">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-promotions.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/images/ico-sales.png">
+      <publishTime>02/10/2015 19:23:40</publishTime>
+    </File>
+    <File Include="Administration/Content/styles.css">
+      <publishTime>06/02/2015 16:52:28</publishTime>
+    </File>
+    <File Include="Administration/Content/styles.rtl.css">
+      <publishTime>06/02/2015 16:52:28</publishTime>
+    </File>
+    <File Include="Administration/sitemap.config">
+      <publishTime>05/21/2015 09:21:43</publishTime>
+    </File>
+    <File Include="Administration/Web.config">
+      <publishTime>06/04/2015 12:13:09</publishTime>
+    </File>
+    <File Include="ErrorPage.htm">
+      <publishTime>02/10/2015 19:24:03</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>02/10/2015 19:24:05</publishTime>
+    </File>
+    <File Include="FileNotFound.htm">
+      <publishTime>02/10/2015 19:24:03</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/20/2015 03:43:00</publishTime>
+    </File>
+    <File Include="license.txt">
+      <publishTime>02/10/2015 19:24:05</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/20/2015 11:02:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\Views\DiscountRulesHasOneProduct\Configure.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\Description.txt
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\web.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\Views\DiscountRulesHasOneProduct\ProductAddPopup.cshtml
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\logo.jpg
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\Nop.Plugin.DiscountRules.HasOneProduct.dll.config
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\Nop.Plugin.DiscountRules.HasOneProduct.dll
+D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\DiscountRules.HasOneProduct\Nop.Plugin.DiscountRules.HasOneProduct.pdb
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.DiscountRules.HasOneProduct\obj\Debug\Nop.Plugin.DiscountRules.HasOneProduct.csprojResolveAssemblyReference.cache
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.DiscountRules.HasOneProduct\obj\Debug\Nop.Plugin.DiscountRules.HasOneProduct.dll
+D:\GitHub\Livetameion\Plugins\Nop.Plugin.DiscountRules.HasOneProduct\obj\Debug\Nop.Plugin.DiscountRules.HasOneProduct.pdb
