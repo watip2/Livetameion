@@ -1,7 +1,0 @@
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.csprojResolveAssemblyReference.cache
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Description.txt
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TaxGroups\web.config
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Nop.Plugin.Misc.TaxGroups.dll
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Nop.Plugin.Misc.TaxGroups.pdb
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.dll
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.pdb

@@ -24,9 +24,3 @@ Tax.FixedRate
 Tax.CountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
-Misc.TrialTracker
-Misc.VendorMembership
-Misc.CustomerGroupRestrictions
-Misc.Advertisements
-Misc.TaxGroups
-Misc.GroupDeals

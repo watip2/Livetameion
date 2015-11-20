@@ -66,23 +66,6 @@
     <Compile Include="Mapping\Common\AddressAttributeMap.cs" />
     <Compile Include="Mapping\Common\AddressAttributeValueMap.cs" />
     <Compile Include="Mapping\Topics\TopicTemplateMap.cs" />
-    <Compile Include="Migrations\201510201804456_InitialMigration.cs" />
-    <Compile Include="Migrations\201510201804456_InitialMigration.Designer.cs">
-      <DependentUpon>201510201804456_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510211205237_VendorModelPersonalInfoFieldsAdded.cs" />
-    <Compile Include="Migrations\201510211205237_VendorModelPersonalInfoFieldsAdded.Designer.cs">
-      <DependentUpon>201510211205237_VendorModelPersonalInfoFieldsAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201510310945387_Vendor_BusinessType_Map.cs" />
-    <Compile Include="Migrations\201510310945387_Vendor_BusinessType_Map.Designer.cs">
-      <DependentUpon>201510310945387_Vendor_BusinessType_Map.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511031552236_testing.cs" />
-    <Compile Include="Migrations\201511031552236_testing.Designer.cs">
-      <DependentUpon>201511031552236_testing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="QueryableExtensions.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="DataReaderExtensions.cs" />
@@ -206,23 +189,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201510201804456_InitialMigration.resx">
-      <DependentUpon>201510201804456_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510211205237_VendorModelPersonalInfoFieldsAdded.resx">
-      <DependentUpon>201510211205237_VendorModelPersonalInfoFieldsAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201510310945387_Vendor_BusinessType_Map.resx">
-      <DependentUpon>201510310945387_Vendor_BusinessType_Map.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511031552236_testing.resx">
-      <DependentUpon>201511031552236_testing.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\CustomMapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

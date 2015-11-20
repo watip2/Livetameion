@@ -24,11 +24,6 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.WebPages.Raz
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\UserAgentStringLibrary.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Autofac.Integration.Mvc.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\EntityFramework.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Web.Framework.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Admin.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.Optimization.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Recaptcha.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\AutoMapper.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Core.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Data.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Autofac.xml
@@ -39,7 +34,6 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\itextsharp.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\MaxMind.Db.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\MaxMind.GeoIP2.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Newtonsoft.Json.xml
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Plugin.Misc.VendorMembership.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\RestSharp.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.Helpers.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.Mvc.xml
@@ -49,15 +43,7 @@ D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.WebPages.Dep
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.WebPages.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Autofac.Integration.Mvc.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\EntityFramework.xml
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Web.Framework.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Admin.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Web.Optimization.xml
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Recaptcha.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\AutoMapper.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\AutoMapper.xml
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.dll
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Services\obj\Release\Nop.Services.XmlSerializers.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Plugin.Misc.GroupDeals.dll
-D:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\Nop.Plugin.Misc.GroupDeals.pdb

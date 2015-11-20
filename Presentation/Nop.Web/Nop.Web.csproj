@@ -104,16 +104,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Nop.Plugin.Misc.GroupDeals">
-      <HintPath>Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.dll</HintPath>
-    </Reference>
-    <Reference Include="Nop.Plugin.Misc.TrialTracker">
-      <HintPath>Plugins\Misc.TrialTracker\Nop.Plugin.Misc.TrialTracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Nop.Plugin.Misc.VendorMembership, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll</HintPath>
-    </Reference>
     <Reference Include="Recaptcha">
       <HintPath>..\..\packages\recaptcha.1.0.5.0\lib\.NetFramework 4.0\Recaptcha.dll</HintPath>
     </Reference>
@@ -204,7 +194,6 @@
     <Compile Include="Controllers\BasePublicController.cs" />
     <Compile Include="Controllers\BoardsController.cs" />
     <Compile Include="Controllers\BackInStockSubscriptionController.cs" />
-    <Compile Include="Controllers\ExtendedControllers\ProductController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
@@ -1112,7 +1101,8 @@
     <Content Include="Content\samples\product_IfYouWait_1.zip" />
     <Content Include="Content\samples\product_NightVision_1.zip" />
     <Content Include="Content\samples\product_ScienceAndFaith_1.zip" />
-    <None Include="Properties\PublishProfiles\Livetameion.pubxml" />
+    <None Include="Properties\PublishProfiles\pub.livetameion.pubxml" />
+    <None Include="Properties\PublishProfiles\spiraea.arvixe.com.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader\iframe.xss.response-4.2.2.js" />
     <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.js" />

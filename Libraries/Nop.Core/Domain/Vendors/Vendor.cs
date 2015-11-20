@@ -73,5 +73,6 @@ namespace Nop.Core.Domain.Vendors
         /// Gets or sets the available customer selectable page size options
         /// </summary>
         public string PageSizeOptions { get; set; }
+
     }
 }

@@ -20,7 +20,6 @@ namespace Nop.Web.Framework.Controllers
 
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
-
         }
 
         public void OnActionExecuting(ActionExecutingContext filterContext)

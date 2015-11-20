@@ -1,7 +1,0 @@
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.csprojResolveAssemblyReference.cache
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Description.txt
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\web.config
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugin.Misc.Advertisements.dll
-D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugin.Misc.Advertisements.pdb
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.dll
-D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.pdb

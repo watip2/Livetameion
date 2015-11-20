@@ -25,10 +25,5 @@ D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Release\System.Web.WebPages.Razor.x
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Release\System.Web.WebPages.xml
 D:\GitHub\Livetameion\Libraries\Nop.Data\bin\Release\System.Web.WebPages.Deployment.xml
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.csprojResolveAssemblyReference.cache
-D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.Migrations.InitialMigration.resources
-D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.Migrations.VendorModelPersonalInfoFieldsAdded.resources
-D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.Migrations.Vendor_BusinessType_Map.resources
-D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.Migrations.testing.resources
-D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.csproj.GenerateResource.Cache
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.dll
 D:\GitHub\Livetameion\Libraries\Nop.Data\obj\Release\Nop.Data.pdb

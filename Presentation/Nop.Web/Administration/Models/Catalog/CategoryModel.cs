@@ -30,11 +30,6 @@ namespace Nop.Admin.Models.Catalog
         [AllowHtml]
         public string Name { get; set; }
 
-        // The NopResourceDisplayName provides the "key" used during localization
-        // Keep an eye out for more about localization in future blogs
-        [NopResourceDisplayName("Admin.Catalog.Categories.Fields.SomeNewProperty")]
-        public string SomeNewProperty { get; set; }
-
         [NopResourceDisplayName("Admin.Catalog.Categories.Fields.Description")]
         [AllowHtml]
         public string Description { get; set; }

@@ -1,25 +1,3 @@
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Core.dll.config
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Core.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Core.pdb
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Autofac.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Autofac.Integration.Mvc.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Helpers.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Mvc.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Razor.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Deployment.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Autofac.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\Autofac.Integration.Mvc.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Helpers.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Mvc.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Razor.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.dll
-C:\Users\pc\Documents\Visual Studio 2013\Projects\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.pdb
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Core.dll.config
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Core.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Core.pdb
@@ -42,39 +20,3 @@ D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Deploymen
 D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Razor.xml
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.dll
 D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.csprojResolveAssemblyReference.cache
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Plugin.Misc.VendorMembership.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Web.Framework.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Data.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Services.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Admin.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Plugin.Misc.GroupDeals.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Optimization.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Newtonsoft.Json.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Recaptcha.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\itextsharp.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\UserAgentStringLibrary.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\MaxMind.GeoIP2.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\MaxMind.Db.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\EPPlus.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\ImageResizer.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\AutoMapper.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\PerlRegex.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\RestSharp.dll
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Plugin.Misc.VendorMembership.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Web.Framework.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Data.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Services.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Admin.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Nop.Plugin.Misc.GroupDeals.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Optimization.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Newtonsoft.Json.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\Recaptcha.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\itextsharp.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\MaxMind.GeoIP2.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\MaxMind.Db.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\EPPlus.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\ImageResizer.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\AutoMapper.pdb
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\AutoMapper.xml
-D:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\RestSharp.xml
