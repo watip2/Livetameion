@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlMAe3C95rU2SNKQTNpCMPAAAAAACAAAAAAAQZgAAAAEAACAAAAA+yc3WaBOvF6z0yBnyeCloNuCWHmyRl3/4ESOuG4sNsgAAAAAOgAAAAAIAACAAAAAIUH0BMiSqX1WJwcXvitdvVawK8N0OHfTmSHu8dJTA9SAAAABKftG/DynznFg/8DQUMRUkoVbjhIb1mCtVjE71dremkEAAAACXLmkHDHdSEcu57UiapGeI85xzpsVuBHpTClrV7tskRv5dbGdSekpwV8wSMI/jS8SUjm/negeb5Yxt7SsnKnrF</EncryptedPassword>
-    <_PublishTargetUrl>D:\pub.livetameion.com_test</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\pub.livetameion.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Administration/Content/images/1pix.gif">
@@ -1283,25 +1283,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:12:51</publishTime>
     </File>
     <File Include="bin/Nop.Admin.dll">
-      <publishTime>11/20/2015 02:44:01</publishTime>
+      <publishTime>11/23/2015 02:16:21</publishTime>
     </File>
     <File Include="bin/Nop.Core.dll">
-      <publishTime>11/20/2015 02:48:06</publishTime>
+      <publishTime>11/23/2015 00:52:42</publishTime>
     </File>
     <File Include="bin/Nop.Data.dll">
-      <publishTime>11/20/2015 02:48:07</publishTime>
+      <publishTime>11/23/2015 00:52:45</publishTime>
+    </File>
+    <File Include="bin/Nop.Plugin.Misc.GroupDeals.dll">
+      <publishTime>11/23/2015 09:17:52</publishTime>
+    </File>
+    <File Include="bin/Nop.Plugin.Misc.VendorMembership.dll">
+      <publishTime>11/23/2015 09:17:53</publishTime>
+    </File>
+    <File Include="bin/Nop.Plugin.Tameion.SupportTicketSystem.dll">
+      <publishTime>11/21/2015 21:53:32</publishTime>
     </File>
     <File Include="bin/Nop.Services.dll">
-      <publishTime>11/20/2015 02:48:10</publishTime>
+      <publishTime>11/23/2015 00:52:51</publishTime>
     </File>
     <File Include="bin/Nop.Services.XmlSerializers.dll">
-      <publishTime>11/20/2015 02:48:13</publishTime>
+      <publishTime>11/23/2015 00:52:58</publishTime>
     </File>
     <File Include="bin/Nop.Web.dll">
-      <publishTime>11/20/2015 11:22:57</publishTime>
+      <publishTime>11/23/2015 09:23:08</publishTime>
     </File>
     <File Include="bin/Nop.Web.Framework.dll">
-      <publishTime>11/20/2015 02:48:16</publishTime>
+      <publishTime>11/23/2015 00:53:02</publishTime>
     </File>
     <File Include="bin/PerlRegex.dll">
       <publishTime>02/10/2015 19:24:20</publishTime>
@@ -4214,7 +4223,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/10/2015 19:24:03</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>11/20/2015 14:13:44</publishTime>
+      <publishTime>11/22/2015 13:41:02</publishTime>
     </File>
     <File Include="license.txt">
       <publishTime>02/10/2015 19:24:05</publishTime>
@@ -4493,7 +4502,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/11/2015 20:07:50</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>11/20/2015 12:30:35</publishTime>
+      <publishTime>11/23/2015 09:17:52</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Views/GroupDeals/Edit.cshtml">
       <publishTime>11/13/2015 11:13:31</publishTime>
@@ -4505,13 +4514,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/13/2015 14:18:27</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/CreateGroupDeal.cshtml">
-      <publishTime>11/14/2015 12:10:59</publishTime>
+      <publishTime>11/20/2015 14:28:00</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/EditGroupdeal.cshtml">
       <publishTime>11/17/2015 23:58:40</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/Index.cshtml">
-      <publishTime>11/19/2015 01:02:00</publishTime>
+      <publishTime>11/20/2015 14:30:43</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Views/VendorGroupDeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>11/18/2015 00:39:36</publishTime>
@@ -4707,6 +4716,180 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Plugins/Misc.TaxGroups/web.config">
       <publishTime>11/16/2015 12:51:43</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Description.txt">
+      <publishTime>10/21/2015 12:36:59</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.VendorMembership.dll">
+      <publishTime>11/23/2015 09:17:53</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Scripts/bootstrap.js">
+      <publishTime>10/22/2015 16:46:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Styles/bootstrap.css">
+      <publishTime>10/22/2015 16:46:33</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Dashboard.cshtml">
+      <publishTime>11/22/2015 14:29:24</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Register.cshtml">
+      <publishTime>11/04/2015 21:23:21</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml">
+      <publishTime>11/22/2015 18:03:53</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/CreateProduct.cshtml">
+      <publishTime>11/14/2015 00:15:48</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/CrossSellProductAddPopup.cshtml">
+      <publishTime>11/06/2015 23:59:26</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/EditProduct.cshtml">
+      <publishTime>11/15/2015 19:36:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/ListProducts.cshtml">
+      <publishTime>11/22/2015 22:39:01</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/Login.cshtml">
+      <publishTime>11/22/2015 20:09:15</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/Nav.cshtml">
+      <publishTime>11/22/2015 13:48:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/RelatedProductAddPopup.cshtml">
+      <publishTime>11/06/2015 22:47:27</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Acl.cshtml">
+      <publishTime>11/06/2015 23:44:37</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.AssociatedProducts.cshtml">
+      <publishTime>11/06/2015 23:42:54</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Categories.cshtml">
+      <publishTime>11/06/2015 19:39:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.CrossSells.cshtml">
+      <publishTime>11/06/2015 23:44:04</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.cshtml">
+      <publishTime>11/07/2015 09:57:21</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Discounts.cshtml">
+      <publishTime>11/06/2015 22:02:27</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Info.cshtml">
+      <publishTime>11/07/2015 01:17:01</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Manufacturers.cshtml">
+      <publishTime>11/06/2015 20:18:06</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Pictures.cshtml">
+      <publishTime>11/06/2015 16:32:53</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.ProductAttributes.cshtml">
+      <publishTime>11/06/2015 21:34:14</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.PurchasedWithOrders.cshtml">
+      <publishTime>11/06/2015 23:50:22</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.RelatedProducts.cshtml">
+      <publishTime>11/06/2015 22:37:05</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.SEO.cshtml">
+      <publishTime>11/07/2015 01:17:55</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.SpecificationAttributes.cshtml">
+      <publishTime>11/06/2015 20:51:58</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.Stores.cshtml">
+      <publishTime>11/06/2015 22:24:32</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/_CreateOrUpdate.TierPrices.cshtml">
+      <publishTime>11/06/2015 22:00:13</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/AddProductToOrder.cshtml">
+      <publishTime>11/10/2015 13:02:20</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/AddProductToOrderDetails.cshtml">
+      <publishTime>11/10/2015 13:15:56</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/AddressEdit.cshtml">
+      <publishTime>11/09/2015 20:17:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/AddShipment.cshtml">
+      <publishTime>11/09/2015 21:00:16</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/BestsellersBriefReportByAmount.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/BestsellersBriefReportByQuantity.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/BestsellersReport.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/CountryReport.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/Edit.cshtml">
+      <publishTime>11/09/2015 00:11:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/Index.cshtml">
+      <publishTime>11/08/2015 23:18:16</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/List.cshtml">
+      <publishTime>11/22/2015 21:45:33</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/NeverSoldReport.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/OrderAverageReport.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/OrderIncompleteReport.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/PartiallyRefundOrderPopup.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/ShipmentDetails.cshtml">
+      <publishTime>11/09/2015 22:25:20</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/ShipmentList.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/UploadLicenseFilePopup.cshtml">
+      <publishTime>11/09/2015 13:51:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_CreateOrUpdateAddress.cshtml">
+      <publishTime>11/09/2015 20:09:44</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_OrderDetails.Billing.cshtml">
+      <publishTime>11/09/2015 00:21:29</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_OrderDetails.Info.cshtml">
+      <publishTime>11/09/2015 13:26:38</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_OrderDetails.Notes.cshtml">
+      <publishTime>11/09/2015 00:41:10</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_OrderDetails.Products.cshtml">
+      <publishTime>11/10/2015 13:21:08</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_OrderDetails.Shipping.cshtml">
+      <publishTime>11/09/2015 21:33:50</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_ProductAddAttributes.cshtml">
+      <publishTime>11/10/2015 13:13:45</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_ProductAddGiftCardInfo.cshtml">
+      <publishTime>11/10/2015 13:13:42</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/VendorOrders/_ProductAddRentalInfo.cshtml">
+      <publishTime>11/10/2015 13:12:06</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/web.config">
+      <publishTime>10/21/2015 16:10:05</publishTime>
     </File>
     <File Include="Plugins/Payments.AuthorizeNet/Description.txt">
       <publishTime>05/24/2015 14:10:49</publishTime>
@@ -4992,6 +5175,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Plugins/SMS.Verizon/web.config">
       <publishTime>02/10/2015 19:23:22</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Description.txt">
+      <publishTime>11/21/2015 01:49:45</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Nop.Plugin.Tameion.SupportTicketSystem.dll">
+      <publishTime>11/21/2015 21:53:32</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Views/SupportTicketTopics/CreateTicket.cshtml">
+      <publishTime>11/21/2015 21:33:01</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Views/SupportTicketTopics/EditTicket.cshtml">
+      <publishTime>11/21/2015 21:33:01</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/web.config">
+      <publishTime>11/21/2015 01:49:01</publishTime>
     </File>
     <File Include="Plugins/Tax.CountryStateZip/Description.txt">
       <publishTime>02/16/2015 15:35:48</publishTime>
@@ -6874,6 +7072,1029 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Themes/DefaultClean/Views/Web.config">
       <publishTime>03/08/2015 15:52:04</publishTime>
     </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap-theme.css">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap-theme.css.map">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap-theme.min.css">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap.css">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap.css.map">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap.min.css">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap.rtl.css">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>06/23/2015 19:23:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/js/bootstrap.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/bootstrap-3.2.0/js/bootstrap.min.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/animate.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/color-styles/blue.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/color-styles/cyan.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/color-styles/darkblue.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/color-styles/green.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/color-styles/orange.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/color-styles/red.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/custom.css">
+      <publishTime>07/03/2015 12:18:15</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/customStyle.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/ie6.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/ie7.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/404/404.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ajax_loader_large.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ajax_loader_small.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/arrow-up.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/bbeditor-button-bg.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/blog-one.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/blog-three.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/blog-two.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/man-four.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/man-one.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/man-three.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/man-two.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blog/socials.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blue-picker.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/blue_logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/bullet-left.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/bullet-right.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/cart/one.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/cart/three.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/cart/two.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/closelabel.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/cyan-picker.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/cyan_logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/darkblue-picker.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/darkblue_logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/download-sample-bg.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/forum-footer-bg.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/forum-header-bg.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/free-shipping.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/green-picker.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/green_logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/bg_border.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/gallery1.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/gallery2.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/gallery3.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/gallery4.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/girl1.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/girl2.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/girl3.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/iframe1.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/iframe2.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/iframe3.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/iframe4.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/map.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/new.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/partner1.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/partner2.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/partner3.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/partner4.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/pricing.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/product1.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/product2.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/product3.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/product4.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/product5.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/product6.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/recommend1.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/recommend2.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/recommend3.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/sale.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/searchicon.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/home/shipping.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-arrow-r.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-close-notification-bar.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-delete.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-edit.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-forum-post-add.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-forum-post-high.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-forum-post.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-forum-watch.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-forum.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-move-topic.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-pm.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/ico-rss.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/left.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/left_hover.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/loading.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/logo.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/nextlabel.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/orange-picker.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/orange_logo.png">
+      <publishTime>11/13/2015 14:56:20</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/orange_logo_default.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/prevlabel.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/1.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/new.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/rating.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/share.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/similar1.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/similar2.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/product-details/similar3.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/progress-step-active.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/progress-step-inactive.gif">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/red-picker.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/red_logo.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/right.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/right_hover.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/advertisement.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/product10.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/product11.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/product12.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/product7.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/product8.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/shop/product9.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/star-x-active.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/star-x-active_old.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/star-x-inactive.png">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/styles.rtl.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/main.css">
+      <publishTime>08/28/2015 12:41:13</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/prettyPhoto.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/price-range.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/print.css">
+      <publishTime>08/14/2015 16:42:08</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/responsive.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/styles.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/styles.rtl.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/font-awosome-4.0.3/css/font-awesome.min.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/font-awosome-4.0.3/css/font-awesome.rtl.css">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/font-awosome-4.0.3/fonts/fontawesome-webfont.svg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/font-awosome-4.0.3/fonts/fontawesome-webfont.woff">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/font-awosome-4.0.3/fonts/FontAwesome.otf">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/preview.jpg">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/contact.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/gmaps.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/html5shiv.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/jquery.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/jquery.prettyPhoto.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/jquery.scrollUp.min.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/jquery.slimscroll.min.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/main.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/price-range.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/respond.min.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Scripts/styleSheetToogle.js">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/theme.config">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/BackInStockSubscription/CustomerSubscriptions.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/BackInStockSubscription/SubscribePopup.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Blog/BlogMonths.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Blog/BlogPost.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Blog/BlogTags.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Blog/List.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/ActiveDiscussions.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/ActiveDiscussionsSmall.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/CustomerForumSubscriptions.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/Forum.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/ForumBreadcrumb.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/ForumGroup.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/Index.cshtml">
+      <publishTime>08/14/2015 16:25:33</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/LastPost.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/PostCreate.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/PostEdit.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/Search.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/Topic.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/TopicCreate.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/TopicEdit.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/TopicMove.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/_ActiveTopics.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/_CreateUpdatePost.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/_CreateUpdateTopic.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/_ForumGroup.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/_ForumPost.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Boards/_SearchBox.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/CategoryNavigation.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/CategoryTemplate.ProductsInGridOrLines.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/HomepageCategories.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/ManufacturerAll.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/ManufacturerNavigation.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/ManufacturerTemplate.ProductsInGridOrLines.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/PopularProductTags.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/ProductsByTag.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/ProductTagsAll.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/Search.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/SearchBox.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/TopMenu.cshtml">
+      <publishTime>07/03/2015 12:08:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/Vendor.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/VendorAll.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/VendorNavigation.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/_FilterPriceBox.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/_FilterSpecsBox.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/BillingAddress.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/CheckoutProgress.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/Completed.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/Confirm.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OnePageCheckout.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OpcBillingAddress.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OpcConfirmOrder.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OpcPaymentInfo.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OpcPaymentMethods.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OpcShippingAddress.cshtml">
+      <publishTime>08/14/2015 16:50:22</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/OpcShippingMethods.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/PaymentInfo.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/PaymentMethod.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/ShippingAddress.cshtml">
+      <publishTime>08/14/2015 16:57:36</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Checkout/ShippingMethod.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/AdminHeaderLinks.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/ContactUs.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/CurrencySelector.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/EuCookieLaw.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/Favicon.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/Footer.cshtml">
+      <publishTime>08/28/2015 18:20:48</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/HeaderLinks.cshtml">
+      <publishTime>08/03/2015 16:40:26</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/JavaScriptDisabledWarning.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/LanguageSelector.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/PageNotFound.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/Sitemap.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/StoreClosed.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/StoreThemeSelector.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/TaxTypeSelector.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/AccountActivation.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/AddressAdd.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/AddressEdit.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/Addresses.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/Avatar.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/ChangePassword.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/CustomerNavigation.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/DownloadableProducts.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/Info.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/Login.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/PasswordRecovery.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/PasswordRecoveryConfirm.cshtml">
+      <publishTime>08/31/2015 14:00:58</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/Register.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/RegisterResult.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/UserAgreement.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/_CheckUsernameAvailability.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/_CustomerAttributes.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/_ExternalAuthentication.AssociateMessage.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Customer/_ExternalAuthentication.Errors.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ExternalAuthentication/ExternalMethods.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Home/index.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Install/Index.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/News/HomePageNews.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/News/List.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/News/NewsItem.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Newsletter/NewsletterBox.cshtml">
+      <publishTime>07/06/2015 13:20:51</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Newsletter/SubscriptionActivation.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Order/CustomerOrders.cshtml">
+      <publishTime>06/23/2015 19:23:09</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Order/CustomerRewardPoints.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Order/Details.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Order/ShipmentDetails.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Poll/HomePagePolls.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Poll/PollBlock.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Poll/_Poll.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/preview.jpg">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/PrivateMessages/Inbox.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/PrivateMessages/Index.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/PrivateMessages/SendPM.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/PrivateMessages/SentItems.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/PrivateMessages/ViewPM.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/BackInStockSubscribePopup.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/CompareProducts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/CrossSellProducts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/HomepageBestSellers.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/HomepageProducts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/ProductEmailAFriend.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/ProductReviews.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/ProductsAlsoPurchased.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/ProductTemplate.Grouped.cshtml">
+      <publishTime>08/31/2015 19:14:43</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/ProductTemplate.Simple.cshtml">
+      <publishTime>08/31/2015 18:59:14</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/RecentlyAddedProducts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/RecentlyViewedProducts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/RecentlyViewedProductsBlock.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/RelatedProducts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_AddToCart.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_BackInStockSubscription.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_CompareProductsButton.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_DownloadSample.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_GiftCardInfo.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductAttributes.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductBreadcrumb.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductDetailsPictures.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductEmailAFriendButton.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductManufacturers.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductPrice.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductReviewHelpfulness.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductReviewOverview.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductSpecifications.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductTags.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ProductTierPrices.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_ShareButton.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Product/_SKU_Man_Stock.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Profile/Index.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Profile/Info.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Profile/Posts.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ReturnRequest/CustomerReturnRequests.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ReturnRequest/ReturnRequest.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/Error.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/Head.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/Header.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/LanguageAttributes.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/TopHeader.cshtml">
+      <publishTime>08/31/2015 19:18:45</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_AddressAttributes.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_ColumnsOne.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_ColumnsThree.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_ColumnsTwo.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_ColumnsTwoHomepage.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_CreateOrUpdateAddress.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_Notifications.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_Print.cshtml">
+      <publishTime>08/14/2015 16:39:57</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_ProductBox.cshtml">
+      <publishTime>08/31/2015 19:02:14</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_Root.cshtml">
+      <publishTime>07/29/2015 19:33:31</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_Root.Head.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Shared/_RootPopup.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/Cart.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/EmailWishlist.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/EstimateShipping.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/FlyoutShoppingCart.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/OrderSummary.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/OrderTotals.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/Wishlist.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/_ButtonPaymentMethod.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/_CheckoutAttributes.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/_DiscountBox.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/_GiftCardBox.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/ShoppingCart/_OrderReviewData.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/theme.config">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Topic/TopicBlock.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Topic/TopicDetails.cshtml">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Web.config">
+      <publishTime>06/23/2015 19:23:10</publishTime>
+    </File>
     <File Include="Views/BackInStockSubscription/CustomerSubscriptions.cshtml">
       <publishTime>05/19/2015 12:49:04</publishTime>
     </File>
@@ -7436,7 +8657,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/10/2015 19:24:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/20/2015 11:23:03</publishTime>
+      <publishTime>11/23/2015 09:26:37</publishTime>
     </File>
   </ItemGroup>
 </Project>

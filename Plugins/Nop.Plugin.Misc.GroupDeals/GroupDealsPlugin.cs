@@ -19,12 +19,12 @@ using Nop.Plugin.Misc.GroupDeals.Helpers;
 
 namespace Nop.Plugin.Misc.GroupDeals
 {
-    public class GroupDealsPlugin : BasePlugin, IAdminMenuPlugin
+    public class GroupdealsPlugin : BasePlugin, IAdminMenuPlugin
     {
         private IRepository<GroupDeal> _groupDealsRepo;
         private GroupDealsContext _groupDealsContext;
         
-        public GroupDealsPlugin(
+        public GroupdealsPlugin(
             IRepository<GroupDeal> groupDealsRepo,
             GroupDealsContext groupDealsContext
         )
@@ -53,8 +53,8 @@ namespace Nop.Plugin.Misc.GroupDeals
                     {
                         SystemName = "Misc.GroupDeals",
                         Title = "Manage Group Deals",
-                        Url = "/VendorGroupDeals/Index",
-                        ControllerName = "VendorGroupDeals",
+                        Url = "/Groupdeals/Index",
+                        ControllerName = "Groupdeals",
                         ActionName = "Index",
                         Visible = true,
                         RouteValues = new RouteValueDictionary() { { "area", null } },
@@ -64,8 +64,8 @@ namespace Nop.Plugin.Misc.GroupDeals
                     {
                         SystemName = "Misc.GroupDeals",
                         Title = "Add New",
-                        Url = "/VendorGroupDeals/Create",
-                        ControllerName = "VendorGroupDeals",
+                        Url = "/Groupdeals/Create",
+                        ControllerName = "Groupdeals",
                         ActionName = "Create",
                         Visible = true,
                         RouteValues = new RouteValueDictionary() { { "area", null } },
@@ -87,7 +87,7 @@ namespace Nop.Plugin.Misc.GroupDeals
 
         public Web.Framework.Menu.SiteMapNode BuildMenuItem()
         {
-            SiteMapNode node = new SiteMapNode { Visible = true, Title = "Group Deals", Url = "/VendorGroupDeals/Index" };
+            SiteMapNode node = new SiteMapNode { Visible = true, Title = "Group Deals", Url = "/Groupdeals/Index" };
             return node;
         }
 

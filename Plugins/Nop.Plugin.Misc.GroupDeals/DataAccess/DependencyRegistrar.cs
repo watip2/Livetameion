@@ -44,6 +44,7 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
                 .As<IRepository<GroupdealPicture>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(GROUP_DEALS_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
+
             ///////////////////////////////////////////////////////////////////////////////////////////////
             
             // services

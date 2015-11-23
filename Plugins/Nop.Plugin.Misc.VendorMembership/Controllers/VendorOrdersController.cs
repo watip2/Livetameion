@@ -36,6 +36,9 @@ using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Kendoui;
 using Nop.Web.Framework.Mvc;
+using System.Web;
+using Nop.Plugin.Misc.VendorMembership.Helpers;
+using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
@@ -794,6 +797,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return RedirectToAction("List");
         }
 
+        [AuthorizeVendor]
         public ActionResult List(int? orderStatusId = null,
             int? paymentStatusId = null, int? shippingStatusId = null)
         {

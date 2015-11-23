@@ -1,0 +1,141 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Admin.Models.Orders;
+@using Nop.Core.Domain.Catalog;
+
+<link href="http://localhost:15536/Administration/Content/styles.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.common.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.default.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/tagit/jquery.tagit.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Scripts/fineuploader/fineuploader-4.2.2.min.css" rel="stylesheet" type="text/css" />
+
+<script src="http://localhost:15536/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/admin.common.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/kendo/2014.1.318/kendo.web.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/tag-it.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Content/tinymce/tinymce.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/fineuploader/jquery.fineuploader-4.2.2.min.js" type="text/javascript"></script>
+
+@using Nop.Core.Domain.Catalog
+@model OrderModel.AddOrderProductModel.ProductDetailsModel
+@{
+    //page title
+    ViewBag.Title = string.Format(T("Admin.Orders.Products.AddNew.Title2").Text, Model.Name, Model.OrderId);
+}
+@*we add enctype = "multipart/form-data" because "File upload" attribute control type requries it*@
+@using (Html.BeginForm("AddProductToOrderDetails", "VendorOrders",
+    new RouteValueDictionary(new { orderId = Model.OrderId, productId = Model.ProductId }),
+    FormMethod.Post,
+    new Dictionary<string, Object> { { "enctype", "multipart/form-data" } }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(false)
+    <div class="section-header">
+        <div class="title">
+            <img src="@Url.Content("~/Administration/Content/images/ico-sales.png")" alt="" />
+            @string.Format(T("Admin.Orders.Products.AddNew.Title2").Text, Model.Name, Model.OrderId)
+            @Html.ActionLink("(" + T("Admin.Orders.Products.AddNew.BackToList") + ")", "AddProductToOrder", new { orderId = Model.OrderId })
+        </div>
+        <div class="options">
+        </div>
+    </div>
+    <div>
+        @if (Model.Warnings.Count > 0)
+        {
+            <div class="messageBox messageBoxError">
+                @foreach (var warning in Model.Warnings)
+                {
+                    @warning
+                    <br />
+                }
+            </div>
+        }
+    </div>
+        if (Model.ProductType == ProductType.SimpleProduct)
+        {
+    <div>
+        <table>
+            <tr>
+                <td>
+                    @Html.NopLabelFor(model => model.UnitPriceInclTax):
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.UnitPriceInclTax)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.NopLabelFor(model => model.UnitPriceExclTax):
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.UnitPriceExclTax)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.NopLabelFor(model => model.Quantity):
+                </td>
+                <td colspan="2">
+                    @Html.EditorFor(model => model.Quantity)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.NopLabelFor(model => model.SubTotalInclTax):
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.SubTotalInclTax)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.NopLabelFor(model => model.SubTotalExclTax):
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.SubTotalExclTax)
+                </td>
+            </tr>
+        </table>
+        <div>
+            @Html.Partial("_ProductAddAttributes", Model.ProductAttributes)
+        </div>
+        @{
+            var dataDictGiftCard = new ViewDataDictionary();
+            dataDictGiftCard.TemplateInfo.HtmlFieldPrefix = "giftcard";
+            @Html.Partial("_ProductAddGiftCardInfo", Model.GiftCard, dataDictGiftCard)
+        }
+        <div>
+            @Html.Partial("_ProductAddRentalInfo", Model)
+        </div>
+        <p>
+            <strong>@T("Admin.Orders.Products.AddNew.Note2")</strong>
+        </p>
+        <input type="submit" class="k-button" value="@T("Admin.Orders.Products.AddNew")" />
+    </div>
+        }
+        else if (Model.ProductType == ProductType.GroupedProduct)
+        {
+    <div>
+        @*TODO add support for grouped products to be added to an existing order*@
+        Grouped products are not currently supported for adding to an existing order
+    </div>
+        }
+        else
+        {
+    <div>
+        This product type (unknown) is not currently supported for adding to an existing order
+    </div>
+        }
+}

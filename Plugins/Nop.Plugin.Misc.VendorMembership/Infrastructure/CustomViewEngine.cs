@@ -19,7 +19,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
             
             PartialViewLocationFormats = new[] {
                 "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml",
-                "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml"
+                "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Views/Shared/{0}.cshtml"
             };
         }
     }

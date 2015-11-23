@@ -27,3 +27,5 @@ Widgets.NivoSlider
 Misc.Advertisements
 Misc.GroupDeals
 Misc.TaxGroups
+Tameion.SupportTicketSystem
+Misc.VendorMembership
