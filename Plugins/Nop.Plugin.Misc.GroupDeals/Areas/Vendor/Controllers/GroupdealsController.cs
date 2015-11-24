@@ -68,9 +68,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
         }
 
         [AcceptVerbs("GET")]
-        public ActionResult Index()
+        public string Index()
         {
-            return View();
+            return "Blogger.....";
         }
 
         [AcceptVerbs("POST")]

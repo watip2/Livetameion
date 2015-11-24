@@ -27,13 +27,17 @@ namespace Nop.Plugin.Misc.VendorMembership.ActionFilters
             {
                 RedirectToLoginPage(filterContext);
             }
-
-            if (!_vendorService.IsVendorAuthenticated(vendor_email_cookie.Value, vendor_password_cookie.Value))
+            else
             {
-                RedirectToLoginPage(filterContext);
+                if (!_vendorService.IsVendorAuthenticated(vendor_email_cookie.Value, vendor_password_cookie.Value))
+                {
+                    RedirectToLoginPage(filterContext);
+                }
+                else
+                {
+                    filterContext.Controller.ViewBag.CurrentVendorEmail = vendor_email_cookie.Value;
+                }
             }
-            
-            filterContext.Controller.ViewBag.CurrentVendorEmail = vendor_email_cookie.Value;
         }
 
         private void RedirectToLoginPage(ActionExecutingContext filterContext)
