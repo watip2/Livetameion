@@ -81,7 +81,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             foreach (var gd in groupDeals)
             {
                 var gdvm = new ModelsMapper().CreateMap<GroupDeal, GroupDealViewModel>(gd);
-                if (gd.SpecialPriceStartDateTimeUtc < gd.SpecialPriceEndDateTimeUtc)
+                if (gd.AvailableStartDateTimeUtc < gd.AvailableEndDateTimeUtc)
                 {
                     gdvm.GroupdealStatusName = PluginHelper.GetAttribute<DisplayAttribute>(GroupdealStatus.Running).Name;
                 }

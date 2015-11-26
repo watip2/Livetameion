@@ -44,7 +44,8 @@ namespace Nop.Plugin.Misc.VendorMembership.ActionFilters
         {
             filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
             {
-                controller = "VendorMembership",
+				area = "Vendor",
+				controller = "Products",
                 action = "Login"
             }));
         }

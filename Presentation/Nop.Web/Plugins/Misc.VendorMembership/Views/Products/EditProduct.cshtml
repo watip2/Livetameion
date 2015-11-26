@@ -1,7 +1,6 @@
 ﻿@model Nop.Admin.Models.Catalog.ProductModel
 @using System;
 @using Nop.Web.Framework.UI;
-
 @using Nop.Core.Infrastructure;
 @using System;
 @using Nop.Web.Framework;
@@ -12,8 +11,9 @@
 @using Nop.Admin.Models.Catalog;
 
 @{
-    //page title
-    ViewBag.Title = T("Admin.Catalog.Products.EditProductDetails").Text;
+	//page title
+	ViewBag.Title = T("Admin.Catalog.Products.EditProductDetails").Text;
+	Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
 }
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "product-form" }))
 {

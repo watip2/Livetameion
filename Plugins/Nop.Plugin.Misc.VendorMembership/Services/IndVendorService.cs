@@ -118,5 +118,10 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
                 !String.IsNullOrWhiteSpace(email.Value) &&
                 !String.IsNullOrWhiteSpace(password.Value));
         }
-    }
+
+		public Vendor GetVendorByEmail(string email)
+		{
+			return _vendorRepository.Table.SingleOrDefault(v => v.Email == email);
+		}
+	}
 }

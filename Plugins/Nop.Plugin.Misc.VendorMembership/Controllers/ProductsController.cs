@@ -78,6 +78,7 @@ using Nop.Admin.Controllers;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 using Nop.Plugin.Misc.VendorMembership.Services;
+using Nop.Plugin.Misc.GroupDeals.Services;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
@@ -128,8 +129,9 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly IDownloadService _downloadService;
         private IRepository<GroupDeal> _groupDealRepo;
         private IGenericAttributeService _genericAttributeService;
-        
-        public ProductsController(IProductService productService, 
+		private IGroupDealService _groupDealService;
+
+		public ProductsController(IProductService productService, 
             IProductTemplateService productTemplateService,
             ICategoryService categoryService, 
             IManufacturerService manufacturerService,
@@ -170,7 +172,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             IProductAttributeParser productAttributeParser,
             IDownloadService downloadService,
             IRepository<GroupDeal> groupDealRepo,
-            IGenericAttributeService genericAttributeService)
+            IGenericAttributeService genericAttributeService,
+			IGroupDealService groupDealService)
         {
             _categories = new System.Collections.Generic.List<DTOs.Category>();
             this._productService = productService;
@@ -214,194 +217,225 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             this._productAttributeParser = productAttributeParser;
             this._downloadService = downloadService;
             this._groupDealRepo = groupDealRepo;
-            _genericAttributeService = genericAttributeService;
+            this._genericAttributeService = genericAttributeService;
+			this._groupDealService = groupDealService;
         }
+
+		public ProductsController() { }
+
+		public ActionResult Index()
+		{
+			return RedirectToAction("ListProducts");
+		}
 
         [HttpGet]
         public ActionResult Register()
         {
             VendorRegisterViewModel model = new VendorRegisterViewModel();
-            model.Countries = VendorMembershipHelper.GetCountriesNames();
-
-            var categoryService = EngineContext.Current.Resolve<ICategoryService>();
-            var AllCategories = categoryService.GetAllCategories();
-
-            foreach (var EachCategory in AllCategories)
-            {
-                var cat = new Nop.Plugin.Misc.VendorMembership.DTOs.Category();
-                cat.CategoryId = EachCategory.Id;
-                cat.Name = EachCategory.Name;
-                
-                if (EachCategory.ParentCategoryId != 0)
-                {
-                    var ParentCategory = _categories.SingleOrDefault(c => c.CategoryId.Equals(EachCategory.ParentCategoryId));
-                    if (ParentCategory != null)
-                    {
-                        if (ParentCategory.ChildrenCategories == null)
-                        {
-                            ParentCategory.ChildrenCategories = new List<DTOs.Category>();
-                        }
-                        ParentCategory.ChildrenCategories.Add(cat);
-                    }
-                }
-                else
-                {
-                    _categories.Add(cat);
-                }
-            }
-
-            model.SelectedItems = new int[] { 1, 3 };
-            model.Options = new List<SelectListItem>();
-            foreach (var _category in _categories)
-            {
-                model.Options.Add(new SelectListItem{ Value = _category.CategoryId.ToString(), Text = _category.Name });
-                if (_category.ChildrenCategories != null && _category.ChildrenCategories.Count > 0)
-                {
-                    foreach (var _childCategory in _category.ChildrenCategories)
-                    {
-                        model.Options.Add(new SelectListItem { Value = _childCategory.CategoryId.ToString(), Text = "--" + _childCategory.Name });
-                    }
-                }
-            }
-
-            //categoryService.
+			model = PrepareVendorRegisterModel(model);	
             return View(model);
         }
 
-        [HttpPost]
+		private VendorRegisterViewModel PrepareVendorRegisterModel(VendorRegisterViewModel model)
+		{
+			model.Countries = VendorMembershipHelper.GetCountriesNames();
+
+			var categoryService = EngineContext.Current.Resolve<ICategoryService>();
+			var AllCategories = categoryService.GetAllCategories();
+
+			foreach (var EachCategory in AllCategories)
+			{
+				var cat = new Nop.Plugin.Misc.VendorMembership.DTOs.Category();
+				cat.CategoryId = EachCategory.Id;
+				cat.Name = EachCategory.Name;
+
+				if (EachCategory.ParentCategoryId != 0)
+				{
+					var ParentCategory = _categories.SingleOrDefault(c => c.CategoryId.Equals(EachCategory.ParentCategoryId));
+					if (ParentCategory != null)
+					{
+						if (ParentCategory.ChildrenCategories == null)
+						{
+							ParentCategory.ChildrenCategories = new List<DTOs.Category>();
+						}
+						ParentCategory.ChildrenCategories.Add(cat);
+					}
+				}
+				else
+				{
+					_categories.Add(cat);
+				}
+			}
+
+			model.SelectedItems = new int[] { 1, 3 };
+			model.Options = new List<SelectListItem>();
+			foreach (var _category in _categories)
+			{
+				model.Options.Add(new SelectListItem { Value = _category.CategoryId.ToString(), Text = _category.Name });
+				if (_category.ChildrenCategories != null && _category.ChildrenCategories.Count > 0)
+				{
+					foreach (var _childCategory in _category.ChildrenCategories)
+					{
+						model.Options.Add(new SelectListItem { Value = _childCategory.CategoryId.ToString(), Text = "--" + _childCategory.Name });
+					}
+				}
+			}
+
+			return model;
+		}
+
+		[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Register(VendorRegisterViewModel model)
         {
             if(ModelState.IsValid)
             {
-                Vendor vendor = new Vendor();
-                vendor.Name = model.Name;
-                vendor.Email = model.Email;
-                var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
-                vendorServiceCore.InsertVendor(vendor);
+				if (ValidateVendorModel(model))
+				{
+					Vendor vendor = new Vendor();
+					vendor.Name = model.Name;
+					vendor.Email = model.Email;
+					var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
+					vendorServiceCore.InsertVendor(vendor);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.AttentionTo, 
-                    model.AttentionTo);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.AttentionTo,
+						model.AttentionTo);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.City,
-                    model.City);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.City,
+						model.City);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Password,
-                    model.Password);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Password,
+						model.Password);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Country,
-                    model.Country);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Country,
+						model.Country);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.EnableGoogleAnalytics,
-                    model.EnableGoogleAnalytics);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.EnableGoogleAnalytics,
+						model.EnableGoogleAnalytics);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.GoogleAnalyticsAccountNumber,
-                    model.GoogleAnalyticsAccountNumber);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.GoogleAnalyticsAccountNumber,
+						model.GoogleAnalyticsAccountNumber);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.LogoImage,
-                    model.LogoImage);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.LogoImage,
+						model.LogoImage);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PhoneNumber,
-                    model.PhoneNumber);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PhoneNumber,
+						model.PhoneNumber);
 
-                //_genericAttributeService.SaveAttribute(
-                //    vendor,
-                //    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredShippingCarrier,
-                //    model.PreferredShippingCarrier);
+					//_genericAttributeService.SaveAttribute(
+					//    vendor,
+					//    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredShippingCarrier,
+					//    model.PreferredShippingCarrier);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredSubdomainName,
-                    model.PreferredSubdomainName);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredSubdomainName,
+						model.PreferredSubdomainName);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StateProvince,
-                    model.StateProvince);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StateProvince,
+						model.StateProvince);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine1,
-                    model.StreetAddressLine1);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine1,
+						model.StreetAddressLine1);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine2,
-                    model.StreetAddressLine2);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine2,
+						model.StreetAddressLine2);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.ZipPostalCode,
-                    model.ZipPostalCode);
+					_genericAttributeService.SaveAttribute(
+						vendor,
+						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.ZipPostalCode,
+						model.ZipPostalCode);
 
-                var productServiceCore = EngineContext.Current.Resolve<IProductService>();
+					var productServiceCore = EngineContext.Current.Resolve<IProductService>();
 
-                foreach (var BusinessTypeId in model.BusinessTypeIds)
-                {
-                    var vb = new VendorBusinessType();
-                    //var vendorServiceExt = new VendorService(_vendorBusinessTypeRepository);
-                    vb.VendorId = vendor.Id;
-                    vb.BusinessTypeId = BusinessTypeId;
-                    //vendorServiceExt.InsertVendorBusinessType(vb);
-                }
-                
-                // create gift cards
-                for(int i = 0; i < 10; i++)
-                {
-                    //var gc = new Nop.Core.Domain.Catalog.Product();
-                    //gc.Name = "gift card name";
-                    //gc.Price = 25;
-                    //gc.IsGiftCard = true;
-                    //gc.ProductType = Core.Domain.Catalog.ProductType.SimpleProduct;
-                    //gc.VisibleIndividually = true;
-                    //gc.ProductTemplateId = 1;
-                    //gc.ShortDescription = "short description";
-                    //gc.FullDescription = "full description";
-                    //gc.VendorId = vendor.Id;
-                    //gc.ShowOnHomePage = true;
-                    //gc.AllowCustomerReviews = true;
-                    //gc.DisplayStockAvailability = true;
-                    //gc.DisplayStockQuantity = true;
-                    //gc.Published = true;
+					foreach (var BusinessTypeId in model.BusinessTypeIds)
+					{
+						var vb = new VendorBusinessType();
+						//var vendorServiceExt = new VendorService(_vendorBusinessTypeRepository);
+						vb.VendorId = vendor.Id;
+						vb.BusinessTypeId = BusinessTypeId;
+						//vendorServiceExt.InsertVendorBusinessType(vb);
+					}
 
-                    //// setting all datetime fields
-                    //gc.AvailableEndDateTimeUtc = DateTime.MinValue;
-                    //gc.AvailableStartDateTimeUtc = DateTime.MaxValue;
-                    //gc.PreOrderAvailabilityStartDateTimeUtc = DateTime.MinValue;
-                    //gc.SpecialPriceEndDateTimeUtc = DateTime.MaxValue;
-                    //gc.SpecialPriceStartDateTimeUtc = DateTime.MinValue;
-                    //gc.CreatedOnUtc = DateTime.Now;
-                    //gc.UpdatedOnUtc = DateTime.Now;
-                    
-                    //productServiceCore.InsertProduct(gc);
+					// create groupdeals
+					for (int i = 0; i < 10; i++)
+					{
+						var groupDeal = new GroupDeal
+						{
+							Active = true,
+							DisplayOrder = 1,
+							ShortDescription = "short description",
+							FullDescription = "full description",
+							Published = true,
+							CouponCode = Guid.NewGuid().ToString(),
+							DisplayStockQuantity = true,
+							StockQuantity = 1,
+							Price = 20,
+							Name = model.Name + " group deal",
+							// datetime fields
+							AvailableStartDateTimeUtc = DateTime.Now,
+							AvailableEndDateTimeUtc = DateTime.Parse("01-01-2016"),
+							CreatedOnUtc = DateTime.Now,
+							UpdatedOnUtc = DateTime.Now,
+							SpecialPrice = 10,
+							SpecialPriceStartDateTimeUtc = DateTime.Now,
+							SpecialPriceEndDateTimeUtc = DateTime.Parse("01-01-2016")
+						};
 
-                    break;
-                }
+						_groupDealService.InsertGroupDeal(groupDeal);
+					}
 
-                return RedirectToAction("Dashboard", "VendorMembership");
-            }
+					return RedirectToAction("Login", "Products");
+				}
+			}
 
-            model.Countries = VendorMembershipHelper.GetCountriesNames();
+			model = PrepareVendorRegisterModel(model);
             return View(model);
         }
 
-        [HttpGet, AuthorizeVendor]
+		private bool ValidateVendorModel(VendorRegisterViewModel model)
+		{
+			bool isModelValid = true;
+			var vendor = _vendorService.GetVendorByEmail(model.Email);
+			if (vendor != null)
+			{
+				ModelState.AddModelError("Email", "This email is already taken.");
+				isModelValid = false;
+			}
+
+			vendor = _vendorService.GetVendorByHost(model.PreferredSubdomainName);
+			if (vendor != null)
+			{
+				ModelState.AddModelError("PreferredSubdomainName", "This subdomain is not available.");
+				isModelValid = false;
+			}
+
+			return isModelValid;
+		}
+
+		[HttpGet, AuthorizeVendor]
         public ActionResult Dashboard()
         {
             return RedirectToAction("Index", "VendorOrders");
@@ -444,7 +478,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 HttpContext.Response.Cookies.Remove("current_vendor_password");
                 HttpContext.Response.SetCookie(password_cookie);
 
-                return RedirectToAction("Index", "VendorOrders");
+                return RedirectToAction("Index", "Orders");
             }
         }
 
@@ -528,7 +562,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 _customerActivityService.InsertActivity("AddNewProduct", _localizationService.GetResource("ActivityLog.AddNewProduct"), product.Name);
 
                 SuccessNotification(_localizationService.GetResource("Admin.Catalog.Products.Added"));
-                return continueEditing ? RedirectToAction("Edit", new { id = product.Id }) : RedirectToAction("ListProducts");
+                return continueEditing ? RedirectToAction("EditProduct", new { id = product.Id }) : RedirectToAction("ListProducts");
             }
 
             //If we got this far, something failed, redisplay form

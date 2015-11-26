@@ -48,7 +48,6 @@
     </Reference>
     <Reference Include="Nop.Admin">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Admin.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Core">
       <HintPath>..\..\Libraries\Nop.Core\bin\Debug\Nop.Core.dll</HintPath>
@@ -99,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFilters\AuthorizeVendor.cs" />
-    <Compile Include="Controllers\HttpCookie.cs" />
+    <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
     <Compile Include="Data\VendorMembershipContext.cs" />
@@ -155,7 +154,7 @@
     <Content Include="Styles\bootstrap.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Register.cshtml">
+    <Content Include="Views\Products\Register.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

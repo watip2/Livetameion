@@ -14,5 +14,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
         Vendor GetVendorByHost(string Subdomain);
         bool IsVendorAuthenticated(string email, string password);
         bool LoginCookiesAreValid(HttpCookie email, HttpCookie password);
-    }
+        Vendor GetVendorByEmail(string email);
+	}
 }

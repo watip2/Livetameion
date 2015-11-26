@@ -12,3 +12,10 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\bin\AutoMapper.Net4.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\bin\Nop.Admin.dll.config
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\bin\Nop.Admin.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\bin\Nop.Admin.pdb
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb

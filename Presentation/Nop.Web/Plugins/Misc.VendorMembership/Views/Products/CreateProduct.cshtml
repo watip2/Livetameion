@@ -2,8 +2,9 @@
 @using System;
 @using Nop.Web.Framework.UI;
 @{
-    //page title
-    ViewBag.Title = T("Admin.Catalog.Products.AddNew").Text;
+	//page title
+	ViewBag.Title = T("Admin.Catalog.Products.AddNew").Text;
+	Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
 }
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "product-form" }))
 {

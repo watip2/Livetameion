@@ -1,0 +1,13 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Admin.Models.Orders;
+
+@model OrderAddressModel
+@Html.ValidationSummary(true)
+@Html.EditorFor(model => model.Address, "Address")

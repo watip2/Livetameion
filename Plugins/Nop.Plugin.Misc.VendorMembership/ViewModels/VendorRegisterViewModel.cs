@@ -39,6 +39,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         //public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
 
         [Display(Name = "Preferred Subdomain Name")]
+		[Required(ErrorMessage = "This is a required field")]
         public string PreferredSubdomainName { get; set; }
 
         [Display(Name = "Attention To")]

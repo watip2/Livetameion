@@ -48,14 +48,14 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/VendorMembership">Vendor Dashboard</a>
+                <a class="navbar-brand" href="/Orders">Vendor Dashboard</a>
             </div>
             <div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/Vendor/Orders">Orders</a></li>
                     <li><a href="#">Returns</a></li>
                     <li><a href="#">Stock</a></li>
-                    <li><a href="/VendorMembership/ListProducts">Products</a></li>
+                    <li><a href="/Products/Index">Products</a></li>
                 </ul>
             </div>
         </div>
@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>Logged in as @ViewBag.CurrentVendorEmail | <a href="/VendorMembership/Logout">Logout</a></p>
+                <p>Logged in as @ViewBag.CurrentVendorEmail | <a href="/Vendor/Products/Logout">Logout</a></p>
                 @RenderBody()
             </div>
         </div>

@@ -91,9 +91,10 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly AddressSettings _addressSettings;
         private readonly ShippingSettings _shippingSettings;
 
-        #endregion
+		#endregion
 
-        #region Ctor
+		#region Ctor
+		public OrdersController() { }
 
         public OrdersController(IOrderService orderService,
             IOrderReportService orderReportService,
