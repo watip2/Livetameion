@@ -17,6 +17,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public string Name { get; set; }
 
         [Display(Name = "Email Address")]
+        [Required]
         public string Email { get; set; }
 
         [Display(Name = "Phone Number")]
@@ -34,10 +35,11 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         [Display(Name = "Google Analytics Account Number")]
         public string GoogleAnalyticsAccountNumber { get; set; }
 
-        [Display(Name = "Preferred Shipping Carrier")]
-        public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
+        //[Display(Name = "Preferred Shipping Carrier")]
+        //public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
 
         [Display(Name = "Preferred Subdomain Name")]
+		[Required(ErrorMessage = "This is a required field")]
         public string PreferredSubdomainName { get; set; }
 
         [Display(Name = "Attention To")]

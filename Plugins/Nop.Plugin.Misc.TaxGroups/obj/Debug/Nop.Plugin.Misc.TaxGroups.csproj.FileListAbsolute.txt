@@ -5,3 +5,10 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Nop.Plugin.Mis
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.dll
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.pdb
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.csprojResolveAssemblyReference.cache
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.TaxGroups\obj\Debug\Nop.Plugin.Misc.TaxGroups.pdb
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Description.txt
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.TaxGroups\web.config
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Nop.Plugin.Misc.TaxGroups.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.TaxGroups\Nop.Plugin.Misc.TaxGroups.pdb

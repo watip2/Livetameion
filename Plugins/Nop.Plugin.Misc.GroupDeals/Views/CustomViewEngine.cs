@@ -13,13 +13,17 @@ namespace Nop.Plugin.Misc.GroupDeals.Views
         public CustomViewEngine()
         {
             ViewLocationFormats = new[] {
-                "~/Plugins/Misc.GroupDeals/Views/{0}.cshtml",
-                "~/Plugins/Misc.GroupDeals/Views/{1}/{0}.cshtml"
+                "~/Plugins/Misc.Groupdeals/Views/{0}.cshtml",
+                "~/Plugins/Misc.Groupdeals/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.Groupdeals/Areas/Vendor/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.Groupdeals/Areas/Public/Views/{1}/{0}.cshtml"
             };
             
             PartialViewLocationFormats = new[] {
-                "~/Plugins/Misc.GroupDeals/Views/{0}.cshtml",
-                "~/Plugins/Misc.GroupDeals/Views/{1}/{0}.cshtml"
+                "~/Plugins/Misc.Groupdeals/Views/{0}.cshtml",
+                "~/Plugins/Misc.Groupdeals/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.Groupdeals/Areas/Vendor/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.Groupdeals/Areas/Public/Views/{1}/{0}.cshtml"
             };
         }
     }

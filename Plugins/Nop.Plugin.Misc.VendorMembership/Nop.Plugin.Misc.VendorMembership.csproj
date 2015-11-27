@@ -51,19 +51,19 @@
     </Reference>
     <Reference Include="Nop.Core">
       <HintPath>..\..\Libraries\Nop.Core\bin\Debug\Nop.Core.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Data">
       <HintPath>..\..\Libraries\Nop.Data\bin\Debug\Nop.Data.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Services">
       <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Web.Framework">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Web.Framework.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -97,7 +97,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\VendorOrdersController.cs" />
+    <Compile Include="ActionFilters\AuthorizeVendor.cs" />
+    <Compile Include="VendorAreaRegistration.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
     <Compile Include="Data\VendorMembershipContext.cs" />
     <Compile Include="Domain\DateRangeFilter.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Domain\OrdersFilter.cs" />
     <Compile Include="Domain\Paypal.cs" />
     <Compile Include="Domain\Test.cs" />
+    <Compile Include="Domain\VendorAttributes.cs" />
     <Compile Include="Domain\VendorBusinessType.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Mapping\PayoutMethodMap.cs" />
@@ -120,7 +123,7 @@
     <Compile Include="Domain\Vendorrr.cs" />
     <Compile Include="DTOs\Category.cs" />
     <Compile Include="DTOs\VendorResponse.cs" />
-    <Compile Include="Helpers\VendorRegistrationHelper.cs" />
+    <Compile Include="Helpers\VendorMembershipHelper.cs" />
     <Compile Include="Infrastructure\CustomViewEngine.cs" />
     <Compile Include="Infrastructure\DependencyRegistrar.cs">
       <SubType>
@@ -128,8 +131,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteConfig.cs" />
-    <Compile Include="Controllers\VendorMembershipController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Services\IIndVendorService.cs" />
+    <Compile Include="Services\IndVendorService.cs" />
     <Compile Include="VendorMembershipPlugin.cs" />
+    <Compile Include="ViewModels\VendorLoginModel.cs" />
     <Compile Include="ViewModels\VendorRegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,7 +154,7 @@
     <Content Include="Styles\bootstrap.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Register.cshtml">
+    <Content Include="Views\Products\Register.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -163,188 +169,188 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\CreateProduct.cshtml">
+    <Content Include="Views\Products\CreateProduct.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\ListProducts.cshtml">
+    <Content Include="Views\Products\ListProducts.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\EditProduct.cshtml">
+    <Content Include="Views\Products\EditProduct.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Pictures.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.Pictures.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Acl.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.Acl.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Categories.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.Categories.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Manufacturers.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.SpecificationAttributes.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.Manufacturers.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.ProductAttributes.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.SpecificationAttributes.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.TierPrices.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.ProductAttributes.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Discounts.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.TierPrices.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.RelatedProducts.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Stores.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.Discounts.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\RelatedProductAddPopup.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.RelatedProducts.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Products\_CreateOrUpdate.Stores.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\CrossSellProductAddPopup.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.CrossSells.cshtml">
+    <Content Include="Views\Products\RelatedProductAddPopup.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.AssociatedProducts.cshtml">
+    <Content Include="Views\Products\CrossSellProductAddPopup.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Products\_CreateOrUpdate.CrossSells.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.PurchasedWithOrders.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.AssociatedProducts.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.Info.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorMembership\_CreateOrUpdate.SEO.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.PurchasedWithOrders.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorOrders\Index.cshtml">
+    <Content Include="Views\Products\_CreateOrUpdate.Info.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Products\_CreateOrUpdate.SEO.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorOrders\List.cshtml">
+    <Content Include="Views\Orders\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorOrders\Edit.cshtml">
+    <Content Include="Views\Orders\List.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorOrders\_OrderDetails.Billing.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorOrders\_OrderDetails.Info.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorOrders\_OrderDetails.Notes.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorOrders\_OrderDetails.Products.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Views\VendorOrders\_OrderDetails.Shipping.cshtml">
+    <Content Include="Views\Orders\Edit.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\VendorOrders\AddProductToOrder.cshtml">
+    <Content Include="Views\Orders\_OrderDetails.Billing.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\AddProductToOrderDetails.cshtml">
+    <Content Include="Views\Orders\_OrderDetails.Info.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\AddressEdit.cshtml">
+    <Content Include="Views\Orders\_OrderDetails.Notes.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\AddShipment.cshtml">
+    <Content Include="Views\Orders\_OrderDetails.Products.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\BestsellersBriefReportByAmount.cshtml">
+    <Content Include="Views\Orders\_OrderDetails.Shipping.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\BestsellersBriefReportByQuantity.cshtml">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Orders\AddProductToOrder.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\BestsellersReport.cshtml">
+    <Content Include="Views\Orders\AddProductToOrderDetails.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\CountryReport.cshtml">
+    <Content Include="Views\Orders\AddressEdit.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\NeverSoldReport.cshtml">
+    <Content Include="Views\Orders\AddShipment.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\OrderAverageReport.cshtml">
+    <Content Include="Views\Orders\BestsellersBriefReportByAmount.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\OrderIncompleteReport.cshtml">
+    <Content Include="Views\Orders\BestsellersBriefReportByQuantity.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\PartiallyRefundOrderPopup.cshtml">
+    <Content Include="Views\Orders\BestsellersReport.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\ShipmentDetails.cshtml">
+    <Content Include="Views\Orders\CountryReport.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\ShipmentList.cshtml">
+    <Content Include="Views\Orders\NeverSoldReport.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\UploadLicenseFilePopup.cshtml">
+    <Content Include="Views\Orders\OrderAverageReport.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\_CreateOrUpdateAddress.cshtml">
+    <Content Include="Views\Orders\OrderIncompleteReport.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\_ProductAddAttributes.cshtml">
+    <Content Include="Views\Orders\PartiallyRefundOrderPopup.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\_ProductAddGiftCardInfo.cshtml">
+    <Content Include="Views\Orders\ShipmentDetails.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\VendorOrders\_ProductAddRentalInfo.cshtml">
+    <Content Include="Views\Orders\ShipmentList.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Orders\UploadLicenseFilePopup.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Orders\_CreateOrUpdateAddress.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Orders\_ProductAddAttributes.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Orders\_ProductAddGiftCardInfo.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Orders\_ProductAddRentalInfo.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -352,7 +358,18 @@
     <ProjectReference Include="..\Nop.Plugin.Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.csproj">
       <Project>{d4c71b95-cfe6-4d18-b551-6ed4d260ae1b}</Project>
       <Name>Nop.Plugin.Misc.GroupDeals</Name>
+      <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Products\Login.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
