@@ -1,0 +1,9 @@
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\Views\BridgePay\Configure.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\Views\BridgePay\PaymentInfo.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\Nop.Plugin.Tameion.BridgePay.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\Nop.Plugin.Tameion.BridgePay.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.BridgePay\obj\Debug\Nop.Plugin.Tameion.BridgePay.csprojResolveAssemblyReference.cache
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.BridgePay\obj\Debug\Nop.Plugin.Tameion.BridgePay.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.BridgePay\obj\Debug\Nop.Plugin.Tameion.BridgePay.pdb
