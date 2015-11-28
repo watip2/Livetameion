@@ -15,13 +15,14 @@ using Nop.Core.Domain.Directory;
 using Nop.Core;
 using Nop.Services.Orders;
 using Nop.Services.Security;
+using Nop.Plugin.Tameion.BridgePay.Controller;
 
 namespace Nop.Plugin.Tameion.BridgePay
 {
     public class PluginConfig : BasePlugin, IPaymentMethod
     {
         public override PluginDescriptor PluginDescriptor { get; set; }
-        private readonly BridgePaySettings _authorizeNetPaymentSettings;
+        private readonly BridgePaySettings _bridgePaySettings;
         private readonly ISettingService _settingService;
         private readonly ICurrencyService _currencyService;
         private readonly ICustomerService _customerService;
@@ -31,10 +32,24 @@ namespace Nop.Plugin.Tameion.BridgePay
         private readonly IEncryptionService _encryptionService;
         private readonly BridgePayContext _bridgePayContext;
 
-        public PluginConfig(ICustomerService customerService,
+        public PluginConfig(BridgePaySettings bridgePaySettings,
+            ISettingService settingService,
+            ICurrencyService currencyService,
+            ICustomerService customerService,
+            CurrencySettings currencySettings,
+            IWebHelper webHelper,
+            IOrderTotalCalculationService orderTotalCalculationService,
+            IEncryptionService encryptionService,
             BridgePayContext bridgePayContext)
         {
-            _customerService = customerService;
+            this._bridgePaySettings = bridgePaySettings;
+            this._settingService = settingService;
+            this._currencyService = currencyService;
+            this._customerService = customerService;
+            this._currencySettings = currencySettings;
+            this._webHelper = webHelper;
+            this._orderTotalCalculationService = orderTotalCalculationService;
+            this._encryptionService = encryptionService;
             _bridgePayContext = bridgePayContext;
         }
 
@@ -62,7 +77,7 @@ namespace Nop.Plugin.Tameion.BridgePay
         {
             get
             {
-                throw new NotImplementedException();
+                return PaymentMethodType.Standard;
             }
         }
         
@@ -78,7 +93,7 @@ namespace Nop.Plugin.Tameion.BridgePay
         {
             get
             {
-                throw new NotImplementedException();
+                return false;
             }
         }
 
@@ -131,7 +146,9 @@ namespace Nop.Plugin.Tameion.BridgePay
 
         public decimal GetAdditionalHandlingFee(IList<ShoppingCartItem> cart)
         {
-            throw new NotImplementedException();
+            var result = this.CalculateAdditionalFee(_orderTotalCalculationService, cart,
+                _bridgePaySettings.AdditionalFee, _bridgePaySettings.AdditionalFeePercentage);
+            return result;
         }
 
         public void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
@@ -143,17 +160,22 @@ namespace Nop.Plugin.Tameion.BridgePay
 
         public Type GetControllerType()
         {
-            throw new NotImplementedException();
+            return typeof(BridgePayController);
         }
 
         public void GetPaymentInfoRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
         {
-            throw new NotImplementedException();
+            actionName = "PaymentInfo";
+            controllerName = "BridgePay";
+            routeValues = new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Tameion.BridgePay.Controllers" }, { "area", null } };
         }
 
         public bool HidePaymentMethod(IList<ShoppingCartItem> cart)
         {
-            throw new NotImplementedException();
+            //you can put any logic here
+            //for example, hide this payment method if all products in the cart are downloadable
+            //or hide this payment method if current customer is from certain country
+            return false;
         }
 
         public void PostProcessPayment(PostProcessPaymentRequest postProcessPaymentRequest)

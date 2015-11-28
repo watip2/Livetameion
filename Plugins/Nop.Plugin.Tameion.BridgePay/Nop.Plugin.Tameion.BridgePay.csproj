@@ -90,6 +90,7 @@
     <Compile Include="Infrastructure\DependencyRegistrar.cs" />
     <Compile Include="Models\BridgePaySettings.cs" />
     <Compile Include="Models\ConfigurationModel.cs" />
+    <Compile Include="Models\PaymentInfoModel.cs" />
     <Compile Include="Models\TransactionMode.cs" />
     <Compile Include="PluginConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
