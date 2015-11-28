@@ -19,17 +19,21 @@ namespace Nop.Plugin.Misc.GroupDeals
 
         public void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute("Plugin.Misc.GroupDeals.GroupDealsController",
-                "GroupDeals/{action}/{id}",
-                new { controller = "GroupDeals", action = "Index", id = UrlParameter.Optional },
-                new[] { "Nop.Plugin.Misc.GroupDeals.Controllers" }
+            var route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Vendor.GroupdealsController",
+                "Vendor/Groupdeals/{action}/{id}",
+                new { area = "Vendor", controller = "Groupdeals", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers" }
             );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
-            routes.MapRoute("Plugin.Misc.GroupDeals.VendorGroupDealsController",
-                "VendorGroupDeals/{action}/{id}",
-                new { controller = "VendorGroupDeals", action = "Index", id = UrlParameter.Optional },
-                new[] { "Nop.Plugin.Misc.GroupDeals.Controllers" }
-            );
+            route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Admin.GroupdealsController",
+                "Admin/Groupdeals/{action}/{id}",
+                new { area = "Admin", controller = "Groupdeals", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers" }
+            );//.DataTokens.Add("area", "Admin")
+            routes.Remove(route);
+            routes.Insert(0, route);
 
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }

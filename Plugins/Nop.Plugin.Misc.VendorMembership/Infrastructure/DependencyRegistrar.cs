@@ -13,6 +13,7 @@ using Nop.Web.Framework.Mvc;
 using Nop.Plugin.Misc.VendorMembership.Data;
 using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Core.Domain.Vendors;
+using Nop.Plugin.Misc.VendorMembership.Services;
 
 namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 {
@@ -55,6 +56,11 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
                 .As<IRepository<VendorBusinessType>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+
+            // services
+            builder.RegisterType<IndVendorService>().As<IIndVendorService>().InstancePerLifetimeScope();
+            ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
         public int Order

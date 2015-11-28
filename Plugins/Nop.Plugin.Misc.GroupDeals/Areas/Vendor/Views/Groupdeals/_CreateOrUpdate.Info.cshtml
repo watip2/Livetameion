@@ -1,0 +1,258 @@
+﻿@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
+@{
+    //resources for product tags input
+    Html.AppendCssFileParts("~/Content/tagit/jquery.tagit.css");
+    Html.AppendScriptParts("~/Scripts/tag-it.min.js");
+}
+@using Nop.Core.Domain.Catalog;
+@using Nop.Services.Catalog;
+@using System.Text;
+
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Plugin.Misc.GroupDeals.ViewModels;
+
+<table class="adminContent">
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.Name):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.ShortDescription):
+        </td>
+        <td class="adminData">
+            @Html.TextAreaFor(model => model.ShortDescription, new { style = "Width: 250px; Height: 150px;" })
+            @Html.ValidationMessageFor(model => model.ShortDescription)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.FullDescription):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.FullDescription, "RichEditor")
+            @Html.ValidationMessageFor(model => model.FullDescription)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.AvailableVendors):
+        </td>
+        <td class="adminData">
+            @Html.DropDownListFor(model => model.VendorId, Model.AvailableVendors)
+            @Html.ValidationMessageFor(model => model.AvailableVendors)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.Published):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.Published)
+            @Html.ValidationMessageFor(model => model.Published)
+        </td>
+    </tr>@*
+    <tr>
+        <td colspan="2">
+            @Html.HiddenFor(model => model.Locales[item].LanguageId)
+        </td>
+    </tr>*@
+</table>
+<table class="adminContent" id="group-prices">
+    <tr class="adminSeparator">
+        <td colspan="2">
+            <hr />
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.Price):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.Price) [@Model.PrimaryStoreCurrencyCode]
+            @Html.ValidationMessageFor(model => model.Price)
+        </td>
+    </tr>
+    @*<tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.OldPrice):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.OldPrice) [@Model.PrimaryStoreCurrencyCode]
+            @Html.ValidationMessageFor(model => model.OldPrice)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.ProductCost):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.ProductCost) [@Model.PrimaryStoreCurrencyCode]
+            @Html.ValidationMessageFor(model => model.ProductCost)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.SpecialPrice):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.SpecialPrice) [@Model.PrimaryStoreCurrencyCode]
+            @Html.ValidationMessageFor(model => model.SpecialPrice)
+        </td>
+    </tr>*@
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.SpecialPriceStartDateTimeUtc):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.SpecialPriceStartDateTimeUtc)
+            @Html.ValidationMessageFor(model => model.SpecialPriceStartDateTimeUtc)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.SpecialPriceEndDateTimeUtc):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.SpecialPriceEndDateTimeUtc)
+            @Html.ValidationMessageFor(model => model.SpecialPriceEndDateTimeUtc)
+        </td>
+    </tr>@*
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.DisableBuyButton):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.DisableBuyButton)
+            @Html.ValidationMessageFor(model => model.DisableBuyButton)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.DisableWishlistButton):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.DisableWishlistButton)
+            @Html.ValidationMessageFor(model => model.DisableWishlistButton)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.AvailableForPreOrder):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.AvailableForPreOrder)
+            @Html.ValidationMessageFor(model => model.AvailableForPreOrder)
+        </td>
+    </tr>
+    <tr id="pnlPreOrderAvailabilityStartDateTimeUtc">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.PreOrderAvailabilityStartDateTimeUtc):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
+            @Html.ValidationMessageFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.CallForPrice):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.CallForPrice)
+            @Html.ValidationMessageFor(model => model.CallForPrice)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.CustomerEntersPrice):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.CustomerEntersPrice)
+            @Html.ValidationMessageFor(model => model.CustomerEntersPrice)
+        </td>
+    </tr>
+    <tr id="pnlMinimumCustomerEnteredPrice">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.MinimumCustomerEnteredPrice):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.MinimumCustomerEnteredPrice) [@Model.PrimaryStoreCurrencyCode]
+            @Html.ValidationMessageFor(model => model.MinimumCustomerEnteredPrice)
+        </td>
+    </tr>
+    <tr id="pnlMaximumCustomerEnteredPrice">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.MaximumCustomerEnteredPrice):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.MaximumCustomerEnteredPrice) [@Model.PrimaryStoreCurrencyCode]
+            @Html.ValidationMessageFor(model => model.MaximumCustomerEnteredPrice)
+        </td>
+    </tr>
+    <tr class="adminSeparator">
+        <td colspan="2">
+            <hr />
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.BasepriceEnabled):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.BasepriceEnabled)
+            @Html.ValidationMessageFor(model => model.BasepriceEnabled)
+        </td>
+    </tr>
+    <tr id="pnlBasepriceAmount">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.BasepriceAmount):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.BasepriceAmount)
+            @Html.ValidationMessageFor(model => model.BasepriceAmount)
+        </td>
+    </tr>
+    <tr id="pnlBasepriceUnit">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.BasepriceUnitId):
+        </td>
+        <td class="adminData">
+            @Html.DropDownListFor(model => model.BasepriceUnitId, Model.AvailableBasepriceUnits)
+            @Html.ValidationMessageFor(model => model.BasepriceUnitId)
+        </td>
+    </tr>
+    <tr id="pnlBasepriceBaseAmount">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.BasepriceBaseAmount):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.BasepriceBaseAmount)
+            @Html.ValidationMessageFor(model => model.BasepriceBaseAmount)
+        </td>
+    </tr>
+    <tr id="pnlBasepriceBaseUnit">
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.BasepriceBaseUnitId):
+        </td>
+        <td class="adminData">
+            @Html.DropDownListFor(model => model.BasepriceBaseUnitId, Model.AvailableBasepriceBaseUnits)
+            @Html.ValidationMessageFor(model => model.BasepriceBaseUnitId)
+        </td>
+    </tr>*@
+</table>
