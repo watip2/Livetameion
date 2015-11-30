@@ -17,18 +17,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Maps
             ToTable("Groupdeals");
             HasKey(gd => gd.Id);
 
-            Property(gd => gd.CreatedOnUtc);
-            Property(gd => gd.UpdatedOnUtc);
-            Property(gd => gd.VendorId);
-            Property(gd => gd.Deleted);
             Property(gd => gd.Active);
-            Property(gd => gd.DisplayOrder);
             Property(gd => gd.SeName);
-            Property(gd => gd.ShowOnHomePage);
-            Property(gd => gd.Published);
             Property(gd => gd.CouponCode);
-            Property(gd => gd.SpecialPriceStartDateTimeUtc);
-            Property(gd => gd.SpecialPriceEndDateTimeUtc);
         }
     }
 }

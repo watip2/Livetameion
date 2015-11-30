@@ -46,7 +46,6 @@ namespace Nop.Plugin.Misc.GroupDeals
                 SystemName = "Misc.GroupDeals",
                 Title = "Group Deals",
                 Visible = true,
-                RouteValues = new RouteValueDictionary() { { "area", null } },
                 ChildNodes = new List<SiteMapNode>
                 {
                     new SiteMapNode()
@@ -57,7 +56,7 @@ namespace Nop.Plugin.Misc.GroupDeals
                         ControllerName = "Groupdeals",
                         ActionName = "Index",
                         Visible = true,
-                        RouteValues = new RouteValueDictionary() { { "area", null } },
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
                     },
 
                     new SiteMapNode()
@@ -68,7 +67,7 @@ namespace Nop.Plugin.Misc.GroupDeals
                         ControllerName = "Groupdeals",
                         ActionName = "Create",
                         Visible = true,
-                        RouteValues = new RouteValueDictionary() { { "area", null } },
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
                     }
                 }
             };

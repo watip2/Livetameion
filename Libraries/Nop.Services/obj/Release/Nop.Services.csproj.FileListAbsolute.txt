@@ -146,3 +146,4 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Services\obj\Release\Nop.Services.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Services\obj\Release\Nop.Services.pdb
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Services\obj\Release\Nop.Services.XmlSerializers.dll
+E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Release\System.Data.SqlServerCe.dll

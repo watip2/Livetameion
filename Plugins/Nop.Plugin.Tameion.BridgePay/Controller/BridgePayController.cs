@@ -9,6 +9,7 @@ using Nop.Services.Configuration;
 using Nop.Services.Localization;
 using Nop.Plugin.Tameion.BridgePay.Models;
 using System.Linq;
+using Nop.Plugin.Tameion.BridgePay.Validators;
 
 namespace Nop.Plugin.Tameion.BridgePay.Controller
 {
@@ -142,14 +143,35 @@ namespace Nop.Plugin.Tameion.BridgePay.Controller
         public override ProcessPaymentRequest GetPaymentInfo(FormCollection form)
         {
             var paymentInfo = new ProcessPaymentRequest();
+            paymentInfo.CreditCardType = form["CreditCardType"];
+            paymentInfo.CreditCardName = form["CardholderName"];
+            paymentInfo.CreditCardNumber = form["CardNumber"];
+            paymentInfo.CreditCardExpireMonth = int.Parse(form["ExpireMonth"]);
+            paymentInfo.CreditCardExpireYear = int.Parse(form["ExpireYear"]);
+            paymentInfo.CreditCardCvv2 = form["CardCode"];
             return paymentInfo;
         }
 
         [NonAction]
         public override IList<string> ValidatePaymentForm(FormCollection form)
         {
-            //var warnings = new List(); return warnings;
-            throw new NotImplementedException();
+            var warnings = new List<string>();
+
+            //validate
+            var validator = new PaymentInfoValidator(_localizationService);
+            var model = new PaymentInfoModel
+            {
+                CardholderName = form["CardholderName"],
+                CardNumber = form["CardNumber"],
+                CardCode = form["CardCode"],
+                ExpireMonth = form["ExpireMonth"],
+                ExpireYear = form["ExpireYear"]
+            };
+            var validationResult = validator.Validate(model);
+            if (!validationResult.IsValid)
+                foreach (var error in validationResult.Errors)
+                    warnings.Add(error.ErrorMessage);
+            return warnings;
         }
 
         [ChildActionOnly]

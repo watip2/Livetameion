@@ -25,46 +25,155 @@ using System.ComponentModel.DataAnnotations;
 using Nop.Services.Directory;
 using Nop.Core.Domain.Directory;
 using Nop.Services.Localization;
+using Nop.Core.Domain.Catalog;
+using Nop.Services.Customers;
+using Nop.Services.Tax;
+using Nop.Services.Common;
+using Nop.Services.ExportImport;
+using Nop.Services.Logging;
+using Nop.Services.Security;
+using Nop.Services.Stores;
+using Nop.Services.Orders;
+using Nop.Services.Shipping;
+using Nop.Core.Domain.Common;
+using Nop.Services.Discounts;
+using Nop.Core.Domain.Discounts;
+using Nop.Admin.Extensions;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 {
     public class GroupdealsController : BasePluginController
     {
+        private readonly IProductService _productService;
+        private readonly IProductTemplateService _productTemplateService;
+        private readonly ICategoryService _categoryService;
+        private readonly IManufacturerService _manufacturerService;
+        private readonly ICustomerService _customerService;
+        private readonly IUrlRecordService _urlRecordService;
+        private readonly IWorkContext _workContext;
+        private readonly ILanguageService _languageService;
+        private readonly ILocalizationService _localizationService;
+        private readonly ILocalizedEntityService _localizedEntityService;
+        private readonly ISpecificationAttributeService _specificationAttributeService;
+        private readonly IPictureService _pictureService;
+        private readonly ITaxCategoryService _taxCategoryService;
+        private readonly IProductTagService _productTagService;
+        private readonly ICopyProductService _copyProductService;
+        private readonly IPdfService _pdfService;
+        private readonly IExportManager _exportManager;
+        private readonly IImportManager _importManager;
+        private readonly ICustomerActivityService _customerActivityService;
+        private readonly IPermissionService _permissionService;
+        private readonly IAclService _aclService;
+        private readonly IStoreService _storeService;
+        private readonly IOrderService _orderService;
+        private readonly IStoreMappingService _storeMappingService;
+        private readonly IVendorService _vendorService;
+        private readonly IShippingService _shippingService;
+        private readonly IShipmentService _shipmentService;
+        private readonly ICurrencyService _currencyService;
+        private readonly CurrencySettings _currencySettings;
+        private readonly IMeasureService _measureService;
+        private readonly MeasureSettings _measureSettings;
+        private readonly AdminAreaSettings _adminAreaSettings;
         private readonly IDateTimeHelper _dateTimeHelper;
+        private readonly IDiscountService _discountService;
+        private readonly IProductAttributeService _productAttributeService;
+        private readonly IBackInStockSubscriptionService _backInStockSubscriptionService;
+        private readonly IShoppingCartService _shoppingCartService;
+        private readonly IProductAttributeFormatter _productAttributeFormatter;
+        private readonly IProductAttributeParser _productAttributeParser;
+        private readonly IDownloadService _downloadService;
         private readonly IRepository<GroupdealPicture> _groupdealPictureRepo;
         private IGroupDealService _groupdealService;
-        private IVendorService _vendorService;
-        private readonly IWorkContext _workContext;
-        private IPictureService _pictureService;
-        private IProductService _productService;
-        private IUrlRecordService _urlRecordService;
-        private ICurrencyService _currencyService;
-        private CurrencySettings _currencySettings;
-        private ILocalizationService _localizationService;
 
         public GroupdealsController(
-            IRepository<GroupDeal> groupDealRepo,
-            IDateTimeHelper dateTimeHelper,
-            IRepository<GroupdealPicture> groupdealPictureRepo,
-            IGroupDealService groupdealService,
-            IVendorService vendorService,
-            IWorkContext workContext,
-            IPictureService pictureService,
+            IProductService productService,
+            IProductTemplateService productTemplateService,
+            ICategoryService categoryService,
+            IManufacturerService manufacturerService,
+            ICustomerService customerService,
             IUrlRecordService urlRecordService,
+            IWorkContext workContext,
+            ILanguageService languageService,
+            ILocalizationService localizationService,
+            ILocalizedEntityService localizedEntityService,
+            ISpecificationAttributeService specificationAttributeService,
+            IPictureService pictureService,
+            ITaxCategoryService taxCategoryService,
+            IProductTagService productTagService,
+            ICopyProductService copyProductService,
+            IPdfService pdfService,
+            IExportManager exportManager,
+            IImportManager importManager,
+            ICustomerActivityService customerActivityService,
+            IPermissionService permissionService,
+            IAclService aclService,
+            IStoreService storeService,
+            IOrderService orderService,
+            IStoreMappingService storeMappingService,
+             IVendorService vendorService,
+            IShippingService shippingService,
+            IShipmentService shipmentService,
             ICurrencyService currencyService,
             CurrencySettings currencySettings,
-            ILocalizationService localizationService)
-        {
-            _dateTimeHelper = dateTimeHelper;
-            _groupdealPictureRepo = groupdealPictureRepo;
-            _groupdealService = groupdealService;
-            _vendorService = vendorService;
-            _workContext = workContext;
-            _pictureService = pictureService;
-            _urlRecordService = urlRecordService;
-            _currencyService = currencyService;
-            _currencySettings = currencySettings;
-            _localizationService = localizationService;
+            IMeasureService measureService,
+            MeasureSettings measureSettings,
+            AdminAreaSettings adminAreaSettings,
+            IDateTimeHelper dateTimeHelper,
+            IDiscountService discountService,
+            IProductAttributeService productAttributeService,
+            IBackInStockSubscriptionService backInStockSubscriptionService,
+            IShoppingCartService shoppingCartService,
+            IProductAttributeFormatter productAttributeFormatter,
+            IProductAttributeParser productAttributeParser,
+            IDownloadService downloadService,
+            IRepository<GroupDeal> groupDealRepo,
+            IRepository<GroupdealPicture> groupdealPictureRepo,
+            IGroupDealService groupdealService)
+        {   
+            this._productService = productService;
+            this._productTemplateService = productTemplateService;
+            this._categoryService = categoryService;
+            this._manufacturerService = manufacturerService;
+            this._customerService = customerService;
+            this._urlRecordService = urlRecordService;
+            this._workContext = workContext;
+            this._languageService = languageService;
+            this._localizationService = localizationService;
+            this._localizedEntityService = localizedEntityService;
+            this._specificationAttributeService = specificationAttributeService;
+            this._pictureService = pictureService;
+            this._taxCategoryService = taxCategoryService;
+            this._productTagService = productTagService;
+            this._copyProductService = copyProductService;
+            this._pdfService = pdfService;
+            this._exportManager = exportManager;
+            this._importManager = importManager;
+            this._customerActivityService = customerActivityService;
+            this._permissionService = permissionService;
+            this._aclService = aclService;
+            this._storeService = storeService;
+            this._orderService = orderService;
+            this._storeMappingService = storeMappingService;
+            this._vendorService = vendorService;
+            this._shippingService = shippingService;
+            this._shipmentService = shipmentService;
+            this._currencyService = currencyService;
+            this._currencySettings = currencySettings;
+            this._measureService = measureService;
+            this._measureSettings = measureSettings;
+            this._adminAreaSettings = adminAreaSettings;
+            this._dateTimeHelper = dateTimeHelper;
+            this._discountService = discountService;
+            this._productAttributeService = productAttributeService;
+            this._backInStockSubscriptionService = backInStockSubscriptionService;
+            this._shoppingCartService = shoppingCartService;
+            this._productAttributeFormatter = productAttributeFormatter;
+            this._productAttributeParser = productAttributeParser;
+            this._downloadService = downloadService;
+            this._groupdealPictureRepo = groupdealPictureRepo;
+            this._groupdealService = groupdealService;
         }
 
         [AcceptVerbs("GET")]
@@ -155,11 +264,11 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             var groupdeal = _groupdealService.GetById(model.Id);
             if (groupdeal == null || groupdeal.Deleted)
                 //No product found with the specified id
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { area = "Admin" });
 
             //a vendor should have access only to his products
             if (_workContext.CurrentVendor != null && groupdeal.VendorId != _workContext.CurrentVendor.Id)
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { area = "Admin" });
 
             if (ModelState.IsValid)
             {
@@ -177,7 +286,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 
                 //groupdeal
                 //groupdeal = model.ToEntity(groupdeal);
-                model.CreatedOnUtc = groupdeal.CreatedOnUtc;
+                model.CreatedOn = groupdeal.CreatedOnUtc;
                 groupdeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
                 groupdeal.UpdatedOnUtc = DateTime.UtcNow;
                 _groupdealService.UpdateGroupdeal(groupdeal);
@@ -237,9 +346,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
                     //selected tab
                     //SaveSelectedTabIndex();
 
-                    return RedirectToAction("Edit", new { id = groupdeal.Id });
+                    return RedirectToAction("Edit", new { id = groupdeal.Id, area = "Admin" });
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { area = "Admin" });
             }
 
             //If we got this far, something failed, redisplay form
@@ -261,6 +370,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         public ActionResult Create()
         {
             var model = new GroupDealViewModel();
+            /*
             var vendors = _vendorService.GetAllVendors();
             model.AvailableVendors = new List<SelectListItem>();
             foreach (var vendor in vendors)
@@ -270,7 +380,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
                     Value = vendor.Id.ToString()
                 });
             }
-            
+            */
+            PrepareGroupdealViewModel(model, null, true, true);
+
             return View("CreateGroupdeal", model);
         }
 
@@ -282,17 +394,25 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
-                groupDeal.CreatedOnUtc = DateTime.UtcNow;
-                groupDeal.UpdatedOnUtc = DateTime.UtcNow;
-                //groupDeal.AvailableEndDateTimeUtc = DateTime.Parse("01/01/2016");
-                //groupDeal.AvailableStartDateTimeUtc = DateTime.UtcNow;
                 groupDeal.Active = true;
                 groupDeal.DisplayOrder = 1;
                 groupDeal.SeName = "se-name-" + Guid.NewGuid();
+                groupDeal.ProductType = ProductType.SimpleProduct;
+                groupDeal.OrderMaximumQuantity = 10;
+                groupDeal.OrderMinimumQuantity = 1;
 
+                // datetime fields
+                groupDeal.CreatedOnUtc = DateTime.UtcNow;
+                groupDeal.UpdatedOnUtc = DateTime.UtcNow;
+                groupDeal.AvailableEndDateTimeUtc = DateTime.Parse("01/01/2016");
+                groupDeal.AvailableStartDateTimeUtc = DateTime.UtcNow;
+                groupDeal.PreOrderAvailabilityStartDateTimeUtc = DateTime.Now;
+                groupDeal.SpecialPriceStartDateTimeUtc = DateTime.Now;
+                groupDeal.SpecialPriceEndDateTimeUtc = DateTime.Parse("01/01/2016");
+                
                 _groupdealService.InsertGroupDeal(groupDeal);
                 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { area = "Admin" });
             }
             
             return View("CreateGroupdeal", model);
@@ -456,86 +576,86 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         }
 
         [NonAction]
-        protected virtual void PrepareGroupdealViewModel(GroupDealViewModel gdvm, GroupDeal groupdeal,
+        protected virtual void PrepareGroupdealViewModel(GroupDealViewModel model, Product product,
             bool setPredefinedValues, bool excludeProperties)
         {
-            if (gdvm == null)
-                throw new ArgumentNullException("gdvm");
+            if (model == null)
+                throw new ArgumentNullException("model");
 
-            //if (groupdeal != null)
-            //{
-            //    var parentGroupedProduct = _productService.GetProductById(groupdeal.ParentGroupedProductId);
-            //    if (parentGroupedProduct != null)
-            //    {
-            //        gdvm.AssociatedToProductId = groupdeal.ParentGroupedProductId;
-            //        gdvm.AssociatedToProductName = parentGroupedProduct.Name;
-            //    }
-            //}
+            if (product != null)
+            {
+                var parentGroupedProduct = _productService.GetProductById(product.ParentGroupedProductId);
+                if (parentGroupedProduct != null)
+                {
+                    model.AssociatedToProductId = product.ParentGroupedProductId;
+                    model.AssociatedToProductName = parentGroupedProduct.Name;
+                }
+            }
 
-            gdvm.PrimaryStoreCurrencyCode = _currencyService.GetCurrencyById(_currencySettings.PrimaryStoreCurrencyId).CurrencyCode;
-            //gdvm.BaseWeightIn = _measureService.GetMeasureWeightById(_measureSettings.BaseWeightId).Name;
-            //gdvm.BaseDimensionIn = _measureService.GetMeasureDimensionById(_measureSettings.BaseDimensionId).Name;
-            //if (groupdeal != null)
-            //{
-            //    gdvm.CreatedOn = _dateTimeHelper.ConvertToUserTime(groupdeal.CreatedOnUtc, DateTimeKind.Utc);
-            //    gdvm.UpdatedOn = _dateTimeHelper.ConvertToUserTime(groupdeal.UpdatedOnUtc, DateTimeKind.Utc);
-            //}
+            model.PrimaryStoreCurrencyCode = _currencyService.GetCurrencyById(_currencySettings.PrimaryStoreCurrencyId).CurrencyCode;
+            model.BaseWeightIn = _measureService.GetMeasureWeightById(_measureSettings.BaseWeightId).Name;
+            model.BaseDimensionIn = _measureService.GetMeasureDimensionById(_measureSettings.BaseDimensionId).Name;
+            if (product != null)
+            {
+                model.CreatedOn = _dateTimeHelper.ConvertToUserTime(product.CreatedOnUtc, DateTimeKind.Utc);
+                model.UpdatedOn = _dateTimeHelper.ConvertToUserTime(product.UpdatedOnUtc, DateTimeKind.Utc);
+            }
 
-            ////little performance hack here
-            ////there's no need to load attributes, categories, manufacturers when creating a new product
-            ////anyway they're not used (you need to save a product before you map add them)
-            //if (groupdeal != null)
-            //{
-            //    foreach (var productAttribute in _productAttributeService.GetAllProductAttributes())
-            //    {
-            //        gdvm.AvailableProductAttributes.Add(new SelectListItem
-            //        {
-            //            Text = productAttribute.Name,
-            //            Value = productAttribute.Id.ToString()
-            //        });
-            //    }
-            //    foreach (var manufacturer in _manufacturerService.GetAllManufacturers(showHidden: true))
-            //    {
-            //        gdvm.AvailableManufacturers.Add(new SelectListItem
-            //        {
-            //            Text = manufacturer.Name,
-            //            Value = manufacturer.Id.ToString()
-            //        });
-            //    }
-            //    var allCategories = _categoryService.GetAllCategories(showHidden: true);
-            //    foreach (var category in allCategories)
-            //    {
-            //        gdvm.AvailableCategories.Add(new SelectListItem
-            //        {
-            //            Text = category.GetFormattedBreadCrumb(allCategories),
-            //            Value = category.Id.ToString()
-            //        });
-            //    }
-            //}
+            //little performance hack here
+            //there's no need to load attributes, categories, manufacturers when creating a new product
+            //anyway they're not used (you need to save a product before you map add them)
+            if (product != null)
+            {
+                foreach (var productAttribute in _productAttributeService.GetAllProductAttributes())
+                {
+                    model.AvailableProductAttributes.Add(new SelectListItem
+                    {
+                        Text = productAttribute.Name,
+                        Value = productAttribute.Id.ToString()
+                    });
+                }
+                foreach (var manufacturer in _manufacturerService.GetAllManufacturers(showHidden: true))
+                {
+                    model.AvailableManufacturers.Add(new SelectListItem
+                    {
+                        Text = manufacturer.Name,
+                        Value = manufacturer.Id.ToString()
+                    });
+                }
+                var allCategories = _categoryService.GetAllCategories(showHidden: true);
+                foreach (var category in allCategories)
+                {
+                    model.AvailableCategories.Add(new SelectListItem
+                    {
+                        Text = category.GetFormattedBreadCrumb(allCategories),
+                        Value = category.Id.ToString()
+                    });
+                }
+            }
 
-            ////copy product
-            //if (groupdeal != null)
-            //{
-            //    gdvm.CopyProductModel.Id = groupdeal.Id;
-            //    gdvm.CopyProductModel.Name = "Copy of " + groupdeal.Name;
-            //    gdvm.CopyProductModel.Published = true;
-            //    gdvm.CopyProductModel.CopyImages = true;
-            //}
+            //copy product
+            if (product != null)
+            {
+                model.CopyProductModel.Id = product.Id;
+                model.CopyProductModel.Name = "Copy of " + product.Name;
+                model.CopyProductModel.Published = true;
+                model.CopyProductModel.CopyImages = true;
+            }
 
-            ////templates
-            //var templates = _productTemplateService.GetAllProductTemplates();
-            //foreach (var template in templates)
-            //{
-            //    gdvm.AvailableProductTemplates.Add(new SelectListItem
-            //    {
-            //        Text = template.Name,
-            //        Value = template.Id.ToString()
-            //    });
-            //}
+            //templates
+            var templates = _productTemplateService.GetAllProductTemplates();
+            foreach (var template in templates)
+            {
+                model.AvailableProductTemplates.Add(new SelectListItem
+                {
+                    Text = template.Name,
+                    Value = template.Id.ToString()
+                });
+            }
 
             //vendors
-            //gdvm.IsLoggedInAsVendor = _workContext.CurrentVendor != null;
-            gdvm.AvailableVendors.Add(new SelectListItem
+            model.IsLoggedInAsVendor = _workContext.CurrentVendor != null;
+            model.AvailableVendors.Add(new SelectListItem
             {
                 Text = _localizationService.GetResource("Admin.Catalog.Products.Fields.Vendor.None"),
                 Value = "0"
@@ -543,139 +663,139 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             var vendors = _vendorService.GetAllVendors(showHidden: true);
             foreach (var vendor in vendors)
             {
-                gdvm.AvailableVendors.Add(new SelectListItem
+                model.AvailableVendors.Add(new SelectListItem
                 {
                     Text = vendor.Name,
                     Value = vendor.Id.ToString()
                 });
             }
 
-            ////delivery dates
-            //gdvm.AvailableDeliveryDates.Add(new SelectListItem
-            //{
-            //    Text = _localizationService.GetResource("Admin.Catalog.Products.Fields.DeliveryDate.None"),
-            //    Value = "0"
-            //});
-            //var deliveryDates = _shippingService.GetAllDeliveryDates();
-            //foreach (var deliveryDate in deliveryDates)
-            //{
-            //    gdvm.AvailableDeliveryDates.Add(new SelectListItem
-            //    {
-            //        Text = deliveryDate.Name,
-            //        Value = deliveryDate.Id.ToString()
-            //    });
-            //}
+            //delivery dates
+            model.AvailableDeliveryDates.Add(new SelectListItem
+            {
+                Text = _localizationService.GetResource("Admin.Catalog.Products.Fields.DeliveryDate.None"),
+                Value = "0"
+            });
+            var deliveryDates = _shippingService.GetAllDeliveryDates();
+            foreach (var deliveryDate in deliveryDates)
+            {
+                model.AvailableDeliveryDates.Add(new SelectListItem
+                {
+                    Text = deliveryDate.Name,
+                    Value = deliveryDate.Id.ToString()
+                });
+            }
 
-            ////warehouses
-            //var warehouses = _shippingService.GetAllWarehouses();
-            //gdvm.AvailableWarehouses.Add(new SelectListItem
-            //{
-            //    Text = _localizationService.GetResource("Admin.Catalog.Products.Fields.Warehouse.None"),
-            //    Value = "0"
-            //});
-            //foreach (var warehouse in warehouses)
-            //{
-            //    gdvm.AvailableWarehouses.Add(new SelectListItem
-            //    {
-            //        Text = warehouse.Name,
-            //        Value = warehouse.Id.ToString()
-            //    });
-            //}
+            //warehouses
+            var warehouses = _shippingService.GetAllWarehouses();
+            model.AvailableWarehouses.Add(new SelectListItem
+            {
+                Text = _localizationService.GetResource("Admin.Catalog.Products.Fields.Warehouse.None"),
+                Value = "0"
+            });
+            foreach (var warehouse in warehouses)
+            {
+                model.AvailableWarehouses.Add(new SelectListItem
+                {
+                    Text = warehouse.Name,
+                    Value = warehouse.Id.ToString()
+                });
+            }
 
-            ////multiple warehouses
-            //foreach (var warehouse in warehouses)
-            //{
-            //    var pwiModel = new ProductModel.ProductWarehouseInventoryModel
-            //    {
-            //        WarehouseId = warehouse.Id,
-            //        WarehouseName = warehouse.Name
-            //    };
-            //    if (groupdeal != null)
-            //    {
-            //        var pwi = groupdeal.ProductWarehouseInventory.FirstOrDefault(x => x.WarehouseId == warehouse.Id);
-            //        if (pwi != null)
-            //        {
-            //            pwiModel.WarehouseUsed = true;
-            //            pwiModel.StockQuantity = pwi.StockQuantity;
-            //            pwiModel.ReservedQuantity = pwi.ReservedQuantity;
-            //            pwiModel.PlannedQuantity = _shipmentService.GetQuantityInShipments(groupdeal, pwi.WarehouseId, true, true);
-            //        }
-            //    }
-            //    gdvm.ProductWarehouseInventoryModels.Add(pwiModel);
-            //}
+            //multiple warehouses
+            foreach (var warehouse in warehouses)
+            {
+                var pwiModel = new GroupDealViewModel.ProductWarehouseInventoryModel
+                {
+                    WarehouseId = warehouse.Id,
+                    WarehouseName = warehouse.Name
+                };
+                if (product != null)
+                {
+                    var pwi = product.ProductWarehouseInventory.FirstOrDefault(x => x.WarehouseId == warehouse.Id);
+                    if (pwi != null)
+                    {
+                        pwiModel.WarehouseUsed = true;
+                        pwiModel.StockQuantity = pwi.StockQuantity;
+                        pwiModel.ReservedQuantity = pwi.ReservedQuantity;
+                        pwiModel.PlannedQuantity = _shipmentService.GetQuantityInShipments(product, pwi.WarehouseId, true, true);
+                    }
+                }
+                model.ProductWarehouseInventoryModels.Add(pwiModel);
+            }
 
-            ////product tags
-            //if (groupdeal != null)
-            //{
-            //    var result = new StringBuilder();
-            //    for (int i = 0; i < groupdeal.ProductTags.Count; i++)
-            //    {
-            //        var pt = groupdeal.ProductTags.ToList()[i];
-            //        result.Append(pt.Name);
-            //        if (i != groupdeal.ProductTags.Count - 1)
-            //            result.Append(", ");
-            //    }
-            //    gdvm.ProductTags = result.ToString();
-            //}
+            //product tags
+            if (product != null)
+            {
+                var result = new StringBuilder();
+                for (int i = 0; i < product.ProductTags.Count; i++)
+                {
+                    var pt = product.ProductTags.ToList()[i];
+                    result.Append(pt.Name);
+                    if (i != product.ProductTags.Count - 1)
+                        result.Append(", ");
+                }
+                model.ProductTags = result.ToString();
+            }
 
-            ////tax categories
-            //var taxCategories = _taxCategoryService.GetAllTaxCategories();
-            //gdvm.AvailableTaxCategories.Add(new SelectListItem { Text = "---", Value = "0" });
-            //foreach (var tc in taxCategories)
-            //    gdvm.AvailableTaxCategories.Add(new SelectListItem { Text = tc.Name, Value = tc.Id.ToString(), Selected = groupdeal != null && !setPredefinedValues && tc.Id == groupdeal.TaxCategoryId });
+            //tax categories
+            var taxCategories = _taxCategoryService.GetAllTaxCategories();
+            model.AvailableTaxCategories.Add(new SelectListItem { Text = "---", Value = "0" });
+            foreach (var tc in taxCategories)
+                model.AvailableTaxCategories.Add(new SelectListItem { Text = tc.Name, Value = tc.Id.ToString(), Selected = product != null && !setPredefinedValues && tc.Id == product.TaxCategoryId });
 
-            ////baseprice units
-            //var measureWeights = _measureService.GetAllMeasureWeights();
-            //foreach (var mw in measureWeights)
-            //    gdvm.AvailableBasepriceUnits.Add(new SelectListItem { Text = mw.Name, Value = mw.Id.ToString(), Selected = groupdeal != null && !setPredefinedValues && mw.Id == groupdeal.BasepriceUnitId });
-            //foreach (var mw in measureWeights)
-            //    gdvm.AvailableBasepriceBaseUnits.Add(new SelectListItem { Text = mw.Name, Value = mw.Id.ToString(), Selected = groupdeal != null && !setPredefinedValues && mw.Id == groupdeal.BasepriceBaseUnitId });
+            //baseprice units
+            var measureWeights = _measureService.GetAllMeasureWeights();
+            foreach (var mw in measureWeights)
+                model.AvailableBasepriceUnits.Add(new SelectListItem { Text = mw.Name, Value = mw.Id.ToString(), Selected = product != null && !setPredefinedValues && mw.Id == product.BasepriceUnitId });
+            foreach (var mw in measureWeights)
+                model.AvailableBasepriceBaseUnits.Add(new SelectListItem { Text = mw.Name, Value = mw.Id.ToString(), Selected = product != null && !setPredefinedValues && mw.Id == product.BasepriceBaseUnitId });
 
-            ////specification attributes
-            //var specificationAttributes = _specificationAttributeService.GetSpecificationAttributes();
-            //for (int i = 0; i < specificationAttributes.Count; i++)
-            //{
-            //    var sa = specificationAttributes[i];
-            //    gdvm.AddSpecificationAttributeModel.AvailableAttributes.Add(new SelectListItem { Text = sa.Name, Value = sa.Id.ToString() });
-            //    if (i == 0)
-            //    {
-            //        //attribute options
-            //        foreach (var sao in _specificationAttributeService.GetSpecificationAttributeOptionsBySpecificationAttribute(sa.Id))
-            //            gdvm.AddSpecificationAttributeModel.AvailableOptions.Add(new SelectListItem { Text = sao.Name, Value = sao.Id.ToString() });
-            //    }
-            //}
-            ////default specs values
-            //gdvm.AddSpecificationAttributeModel.ShowOnProductPage = true;
+            //specification attributes
+            var specificationAttributes = _specificationAttributeService.GetSpecificationAttributes();
+            for (int i = 0; i < specificationAttributes.Count; i++)
+            {
+                var sa = specificationAttributes[i];
+                model.AddSpecificationAttributeModel.AvailableAttributes.Add(new SelectListItem { Text = sa.Name, Value = sa.Id.ToString() });
+                if (i == 0)
+                {
+                    //attribute options
+                    foreach (var sao in _specificationAttributeService.GetSpecificationAttributeOptionsBySpecificationAttribute(sa.Id))
+                        model.AddSpecificationAttributeModel.AvailableOptions.Add(new SelectListItem { Text = sao.Name, Value = sao.Id.ToString() });
+                }
+            }
+            //default specs values
+            model.AddSpecificationAttributeModel.ShowOnProductPage = true;
 
-            ////discounts
-            //gdvm.AvailableDiscounts = _discountService
-            //    .GetAllDiscounts(DiscountType.AssignedToSkus, showHidden: true)
-            //    .Select(d => d.ToModel())
-            //    .ToList();
-            //if (!excludeProperties && groupdeal != null)
-            //{
-            //    gdvm.SelectedDiscountIds = groupdeal.AppliedDiscounts.Select(d => d.Id).ToArray();
-            //}
+            //discounts
+            model.AvailableDiscounts = _discountService
+                .GetAllDiscounts(DiscountType.AssignedToSkus, showHidden: true)
+                .Select(d => d.ToModel())
+                .ToList();
+            if (!excludeProperties && product != null)
+            {
+                model.SelectedDiscountIds = product.AppliedDiscounts.Select(d => d.Id).ToArray();
+            }
 
-            ////default values
-            //if (setPredefinedValues)
-            //{
-            //    gdvm.MaximumCustomerEnteredPrice = 1000;
-            //    gdvm.MaxNumberOfDownloads = 10;
-            //    gdvm.RecurringCycleLength = 100;
-            //    gdvm.RecurringTotalCycles = 10;
-            //    gdvm.RentalPriceLength = 1;
-            //    gdvm.StockQuantity = 10000;
-            //    gdvm.NotifyAdminForQuantityBelow = 1;
-            //    gdvm.OrderMinimumQuantity = 1;
-            //    gdvm.OrderMaximumQuantity = 10000;
+            //default values
+            if (setPredefinedValues)
+            {
+                model.MaximumCustomerEnteredPrice = 1000;
+                model.MaxNumberOfDownloads = 10;
+                model.RecurringCycleLength = 100;
+                model.RecurringTotalCycles = 10;
+                model.RentalPriceLength = 1;
+                model.StockQuantity = 10000;
+                model.NotifyAdminForQuantityBelow = 1;
+                model.OrderMinimumQuantity = 1;
+                model.OrderMaximumQuantity = 10000;
 
-            //    gdvm.UnlimitedDownloads = true;
-            //    gdvm.IsShipEnabled = true;
-            //    gdvm.AllowCustomerReviews = true;
-            //    gdvm.Published = true;
-            //    gdvm.VisibleIndividually = true;
-            //}
+                model.UnlimitedDownloads = true;
+                model.IsShipEnabled = true;
+                model.AllowCustomerReviews = true;
+                model.Published = true;
+                model.VisibleIndividually = true;
+            }
         }
     }
 }

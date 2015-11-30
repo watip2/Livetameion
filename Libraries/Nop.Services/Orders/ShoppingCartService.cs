@@ -1119,6 +1119,10 @@ namespace Nop.Services.Orders
                         CreatedOnUtc = now,
                         UpdatedOnUtc = now
                     };
+
+                    shoppingCartItem.CustomerId = customer.Id;
+                    shoppingCartItem.ProductId = product.Id;
+
                     customer.ShoppingCartItems.Add(shoppingCartItem);
                     _customerService.UpdateCustomer(customer);
 

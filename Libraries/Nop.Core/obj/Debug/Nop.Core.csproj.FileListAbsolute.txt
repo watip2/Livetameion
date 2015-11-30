@@ -62,6 +62,5 @@ E:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.Razor.xml
 E:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.xml
 E:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\GitHub\Livetameion\Libraries\Nop.Core\bin\Debug\System.Web.WebPages.Razor.xml
-E:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.dll
 E:\GitHub\Livetameion\Libraries\Nop.Core\obj\Debug\Nop.Core.pdb

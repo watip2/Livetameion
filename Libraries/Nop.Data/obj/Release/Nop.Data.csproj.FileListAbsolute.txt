@@ -86,3 +86,4 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Data\obj\Release\Nop.Data.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Data\obj\Release\Nop.Data.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Data\obj\Release\Nop.Data.pdb
+E:\GitHub\Livetameion\Libraries\Nop.Data\bin\Release\Microsoft.Web.Infrastructure.dll

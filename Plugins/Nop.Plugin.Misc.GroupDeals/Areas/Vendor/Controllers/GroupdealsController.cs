@@ -177,7 +177,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
 
                 //groupdeal
                 //groupdeal = model.ToEntity(groupdeal);
-                model.CreatedOnUtc = groupdeal.CreatedOnUtc;
+                model.CreatedOn = groupdeal.CreatedOnUtc;
                 groupdeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
                 groupdeal.UpdatedOnUtc = DateTime.UtcNow;
                 _groupdealService.UpdateGroupdeal(groupdeal);

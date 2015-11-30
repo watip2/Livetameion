@@ -16,6 +16,7 @@ using Nop.Core;
 using Nop.Services.Orders;
 using Nop.Services.Security;
 using Nop.Plugin.Tameion.BridgePay.Controller;
+using System.IO;
 
 namespace Nop.Plugin.Tameion.BridgePay
 {
@@ -180,11 +181,26 @@ namespace Nop.Plugin.Tameion.BridgePay
 
         public void PostProcessPayment(PostProcessPaymentRequest postProcessPaymentRequest)
         {
-            throw new NotImplementedException();
+            // nothing
         }
 
         public ProcessPaymentResult ProcessPayment(ProcessPaymentRequest processPaymentRequest)
         {
+            string serviceUrl = string.Format("https://gatewaystage.itstgate.com/SmartPayments/transact.asmx/ProcessCreditCard?UserName=Gyne4392&Password=J4066nh8&TransType=Sale&CardNum=4111111111111111&ExpDate=0117&MagData=data&NameOnCard=sohail&Amount=10&InvNum=1&PNRef=1&Zip=43600&Street=Kamra&CVNum=023&ExtData=ext-data");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(serviceUrl);
+            try
+            {
+                var httpResponse = (HttpWebResponse)request.GetResponse();
+                //Receipt Receipt = null;
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var responstText = streamReader.ReadToEnd();
+                    //Receipt = serializer.Deserialize<Receipt>(responstText);
+                }
+            }
+            catch (Exception ex)
+            { }
+            /////////////////////////////////////////////////////////////////////////////////////////////////
             var result = new ProcessPaymentResult();
 
             var customer = _customerService.GetCustomerById(processPaymentRequest.CustomerId);

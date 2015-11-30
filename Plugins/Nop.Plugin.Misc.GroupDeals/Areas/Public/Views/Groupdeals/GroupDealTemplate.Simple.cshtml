@@ -1,0 +1,366 @@
+﻿@using Nop.Web.Framework.UI;
+@{
+    Html.AddScriptParts(Url.Content("~/Plugins/Misc.GroupDeals/scripts/public.groupdeal.ajaxcart.js"));
+    Html.AddCssFileParts(Url.Content("~/Plugins/Misc.GroupDeals/styles/bootstrap.css"));
+}
+@model Nop.Plugin.Misc.GroupDeals.Models.GroupDeal
+
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+}
+<h1 onclick="AjaxCart.addgroupdealtocart_details('/addgroupdealtocart/details/3/1', '#product-details-form'); return false;">@Model.Name</h1>
+
+<form action="/groupdeals/details/3" id="product-details-form" method="post">
+    <div itemscope itemtype="http://schema.org/Product" data-productid="3">
+        <div class="product-essential">
+
+            <!--product pictures-->
+            <div class="row">
+
+
+                <div class="col-md-5">
+
+
+
+
+                    <div class="view-product">
+                        <img alt="Picture of Nikon D5500 DSLR" src="http://localhost:15536/content/images/thumbs/0000035_nikon-d5500-dslr_550.jpeg" title="Picture of Nikon D5500 DSLR" itemprop="image" id="main-product-img-13" />
+
+                    </div>
+                    <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+
+                            <div class='item active'>
+                                <a class="thumb-popup-link" href="http://localhost:15536/content/images/thumbs/0000035_nikon-d5500-dslr.jpeg" title="Nikon D5500 DSLR">
+                                    <img src="http://localhost:15536/content/images/thumbs/0000035_nikon-d5500-dslr_100.jpeg" alt="Picture of Nikon D5500 DSLR" title="Picture of Nikon D5500 DSLR" />
+                                </a>
+                                <a class="thumb-popup-link" href="http://localhost:15536/content/images/thumbs/0000036_nikon-d5500-dslr.jpeg" title="Nikon D5500 DSLR">
+                                    <img src="http://localhost:15536/content/images/thumbs/0000036_nikon-d5500-dslr_100.jpeg" alt="Picture of Nikon D5500 DSLR" title="Picture of Nikon D5500 DSLR" />
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left item-control" href="#similar-product" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right item-control" href="#similar-product" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                    <script type="text/javascript">
+            $(document).ready(function () {
+                $('.thumb-popup-link').magnificPopup(
+                {
+                    type: 'image',
+                    removalDelay: 300,
+                    gallery: {
+                        enabled: true
+                    }
+                });
+            });
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="col-md-7 overview">
+                    <div class="product-information">
+                        <div class="short-description">
+                            Slim, lightweight Nikon D5500 packs a vari-angle touchscreen
+                        </div><br />
+
+                        <!--product manufacturers-->
+                        <!--product reviews-->
+
+                        <div class="product-reviews-overview" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+
+
+                            <div class="rating-div hide-on-grid">
+
+
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+
+
+                            <div class="product-no-reviews">
+                                <a href="/productreviews/13">Be the first to review this product</a>
+                            </div>
+                        </div>
+
+                        <div class="email-a-friend col-md-5">
+                            <button type="button" class="btn btn-primary email-a-friend-button" onclick="setLocation('/productemailafriend/13')"><i class="fa fa-envelope fa-fw"></i> Email a friend </button>
+                        </div>
+
+                        <div class="compare-products col-md-5">
+                            <button type="button" class="btn btn-primary add-to-compare-list-button" onclick="setLocation('/compareproducts/add/13')"><i class="fa fa-retweet fa-fw"></i> Add to compare list </button>
+                        </div><br />
+
+
+                        <div class="product-share-button">
+                            <!-- AddThis Button BEGIN --><div class="addthis_toolbox addthis_default_style "><a class="addthis_button_preferred_1"></a><a class="addthis_button_preferred_2"></a><a class="addthis_button_preferred_3"></a><a class="addthis_button_preferred_4"></a><a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a></div>
+                            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=nopsolutions"></script><!-- AddThis Button END -->
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+        <div class="product-collateral">
+            <!--associated products-->
+            <div class="product-variant-list">
+                <div class="row">
+
+
+                    <div class=" col-md-5 custom-page-box-div" data-productid="14">
+                        <div class="variant-picture">
+                            <img alt="Picture of Nikon D5500 DSLR - Black" src="http://localhost:15536/content/images/thumbs/0000037_canon-digital-slr-camera-black_220.jpeg"
+                                 title="Picture of Nikon D5500 DSLR - Black" id="main-product-img-14" />
+                        </div>
+                        <div class="variant-overview">
+                            <div class="variant-name">
+                                Nikon D5500 DSLR - Black
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            <!--product SKU, manufacturer part number, stock info-->
+
+                            <p class="product-details-label "><b>Availability: </b>In stock</p>
+
+
+                            <!--Back in stock subscription-->
+
+
+
+                            <div class="prices" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                <div class="product-price">
+
+                                    <span itemprop="price">
+                                        $670.00
+                                    </span>
+                                </div>
+                                <meta itemprop="priceCurrency" content="USD" />
+                            </div>
+
+                            <div class="">
+                                <div class="add-to-cart-panel">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+
+                                            <label for="giftcard_1_Message">Quantity:</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="qty-input" data-val="true" data-val-number="The field Qty must be a number." id="addtocart_14_EnteredQuantity" name="addtocart_14.EnteredQuantity" type="text" value="1" />
+                                        </div>
+                                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $("#addtocart_14_EnteredQuantity").keydown(function(event) {
+                                    if (event.keyCode == 13) {
+                                        $("#add-to-cart-button-14").click();
+                                        return false;
+                                    }
+                                });
+                            });
+                                        </script>
+
+                                        <div class="col-md-3">
+                                            <button type="button" id="add-to-cart-button-14" class="btn btn-primary cart add-to-cart-button" data-productid="14" onclick="AjaxCart.addproducttocart_details('/addproducttocart/details/14/1', '#product-details-form');return false;"><i class="fa fa-shopping-cart fa-fw"></i> Add to cart </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <button type="button" id="add-to-wishlist-button-14" class="btn btn-primary add-to-wishlist-button " data-productid="14" onclick="AjaxCart.addproducttocart_details('/addproducttocart/details/14/2', '#product-details-form');return false;"><i class="fa fa-heart fa-fw"></i> Add to wishlist </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <div class=" col-md-5 custom-page-box-div" data-productid="15">
+                        <div class="variant-picture">
+                            <img alt="Picture of Nikon D5500 DSLR - Red" src="http://localhost:15536/content/images/thumbs/0000038_canon-digital-slr-camera-silver_220.jpeg"
+                                 title="Picture of Nikon D5500 DSLR - Red" id="main-product-img-15" />
+                        </div>
+                        <div class="variant-overview">
+                            <div class="variant-name">
+                                Nikon D5500 DSLR - Red
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            <!--product SKU, manufacturer part number, stock info-->
+
+                            <p class="product-details-label "><b>Availability: </b>In stock</p>
+
+
+                            <!--Back in stock subscription-->
+
+
+
+                            <div class="prices" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                <div class="product-price">
+
+                                    <span itemprop="price">
+                                        $630.00
+                                    </span>
+                                </div>
+                                <meta itemprop="priceCurrency" content="USD" />
+                            </div>
+
+                            <div class="">
+                                <div class="add-to-cart-panel">
+                                    <div class="form-group row">
+                                        <div class="col-md-2">
+
+                                            <label for="giftcard_1_Message">Quantity:</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input class="qty-input" data-val="true" data-val-number="The field Qty must be a number." id="addtocart_15_EnteredQuantity" name="addtocart_15.EnteredQuantity" type="text" value="1" />
+                                        </div>
+                                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $("#addtocart_15_EnteredQuantity").keydown(function(event) {
+                                    if (event.keyCode == 13) {
+                                        $("#add-to-cart-button-15").click();
+                                        return false;
+                                    }
+                                });
+                            });
+                                        </script>
+
+                                        <div class="col-md-3">
+                                            <button type="button" id="add-to-cart-button-15" class="btn btn-primary cart add-to-cart-button" data-productid="15" onclick="AjaxCart.addproducttocart_details('/addproducttocart/details/15/1', '#product-details-form');return false;"><i class="fa fa-shopping-cart fa-fw"></i> Add to cart </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <button type="button" id="add-to-wishlist-button-15" class="btn btn-primary add-to-wishlist-button " data-productid="15" onclick="AjaxCart.addproducttocart_details('/addproducttocart/details/15/2', '#product-details-form');return false;"><i class="fa fa-heart fa-fw"></i> Add to wishlist </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="category-tab shop-details-tab">
+                <!--category-tab-->
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+                        <li><a href="#tags" data-toggle="tab">Products Tags</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="full-description tab-pane fade active in" id="description" itemprop="description">
+                        <div class="custom-page-box-border-less-div">
+                            Nikon has announced its latest DSLR, the D5500. A lightweight, compact DX-format camera with a 24.2MP sensor, it’s the first of its type to offer a vari-angle touchscreen. The D5500 replaces the D5300 in Nikon’s range, and while it offers much the same features the company says it’s a much slimmer and lighter prospect. There’s a deep grip for easier handling and built-in Wi-Fi that lets you transfer and share shots via your phone or tablet.
+                        </div>
+
+                    </div>
+                    <div class="full-description fade tab-pane" id="specification">
+                        <div class="custom-page-box-border-less-div">
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="full-description fade tab-pane" id="tags">
+                        <div class="custom-page-box-border-less-div">
+                            <div class="product-tags-box">
+
+                                <div class="product-tags-list">
+                                    <ul>
+                                        <li class="tag">
+                                            <a href="/producttag/3/cool" class="producttag">
+                                                cool (17)
+                                            </a>
+                                        </li>
+                                        <li class="separator">,</li>
+                                        <li class="tag">
+                                            <a href="/producttag/12/camera" class="producttag">
+                                                camera (3)
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+</form>

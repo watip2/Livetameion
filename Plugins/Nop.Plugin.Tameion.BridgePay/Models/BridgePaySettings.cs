@@ -18,5 +18,6 @@ namespace Nop.Plugin.Tameion.BridgePay.Models
         /// Additional fee
         /// </summary>
         public decimal AdditionalFee { get; set; }
+        public string GatewayUrl { get; set; }
     }
 }
