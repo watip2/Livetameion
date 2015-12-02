@@ -42,7 +42,7 @@ using Nop.Admin.Extensions;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 {
-    public class GroupdealsController : BasePluginController
+    public class GroupDealsController : BasePluginController
     {
         private readonly IProductService _productService;
         private readonly IProductTemplateService _productTemplateService;
@@ -86,8 +86,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         private readonly IDownloadService _downloadService;
         private readonly IRepository<GroupdealPicture> _groupdealPictureRepo;
         private IGroupDealService _groupdealService;
+        private readonly IGenericAttributeService _genericAttributeService;
 
-        public GroupdealsController(
+        public GroupDealsController(
             IProductService productService,
             IProductTemplateService productTemplateService,
             ICategoryService categoryService,
@@ -130,7 +131,8 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             IDownloadService downloadService,
             IRepository<GroupDeal> groupDealRepo,
             IRepository<GroupdealPicture> groupdealPictureRepo,
-            IGroupDealService groupdealService)
+            IGroupDealService groupdealService,
+            IGenericAttributeService genericAttributeService)
         {   
             this._productService = productService;
             this._productTemplateService = productTemplateService;
@@ -174,6 +176,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             this._downloadService = downloadService;
             this._groupdealPictureRepo = groupdealPictureRepo;
             this._groupdealService = groupdealService;
+            this._genericAttributeService = genericAttributeService;
         }
 
         [AcceptVerbs("GET")]
@@ -185,11 +188,14 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         [AcceptVerbs("POST")]
         public ActionResult List(DataSourceRequest command)
         {
-            var groupDeals = _groupdealService.GetAllGroupdeals().ToList();
+            //var groupDeals = _groupdealService.GetAllGroupdeals().ToList();
+            var groupDeals = _groupdealService.GetAllGroupDealProducts().ToList();
+
             var groupDealViewModels = new List<GroupDealViewModel>();
             foreach (var gd in groupDeals)
             {
-                var gdvm = new ModelsMapper().CreateMap<GroupDeal, GroupDealViewModel>(gd);
+                //var gdvm = new ModelsMapper().CreateMap<GroupDeal, GroupDealViewModel>(gd);
+                var gdvm = new ModelsMapper().CreateMap<Product, GroupDealViewModel>(gd);
                 if (gd.AvailableStartDateTimeUtc < gd.AvailableEndDateTimeUtc)
                 {
                     gdvm.GroupdealStatusName = PluginHelper.GetAttribute<DisplayAttribute>(GroupdealStatus.Running).Name;
@@ -216,6 +222,33 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             return View();
         }
 
+        //[AcceptVerbs("GET")]
+        //[ActionName("Edit")]
+        //public ActionResult Edit(int id)
+        //{
+        //    if (id == null)
+        //    {
+        //        throw new ArgumentNullException("id");
+        //    }
+        //    var groupdeal = _groupdealService.GetGroupDealById(id);
+        //    var model = new ModelsMapper().CreateMap<GroupDeal, GroupDealViewModel>(groupdeal);
+        //    model.GroupdealPictureViewModel = new GroupdealPictureViewModel();
+
+        //    var vendors = _vendorService.GetAllVendors();
+        //    model.AvailableVendors = new List<SelectListItem>();
+        //    foreach (var vendor in vendors)
+        //    {
+        //        model.AvailableVendors.Add(new SelectListItem
+        //        {
+        //            Text = vendor.Name,
+        //            Value = vendor.Id.ToString()
+        //        });
+        //    }
+        //    PrepareGroupdealViewModel(model, groupdeal, false, false);
+
+        //    return View("EditGroupdeal", model);
+        //}
+
         [AcceptVerbs("GET")]
         [ActionName("Edit")]
         public ActionResult Edit(int id)
@@ -224,8 +257,8 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             {
                 throw new ArgumentNullException("id");
             }
-            var groupdeal = _groupdealService.GetById(id);
-            var model = new ModelsMapper().CreateMap<GroupDeal, GroupDealViewModel>(groupdeal);
+            var groupdeal = _productService.GetProductById(id);
+            var model = new ModelsMapper().CreateMap<Product, GroupDealViewModel>(groupdeal);
             model.GroupdealPictureViewModel = new GroupdealPictureViewModel();
 
             var vendors = _vendorService.GetAllVendors();
@@ -242,6 +275,121 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 
             return View("EditGroupdeal", model);
         }
+
+        //[AcceptVerbs("POST"), ActionName("Edit"), ValidateAntiForgeryToken]
+        //[ParameterBasedOnFormName("save-continue", "continueEditing")]
+        //public ActionResult Edit(GroupDealViewModel model, bool continueEditing)
+        //{
+        //    //var groupDeal = _groupdealService.GetGroupDealById(model.Id);
+
+        //    //groupDeal.Name = model.Name;
+        //    //groupDeal.CreatedOnUtc = model.CreatedOnUtc;
+        //    //groupDeal.UpdatedOnUtc = model.UpdatedOnUtc;
+        //    //groupDeal.Country = model.Country;
+        //    //groupDeal.StateOrProvince = model.StateOrProvince;
+        //    //_groupdealService.UpdateGroupdeal(groupDeal);
+
+        //    //return new NullJsonResult();
+
+        //    //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+        //    //    return AccessDeniedView();
+
+        //    var groupdeal = _groupdealService.GetGroupDealById(model.Id);
+        //    if (groupdeal == null || groupdeal.Deleted)
+        //        //No product found with the specified id
+        //        return RedirectToAction("Index", new { area = "Admin" });
+
+        //    //a vendor should have access only to his products
+        //    if (_workContext.CurrentVendor != null && groupdeal.VendorId != _workContext.CurrentVendor.Id)
+        //        return RedirectToAction("Index", new { area = "Admin" });
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        //a vendor should have access only to his products
+        //        if (_workContext.CurrentVendor != null)
+        //        {
+        //            model.VendorId = _workContext.CurrentVendor.Id;
+        //        }
+        //        //vendors cannot edit "Show on home page" property
+        //        if (_workContext.CurrentVendor != null && model.ShowOnHomePage != groupdeal.ShowOnHomePage)
+        //        {
+        //            model.ShowOnHomePage = groupdeal.ShowOnHomePage;
+        //        }
+        //        var prevStockQuantity = groupdeal.GetTotalStockQuantity();
+
+        //        //groupdeal
+        //        //groupdeal = model.ToEntity(groupdeal);
+        //        model.CreatedOn = groupdeal.CreatedOnUtc;
+        //        groupdeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
+        //        groupdeal.UpdatedOnUtc = DateTime.UtcNow;
+        //        _groupdealService.UpdateGroupdeal(groupdeal);
+        //        //search engine name
+        //        model.SeName = groupdeal.ValidateSeName(model.SeName, "groupdeal.Name", true);
+        //        _urlRecordService.SaveSlug(groupdeal, model.SeName, 0);
+        //        ////locales
+        //        //UpdateLocales(groupdeal, model);
+        //        ////tags
+        //        //SaveProductTags(groupdeal, ParseProductTags(model.ProductTags));
+        //        ////warehouses
+        //        //SaveProductWarehouseInventory(groupdeal, model);
+        //        ////ACL (customer roles)
+        //        //SaveProductAcl(groupdeal, model);
+        //        ////Stores
+        //        //SaveStoreMappings(groupdeal, model);
+        //        ////picture seo names
+        //        //UpdatePictureSeoNames(groupdeal);
+        //        ////discounts
+        //        //var allDiscounts = _discountService.GetAllDiscounts(DiscountType.AssignedToSkus, showHidden: true);
+        //        //foreach (var discount in allDiscounts)
+        //        //{
+        //        //    if (model.SelectedDiscountIds != null && model.SelectedDiscountIds.Contains(discount.Id))
+        //        //    {
+        //        //        //new discount
+        //        //        if (groupdeal.AppliedDiscounts.Count(d => d.Id == discount.Id) == 0)
+        //        //            groupdeal.AppliedDiscounts.Add(discount);
+        //        //    }
+        //        //    else
+        //        //    {
+        //        //        //remove discount
+        //        //        if (groupdeal.AppliedDiscounts.Count(d => d.Id == discount.Id) > 0)
+        //        //            groupdeal.AppliedDiscounts.Remove(discount);
+        //        //    }
+        //        //}
+        //        //_productService.UpdateProduct(groupdeal);
+        //        //_productService.UpdateHasDiscountsApplied(groupdeal);
+        //        ////back in stock notifications
+        //        //if (groupdeal.ManageInventoryMethod == ManageInventoryMethod.ManageStock &&
+        //        //    groupdeal.BackorderMode == BackorderMode.NoBackorders &&
+        //        //    groupdeal.AllowBackInStockSubscriptions &&
+        //        //    groupdeal.GetTotalStockQuantity() > 0 &&
+        //        //    prevStockQuantity <= 0 &&
+        //        //    groupdeal.Published &&
+        //        //    !groupdeal.Deleted)
+        //        //{
+        //        //    _backInStockSubscriptionService.SendNotificationsToSubscribers(groupdeal);
+        //        //}
+
+        //        ////activity log
+        //        //_customerActivityService.InsertActivity("EditProduct", _localizationService.GetResource("ActivityLog.EditProduct"), groupdeal.Name);
+
+        //        //SuccessNotification(_localizationService.GetResource("Admin.Catalog.Products.Updated"));
+
+        //        if (continueEditing)
+        //        {
+        //            //selected tab
+        //            //SaveSelectedTabIndex();
+
+        //            return RedirectToAction("Edit", new { id = groupdeal.Id, area = "Admin" });
+        //        }
+        //        return RedirectToAction("Index", new { area = "Admin" });
+        //    }
+
+        //    //If we got this far, something failed, redisplay form
+        //    //PrepareProductModel(model, groupdeal, false, true);
+        //    //PrepareAclModel(model, groupdeal, true);
+        //    //PrepareStoresMappingModel(model, groupdeal, true);
+        //    return View("EditGroupdeal", model);
+        //}
 
         [AcceptVerbs("POST"), ActionName("Edit"), ValidateAntiForgeryToken]
         [ParameterBasedOnFormName("save-continue", "continueEditing")]
@@ -260,8 +408,8 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
             //    return AccessDeniedView();
-            
-            var groupdeal = _groupdealService.GetById(model.Id);
+
+            var groupdeal = _productService.GetProductById(model.Id);
             if (groupdeal == null || groupdeal.Deleted)
                 //No product found with the specified id
                 return RedirectToAction("Index", new { area = "Admin" });
@@ -287,9 +435,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
                 //groupdeal
                 //groupdeal = model.ToEntity(groupdeal);
                 model.CreatedOn = groupdeal.CreatedOnUtc;
-                groupdeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
+                groupdeal = new ModelsMapper().CreateMap<GroupDealViewModel, Product>(model);
                 groupdeal.UpdatedOnUtc = DateTime.UtcNow;
-                _groupdealService.UpdateGroupdeal(groupdeal);
+                _productService.UpdateProduct(groupdeal);
                 //search engine name
                 model.SeName = groupdeal.ValidateSeName(model.SeName, "groupdeal.Name", true);
                 _urlRecordService.SaveSlug(groupdeal, model.SeName, 0);
@@ -361,7 +509,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Delete(DataSourceRequest command, int id)
         {
-            _groupdealService.DeleteGroupdeal(_groupdealService.GetById(id));
+            _groupdealService.DeleteGroupdeal(_groupdealService.GetGroupDealById(id));
             return new NullJsonResult();
         }
 
@@ -393,13 +541,13 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
-                groupDeal.Active = true;
+                //var groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
+                var groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, Product>(model);
                 groupDeal.DisplayOrder = 1;
-                groupDeal.SeName = "se-name-" + Guid.NewGuid();
                 groupDeal.ProductType = ProductType.SimpleProduct;
                 groupDeal.OrderMaximumQuantity = 10;
                 groupDeal.OrderMinimumQuantity = 1;
+                groupDeal.Published = true;
 
                 // datetime fields
                 groupDeal.CreatedOnUtc = DateTime.UtcNow;
@@ -409,8 +557,13 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
                 groupDeal.PreOrderAvailabilityStartDateTimeUtc = DateTime.Now;
                 groupDeal.SpecialPriceStartDateTimeUtc = DateTime.Now;
                 groupDeal.SpecialPriceEndDateTimeUtc = DateTime.Parse("01/01/2016");
-                
-                _groupdealService.InsertGroupDeal(groupDeal);
+
+                //_groupdealService.InsertGroupDeal(groupDeal);
+                _productService.InsertProduct(groupDeal);
+
+                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.IsGroupDeal, true);
+                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.Active, true);
+                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.SeName, "se-name-" + Guid.NewGuid());
                 
                 return RedirectToAction("Index", new { area = "Admin" });
             }
@@ -429,7 +582,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             if (pictureId == 0)
                 throw new ArgumentException();
 
-            var groupdeal = _groupdealService.GetById(groupdealId);
+            var groupdeal = _groupdealService.GetGroupDealById(groupdealId);
             if (groupdeal == null)
                 throw new ArgumentException("No groupdeal found with the specified id");
 
@@ -469,7 +622,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             //a vendor should have access only to his products
             if (_workContext.CurrentVendor != null)
             {
-                var product = _groupdealService.GetById(groupdealId);
+                var product = _groupdealService.GetGroupDealById(groupdealId);
                 if (product != null && product.VendorId != _workContext.CurrentVendor.Id)
                 {
                     return Content("This is not your product");
@@ -558,7 +711,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             //a vendor should have access only to his products
             if (_workContext.CurrentVendor != null)
             {
-                var groupdeal = _groupdealService.GetById(groupdealId);
+                var groupdeal = _groupdealService.GetGroupDealById(groupdealId);
                 if (groupdeal != null && groupdeal.VendorId != _workContext.CurrentVendor.Id)
                 {
                     return Content("This is not your product");

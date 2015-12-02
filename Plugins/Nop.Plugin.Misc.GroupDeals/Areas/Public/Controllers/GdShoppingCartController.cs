@@ -1572,7 +1572,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers
         [ValidateInput(false)]
         public ActionResult AddGroupDealToCart_Details(int groupDealId, int shoppingCartTypeId, FormCollection form)
         {
-            var groupDeal = _groupDealService.GetById(groupDealId);
+            var groupDeal = _groupDealService.GetGroupDealById(groupDealId);
             groupDeal.MinStockQuantity = 1;
             groupDeal.StockQuantity = 10;
             groupDeal.DisplayStockQuantity = true;

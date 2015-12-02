@@ -19,7 +19,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
     {
         public GroupDeal()
         {
-            // datetime fields
+            // datetime fields default values
             CreatedOnUtc = DateTime.MinValue;
             UpdatedOnUtc = DateTime.MinValue;
             AvailableEndDateTimeUtc = DateTime.MinValue;
@@ -29,11 +29,13 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
             SpecialPriceEndDateTimeUtc = DateTime.MinValue;
         }
 
-        public bool Active { get; set; }
-        public string SeName { get; set; }
-        public string CouponCode { get; set; }
-        
         // generic attributes
+        [NotMapped]
+        public bool Active { get; set; }
+        [NotMapped]
+        public string SeName { get; set; }
+        [NotMapped]
+        public string CouponCode { get; set; }
         [NotMapped]
         public string Country { get; set; }
         [NotMapped]

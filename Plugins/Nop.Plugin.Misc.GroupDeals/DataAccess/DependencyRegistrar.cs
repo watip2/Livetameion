@@ -13,6 +13,7 @@ using Nop.Web.Framework.Mvc;
 using Nop.Core.Domain.Vendors;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
+using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.GroupDeals.DataAccess
 {
@@ -44,10 +45,17 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
                 .As<IRepository<GroupdealPicture>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(GROUP_DEALS_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
-            ///////////////////////////////////////////////////////////////////////////////////////////////
 
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<GroupDealProduct>>()
+                .As<IRepository<GroupDealProduct>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(GROUP_DEALS_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+            ///////////////////////////////////////////////////////////////////////////////////////////////
+            
             // services
             builder.RegisterType<GroupDealService>().As<IGroupDealService>().InstancePerLifetimeScope();
+            builder.RegisterType<Nop.Plugin.Misc.GroupDeals.ActionFilters.ActionFilters>().As<IFilterProvider>().InstancePerLifetimeScope();
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 

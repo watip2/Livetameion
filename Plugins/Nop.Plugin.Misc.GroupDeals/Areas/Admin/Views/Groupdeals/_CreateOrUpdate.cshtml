@@ -52,10 +52,10 @@
         <li @Html.RenderSelectedTabIndex(2, GetSelectedTabIndex())>
             @T("Admin.Catalog.Products.Pictures")
         </li>
-        @*<li @Html.RenderSelectedTabIndex(3, GetSelectedTabIndex())>
+        <li @Html.RenderSelectedTabIndex(3, GetSelectedTabIndex())>
             @T("Admin.Catalog.Products.Categories")
         </li>
-        <li @Html.RenderSelectedTabIndex(4, GetSelectedTabIndex())>
+        @*<li @Html.RenderSelectedTabIndex(4, GetSelectedTabIndex())>
             @T("Admin.Catalog.Products.Manufacturers")
         </li>
         <li @Html.RenderSelectedTabIndex(5, GetSelectedTabIndex())>
@@ -101,10 +101,10 @@
     <div>
         @TabPictures()
     </div>
-    @*<div>
+    <div>
         @TabCategories()
     </div>
-    <div>
+    @*<div>
         @TabManufacturers()
     </div>
     <div>
@@ -162,11 +162,11 @@
 @*@helper TabSeo()
 {
     @Html.Partial("_CreateOrUpdate.SEO", Model)
-}
+}*@
 @helper TabCategories()
 {
     @Html.Partial("_CreateOrUpdate.Categories", Model)
-}
+}@*
 @helper TabManufacturers()
 {
     @Html.Partial("_CreateOrUpdate.Manufacturers", Model)

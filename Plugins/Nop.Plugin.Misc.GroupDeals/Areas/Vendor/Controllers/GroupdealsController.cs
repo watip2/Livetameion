@@ -28,7 +28,7 @@ using Nop.Services.Localization;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
 {
-    public class GroupdealsController : BasePluginController
+    public class GroupDealsController : BasePluginController
     {
         private readonly IDateTimeHelper _dateTimeHelper;
         private readonly IRepository<GroupdealPicture> _groupdealPictureRepo;
@@ -42,7 +42,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
         private CurrencySettings _currencySettings;
         private ILocalizationService _localizationService;
 
-        public GroupdealsController(
+        public GroupDealsController(
             IRepository<GroupDeal> groupDealRepo,
             IDateTimeHelper dateTimeHelper,
             IRepository<GroupdealPicture> groupdealPictureRepo,
@@ -115,7 +115,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
             {
                 throw new ArgumentNullException("id");
             }
-            var groupdeal = _groupdealService.GetById(id);
+            var groupdeal = _groupdealService.GetGroupDealById(id);
             var model = new ModelsMapper().CreateMap<GroupDeal, GroupDealViewModel>(groupdeal);
             model.GroupdealPictureViewModel = new GroupdealPictureViewModel();
 
@@ -152,7 +152,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
             //    return AccessDeniedView();
             
-            var groupdeal = _groupdealService.GetById(model.Id);
+            var groupdeal = _groupdealService.GetGroupDealById(model.Id);
             if (groupdeal == null || groupdeal.Deleted)
                 //No product found with the specified id
                 return RedirectToAction("Index");
@@ -252,7 +252,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
         [HttpPost]
         public ActionResult Delete(DataSourceRequest command, int id)
         {
-            _groupdealService.DeleteGroupdeal(_groupdealService.GetById(id));
+            _groupdealService.DeleteGroupdeal(_groupdealService.GetGroupDealById(id));
             return new NullJsonResult();
         }
 
@@ -309,7 +309,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
             if (pictureId == 0)
                 throw new ArgumentException();
 
-            var groupdeal = _groupdealService.GetById(groupdealId);
+            var groupdeal = _groupdealService.GetGroupDealById(groupdealId);
             if (groupdeal == null)
                 throw new ArgumentException("No groupdeal found with the specified id");
 
@@ -349,7 +349,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
             //a vendor should have access only to his products
             if (_workContext.CurrentVendor != null)
             {
-                var product = _groupdealService.GetById(groupdealId);
+                var product = _groupdealService.GetGroupDealById(groupdealId);
                 if (product != null && product.VendorId != _workContext.CurrentVendor.Id)
                 {
                     return Content("This is not your product");
@@ -438,7 +438,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
             //a vendor should have access only to his products
             if (_workContext.CurrentVendor != null)
             {
-                var groupdeal = _groupdealService.GetById(groupdealId);
+                var groupdeal = _groupdealService.GetGroupDealById(groupdealId);
                 if (groupdeal != null && groupdeal.VendorId != _workContext.CurrentVendor.Id)
                 {
                     return Content("This is not your product");

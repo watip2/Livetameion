@@ -39,6 +39,7 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
              */
 
             modelBuilder.Configurations.Add(new GroupDealMap());
+            modelBuilder.Configurations.Add(new GroupDealProductMap());
             modelBuilder.Configurations.Add(new GroupdealPictureMap());
             modelBuilder.Configurations.Add(new Nop.Data.Mapping.Vendors.VendorMap());
             modelBuilder.Configurations.Add(new Nop.Data.Mapping.Catalog.CategoryMap());
@@ -139,7 +140,10 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
 
             dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDeal>(this);
             Database.ExecuteSqlCommand(dbScript);
-            
+
+            dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDealProduct>(this);
+            Database.ExecuteSqlCommand(dbScript);
+
             SaveChanges();
         }
 
