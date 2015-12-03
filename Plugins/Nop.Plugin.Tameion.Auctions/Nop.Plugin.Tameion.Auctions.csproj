@@ -87,11 +87,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Areas\Public\Controllers\Auctions.cs" />
-    <Compile Include="Areas\Vendor\Controllers\Auctions.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuctionsController.cs" />
+    <Compile Include="Areas\Public\Controllers\AuctionsController.cs" />
+    <Compile Include="Areas\Vendor\Controllers\AuctionsController.cs" />
     <Compile Include="DomainModels\Auction.cs" />
     <Compile Include="DomainModels\AuctionStatus.cs" />
     <Compile Include="DomainModels\Bid.cs" />
+    <Compile Include="DomainModels\ModelsMapper.cs" />
     <Compile Include="Helpers\AuctionsHelper.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Infrastructure\CustomViewEngine.cs" />
@@ -107,6 +109,9 @@
     <Compile Include="Services\BidService.cs" />
     <Compile Include="Services\IAuctionService.cs" />
     <Compile Include="Services\IBidService.cs" />
+    <Compile Include="PluginAreaRegistration.cs" />
+    <Compile Include="ViewModels\AuctionListModel.cs" />
+    <Compile Include="ViewModels\AuctionModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Description.txt">
@@ -121,6 +126,35 @@
   <ItemGroup>
     <Folder Include="Areas\Public\Views\" />
     <Folder Include="Areas\Vendor\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Auctions\Create.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\Auctions\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\Auctions\_CreateOrUpdate.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\Auctions\_CreateOrUpdate.Info.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Auctions\_CreateOrUpdate.RelatedProducts.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Auctions\Edit.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Auctions\RelatedProductAddPopup.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

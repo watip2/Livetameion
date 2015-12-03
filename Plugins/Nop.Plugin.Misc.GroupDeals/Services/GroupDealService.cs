@@ -108,7 +108,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         public void InsertGroupDeal(GroupDeal groupDeal)
         {
             if (groupDeal == null)
-                throw new ArgumentNullException("GroupDeal");
+                throw new ArgumentNullException("groupDeal");
             
             _groupDealRepo.Insert(groupDeal);
             SaveGenericAttributes(groupDeal);

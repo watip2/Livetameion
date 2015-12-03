@@ -1,6 +1,5 @@
 ﻿using Nop.Core;
 using Nop.Core.Data;
-using Nop.Plugin.Misc.GroupDeals.DataAccess;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
 using Nop.Plugin.Misc.GroupDeals.ViewModels;
@@ -15,10 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using Nop.Services.Seo;
-using System.Diagnostics;
 using Nop.Plugin.Misc.GroupDeals.Enums;
 using Nop.Plugin.Misc.GroupDeals.Helpers;
 using System.ComponentModel.DataAnnotations;
@@ -259,8 +256,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             }
             var groupdeal = _productService.GetProductById(id);
             var model = new ModelsMapper().CreateMap<Product, GroupDealViewModel>(groupdeal);
-            model.GroupdealPictureViewModel = new GroupdealPictureViewModel();
-
+            
             var vendors = _vendorService.GetAllVendors();
             model.AvailableVendors = new List<SelectListItem>();
             foreach (var vendor in vendors)
@@ -563,6 +559,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 
                 _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.IsGroupDeal, true);
                 _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.Active, true);
+                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.FinePrint, model.FinePrint);
                 _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.SeName, "se-name-" + Guid.NewGuid());
                 
                 return RedirectToAction("Index", new { area = "Admin" });

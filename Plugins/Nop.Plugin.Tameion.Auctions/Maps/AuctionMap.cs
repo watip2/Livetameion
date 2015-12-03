@@ -21,6 +21,7 @@ namespace Nop.Plugin.Tameion.Auctions.Maps
             Property(b => b.ReservedAmount);
             Property(b => b.Status);
             Property(b => b.StartingDate);
+            Property(b => b.Published);
         }
     }
 }

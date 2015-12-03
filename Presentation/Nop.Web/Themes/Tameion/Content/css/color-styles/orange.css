@@ -1,4 +1,4 @@
-﻿a.logo { background: url("../images/orange_logo.png") no-repeat 0 0; }
+﻿a.logo { background: url("../images/orange_logo.png") no-repeat 0 0; background-size: 150px; }
 
 body a:hover, a:focus, a:active { color: #FE980F; }
 .rating-area a { color: #FE980F; }

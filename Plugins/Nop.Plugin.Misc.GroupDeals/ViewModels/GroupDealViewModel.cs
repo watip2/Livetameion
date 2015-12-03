@@ -14,6 +14,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ViewModels
         public string City { get; set; }
         public string CouponCode { get; set; }
         public int GroupdealStatusId { get; set; }
+        public string FinePrint { get; set; }
         public GroupdealStatus GroupdealStatus
         {
             get { return (GroupdealStatus)this.GroupdealStatusId; }

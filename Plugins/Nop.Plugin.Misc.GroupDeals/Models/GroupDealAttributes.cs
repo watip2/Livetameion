@@ -15,5 +15,6 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
         public static string Country { get { return "Country"; } } // string
         public static string StateOrProvince { get { return "StateOrProvince"; } } // string
         public static string City { get { return "City"; } } // string
+        public static string FinePrint { get { return "FinePrint"; } } // string
     }
 }

@@ -42,5 +42,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
         public string StateOrProvince { get; set; }
         [NotMapped]
         public string City { get; set; }
+        [NotMapped]
+        public string FinePrint { get; set; }
     }
 }

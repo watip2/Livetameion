@@ -23,6 +23,7 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Vendor\
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Categories.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Info_GroupDeal.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Pictures_GroupDeal.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Stores.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.GroupDeals\obj\Debug\Nop.Plugin.Misc.GroupDeals.csprojResolveAssemblyReference.cache

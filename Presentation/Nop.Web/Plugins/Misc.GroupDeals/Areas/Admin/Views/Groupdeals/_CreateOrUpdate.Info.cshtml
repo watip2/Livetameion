@@ -1,13 +1,6 @@
-﻿@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
-@{
-    //resources for product tags input
-    Html.AppendCssFileParts("~/Content/tagit/jquery.tagit.css");
-    Html.AppendScriptParts("~/Scripts/tag-it.min.js");
-}
-@using Nop.Core.Domain.Catalog;
+﻿@using Nop.Core.Domain.Catalog;
 @using Nop.Services.Catalog;
 @using System.Text;
-
 @using System;
 @using Nop.Web.Framework;
 @using Nop.Web.Framework.UI;
@@ -16,6 +9,12 @@
 @using Nop.Services.Events;
 @using Nop.Admin.Models.Catalog;
 @using Nop.Plugin.Misc.GroupDeals.ViewModels;
+@model GroupDealViewModel
+@{
+    //resources for product tags input
+    Html.AppendCssFileParts("~/Content/tagit/jquery.tagit.css");
+    Html.AppendScriptParts("~/Scripts/tag-it.min.js");
+}
 
 <table class="adminContent">
     <tr>
@@ -46,6 +45,16 @@
         <td class="adminData">
             @Html.EditorFor(model => model.FullDescription, "RichEditor")
             @Html.ValidationMessageFor(model => model.FullDescription)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
+            @Html.NopLabelFor(model => model.FinePrint):
+        </td>
+        <td class="adminData">
+            @Html.TextAreaFor(model => model.FinePrint, new { style = "Width: 250px; Height: 150px;" })
+            @Html.ValidationMessageFor(model => model.FinePrint)
         </td>
     </tr>
     <tr>

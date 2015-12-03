@@ -29,7 +29,15 @@ namespace Nop.Plugin.Tameion.Auctions
             );
             routes.Remove(route);
             routes.Insert(0, route);
-            
+
+            route = routes.MapRoute("Plugin.Tameion.Auctions.Admin.AuctionsController",
+                "Admin/Auctions/{action}/{id}",
+                new { area = "Admin", controller = "Auctions", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Tameion.Auctions.Areas.Admin.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }
     }
