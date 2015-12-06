@@ -28,6 +28,5 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\logo.jp
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.dll.config
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.AuthorizeNet\Nop.Plugin.Payments.AuthorizeNet.pdb
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.AuthorizeNet\obj\Debug\Nop.Plugin.Payments.AuthorizeNet.pdb

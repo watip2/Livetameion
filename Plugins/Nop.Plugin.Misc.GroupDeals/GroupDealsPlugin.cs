@@ -1,30 +1,22 @@
 ﻿using Nop.Core.Data;
-using Nop.Core.Domain.Messages;
-using Nop.Core.Events;
 using Nop.Core.Plugins;
-using Nop.Services.Configuration;
-using Nop.Services.Events;
 using Nop.Web.Framework.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 using System.Web.Routing;
-using Nop.Services.Localization;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.DataAccess;
 using Nop.Plugin.Misc.GroupDeals.Helpers;
 
 namespace Nop.Plugin.Misc.GroupDeals
 {
-    public class GroupdealsPlugin : BasePlugin, IAdminMenuPlugin
+    public class GroupDealsPlugin : BasePlugin, IAdminMenuPlugin
     {
         private IRepository<GroupDeal> _groupDealsRepo;
         private GroupDealsContext _groupDealsContext;
         
-        public GroupdealsPlugin(
+        public GroupDealsPlugin(
             IRepository<GroupDeal> groupDealsRepo,
             GroupDealsContext groupDealsContext
         )

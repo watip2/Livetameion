@@ -20,7 +20,7 @@
     <tr>
         <td class="adminTitle">
             <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
-            @Html.NopLabelFor(model => model.Name):
+            @Html.Label("Group Deal Name"):
         </td>
         <td class="adminData">
             @Html.EditorFor(model => model.Name)
@@ -30,7 +30,7 @@
     <tr>
         <td class="adminTitle">
             <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
-            @Html.NopLabelFor(model => model.ShortDescription):
+            @Html.Label("Short Description"):
         </td>
         <td class="adminData">
             @Html.TextAreaFor(model => model.ShortDescription, new { style = "Width: 250px; Height: 150px;" })
@@ -40,7 +40,7 @@
     <tr>
         <td class="adminTitle">
             <img alt="Choose your product type." src="/Administration/Content/images/ico-help.gif" title="">
-            @Html.NopLabelFor(model => model.FullDescription):
+            @Html.Label("Full Description"):
         </td>
         <td class="adminData">
             @Html.EditorFor(model => model.FullDescription, "RichEditor")
@@ -626,7 +626,7 @@
 
 </script>
 <table class="adminContent">
-    @if (Model.Id > 0)
+    @*@if (Model.Id > 0)
     {
         <tr>
             <td class="adminTitle">
@@ -637,7 +637,7 @@
                 @Html.ValidationMessageFor(model => model.Id)
             </td>
         </tr>
-    }
+    }*@
     <tr>
         <td class="adminTitle">
             @Html.NopLabelFor(model => model.ProductTypeId):

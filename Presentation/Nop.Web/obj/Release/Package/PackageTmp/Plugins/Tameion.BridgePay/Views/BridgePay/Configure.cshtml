@@ -14,7 +14,7 @@
                 <b>If you're using this gateway, ensure that your primary store currency is supported by BridgePay.</b>
             </td>
         </tr>
-        <tr>
+        @*<tr>
             <td class="adminTitle">
                 @Html.OverrideStoreCheckboxFor(model => model.UseSandbox_OverrideForStore, model => model.UseSandbox, Model.ActiveStoreScopeConfiguration)
                 @Html.NopLabelFor(model => model.UseSandbox):
@@ -23,17 +23,17 @@
                 @Html.EditorFor(model => model.UseSandbox)
                 @Html.ValidationMessageFor(model => model.UseSandbox)
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.OverrideStoreCheckboxFor(model => model.TransactModeId_OverrideForStore, model => model.TransactModeId, Model.ActiveStoreScopeConfiguration)
                 @Html.NopLabelFor(model => model.TransactModeValues):
             </td>
             <td class="adminData">
-                @*@Html.DropDownList("TransactModeId", Model.TransactModeValues)*@
+                @Html.DropDownList("TransactModeId", Model.TransactModeValues)
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.OverrideStoreCheckboxFor(model => model.TransactionKey_OverrideForStore, model => model.TransactionKey, Model.ActiveStoreScopeConfiguration)
                 @Html.NopLabelFor(model => model.TransactionKey):
@@ -42,7 +42,7 @@
                 @Html.EditorFor(model => model.TransactionKey)
                 @Html.ValidationMessageFor(model => model.TransactionKey)
             </td>
-        </tr>
+        </tr>*@
         <tr>
             <td class="adminTitle">
                 @Html.OverrideStoreCheckboxFor(model => model.Username_OverrideForStore, model => model.Username, Model.ActiveStoreScopeConfiguration)
@@ -74,6 +74,17 @@
             <td class="adminData">
                 @Html.EditorFor(model => model.MerchantKey)
                 @Html.ValidationMessageFor(model => model.MerchantKey)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.OverrideStoreCheckboxFor(model => model.GatewayUrl_OverrideForStore, model => model.GatewayUrl, Model.ActiveStoreScopeConfiguration)
+                <img alt="Specify transaction key" src="/Administration/Content/images/ico-help.gif" title="Specify merchant key" />
+                @Html.NopLabelFor(model => model.GatewayUrl):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.GatewayUrl)
+                @Html.ValidationMessageFor(model => model.GatewayUrl)
             </td>
         </tr>
         <tr>

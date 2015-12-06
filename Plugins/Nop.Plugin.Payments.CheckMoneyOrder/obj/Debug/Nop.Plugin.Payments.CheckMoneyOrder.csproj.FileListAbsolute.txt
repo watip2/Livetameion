@@ -20,3 +20,13 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\PaymentCheckMoneyOrder\Configure.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Views\PaymentCheckMoneyOrder\PaymentInfo.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\logo.jpg
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.dll.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.pdb

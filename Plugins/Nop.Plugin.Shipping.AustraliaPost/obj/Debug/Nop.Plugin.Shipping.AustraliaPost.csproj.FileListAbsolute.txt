@@ -18,3 +18,12 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Views\ShippingAustraliaPost\Configure.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\logo.jpg
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Nop.Plugin.Shipping.AustraliaPost.dll.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Nop.Plugin.Shipping.AustraliaPost.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Nop.Plugin.Shipping.AustraliaPost.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.pdb

@@ -17,6 +17,10 @@ using Nop.Services.Orders;
 using Nop.Services.Security;
 using Nop.Plugin.Tameion.BridgePay.Controller;
 using System.IO;
+using System.Xml;
+using Newtonsoft.Json;
+using System.Collections;
+using System.Linq;
 
 namespace Nop.Plugin.Tameion.BridgePay
 {
@@ -186,7 +190,21 @@ namespace Nop.Plugin.Tameion.BridgePay
 
         public ProcessPaymentResult ProcessPayment(ProcessPaymentRequest processPaymentRequest)
         {
-            string serviceUrl = string.Format("https://gatewaystage.itstgate.com/SmartPayments/transact.asmx/ProcessCreditCard?UserName=Gyne4392&Password=J4066nh8&TransType=Sale&CardNum=4111111111111111&ExpDate=0117&MagData=data&NameOnCard=sohail&Amount=10&InvNum=1&PNRef=1&Zip=43600&Street=Kamra&CVNum=023&ExtData=ext-data");
+            TransactionResponse TransactionResponse = null;
+            string serviceUrl = string.Format("https://gatewaystage.itstgate.com/SmartPayments/transact.asmx/ProcessCreditCard?" +
+                "UserName=Gyne4392&Password=J4066nh8&"+
+                "TransType=Sale&"+
+                "CardNum=" + processPaymentRequest.CreditCardNumber + "&"+
+                "ExpDate=" + processPaymentRequest.CreditCardExpireMonth + processPaymentRequest.CreditCardExpireYear + "&"+
+                "MagData=data&" +
+                "NameOnCard=" + processPaymentRequest.CreditCardName + "&" +
+                "Amount=" + processPaymentRequest.OrderTotal + "&" +
+                "InvNum=1&" +
+                "PNRef=1&" +
+                "Zip=43600&" +
+                "Street=Kamra&" +
+                "CVNum=" + processPaymentRequest.CreditCardCvv2 + "&" +
+                "ExtData=ext-data");
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(serviceUrl);
             try
             {
@@ -195,18 +213,71 @@ namespace Nop.Plugin.Tameion.BridgePay
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var responstText = streamReader.ReadToEnd();
-                    //Receipt = serializer.Deserialize<Receipt>(responstText);
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(responstText);
+                    if (doc.ChildNodes[1].Name == "Response")
+                    {
+                        var responseNode = doc.ChildNodes[1];
+                        var responseNodes = responseNode.Cast<XmlNode>().ToArray();
+                        var res = responseNodes.SingleOrDefault(n => n.Name == "Result");
+                        string jsonText = JsonConvert.SerializeXmlNode(node: responseNode, formatting: Newtonsoft.Json.Formatting.None, omitRootObject: true);
+
+                        // parse json to anonymous object
+                        var Response = new
+                        {
+                            Result = 0,
+                            RespMSG = string.Empty,
+                            ExtData = string.Empty
+                        };
+                        Response = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(jsonText, Response);
+
+                        // parse json to class object
+                        TransactionResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<TransactionResponse>(jsonText);
+                        
+                    }
                 }
             }
             catch (Exception ex)
             { }
-            /////////////////////////////////////////////////////////////////////////////////////////////////
+
             var result = new ProcessPaymentResult();
-
             var customer = _customerService.GetCustomerById(processPaymentRequest.CustomerId);
+            if (TransactionResponse != null)
+            {
+                switch (TransactionResponse.Result)
+                {
+                    case 0:
+                        result.AuthorizationTransactionCode = string.Format("{0}", TransactionResponse.AuthCode);
+                        result.AuthorizationTransactionResult = string.Format("Approved {0})", TransactionResponse.Message1);
+                        result.AvsResult = TransactionResponse.GetAVSResult;
+                        //responseFields[38];
+                        //if (_authorizeNetPaymentSettings.TransactMode == TransactMode.Authorize)
+                        //{
+                        //    result.NewPaymentStatus = PaymentStatus.Authorized;
+                        //}
+                        //else
+                        //{
+                        //    result.NewPaymentStatus = PaymentStatus.Paid;
+                        //}
+                        break;
+                    case 24:
+                        result.AddError(string.Format("Error: {0}", TransactionResponse.Message));
+                        break;
+                    case 110:
+                        result.AddError(string.Format("Error: {0}", TransactionResponse.Message));
+                        break;
 
-            var webClient = new WebClient();
-            var form = new NameValueCollection();
+                }
+            }
+            else
+            {
+                result.AddError("BridgePay unknown error");
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            //var webClient = new WebClient();
+            //var form = new NameValueCollection();
             //form.Add("x_login", _authorizeNetPaymentSettings.LoginId);
             //form.Add("x_tran_key", _authorizeNetPaymentSettings.TransactionKey);
             

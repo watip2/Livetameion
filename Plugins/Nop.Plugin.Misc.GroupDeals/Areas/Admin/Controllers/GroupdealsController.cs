@@ -36,6 +36,7 @@ using Nop.Core.Domain.Common;
 using Nop.Services.Discounts;
 using Nop.Core.Domain.Discounts;
 using Nop.Admin.Extensions;
+using System.Diagnostics;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 {
@@ -248,13 +249,13 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
 
         [AcceptVerbs("GET")]
         [ActionName("Edit")]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 throw new ArgumentNullException("id");
             }
-            var groupdeal = _productService.GetProductById(id);
+            var groupdeal = _productService.GetProductById((int)id);
             var model = new ModelsMapper().CreateMap<Product, GroupDealViewModel>(groupdeal);
             
             var vendors = _vendorService.GetAllVendors();
@@ -269,7 +270,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             }
             PrepareGroupdealViewModel(model, groupdeal, false, false);
 
-            return View("EditGroupdeal", model);
+            return View("EditGroupDeal", model);
         }
 
         //[AcceptVerbs("POST"), ActionName("Edit"), ValidateAntiForgeryToken]
@@ -386,32 +387,18 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
         //    //PrepareStoresMappingModel(model, groupdeal, true);
         //    return View("EditGroupdeal", model);
         //}
-
+        
         [AcceptVerbs("POST"), ActionName("Edit"), ValidateAntiForgeryToken]
         [ParameterBasedOnFormName("save-continue", "continueEditing")]
         public ActionResult Edit(GroupDealViewModel model, bool continueEditing)
         {
-            //var groupDeal = _groupdealService.GetGroupDealById(model.Id);
-
-            //groupDeal.Name = model.Name;
-            //groupDeal.CreatedOnUtc = model.CreatedOnUtc;
-            //groupDeal.UpdatedOnUtc = model.UpdatedOnUtc;
-            //groupDeal.Country = model.Country;
-            //groupDeal.StateOrProvince = model.StateOrProvince;
-            //_groupdealService.UpdateGroupdeal(groupDeal);
-
-            //return new NullJsonResult();
-
-            //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
-            //    return AccessDeniedView();
-
-            var groupdeal = _productService.GetProductById(model.Id);
-            if (groupdeal == null || groupdeal.Deleted)
+            var groupDeal = _productService.GetProductById(model.Id);
+            if (groupDeal == null || groupDeal.Deleted)
                 //No product found with the specified id
                 return RedirectToAction("Index", new { area = "Admin" });
 
             //a vendor should have access only to his products
-            if (_workContext.CurrentVendor != null && groupdeal.VendorId != _workContext.CurrentVendor.Id)
+            if (_workContext.CurrentVendor != null && groupDeal.VendorId != _workContext.CurrentVendor.Id)
                 return RedirectToAction("Index", new { area = "Admin" });
 
             if (ModelState.IsValid)
@@ -422,21 +409,21 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
                     model.VendorId = _workContext.CurrentVendor.Id;
                 }
                 //vendors cannot edit "Show on home page" property
-                if (_workContext.CurrentVendor != null && model.ShowOnHomePage != groupdeal.ShowOnHomePage)
+                if (_workContext.CurrentVendor != null && model.ShowOnHomePage != groupDeal.ShowOnHomePage)
                 {
-                    model.ShowOnHomePage = groupdeal.ShowOnHomePage;
+                    model.ShowOnHomePage = groupDeal.ShowOnHomePage;
                 }
-                var prevStockQuantity = groupdeal.GetTotalStockQuantity();
+                var prevStockQuantity = groupDeal.GetTotalStockQuantity();
 
                 //groupdeal
                 //groupdeal = model.ToEntity(groupdeal);
-                model.CreatedOn = groupdeal.CreatedOnUtc;
-                groupdeal = new ModelsMapper().CreateMap<GroupDealViewModel, Product>(model);
-                groupdeal.UpdatedOnUtc = DateTime.UtcNow;
-                _productService.UpdateProduct(groupdeal);
+                model.CreatedOn = groupDeal.CreatedOnUtc;
+                groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, Product>(model, groupDeal);
+                groupDeal.UpdatedOnUtc = DateTime.UtcNow;
+                _productService.UpdateProduct(groupDeal);
                 //search engine name
-                model.SeName = groupdeal.ValidateSeName(model.SeName, "groupdeal.Name", true);
-                _urlRecordService.SaveSlug(groupdeal, model.SeName, 0);
+                model.SeName = groupDeal.ValidateSeName(model.SeName, "groupdeal.Name", true);
+                _urlRecordService.SaveSlug(groupDeal, model.SeName, 0);
                 ////locales
                 //UpdateLocales(groupdeal, model);
                 ////tags
@@ -490,7 +477,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
                     //selected tab
                     //SaveSelectedTabIndex();
 
-                    return RedirectToAction("Edit", new { id = groupdeal.Id, area = "Admin" });
+                    return RedirectToAction("Edit", new { id = groupDeal.Id, area = "Admin" });
                 }
                 return RedirectToAction("Index", new { area = "Admin" });
             }
@@ -499,7 +486,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers
             //PrepareProductModel(model, groupdeal, false, true);
             //PrepareAclModel(model, groupdeal, true);
             //PrepareStoresMappingModel(model, groupdeal, true);
-            return View("EditGroupdeal", model);
+            return View("EditGroupDeal", model);
         }
 
         [HttpPost]

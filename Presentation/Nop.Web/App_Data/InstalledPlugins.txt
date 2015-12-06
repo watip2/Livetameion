@@ -7,7 +7,6 @@ ExternalAuth.Facebook
 Misc.Advertisements
 Misc.FacebookShop
 Misc.TaxGroups
-Misc.VendorMembership
 Payments.CheckMoneyOrder
 Payments.PayPalDirect
 Payments.Manual
@@ -31,3 +30,4 @@ Widgets.GoogleAnalytics
 Widgets.NivoSlider
 Misc.GroupDeals
 Tameion.Auctions
+Misc.VendorMembership

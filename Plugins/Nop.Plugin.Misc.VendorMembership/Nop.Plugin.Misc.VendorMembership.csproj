@@ -94,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFilters\AuthorizeVendor.cs" />
-    <Compile Include="PluginAreaRegistration.cs" />
+    <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
     <Compile Include="Data\VendorMembershipContext.cs" />
@@ -140,6 +140,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Admin\" />
+    <Folder Include="Areas\Public\" />
+    <Folder Include="Areas\Vendor\" />
     <Folder Include="Test\" />
   </ItemGroup>
   <ItemGroup>
@@ -358,7 +361,6 @@
     <ProjectReference Include="..\Nop.Plugin.Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.csproj">
       <Project>{d4c71b95-cfe6-4d18-b551-6ed4d260ae1b}</Project>
       <Name>Nop.Plugin.Misc.GroupDeals</Name>
-      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

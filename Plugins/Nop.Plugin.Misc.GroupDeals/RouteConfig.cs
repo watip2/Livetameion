@@ -20,25 +20,25 @@ namespace Nop.Plugin.Misc.GroupDeals
 
         public void RegisterRoutes(RouteCollection routes)
         {
-            var route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Vendor.GroupdealsController",
-                "Vendor/Groupdeals/{action}/{id}",
-                new { area = "Vendor", controller = "Groupdeals", action = "Index", id = UrlParameter.Optional },
+            var route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Vendor.GroupDealsController",
+                "Vendor/GroupDeals/{action}/{id}",
+                new { area = "Vendor", controller = "GroupDeals", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers" }
             );
             routes.Remove(route);
             routes.Insert(0, route);
 
-            route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Admin.GroupdealsController",
-                "Admin/Groupdeals/{action}/{id}",
-                new { area = "Admin", controller = "Groupdeals", action = "Index", id = UrlParameter.Optional },
+            route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Admin.GroupDealsController",
+                "Admin/GroupDeals/{action}/{id}",
+                new { area = "Admin", controller = "GroupDeals", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers" }
             );//.DataTokens.Add("area", "Admin")
             routes.Remove(route);
             routes.Insert(0, route);
 
-            route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Public.GroupdealsController",
-                "Groupdeals/{action}/{id}",
-                new { controller = "Groupdeals", action = "Index", id = UrlParameter.Optional },
+            route = routes.MapRoute("Plugin.Misc.GroupDeals.Areas.Public.GroupDealsController",
+                "GroupDeals/{action}/{id}",
+                new { controller = "GroupDeals", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers" }
             );
             routes.Remove(route);

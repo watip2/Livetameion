@@ -1,6 +1,7 @@
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.GroupDeals\obj\Debug\Nop.Plugin.Misc.GroupDeals.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Description.txt
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\web.config
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\CreateGroupdeal.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\CreateGroupDeal.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Scripts\public.groupdeal.ajaxcart.js
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Public\Views\GroupDeals\GroupDealTemplate.Simple.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Public\Views\GroupDeals\Edit.cshtml
@@ -10,7 +11,7 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\V
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Info.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.SEO.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Pictures.cshtml
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\EditGroupdeal.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\EditGroupDeal.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\Index.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Vendor\Views\GroupDeals\_CreateOrUpdate.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Vendor\Views\GroupDeals\_CreateOrUpdate.Info.cshtml
@@ -26,6 +27,5 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\V
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Stores.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.pdb
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.GroupDeals\obj\Debug\Nop.Plugin.Misc.GroupDeals.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.GroupDeals\obj\Debug\Nop.Plugin.Misc.GroupDeals.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.GroupDeals\obj\Debug\Nop.Plugin.Misc.GroupDeals.pdb

@@ -17,3 +17,12 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Views\WidgetsGoogleAnalytics\Configure.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\logo.jpg
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.dll.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.GoogleAnalytics\Nop.Plugin.Widgets.GoogleAnalytics.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.GoogleAnalytics\obj\Debug\Nop.Plugin.Widgets.GoogleAnalytics.pdb

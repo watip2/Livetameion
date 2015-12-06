@@ -131,7 +131,7 @@
     <Compile Include="RouteConfig.cs" />
     <Compile Include="Services\GroupDealService.cs" />
     <Compile Include="Services\IGroupDealService.cs" />
-    <Compile Include="GroupdealsPlugin.cs" />
+    <Compile Include="GroupDealsPlugin.cs" />
     <Compile Include="Models\GroupdealPicture.cs" />
     <Compile Include="ViewModels\GroupDealDetailsModel.cs" />
     <Compile Include="ViewModels\GroupdealPictureViewModel.cs" />
@@ -139,7 +139,7 @@
     <Compile Include="Views\CustomViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeals\CreateGroupdeal.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\CreateGroupDeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -189,7 +189,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeals\EditGroupdeal.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\EditGroupDeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

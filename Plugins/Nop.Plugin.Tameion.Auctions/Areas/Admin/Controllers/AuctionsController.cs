@@ -16,6 +16,7 @@ using Nop.Services.Stores;
 using Nop.Services.Vendors;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Kendoui;
+using Nop.Web.Framework.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -444,6 +445,132 @@ namespace Nop.Plugin.Tameion.Auctions.Areas.Admin.Controllers
             gridModel.Total = products.TotalCount;
 
             return Json(gridModel);
+        }
+
+        [HttpPost]
+        [FormValueRequired("save")]
+        public ActionResult RelatedProductAddPopup(string btnId, string formId, AuctionModel.AddRelatedProductModel model)
+        {
+            //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+            //    return AccessDeniedView();
+
+            if (model.SelectedProductIds.Count() > 1)
+            {
+                ModelState.AddModelError("NumberOfProducts", "Please select a single product.");
+                model.IsLoggedInAsVendor = _workContext.CurrentVendor != null;
+                ViewBag.RefreshPage = false;
+                ViewBag.btnId = btnId;
+                ViewBag.formId = formId;
+                return View(model);
+            }
+
+            if (model.SelectedProductIds != null)
+            {
+                foreach (int id in model.SelectedProductIds)
+                {
+                    var product = _productService.GetProductById(id);
+                    if (product != null)
+                    {
+                        //a vendor should have access only to his products
+                        //if (_workContext.CurrentVendor != null && product.VendorId != _workContext.CurrentVendor.Id)
+                        //    continue;
+
+                        var existingAuctionedProduct = _auctionService.GetAuctionedProductByAuctionId(model.AuctionId);
+                        if (existingAuctionedProduct == null)
+                        {
+                            _auctionService.InsertAuctionedProduct(model.AuctionId, product.Id);
+                        }
+                    }
+                }
+            }
+
+            //a vendor should have access only to his products
+            model.IsLoggedInAsVendor = _workContext.CurrentVendor != null;
+            ViewBag.RefreshPage = true;
+            ViewBag.btnId = btnId;
+            ViewBag.formId = formId;
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AuctionProductList(DataSourceRequest command, int auctionId)
+        {
+            //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+            //    return AccessDeniedView();
+
+            //a vendor should have access only to his products
+            if (_workContext.CurrentVendor != null)
+            {
+                //var product = _productService.GetProductById(auctionId);
+                //if (product != null && product.VendorId != _workContext.CurrentVendor.Id)
+                //{
+                //    return Content("This is not your product");
+                //}
+            }
+
+            var auction = _auctionService.GetAuctionById(auctionId);
+            var auctionProduct = _auctionService.GetAuctionedProductByAuctionId(auctionId);
+            var auctionProductModel = 
+                new AuctionModel.AuctionProductModel
+                {
+                    AuctionId = auctionId,
+                    ProductId = auctionProduct.Id,
+                    ProductName = auctionProduct.Name,
+                    Status = auction.Status
+                };
+            List<AuctionModel.AuctionProductModel> auctionProductModels = new List<AuctionModel.AuctionProductModel>
+            {
+                auctionProductModel
+            };
+
+            var gridModel = new DataSourceResult
+            {
+                Data = auctionProductModels,
+                Total = auctionProductModels.Count
+            };
+
+            return Json(gridModel);
+        }
+
+        [HttpPost]
+        public ActionResult AuctionProductUpdate(AuctionModel.AuctionProductModel model)
+        {
+            //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+            //    return AccessDeniedView();
+
+            var relatedProduct = _productService.GetRelatedProductById(model.Id);
+            if (relatedProduct == null)
+                throw new ArgumentException("No related product found with the specified id");
+
+            //a vendor should have access only to his products
+            if (_workContext.CurrentVendor != null)
+            {
+                var product = _productService.GetProductById(relatedProduct.ProductId1);
+                if (product != null && product.VendorId != _workContext.CurrentVendor.Id)
+                {
+                    return Content("This is not your product");
+                }
+            }
+
+            relatedProduct.DisplayOrder = model.DisplayOrder;
+            _productService.UpdateRelatedProduct(relatedProduct);
+
+            return new NullJsonResult();
+        }
+
+        [HttpPost]
+        public ActionResult AuctionProductDelete(int id)
+        {
+            //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+            //    return AccessDeniedView();
+
+            var auction = _auctionService.GetAuctionById(id);
+            if (auction == null)
+                throw new ArgumentException("No auction found with the specified id");
+
+            auction.ProductId = 0;
+
+            return new NullJsonResult();
         }
     }
 }

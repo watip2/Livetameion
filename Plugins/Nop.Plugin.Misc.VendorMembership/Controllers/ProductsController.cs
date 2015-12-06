@@ -33,48 +33,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Web;
-using System.Web.Mvc;
 using Nop.Admin.Extensions;
-using Nop.Admin.Models.Catalog;
 using Nop.Admin.Models.Orders;
-using Nop.Core;
-using Nop.Core.Domain.Catalog;
-using Nop.Core.Domain.Common;
-using Nop.Core.Domain.Directory;
-using Nop.Core.Domain.Discounts;
 using Nop.Core.Domain.Media;
 using Nop.Core.Domain.Orders;
-using Nop.Services.Catalog;
-using Nop.Services.Common;
-using Nop.Services.Customers;
-using Nop.Services.Directory;
-using Nop.Services.Discounts;
-using Nop.Services.ExportImport;
-using Nop.Services.Helpers;
-using Nop.Services.Localization;
-using Nop.Services.Logging;
-using Nop.Services.Media;
-using Nop.Services.Orders;
-using Nop.Services.Security;
-using Nop.Services.Seo;
-using Nop.Services.Shipping;
-using Nop.Services.Stores;
-using Nop.Services.Tax;
-using Nop.Services.Vendors;
 using Nop.Web.Framework;
-using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Kendoui;
 using Nop.Web.Framework.Mvc;
-using Nop.Admin.Controllers;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 using Nop.Plugin.Misc.VendorMembership.Services;
@@ -380,21 +348,24 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 					}
 
 					// create groupdeals
-					for (int i = 0; i < 10; i++)
+					for (int i = 0; i < 5; i++)
 					{
-						var groupDeal = new GroupDeal
-						{
-							Active = true,
+						var groupDealProduct = new Product
+						{		
 							DisplayOrder = 1,
 							ShortDescription = "short description",
 							FullDescription = "full description",
 							Published = true,
-							CouponCode = Guid.NewGuid().ToString(),
 							DisplayStockQuantity = true,
 							StockQuantity = 1,
 							Price = 20,
 							Name = model.Name + " group deal",
-							// datetime fields
+                            VendorId = vendor.Id,
+                            VisibleIndividually = true,
+							OrderMaximumQuantity = int.MaxValue,
+                            AllowCustomerReviews = true,
+
+                            // datetime fields
 							AvailableStartDateTimeUtc = DateTime.Now,
 							AvailableEndDateTimeUtc = DateTime.Parse("01-01-2016"),
 							CreatedOnUtc = DateTime.Now,
@@ -404,10 +375,30 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 							SpecialPriceEndDateTimeUtc = DateTime.Parse("01-01-2016")
 						};
 
-						_groupDealService.InsertGroupDeal(groupDeal);
+                        _groupDealService.InsertGroupDealProduct(groupDealProduct);
+                        // generic attributes for the groupdeal product
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.IsGroupDeal, true);
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.SeName, "dummy-SeName");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.CouponCode, "12345");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Country, "Pakistan");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.StateOrProvince, "KPK");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.City, "Kamra");
+
+                        foreach (var categoryId in model.BusinessTypeIds)
+                        {
+                            var productCategory = new ProductCategory
+                            {
+                                ProductId = groupDealProduct.Id,
+                                CategoryId = categoryId,
+                                IsFeaturedProduct = false,
+                                DisplayOrder = 0
+                            };
+                            _categoryService.InsertProductCategory(productCategory);
+                        }
 					}
 
-					return RedirectToAction("Login", "Products");
+                    return RedirectToAction("Login", "Products");
 				}
 			}
 

@@ -86,5 +86,19 @@ namespace Nop.Plugin.Tameion.Auctions.ViewModels
             //vendor
             public bool IsLoggedInAsVendor { get; set; }
         }
+
+        public partial class AuctionProductModel : BaseNopEntityModel
+        {
+            public int AuctionId { get; set; }
+            public int ProductId { get; set; }
+
+            [NopResourceDisplayName("Admin.Catalog.Products.RelatedProducts.Fields.Product")]
+            public string ProductName { get; set; }
+
+            public AuctionStatus Status { get; set; }
+
+            [NopResourceDisplayName("Admin.Catalog.Products.RelatedProducts.Fields.DisplayOrder")]
+            public int DisplayOrder { get; set; }
+        }
     }
 }

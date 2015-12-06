@@ -16,7 +16,7 @@ namespace Nop.Plugin.Tameion.Auctions
         {
             var route = routes.MapRoute("Plugin.Tameion.Auctions.Public.AuctionsController",
                 "Auctions/{action}/{id}",
-                new { controller = "Auctions", action = "Index", id = UrlParameter.Optional },
+                new { area = "Public", controller = "Auctions", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Tameion.Auctions.Areas.Public.Controllers" }
             );
             routes.Remove(route);

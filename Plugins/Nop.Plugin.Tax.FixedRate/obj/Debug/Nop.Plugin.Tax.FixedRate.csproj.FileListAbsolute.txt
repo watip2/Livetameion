@@ -17,3 +17,12 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Views\TaxFixedRate\Configure.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\logo.jpg
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.dll.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.pdb

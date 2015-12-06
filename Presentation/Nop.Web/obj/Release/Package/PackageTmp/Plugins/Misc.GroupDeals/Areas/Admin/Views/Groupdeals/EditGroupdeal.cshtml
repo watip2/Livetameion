@@ -1,5 +1,4 @@
-﻿@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
-@using System;
+﻿@using System;
 @using Nop.Web.Framework.UI;
 @using Nop.Core.Infrastructure;
 @using System;
@@ -9,19 +8,19 @@
 @using Nop.Core.Infrastructure;
 @using Nop.Services.Events;
 @using Nop.Admin.Models.Catalog;
-
+@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
 @{
     //page title
     ViewBag.Title = T("Admin.Catalog.Products.EditProductDetails").Text;
     Layout = "_AdminLayout";
 }
-@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "product-form" }))
+@using (Html.BeginForm("Edit", "GroupDeals", new { area = "Admin" }, FormMethod.Post, new { id = "product-form" }))
 {
     @Html.AntiForgeryToken()
     <div class="section-header">
         <div class="title">
             <img src="@Url.Content("~/Administration/Content/images/ico-catalog.png")" alt="" />
-            @T("Admin.Catalog.Products.EditProductDetails") - @Model.Name @Html.ActionLink("(" + T("Admin.Catalog.Products.BackToList") + ")", "List")
+            Edit Group Deal Details - @Model.Name @Html.ActionLink("(" + T("Admin.Catalog.Products.BackToList") + ")", "Index", new { area = "Admin" })
         </div>
         <div class="options">
             <input type="submit" value="@T("Admin.Common.Preview")" onclick="javascript:OpenWindow('@Url.RouteUrl("Product", new { SeName = Model.SeName })', 800, 600, true); return false;" class="k-button" />
@@ -33,7 +32,7 @@
     </div>
     @Html.Partial("_CreateOrUpdate", Model)
 }
-@*@Html.DeleteConfirmation("product-delete")*@
+@Html.DeleteConfirmation("product-delete")
 
 @*copy product form*@
 @*<div id="copyproduct-window" style="display:none;">

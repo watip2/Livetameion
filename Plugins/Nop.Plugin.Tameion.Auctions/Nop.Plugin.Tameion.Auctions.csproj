@@ -109,7 +109,8 @@
     <Compile Include="Services\BidService.cs" />
     <Compile Include="Services\IAuctionService.cs" />
     <Compile Include="Services\IBidService.cs" />
-    <Compile Include="PluginAreaRegistration.cs" />
+    <Compile Include="PublicAreaRegistration.cs" />
+    <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="ViewModels\AuctionListModel.cs" />
     <Compile Include="ViewModels\AuctionModel.cs" />
   </ItemGroup>
@@ -124,7 +125,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Public\Views\" />
     <Folder Include="Areas\Vendor\Views\" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +155,11 @@
     <Content Include="Areas\Admin\Views\Auctions\RelatedProductAddPopup.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\Public\Views\Auctions\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

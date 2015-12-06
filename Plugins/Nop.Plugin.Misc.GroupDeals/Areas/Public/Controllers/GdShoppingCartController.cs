@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Customers;
-using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Discounts;
 using Nop.Core.Domain.Media;
 using Nop.Core.Domain.Orders;
@@ -32,15 +29,11 @@ using Nop.Services.Security;
 using Nop.Services.Seo;
 using Nop.Services.Shipping;
 using Nop.Services.Tax;
-using Nop.Web.Framework.Controllers;
-using Nop.Web.Framework.Mvc;
-using Nop.Web.Framework.Security;
 using Nop.Web.Framework.Security.Captcha;
 using Nop.Web.Models.ShoppingCart;
 using Nop.Web.Infrastructure.Cache;
 using Nop.Web.Models.Media;
 using Nop.Plugin.Misc.GroupDeals.Services;
-using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Web.Controllers;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers

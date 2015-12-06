@@ -20,3 +20,13 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Views\PaymentManual\Configure.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Views\PaymentManual\PaymentInfo.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\logo.jpg
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.dll.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.pdb
