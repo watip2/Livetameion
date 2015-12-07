@@ -101,8 +101,11 @@
   <ItemGroup>
     <Compile Include="ActionFilters\VendorAuthorize.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Domain\Invoice.cs" />
+    <Compile Include="Mapping\InvoiceMap.cs" />
     <Compile Include="Services\IInvoiceService.cs" />
+    <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
@@ -140,6 +143,8 @@
     <Compile Include="Services\IIndVendorService.cs" />
     <Compile Include="Services\IndVendorService.cs" />
     <Compile Include="VendorMembershipPlugin.cs" />
+    <Compile Include="ViewModels\InvoiceListModel.cs" />
+    <Compile Include="ViewModels\InvoiceModel.cs" />
     <Compile Include="ViewModels\RegisterModel.cs" />
     <Compile Include="ViewModels\VendorLoginModel.cs" />
     <Compile Include="ViewModels\VendorRegisterModelExtensions.cs" />
@@ -386,6 +391,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Register.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Invoices\List.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

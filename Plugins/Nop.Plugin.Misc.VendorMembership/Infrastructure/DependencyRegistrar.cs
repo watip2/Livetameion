@@ -60,6 +60,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
 
             // services
             builder.RegisterType<IndVendorService>().As<IIndVendorService>().InstancePerLifetimeScope();
+            builder.RegisterType<InvoiceService>().As<IInvoiceService>().InstancePerLifetimeScope();
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
