@@ -296,8 +296,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csproj.App.config
 E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.GroupDeals.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Tameion.SupportTicketSystem.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.dll
@@ -307,3 +305,5 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Tameion.SupportTicketS
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.xml
+E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.GroupDeals.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.dll

@@ -39,6 +39,7 @@ using Nop.Web.Framework.Mvc;
 using System.Web;
 using Nop.Plugin.Misc.VendorMembership.Helpers;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
+using Nop.Core.Infrastructure;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
@@ -792,15 +793,18 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         }
 
         //#endregion
-
+        
         #region Order list
 
         public ActionResult Index()
         {
+            var c = _workContext.CurrentCustomer;
+            var v = _workContext.CurrentVendor;
+            
             return RedirectToAction("List");
         }
 
-        [AuthorizeVendor]
+        [VendorAuthorize]
         public ActionResult List(int? orderStatusId = null,
             int? paymentStatusId = null, int? shippingStatusId = null)
         {

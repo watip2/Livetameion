@@ -3,6 +3,7 @@ using Nop.Admin.Models.Catalog;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Infrastructure;
 using Nop.Plugin.Misc.GroupDeals.Services;
+using Nop.Plugin.Misc.VendorMembership.Controllers;
 using Nop.Services.Common;
 using Nop.Web.Framework.Kendoui;
 using System;
@@ -21,7 +22,9 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
 
         public IEnumerable<System.Web.Mvc.Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
         {
-            if (controllerContext.Controller is ProductController && actionDescriptor.ActionName.Equals("ProductList", StringComparison.InvariantCultureIgnoreCase))
+            if ((controllerContext.Controller is ProductController || controllerContext.Controller is ProductsController) &&
+                actionDescriptor.ActionName.Equals("ProductList", 
+                StringComparison.InvariantCultureIgnoreCase))
             {
                 return new List<System.Web.Mvc.Filter>() { new System.Web.Mvc.Filter(this, FilterScope.Action, 0) };
             }

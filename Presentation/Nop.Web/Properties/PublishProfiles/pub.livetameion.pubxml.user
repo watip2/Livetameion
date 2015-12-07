@@ -1298,10 +1298,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 10:26:48</publishTime>
     </File>
     <File Include="bin/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/05/2015 14:45:22</publishTime>
+      <publishTime>12/06/2015 16:00:17</publishTime>
     </File>
     <File Include="bin/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/05/2015 13:47:28</publishTime>
+      <publishTime>12/06/2015 01:37:50</publishTime>
     </File>
     <File Include="bin/Nop.Plugin.Tameion.SupportTicketSystem.dll">
       <publishTime>12/05/2015 13:48:36</publishTime>
@@ -1313,7 +1313,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 15:02:54</publishTime>
     </File>
     <File Include="bin/Nop.Web.dll">
-      <publishTime>12/05/2015 15:03:18</publishTime>
+      <publishTime>12/06/2015 16:12:43</publishTime>
     </File>
     <File Include="bin/Nop.Web.Framework.dll">
       <publishTime>12/05/2015 15:03:03</publishTime>
@@ -4514,7 +4514,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 12:49:19</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Index.cshtml">
-      <publishTime>11/29/2015 18:13:56</publishTime>
+      <publishTime>12/06/2015 15:53:44</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>11/28/2015 10:27:40</publishTime>
@@ -4588,8 +4588,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.GroupDeals/Description.txt">
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
+    <File Include="Plugins/Misc.GroupDeals/Livetameion - Shortcut.lnk">
+      <publishTime>12/05/2015 20:43:14</publishTime>
+    </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/05/2015 14:45:22</publishTime>
+      <publishTime>12/06/2015 16:00:17</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Scripts/public.groupdeal.ajaxcart.js">
       <publishTime>11/29/2015 23:40:44</publishTime>
@@ -4898,13 +4901,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 13:43:40</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/05/2015 13:47:09</publishTime>
+      <publishTime>12/05/2015 19:37:52</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/05/2015 13:47:28</publishTime>
+      <publishTime>12/06/2015 01:37:50</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Web.Framework.dll">
-      <publishTime>12/05/2015 13:43:05</publishTime>
+      <publishTime>12/05/2015 19:19:48</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Recaptcha.dll">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -5024,7 +5027,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 10:27:46</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/Register.cshtml">
-      <publishTime>12/04/2015 22:53:41</publishTime>
+      <publishTime>12/05/2015 19:38:12</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/RelatedProductAddPopup.cshtml">
       <publishTime>11/28/2015 10:27:46</publishTime>
@@ -5581,8 +5584,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Tameion.BridgePay/Description.txt">
       <publishTime>11/28/2015 11:19:58</publishTime>
     </File>
+    <File Include="Plugins/Tameion.BridgePay/Newtonsoft.Json.dll">
+      <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.BridgePay/Newtonsoft.Json.xml">
+      <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
     <File Include="Plugins/Tameion.BridgePay/Nop.Plugin.Tameion.BridgePay.dll">
-      <publishTime>12/05/2015 13:48:27</publishTime>
+      <publishTime>12/06/2015 15:46:56</publishTime>
     </File>
     <File Include="Plugins/Tameion.BridgePay/Views/BridgePay/Configure.cshtml">
       <publishTime>11/29/2015 11:05:41</publishTime>

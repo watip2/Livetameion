@@ -43,11 +43,11 @@ namespace Nop.Plugin.Misc.VendorMembership
             routes.Remove(route);
             routes.Insert(0, route);
 
-            //route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.OrdersController",
-            //    "Vendor/Orders/{action}/{id}",
-            //    new { area = "Vendor", controller = "VendorOrders", action = "VendorTest", id = UrlParameter.Optional },
-            //    new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
-            //);
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.AccountController",
+                "Vendor/Account/{action}",
+                new { area = "Vendor", controller = "Account", action = "Login" },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            );
 
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }

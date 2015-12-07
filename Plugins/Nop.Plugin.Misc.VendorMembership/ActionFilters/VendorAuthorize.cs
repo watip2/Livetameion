@@ -12,7 +12,7 @@ using System.Web.Routing;
 
 namespace Nop.Plugin.Misc.VendorMembership.ActionFilters
 {
-    public class AuthorizeVendor : ActionFilterAttribute, IActionFilter
+    public class VendorAuthorize : ActionFilterAttribute, IActionFilter
     {
         private IIndVendorService _vendorService;
         
@@ -23,7 +23,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ActionFilters
             HttpCookie vendor_email_cookie = filterContext.HttpContext.Request.Cookies.Get("current_vendor_email");
             HttpCookie vendor_password_cookie = filterContext.HttpContext.Request.Cookies.Get("current_vendor_password");
 
-            if (!_vendorService.LoginCookiesAreValid(vendor_email_cookie, vendor_password_cookie))
+            if (!_vendorService.AreLoginCookiesValid(vendor_email_cookie, vendor_password_cookie))
             {
                 RedirectToLoginPage(filterContext);
             }

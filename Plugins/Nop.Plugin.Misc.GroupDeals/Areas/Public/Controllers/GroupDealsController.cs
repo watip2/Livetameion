@@ -40,7 +40,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers
         public ActionResult Index()
         {
             var groupDeals = _groupDealService.GetAllGroupDealProducts();
-            return View("~/Areas/Public/Views/GroupDeals/Index.cshtml", groupDeals);
+            return View(groupDeals);
         }
 
         [AcceptVerbs("GET")]

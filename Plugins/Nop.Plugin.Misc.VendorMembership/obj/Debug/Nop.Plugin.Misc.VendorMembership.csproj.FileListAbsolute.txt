@@ -200,7 +200,6 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.pdb
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.pdb
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Description.txt
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\web.config
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Areas\Admin\Views\GroupDeals\CreateGroupDeal.cshtml
@@ -281,7 +280,9 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\O
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Orders\_ProductAddRentalInfo.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Shared\_Layout.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\Login.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Account\Register.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.pdb

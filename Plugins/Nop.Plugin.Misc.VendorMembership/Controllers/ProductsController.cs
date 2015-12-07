@@ -204,6 +204,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return View(model);
         }
 
+        [NonAction]
 		private VendorRegisterViewModel PrepareVendorRegisterModel(VendorRegisterViewModel model)
 		{
 			model.Countries = VendorMembershipHelper.GetCountriesNames();
@@ -406,6 +407,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return View(model);
         }
 
+        [NonAction]
 		private bool ValidateVendorModel(VendorRegisterViewModel model)
 		{
 			bool isModelValid = true;
@@ -426,7 +428,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 			return isModelValid;
 		}
 
-		[HttpGet, AuthorizeVendor]
+		[HttpGet, VendorAuthorize]
         public ActionResult Dashboard()
         {
             return RedirectToAction("Index", "VendorOrders");
@@ -488,7 +490,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return RedirectToAction("Login");
         }
 
-        [AcceptVerbs("GET"), AuthorizeVendor]
+        [AcceptVerbs("GET"), VendorAuthorize]
         public ActionResult CreateProduct()
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
@@ -1333,7 +1335,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             }
         }
 
-        [AcceptVerbs("GET"), AuthorizeVendor]
+        [AcceptVerbs("GET"), VendorAuthorize]
         public ActionResult ListProducts()
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))

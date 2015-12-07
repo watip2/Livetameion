@@ -61,6 +61,9 @@
       <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Nop.Web">
+      <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -91,9 +94,15 @@
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFilters\AuthorizeVendor.cs" />
+    <Compile Include="ActionFilters\VendorAuthorize.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Domain\Invoice.cs" />
+    <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
@@ -131,7 +140,9 @@
     <Compile Include="Services\IIndVendorService.cs" />
     <Compile Include="Services\IndVendorService.cs" />
     <Compile Include="VendorMembershipPlugin.cs" />
+    <Compile Include="ViewModels\RegisterModel.cs" />
     <Compile Include="ViewModels\VendorLoginModel.cs" />
+    <Compile Include="ViewModels\VendorRegisterModelExtensions.cs" />
     <Compile Include="ViewModels\VendorRegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -370,6 +381,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Products\Login.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

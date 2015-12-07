@@ -58,6 +58,9 @@
       <HintPath>..\..\Libraries\Nop.Data\bin\Debug\Nop.Data.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Nop.Plugin.Misc.VendorMembership">
+      <HintPath>..\..\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll</HintPath>
+    </Reference>
     <Reference Include="Nop.Services">
       <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
       <Private>False</Private>
@@ -133,6 +136,9 @@
     <Compile Include="Services\IGroupDealService.cs" />
     <Compile Include="GroupDealsPlugin.cs" />
     <Compile Include="Models\GroupdealPicture.cs" />
+    <Compile Include="AdminAreaRegistration.cs" />
+    <Compile Include="PublicAreaRegistration.cs" />
+    <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="ViewModels\GroupDealDetailsModel.cs" />
     <Compile Include="ViewModels\GroupdealPictureViewModel.cs" />
     <Compile Include="ViewModels\GroupDealViewModel.cs" />

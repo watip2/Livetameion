@@ -110,7 +110,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
             return null;
         }
 
-        public bool LoginCookiesAreValid(HttpCookie email, HttpCookie password)
+        public bool AreLoginCookiesValid(HttpCookie email, HttpCookie password)
         {
             return (
                 email != null &&
@@ -123,5 +123,15 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
 		{
 			return _vendorRepository.Table.SingleOrDefault(v => v.Email == email);
 		}
-	}
+        
+        public bool IsVendorLoggedIn()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vendor GetLoggedInVendor()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
