@@ -194,6 +194,11 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region Utilities
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [NonAction]
         protected virtual void TryAssociateAccountWithExternalAccount(Customer customer)
         {

@@ -60,6 +60,7 @@
     </Reference>
     <Reference Include="Nop.Plugin.Misc.GroupDeals">
       <HintPath>..\..\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Services">
       <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>

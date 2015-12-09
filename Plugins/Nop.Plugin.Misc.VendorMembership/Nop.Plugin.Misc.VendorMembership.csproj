@@ -48,6 +48,7 @@
     </Reference>
     <Reference Include="Nop.Admin">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Admin.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Core">
       <HintPath>..\..\Libraries\Nop.Core\bin\Debug\Nop.Core.dll</HintPath>
@@ -63,6 +64,7 @@
     </Reference>
     <Reference Include="Nop.Web">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Web.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -96,6 +98,7 @@
     </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -373,10 +376,12 @@
     <ProjectReference Include="..\..\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj">
       <Project>{75fd4163-333c-4dd5-854d-2ef294e45d94}</Project>
       <Name>Nop.Web.Framework</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Nop.Plugin.Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.csproj">
       <Project>{d4c71b95-cfe6-4d18-b551-6ed4d260ae1b}</Project>
       <Name>Nop.Plugin.Misc.GroupDeals</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -396,6 +401,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Invoices\List.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

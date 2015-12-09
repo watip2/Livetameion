@@ -1,8 +1,0 @@
-﻿Group: Misc
-FriendlyName: Group Deals
-SystemName: Misc.GroupDeals
-Version: 1.0
-SupportedVersions: 3.60
-Author: Muhammad Sohail
-DisplayOrder: 1
-FileName: Nop.Plugin.Misc.GroupDeals.dll

@@ -27,4 +27,3 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\SMS.Verizon\Nop.Plugin.SMS.Ve
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\SMS.Verizon\Nop.Plugin.SMS.Verizon.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.SMS.Verizon\obj\Debug\Nop.Plugin.SMS.Verizon.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.SMS.Verizon\obj\Debug\Nop.Plugin.SMS.Verizon.pdb
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.SMS.Verizon\obj\Debug\Nop.Plugin.SMS.Verizon.csprojResolveAssemblyReference.cache
