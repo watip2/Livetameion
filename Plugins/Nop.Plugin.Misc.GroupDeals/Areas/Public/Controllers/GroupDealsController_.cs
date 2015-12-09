@@ -15,7 +15,7 @@ using Nop.Services.Common;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers
 {
-    public class GroupDealsController : BasePluginController
+    public class GroupDealsController_ : BasePluginController
     {
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly IGroupDealService _groupDealProductService;
@@ -23,7 +23,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers
         private readonly IRepository<Product> _productRepo;
         private readonly IProductService _productService;
 
-        public GroupDealsController(IGroupDealService groupDealService,
+        public GroupDealsController_(IGroupDealService groupDealService,
             IRepository<Product> productRepo,
             IGroupDealService groupDealProductService,
             IGenericAttributeService genericAttributeService,

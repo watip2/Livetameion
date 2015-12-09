@@ -307,3 +307,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.GroupDeals.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\bin\RouteDebugger.dll

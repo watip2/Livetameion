@@ -18,10 +18,7 @@ namespace Nop.Plugin.Misc.VendorMembership
                 "Vendor_default",
                 "Vendor/{controller}/{action}/{id}",
                 new { controller = "Orders", action = "Index", area = "Vendor", id = "" },
-                new[] {
-                    "Nop.Plugin.Misc.VendorMembership.Controllers",
-                    "Nop.Plugin.Misc.VendorMembership.Areas.Vendor.Controllers"
-                }
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
         }
     }

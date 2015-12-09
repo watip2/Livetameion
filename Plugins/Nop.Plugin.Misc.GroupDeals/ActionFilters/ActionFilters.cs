@@ -1,6 +1,5 @@
 ﻿using Nop.Admin.Controllers;
 using Nop.Admin.Models.Catalog;
-using Nop.Core.Domain.Catalog;
 using Nop.Core.Infrastructure;
 using Nop.Plugin.Misc.GroupDeals.Services;
 using Nop.Plugin.Misc.VendorMembership.Controllers;
@@ -23,20 +22,20 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
         public IEnumerable<System.Web.Mvc.Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
         {
             if ((controllerContext.Controller is ProductController || controllerContext.Controller is ProductsController) &&
-                actionDescriptor.ActionName.Equals("ProductList", 
+                actionDescriptor.ActionName.Equals("ProductList",
                 StringComparison.InvariantCultureIgnoreCase))
             {
                 return new List<System.Web.Mvc.Filter>() { new System.Web.Mvc.Filter(this, FilterScope.Action, 0) };
             }
             return new List<System.Web.Mvc.Filter>();
         }
-        
+
         public override void OnActionExecuting(ActionExecutingContext filterContext)
 
         {
             // Create object parameter.
             //filterContext.ActionParameters["person"] = new Person("John", "Smith");
-            
+
             //_vendorService = EngineContext.Current.Resolve<IIndVendorService>();
 
             //HttpCookie vendor_email_cookie = filterContext.HttpContext.Request.Cookies.Get("current_vendor_email");
@@ -73,7 +72,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
             var result1 = filterContext.Result as JsonResult;
             var d = result1.Data as DataSourceResult;
             IEnumerable products = d.Data.AsQueryable() as IEnumerable;
-            
+
             _genericAttributeService = EngineContext.Current.Resolve<IGenericAttributeService>();
             _groupDealService = EngineContext.Current.Resolve<IGroupDealService>();
 
@@ -87,11 +86,11 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
                     productModels.Add(productModel);
                 }
             }
-            
+
             var gridModel = new DataSourceResult();
-            gridModel.Data = productModels;            
+            gridModel.Data = productModels;
             gridModel.Total = productModels.Count;
-            filterContext.Result = new JsonResult{ Data = gridModel };
+            filterContext.Result = new JsonResult { Data = gridModel };
 
             if (result == null)
             {
@@ -99,7 +98,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
                 // => no need to continue any further
                 //return;
             }
-            
+
             //var gridModel = result.Model as DataSourceResult;
             //if (gridModel == null)
             {
@@ -116,8 +115,8 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
         {
             filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
             {
-				area = "Vendor",
-				controller = "Products",
+                area = "Vendor",
+                controller = "Products",
                 action = "Login"
             }));
         }

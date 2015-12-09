@@ -1,0 +1,26 @@
+﻿@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Seo;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Models.Catalog;
+@using Nop.Plugin.Tameion.Auctions.ViewModels
+@model AuctionModel
+
+<script src="http://localhost:15536/Scripts/public.ajaxcart.js"></script>
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    Html.AddScriptParts(Url.Content("~/Plugins/Misc.GroupDeals/scripts/public.groupdeal.ajaxcart.js"));
+    //Html.AddCssFileParts(Url.Content("~/Plugins/Misc.GroupDeals/styles/bootstrap.css"));
+
+    //title, meta
+    Html.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Name);
+    Html.AddMetaDescriptionParts(Model.MetaDescription);
+    Html.AddMetaKeywordParts(Model.MetaKeywords);
+
+    var canonicalUrlsEnabled = EngineContext.Current.Resolve<SeoSettings>().CanonicalUrlsEnabled;
+    if (canonicalUrlsEnabled)
+    {
+        var productUrl = Url.RouteUrl("Product", new { SeName = Model.SeName }, this.Request.Url.Scheme);
+        Html.AddCanonicalUrlParts(productUrl);
+    }
+}

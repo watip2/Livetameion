@@ -15,7 +15,7 @@
     var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
 
     //page title
-    ViewBag.Title = T("Admin.Orders").Text;
+    ViewBag.Title = "Invoices";
     Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,7 +25,7 @@
     <div class="section-header">
         <div class="title">
             <img src="@Url.Content("~/Administration/Content/images/ico-sales.png")" alt="" />
-            @T("Admin.Orders")
+            Invoices
         </div>
         <div class="options">
             @if (!Model.IsLoggedInAsVendor)
@@ -65,14 +65,14 @@
                 @Html.EditorFor(model => model.CustomerEmail)
             </td>
         </tr>
-        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        @*<tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.OrderStatusId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("OrderStatusId", Model.AvailableOrderStatuses)
             </td>
-        </tr>
+        </tr>*@
         <tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.PaymentStatusId):

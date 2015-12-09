@@ -1292,31 +1292,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 13:43:40</publishTime>
     </File>
     <File Include="bin/Nop.Core.dll">
-      <publishTime>11/28/2015 10:26:47</publishTime>
+      <publishTime>12/09/2015 11:38:52</publishTime>
     </File>
     <File Include="bin/Nop.Data.dll">
-      <publishTime>11/28/2015 10:26:48</publishTime>
+      <publishTime>12/09/2015 11:38:57</publishTime>
     </File>
     <File Include="bin/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/06/2015 16:00:17</publishTime>
+      <publishTime>12/08/2015 21:28:42</publishTime>
     </File>
     <File Include="bin/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/06/2015 01:37:50</publishTime>
+      <publishTime>12/08/2015 11:00:12</publishTime>
     </File>
     <File Include="bin/Nop.Plugin.Tameion.SupportTicketSystem.dll">
       <publishTime>12/05/2015 13:48:36</publishTime>
     </File>
     <File Include="bin/Nop.Services.dll">
-      <publishTime>12/05/2015 15:02:38</publishTime>
+      <publishTime>12/09/2015 11:39:10</publishTime>
     </File>
     <File Include="bin/Nop.Services.XmlSerializers.dll">
-      <publishTime>12/05/2015 15:02:54</publishTime>
+      <publishTime>12/09/2015 11:40:01</publishTime>
     </File>
     <File Include="bin/Nop.Web.dll">
-      <publishTime>12/06/2015 16:12:43</publishTime>
+      <publishTime>12/09/2015 11:40:43</publishTime>
     </File>
     <File Include="bin/Nop.Web.Framework.dll">
-      <publishTime>12/05/2015 15:03:03</publishTime>
+      <publishTime>12/09/2015 11:40:15</publishTime>
     </File>
     <File Include="bin/PerlRegex.dll">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -1332,6 +1332,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/RestSharp.dll">
       <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
+    <File Include="bin/RouteDebugger.dll">
+      <publishTime>12/08/2015 23:16:36</publishTime>
     </File>
     <File Include="bin/ru/FluentValidation.resources.dll">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -4232,7 +4235,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>12/04/2015 20:40:24</publishTime>
+      <publishTime>12/07/2015 23:29:09</publishTime>
     </File>
     <File Include="license.txt">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -4507,6 +4510,42 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.FacebookShop/web.config">
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/CreateGroupDeal.cshtml">
+      <publishTime>12/02/2015 17:15:09</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/EditGroupDeal.cshtml">
+      <publishTime>12/05/2015 12:49:19</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/Index.cshtml">
+      <publishTime>12/06/2015 17:11:11</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/Inmnbdex_quick_edit.cshtml">
+      <publishTime>11/28/2015 10:26:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.Categories.cshtml">
+      <publishTime>12/02/2015 16:26:45</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.cshtml">
+      <publishTime>12/02/2015 17:54:23</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.Info.cshtml">
+      <publishTime>12/05/2015 01:00:31</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.Info_GroupDeal.cshtml">
+      <publishTime>12/02/2015 15:04:30</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.Pictures.cshtml">
+      <publishTime>12/02/2015 17:49:58</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.Pictures_GroupDeal.cshtml">
+      <publishTime>12/02/2015 15:05:22</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.SEO.cshtml">
+      <publishTime>11/28/2015 10:26:51</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/GroupDeal/_CreateOrUpdate.Stores.cshtml">
+      <publishTime>12/02/2015 17:50:10</publishTime>
+    </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/CreateGroupdeal.cshtml">
       <publishTime>12/02/2015 17:15:09</publishTime>
     </File>
@@ -4514,7 +4553,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 12:49:19</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Index.cshtml">
-      <publishTime>12/06/2015 15:53:44</publishTime>
+      <publishTime>12/06/2015 17:11:11</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>11/28/2015 10:27:40</publishTime>
@@ -4559,7 +4598,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/02/2015 02:07:28</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Public/Views/GroupDeals/Index.cshtml">
-      <publishTime>12/02/2015 12:33:01</publishTime>
+      <publishTime>12/06/2015 17:56:29</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Vendor/Views/Groupdeals/CreateGroupdeal.cshtml">
       <publishTime>11/28/2015 10:27:41</publishTime>
@@ -4592,7 +4631,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 20:43:14</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/06/2015 16:00:17</publishTime>
+      <publishTime>12/08/2015 21:28:42</publishTime>
+    </File>
+    <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.VendorMembership.dll">
+      <publishTime>12/08/2015 11:21:49</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Scripts/public.groupdeal.ajaxcart.js">
       <publishTime>11/29/2015 23:40:44</publishTime>
@@ -4826,7 +4868,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/05/2015 12:49:19</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Areas/Admin/Views/GroupDeals/Index.cshtml">
-      <publishTime>11/29/2015 18:13:56</publishTime>
+      <publishTime>12/06/2015 17:11:11</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Areas/Admin/Views/GroupDeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>11/28/2015 10:26:51</publishTime>
@@ -4862,7 +4904,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/02/2015 02:07:28</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Areas/Public/Views/GroupDeals/Index.cshtml">
-      <publishTime>12/02/2015 12:33:01</publishTime>
+      <publishTime>12/06/2015 17:56:29</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Areas/Vendor/Views/GroupDeals/CreateGroupdeal.cshtml">
       <publishTime>11/28/2015 10:26:51</publishTime>
@@ -4897,17 +4939,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.VendorMembership/Description.txt">
       <publishTime>11/28/2015 10:27:43</publishTime>
     </File>
+    <File Include="Plugins/Misc.VendorMembership/FluentValidation.Mvc.dll">
+      <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/MiniProfiler.dll">
+      <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/MiniProfiler.Mvc.dll">
+      <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/MiniProfiler.xml">
+      <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Admin.dll">
       <publishTime>12/05/2015 13:43:40</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/05/2015 19:37:52</publishTime>
+      <publishTime>12/08/2015 11:35:02</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/06/2015 01:37:50</publishTime>
+      <publishTime>12/08/2015 11:00:12</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Nop.Web.dll">
+      <publishTime>12/08/2015 00:09:55</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Web.Framework.dll">
-      <publishTime>12/05/2015 19:19:48</publishTime>
+      <publishTime>12/07/2015 17:41:39</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Recaptcha.dll">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -4927,8 +4984,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.VendorMembership/System.Web.Optimization.xml">
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Account/Register.cshtml">
+      <publishTime>12/07/2015 00:30:16</publishTime>
+    </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Dashboard.cshtml">
       <publishTime>11/28/2015 10:27:43</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Invoices/List.cshtml">
+      <publishTime>12/07/2015 22:58:00</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/AddProductToOrder.cshtml">
       <publishTime>11/28/2015 10:27:44</publishTime>
@@ -5027,7 +5090,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 10:27:46</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/Register.cshtml">
-      <publishTime>12/05/2015 19:38:12</publishTime>
+      <publishTime>12/07/2015 10:19:38</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/RelatedProductAddPopup.cshtml">
       <publishTime>11/28/2015 10:27:46</publishTime>
@@ -5084,7 +5147,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml">
-      <publishTime>12/05/2015 13:00:59</publishTime>
+      <publishTime>12/07/2015 21:49:46</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/CreateProduct.cshtml">
       <publishTime>11/14/2015 00:15:48</publishTime>
@@ -5237,7 +5300,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/10/2015 13:12:06</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/web.config">
-      <publishTime>11/28/2015 10:27:46</publishTime>
+      <publishTime>12/07/2015 19:17:10</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/WebGrease.dll">
+      <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Plugins/Payments.AuthorizeNet/Description.txt">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -5564,19 +5630,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/05/2015 13:47:09</publishTime>
+      <publishTime>12/08/2015 00:08:51</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>11/28/2015 10:27:43</publishTime>
+      <publishTime>12/08/2015 00:08:55</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Plugin.Tameion.Auctions.dll">
-      <publishTime>12/05/2015 13:48:28</publishTime>
+      <publishTime>12/08/2015 09:02:50</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Plugin.Tameion.SupportTicketSystem.dll">
       <publishTime>11/28/2015 10:27:47</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Web.dll">
-      <publishTime>11/29/2015 20:46:53</publishTime>
+      <publishTime>12/08/2015 00:09:55</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/web.config">
       <publishTime>12/01/2015 14:34:46</publishTime>
@@ -5823,6 +5889,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
       <publishTime>11/24/2015 00:20:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1-vsdoc.js">
+      <publishTime>12/08/2015 23:15:29</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.intellisense.js">
+      <publishTime>12/08/2015 23:15:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>12/08/2015 23:15:29</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>12/08/2015 23:15:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>12/08/2015 23:15:14</publishTime>
     </File>
     <File Include="Scripts/jquery-migrate-1.2.1.js">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -7346,7 +7427,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>11/24/2015 00:20:26</publishTime>
+      <publishTime>12/08/2015 23:15:39</publishTime>
     </File>
     <File Include="Themes/DefaultClean/Content/css/ie8.css">
       <publishTime>11/24/2015 00:20:26</publishTime>
@@ -9086,7 +9167,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/28/2015 20:28:13</publishTime>
+      <publishTime>12/09/2015 00:51:59</publishTime>
     </File>
   </ItemGroup>
 </Project>
