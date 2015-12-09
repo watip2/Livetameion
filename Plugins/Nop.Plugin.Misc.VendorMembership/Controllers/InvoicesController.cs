@@ -5,6 +5,7 @@ using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Payments;
 using Nop.Core.Domain.Shipping;
 using Nop.Core.Domain.Tax;
+using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Plugin.Misc.VendorMembership.Services;
 using Nop.Plugin.Misc.VendorMembership.ViewModels;
 using Nop.Services.Affiliates;
@@ -173,10 +174,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         public ActionResult Index()
         {
-            if (_workContext.CurrentVendor != null)
-            {
-                _orderService.SearchOrders(vendorId: _workContext.CurrentVendor.Id);
-            }
             return RedirectToAction("List");
         }
         
@@ -185,6 +182,35 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageOrders))
             //    return AccessDeniedView();
+
+            //if (_workContext.CurrentVendor != null)
+            //{
+            var orders = _orderService.SearchOrders();
+            //}
+
+            foreach (var order in orders)
+            {
+                var invoice = new Invoice
+                {
+                    OrderId = order.Id,
+                    Commission = order.OrderTotal * new decimal(0.15),
+                    StoreId = order.StoreId,
+                    IsCommissionPaid = false,
+                    CreatedOnUtc = DateTime.Now,
+                    PaymentStatus = order.PaymentStatus,
+                    ShippingStatus = order.ShippingStatus,
+                    BillingAddress = order.BillingAddress,
+                    OrderStatus = order.OrderStatus
+                };
+                if (_invoiceService.GetInvoicesByOrderId(order.Id) == null)
+                {
+                    _invoiceService.InsertInvoice(invoice);
+                }
+                else
+                {
+                    _invoiceService.UpdateInvoice(invoice);
+                }
+            }
 
             //order statuses
             var model = new InvoiceListModel();

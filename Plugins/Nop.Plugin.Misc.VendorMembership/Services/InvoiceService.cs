@@ -79,14 +79,29 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
             throw new NotImplementedException();
         }
 
+        public Invoice GetInvoicesByOrderId(int orderId)
+        {
+            return _invoiceRepository.Table.SingleOrDefault(inv => inv.OrderId == orderId);
+        }
+
         public void InsertInvoice(Invoice invoice)
         {
-            throw new NotImplementedException();
+            if(invoice == null)
+                throw new ArgumentNullException("invoice");
+
+            _invoiceRepository.Insert(invoice);
+
+            _eventPublisher.EntityInserted(invoice);
         }
 
         public void UpdateInvoice(Invoice invoice)
         {
-            throw new NotImplementedException();
+            if (invoice == null)
+                throw new ArgumentNullException("invoice");
+
+            _invoiceRepository.Update(invoice);
+
+            _eventPublisher.EntityUpdated(invoice);
         }
 
         public virtual IPagedList<Invoice> SearchInvoices(int storeId = 0,
@@ -165,7 +180,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
             //if (!String.IsNullOrEmpty(orderNotes))
             //    query = query.Where(o => o.OrderNotes.Any(on => on.Note.Contains(orderNotes)));
             //query = query.Where(o => !o.Deleted);
-            //query = query.OrderByDescending(o => o.CreatedOnUtc);
+            query = query.OrderByDescending(o => o.CreatedOnUtc);
 
 
 

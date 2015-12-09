@@ -50,5 +50,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
             OrderStatus? os = null, PaymentStatus? ps = null, ShippingStatus? ss = null,
             string billingEmail = null, string orderNotes = null, string orderGuid = null,
             int pageIndex = 0, int pageSize = int.MaxValue);
+
+        Invoice GetInvoicesByOrderId(int orderId);
     }
 }

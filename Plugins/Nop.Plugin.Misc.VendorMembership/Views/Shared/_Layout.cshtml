@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+
     <link href="http://localhost:15536/Administration/Content/styles.css" rel="stylesheet" type="text/css" />
     <link href="http://localhost:15536/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
     <link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.common.min.css" rel="stylesheet" type="text/css" />
@@ -31,12 +31,15 @@
         .container {
             margin-top: 55px;
         }
+
         .section-header {
             height: 65px;
         }
+
         td.adminTitle img {
             vertical-align: top;
         }
+
         .navbar-inverse {
             background-color: #E7E7E7;
             border-color: #E7E7E7;
@@ -52,7 +55,8 @@
             </div>
             <div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/Vendor/Orders">Orders</a></li>
+                    <li class="activee"><a href="/Vendor/Orders">Orders</a></li>
+                    <li><a href="/Vendor/Invoices">Invoices</a></li>
                     <li><a href="#">Returns</a></li>
                     <li><a href="#">Stock</a></li>
                     <li><a href="/Vendor/Products">Products</a></li>
@@ -65,7 +69,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>Logged in as @ViewBag.CurrentVendorEmail | <a href="/Vendor/Products/Logout">Logout</a></p>
+                @if (ViewBag.CurrentVendorEmail != null)
+                {
+                    <p>Logged in as @ViewBag.CurrentVendorEmail | <a href="/Customer/Logout">Logout</a></p>
+                }
                 @RenderBody()
             </div>
         </div>
