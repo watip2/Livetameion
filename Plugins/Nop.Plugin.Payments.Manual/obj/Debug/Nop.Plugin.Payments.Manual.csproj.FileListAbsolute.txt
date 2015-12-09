@@ -30,3 +30,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Pa
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.csprojResolveAssemblyReference.cache

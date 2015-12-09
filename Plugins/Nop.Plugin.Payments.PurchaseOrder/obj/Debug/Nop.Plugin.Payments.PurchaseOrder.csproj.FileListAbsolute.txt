@@ -29,3 +29,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Nop.Pl
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Nop.Plugin.Payments.PurchaseOrder.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PurchaseOrder\obj\Debug\Nop.Plugin.Payments.PurchaseOrder.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PurchaseOrder\obj\Debug\Nop.Plugin.Payments.PurchaseOrder.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PurchaseOrder\obj\Debug\Nop.Plugin.Payments.PurchaseOrder.csprojResolveAssemblyReference.cache

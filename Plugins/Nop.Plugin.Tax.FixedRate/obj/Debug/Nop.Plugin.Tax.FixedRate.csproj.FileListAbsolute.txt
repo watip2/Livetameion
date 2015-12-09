@@ -26,3 +26,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.csprojResolveAssemblyReference.cache

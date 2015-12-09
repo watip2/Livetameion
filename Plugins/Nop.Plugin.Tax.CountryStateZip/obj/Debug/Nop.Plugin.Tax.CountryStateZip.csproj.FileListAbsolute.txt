@@ -27,3 +27,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.CountryStateZip\Nop.Plugi
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tax.CountryStateZip\Nop.Plugin.Tax.CountryStateZip.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.CountryStateZip\obj\Debug\Nop.Plugin.Tax.CountryStateZip.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.CountryStateZip\obj\Debug\Nop.Plugin.Tax.CountryStateZip.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tax.CountryStateZip\obj\Debug\Nop.Plugin.Tax.CountryStateZip.csprojResolveAssemblyReference.cache

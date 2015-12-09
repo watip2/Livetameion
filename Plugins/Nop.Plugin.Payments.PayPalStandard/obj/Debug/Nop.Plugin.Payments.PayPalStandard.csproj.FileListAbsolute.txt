@@ -29,3 +29,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.P
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.PayPalStandard\Nop.Plugin.Payments.PayPalStandard.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.PayPalStandard\obj\Debug\Nop.Plugin.Payments.PayPalStandard.csprojResolveAssemblyReference.cache

@@ -101,3 +101,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.NivoSlider\Nop.Plugin
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Widgets.NivoSlider\Nop.Plugin.Widgets.NivoSlider.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.NivoSlider\obj\Debug\Nop.Plugin.Widgets.NivoSlider.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.NivoSlider\obj\Debug\Nop.Plugin.Widgets.NivoSlider.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Widgets.NivoSlider\obj\Debug\Nop.Plugin.Widgets.NivoSlider.csprojResolveAssemblyReference.cache

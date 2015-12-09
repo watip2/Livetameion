@@ -27,7 +27,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             //routes.Remove(route);
             //routes.Insert(0, route);
 
-            var route = routes.MapRoute("Plugin.Misc.VendorMembership.ProductsController",
+            var route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.ProductsController",
                 "Vendor/Products/{action}/{id}",
                 new { area = "Vendor", controller = "Products", action = "ListProducts", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
@@ -35,7 +35,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             routes.Remove(route);
             routes.Insert(0, route);
 
-            route = routes.MapRoute("Plugin.Misc.VendorMembership.OrdersController",
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.OrdersController",
                 "Vendor/Orders/{action}/{id}",
                 new { area = "Vendor", controller = "Orders", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
@@ -43,7 +43,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             routes.Remove(route);
             routes.Insert(0, route);
 
-            route = routes.MapRoute("Plugin.Misc.VendorMembership.AccountController",
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.AccountController",
                 "Vendor/Account/{action}",
                 new { area = "Vendor", controller = "Account", action = "Login" },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }

@@ -1,4 +1,0 @@
-E:\GitHub\Livetameion\Helpers\ActionFilterHelper\bin\Debug\ActionFilterHelper.dll
-E:\GitHub\Livetameion\Helpers\ActionFilterHelper\bin\Debug\ActionFilterHelper.pdb
-E:\GitHub\Livetameion\Helpers\ActionFilterHelper\obj\Debug\ActionFilterHelper.dll
-E:\GitHub\Livetameion\Helpers\ActionFilterHelper\obj\Debug\ActionFilterHelper.pdb

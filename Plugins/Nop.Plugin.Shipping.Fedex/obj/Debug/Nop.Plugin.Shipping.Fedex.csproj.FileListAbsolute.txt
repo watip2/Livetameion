@@ -27,3 +27,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shi
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.Fedex\Nop.Plugin.Shipping.Fedex.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.Fedex\obj\Debug\Nop.Plugin.Shipping.Fedex.csprojResolveAssemblyReference.cache

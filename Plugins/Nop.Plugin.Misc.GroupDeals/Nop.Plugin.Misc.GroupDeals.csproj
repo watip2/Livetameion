@@ -60,7 +60,6 @@
     </Reference>
     <Reference Include="Nop.Plugin.Misc.VendorMembership">
       <HintPath>..\..\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Nop.Services">
       <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
@@ -112,12 +111,10 @@
     <Compile Include="ActionFilters\ActionFilters.cs" />
     <Compile Include="Areas\BaseGroupDealsController.cs" />
     <Compile Include="Areas\Public\Controllers\GdShoppingCartController.cs" />
-    <Compile Include="Areas\Public\Controllers\GroupDealsController_.cs" />
+    <Compile Include="Areas\Public\Controllers\GroupDealsController.cs" />
     <Compile Include="Areas\Vendor\Controllers\cccccGroupdealsController.cs" />
     <Compile Include="Areas\Admin\Controllers\GroupDealsController.cs" />
-    <Compile Include="Areas\Vendor\Controllers\GroupDealController.cs" />
     <Compile Include="Areas\Vendor\Controllers\GroupDealsController.cs" />
-    <Compile Include="Areas\Vendor\Controllers\GroupDealsControllerrrr.cs" />
     <Compile Include="DataAccess\DependencyRegistrar.cs" />
     <Compile Include="DataAccess\EfStartUpTask.cs" />
     <Compile Include="DataAccess\GroupDealsContext.cs" />
@@ -149,7 +146,7 @@
     <Compile Include="Views\CustomViewEngine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\CreateGroupDeal.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\CreateGroupDeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -174,37 +171,37 @@
     <Content Include="Areas\Public\Views\GroupDeals\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Admin\Views\GroupDeal\Inmnbdex_quick_edit.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\Inmnbdex_quick_edit.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.Info.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Info.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.SEO.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.SEO.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.Pictures.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Pictures.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\EditGroupDeal.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\EditGroupDeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\Index.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -252,22 +249,22 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.Categories.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Categories.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.Info_GroupDeal.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Info_GroupDeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.Pictures_GroupDeal.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Pictures_GroupDeal.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeal\_CreateOrUpdate.Stores.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Stores.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

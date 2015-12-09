@@ -10,14 +10,7 @@ namespace Nop.Plugin.Tameion.Auctions.Areas.Public.Controllers
 {
     public class AuctionsController : BasePluginController
     {
-        [AcceptVerbs("GET")]
         public ActionResult Index()
-        {
-            return RedirectToAction("List");
-        }
-
-        [AcceptVerbs("GET")]
-        public ActionResult List()
         {
             return View();
         }

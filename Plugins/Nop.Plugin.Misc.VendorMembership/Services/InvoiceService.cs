@@ -98,21 +98,21 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
             string billingEmail = null, string orderNotes = null, string orderGuid = null,
             int pageIndex = 0, int pageSize = int.MaxValue)
         {
-            int? orderStatusId = null;
-            if (os.HasValue)
-                orderStatusId = (int)os.Value;
+            //int? orderStatusId = null;
+            //if (os.HasValue)
+            //    orderStatusId = (int)os.Value;
 
-            int? paymentStatusId = null;
-            if (ps.HasValue)
-                paymentStatusId = (int)ps.Value;
+            //int? paymentStatusId = null;
+            //if (ps.HasValue)
+            //    paymentStatusId = (int)ps.Value;
 
-            int? shippingStatusId = null;
-            if (ss.HasValue)
-                shippingStatusId = (int)ss.Value;
+            //int? shippingStatusId = null;
+            //if (ss.HasValue)
+            //    shippingStatusId = (int)ss.Value;
 
             var query = _invoiceRepository.Table;
-            if (storeId > 0)
-                query = query.Where(o => o.StoreId == storeId);
+            //if (storeId > 0)
+            //    query = query.Where(o => o.StoreId == storeId);
             if (vendorId > 0)
             {
                 query = query.Where(inv => inv.VendorId == vendorId);
@@ -165,7 +165,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
             //if (!String.IsNullOrEmpty(orderNotes))
             //    query = query.Where(o => o.OrderNotes.Any(on => on.Note.Contains(orderNotes)));
             //query = query.Where(o => !o.Deleted);
-            query = query.OrderByDescending(o => o.CreatedOnUtc);
+            //query = query.OrderByDescending(o => o.CreatedOnUtc);
 
 
 

@@ -61,18 +61,9 @@
     <Reference Include="Nop.Plugin.Misc.GroupDeals">
       <HintPath>..\..\Presentation\Nop.Web\Plugins\Misc.GroupDeals\Nop.Plugin.Misc.GroupDeals.dll</HintPath>
     </Reference>
-    <Reference Include="Nop.Plugin.Misc.VendorMembership, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Nop.Services">
       <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="Nop.Web, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Web.dll</HintPath>
     </Reference>
     <Reference Include="Nop.Web.Framework">
       <HintPath>..\..\Presentation\Nop.Web\bin\Nop.Web.Framework.dll</HintPath>
@@ -120,7 +111,6 @@
     <Compile Include="Services\IBidService.cs" />
     <Compile Include="PublicAreaRegistration.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
-    <Compile Include="ViewModels\AuctionDetailsModel.cs" />
     <Compile Include="ViewModels\AuctionListModel.cs" />
     <Compile Include="ViewModels\AuctionModel.cs" />
   </ItemGroup>
@@ -135,7 +125,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ActionFilters\" />
     <Folder Include="Areas\Vendor\Views\" />
   </ItemGroup>
   <ItemGroup>
@@ -168,17 +157,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Areas\Public\Views\Auctions\Details.cshtml" />
     <None Include="Areas\Public\Views\Auctions\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Helpers\ActionFilterHelper\ActionFilterHelper.csproj">
-      <Project>{cd2ee4d4-ab27-4484-9c85-ae5c59ac81ec}</Project>
-      <Name>ActionFilterHelper</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

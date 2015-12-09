@@ -27,3 +27,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Nop.Pl
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Shipping.AustraliaPost\Nop.Plugin.Shipping.AustraliaPost.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Shipping.AustraliaPost\obj\Debug\Nop.Plugin.Shipping.AustraliaPost.csprojResolveAssemblyReference.cache

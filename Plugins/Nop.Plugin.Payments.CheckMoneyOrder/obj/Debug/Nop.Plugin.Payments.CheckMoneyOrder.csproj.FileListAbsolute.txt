@@ -30,3 +30,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Payments.CheckMoneyOrder\Nop.Plugin.Payments.CheckMoneyOrder.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Payments.CheckMoneyOrder\obj\Debug\Nop.Plugin.Payments.CheckMoneyOrder.csprojResolveAssemblyReference.cache

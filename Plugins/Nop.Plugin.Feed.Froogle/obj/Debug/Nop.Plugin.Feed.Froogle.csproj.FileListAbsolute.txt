@@ -30,3 +30,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.csprojResolveAssemblyReference.cache

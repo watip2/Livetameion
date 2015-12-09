@@ -15,7 +15,7 @@
     var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
 
     //page title
-    ViewBag.Title = "Invoices";
+    ViewBag.Title = T("Admin.Orders").Text;
     Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
 }
 
@@ -25,7 +25,7 @@
     <div class="section-header">
         <div class="title">
             <img src="@Url.Content("~/Administration/Content/images/ico-sales.png")" alt="" />
-            Invoices
+            @T("Admin.Orders")
         </div>
         <div class="options">
             @if (!Model.IsLoggedInAsVendor)
