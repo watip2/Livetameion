@@ -21,9 +21,11 @@ using Nop.Services.Orders;
 using Nop.Services.Shipping;
 using Nop.Core.Domain.Common;
 using Nop.Services.Discounts;
+using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers
 {
+    [VendorAuthorize]
     public class GroupDealsController : BaseGroupDealsController
     {
         public GroupDealsController(

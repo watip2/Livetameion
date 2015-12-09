@@ -1278,6 +1278,11 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return View(vrmodel);
         }
 
+        public ActionResult Login()
+        {
+            return RedirectToAction("Login", "Customer");
+        }
+
         [NonAction]
         private bool ValidateVendorModel(VendorRegisterViewModel model)
         {

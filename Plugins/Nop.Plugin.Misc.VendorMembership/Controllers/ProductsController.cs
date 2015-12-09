@@ -50,6 +50,7 @@ using Nop.Plugin.Misc.GroupDeals.Services;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
+    [VendorAuthorize]
     public class ProductsController : BasePluginController
     {
         private IRepository<Vendor> _vendorRepo;
@@ -428,7 +429,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 			return isModelValid;
 		}
 
-		[HttpGet, VendorAuthorize]
+		[HttpGet]
         public ActionResult Dashboard()
         {
             return RedirectToAction("Index", "VendorOrders");
@@ -490,7 +491,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return RedirectToAction("Login");
         }
 
-        [AcceptVerbs("GET"), VendorAuthorize]
+        [AcceptVerbs("GET")]
         public ActionResult CreateProduct()
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
@@ -1335,7 +1336,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             }
         }
 
-        [AcceptVerbs("GET"), VendorAuthorize]
+        [AcceptVerbs("GET")]
         public ActionResult ListProducts()
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))

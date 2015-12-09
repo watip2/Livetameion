@@ -43,6 +43,7 @@ using Nop.Core.Infrastructure;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
+    [VendorAuthorize]
     public partial class OrdersController : BasePluginController
     {
         #region Fields
@@ -803,8 +804,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             
             return RedirectToAction("List");
         }
-
-        [VendorAuthorize]
+        
         public ActionResult List(int? orderStatusId = null,
             int? paymentStatusId = null, int? shippingStatusId = null)
         {

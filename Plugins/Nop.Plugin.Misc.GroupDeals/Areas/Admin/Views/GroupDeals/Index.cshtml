@@ -1,5 +1,13 @@
 ﻿@{
-    //Layout = "_AdminLayout";
+    var areaName = HttpContext.Current.Request.RequestContext.RouteData.Values["area"].ToString();
+    if (areaName == "Vendor")
+    {
+        Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "_AdminLayout";
+    }
 }
 @using Nop.Core.Domain.Catalog
 

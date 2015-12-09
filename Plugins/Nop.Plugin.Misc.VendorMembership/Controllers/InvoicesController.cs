@@ -5,6 +5,7 @@ using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Payments;
 using Nop.Core.Domain.Shipping;
 using Nop.Core.Domain.Tax;
+using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Plugin.Misc.VendorMembership.Services;
 using Nop.Plugin.Misc.VendorMembership.ViewModels;
@@ -32,6 +33,7 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
+    [VendorAuthorize]
     public class InvoicesController : BasePluginController
     {
         private readonly IOrderService _orderService;
