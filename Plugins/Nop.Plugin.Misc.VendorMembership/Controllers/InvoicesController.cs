@@ -203,7 +203,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     PaymentStatus = order.PaymentStatus,
                     ShippingStatus = order.ShippingStatus,
                     BillingAddress = order.BillingAddress,
-                    OrderStatus = order.OrderStatus
+                    OrderStatus = order.OrderStatus,
                 };
                 if (_invoiceService.GetInvoicesByOrderId(order.Id) == null)
                 {
@@ -309,7 +309,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             //if (product != null && HasAccessToProduct(product))
             //    filterByProductId = model.ProductId;
 
-            //load orders
+            //load invoices
             var invoices = _invoiceService.SearchInvoices(storeId: model.StoreId,
                 //vendorId: model.VendorId,
                 productId: filterByProductId,
@@ -326,6 +326,13 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 orderGuid: model.OrderGuid,
                 pageIndex: command.Page - 1,
                 pageSize: command.PageSize);
+
+            foreach (var invoice in invoices)
+            {
+                var order = _orderService.GetOrderById(invoice.OrderId);
+                invoice.OrderTotal = order.OrderTotal;
+            }
+            
             var gridModel = new DataSourceResult
             {
                 Data = invoices.Select(x =>
@@ -347,7 +354,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 }),
                 Total = invoices.TotalCount
             };
-
+            
             //summary report
             //currently we do not support productId and warehouseId parameters for this report
             var reportSummary = _orderReportService.GetOrderAverageReportLine(

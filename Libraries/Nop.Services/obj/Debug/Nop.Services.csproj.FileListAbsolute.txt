@@ -93,7 +93,6 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Services\obj\Debug\Nop.Services.csprojResolveAssemblyReference.cache
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Services\obj\Debug\Nop.Services.dll
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Libraries\Nop.Services\obj\Debug\Nop.Services.pdb
-E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Services.dll.config
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Services.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Services.pdb
@@ -118,6 +117,7 @@ E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Web.WebPages.Razor.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\UserAgentStringLibrary.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Autofac.Integration.Mvc.dll
+E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\EntityFramework.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\System.Data.SqlServerCe.dll
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Core.pdb
 E:\GitHub\Livetameion\Libraries\Nop.Services\bin\Debug\Nop.Data.pdb

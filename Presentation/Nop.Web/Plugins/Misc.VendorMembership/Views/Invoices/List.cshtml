@@ -25,7 +25,7 @@
     <div class="section-header">
         <div class="title">
             <img src="@Url.Content("~/Administration/Content/images/ico-sales.png")" alt="" />
-            @T("Admin.Orders")
+            Invoices
         </div>
         <div class="options">
             @if (!Model.IsLoggedInAsVendor)
@@ -296,6 +296,10 @@
                                     title: "@T("Admin.Orders.Fields.Store")",
                                     width: 200
                                 },*@ {
+                                    field: "Items",
+                                    title: "OrderTotal",
+                                    width: 200
+                                }, {
                                     field: "Commission",
                                     title: "Commission",
                                     width: 200

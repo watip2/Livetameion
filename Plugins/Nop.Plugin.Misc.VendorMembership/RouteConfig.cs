@@ -45,7 +45,7 @@ namespace Nop.Plugin.Misc.VendorMembership
 
             route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.AccountController",
                 "Vendor/Account/{action}",
-                new { area = "Vendor", controller = "Account", action = "Login" },
+                new { area = "Vendor", controller = "Account", action = "Index" },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
 

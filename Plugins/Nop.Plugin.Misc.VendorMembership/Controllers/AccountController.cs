@@ -47,9 +47,11 @@ using Nop.Services.Vendors;
 using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
+using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
+    [VendorAuthorize]
     public partial class AccountController : BasePublicController
     {
         #region Fields
@@ -196,6 +198,28 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         public ActionResult Index()
         {
+            var accountModel = new AccountModel();
+            accountModel.Name = _workContext.CurrentVendor.Name;
+            accountModel.Email = _workContext.CurrentVendor.Email;
+            accountModel.Password = _workContext.CurrentCustomer.Password;
+            accountModel.PhoneNumber = _workContext.CurrentVendor.GetAttribute<string>(Domain.VendorAttributes.PhoneNumber, _genericAttributeService);
+            accountModel.VacationMode = null;
+            accountModel.VacationEndsAt = DateTime.Parse("01/01/2017");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(AccountModel model)
+        {
+            if (model == null)
+                throw new ArgumentNullException();
+
+            if (ModelState.IsValid)
+            {
+
+            }
+
             return View();
         }
 

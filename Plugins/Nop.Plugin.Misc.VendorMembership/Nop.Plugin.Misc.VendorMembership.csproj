@@ -146,6 +146,7 @@
     <Compile Include="Services\IIndVendorService.cs" />
     <Compile Include="Services\IndVendorService.cs" />
     <Compile Include="VendorMembershipPlugin.cs" />
+    <Compile Include="ViewModels\AccountModel.cs" />
     <Compile Include="ViewModels\InvoiceListModel.cs" />
     <Compile Include="ViewModels\InvoiceModel.cs" />
     <Compile Include="ViewModels\RegisterModel.cs" />

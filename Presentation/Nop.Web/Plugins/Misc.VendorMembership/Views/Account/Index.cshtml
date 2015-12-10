@@ -10,7 +10,8 @@
 @using Nop.Core.Infrastructure;
 @using Nop.Services.Events;
 @using Nop.Admin.Models.Catalog;
-@using Nop.Plugin.Misc.GroupDeals.ViewModels;
+@using Nop.Plugin.Misc.VendorMembership.ViewModels;
+@model AccountModel
 
 <link href="http://localhost:15536/Administration/Content/styles.css" rel="stylesheet" type="text/css" />
 <link href="http://localhost:15536/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
@@ -26,11 +27,79 @@
 <script src="http://localhost:15536/Scripts/admin.common.js" type="text/javascript"></script>
 <script src="http://localhost:15536/Scripts/kendo/2014.1.318/kendo.web.min.js" type="text/javascript"></script>
 
-@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
 @{
     var defaultGridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().DefaultGridPageSize;
     var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
 
     //page title
     ViewBag.Title = "Account Information";
+}
+
+@Html.BeginForm("Save", "Account")
+{
+    @Html.AntiForgeryToken()
+    @*Account Information*@
+    <container>
+        Account Information
+        <div class="row">
+            @Html.LabelFor(model => model.Name) :
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.AttentionTo) :
+            @Html.EditorFor(model => model.AttentionTo)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Email) :
+            @Html.EditorFor(model => model.Email)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Password) :
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.PhoneNumber) :
+            @Html.EditorFor(model => model.PhoneNumber)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.VacationMode) :
+            @Html.EditorFor(model => model.VacationMode)
+        </div>
+        @*<div class="row">
+            @Html.LabelFor(model => model.VacationEndsAt) :
+            @Html.EditorFor(model => model.VacationEndsAt)
+        </div>*@
+    </container>
+    @*Shipping Origin Address*@
+    @*<container>
+        Shipping Origin Address
+        <div class="row">
+            @Html.LabelFor(model => model.Name) :
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.AttentionTo) :
+            @Html.EditorFor(model => model.AttentionTo)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Email) :
+            @Html.EditorFor(model => model.Email)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Password) :
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.PhoneNumber) :
+            @Html.EditorFor(model => model.PhoneNumber)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.VacationMode) :
+            @Html.EditorFor(model => model.VacationMode)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.VacationEndsAt) :
+            @Html.EditorFor(model => model.VacationEndsAt)
+        </div>
+    </container>*@
 }
