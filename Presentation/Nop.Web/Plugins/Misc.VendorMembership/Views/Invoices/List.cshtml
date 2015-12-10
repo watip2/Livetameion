@@ -57,22 +57,22 @@
                 @Html.EditorFor(model => model.EndDate)
             </td>
         </tr>
-        <tr>
+        @*<tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.CustomerEmail):
             </td>
             <td class="adminData">
                 @Html.EditorFor(model => model.CustomerEmail)
             </td>
-        </tr>
-        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        </tr>*@
+        @*<tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.OrderStatusId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("OrderStatusId", Model.AvailableOrderStatuses)
             </td>
-        </tr>
+        </tr>*@
         <tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.PaymentStatusId):
@@ -81,55 +81,55 @@
                 @Html.DropDownList("PaymentStatusId", Model.AvailablePaymentStatuses)
             </td>
         </tr>
-        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        @*<tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.ShippingStatusId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("ShippingStatusId", Model.AvailableShippingStatuses)
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.StoreId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("StoreId", Model.AvailableStores)
             </td>
-        </tr>
-        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        </tr>*@
+        @*<tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.VendorId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("VendorId", Model.AvailableVendors)
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.WarehouseId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("WarehouseId", Model.AvailableWarehouses)
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.BillingCountryId):
             </td>
             <td class="adminData">
                 @Html.DropDownList("BillingCountryId", Model.AvailableCountries)
             </td>
-        </tr>
-        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+        </tr>*@
+        @*<tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.PaymentMethodSystemName):
             </td>
             <td class="adminData">
                 @Html.DropDownList("PaymentMethodSystemName", Model.AvailablePaymentMethods)
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.ProductId):
             </td>
@@ -165,8 +165,8 @@
                     });
                 </script>
             </td>
-        </tr>
-        <tr>
+        </tr>*@
+        @*<tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.OrderNotes):
             </td>
@@ -181,7 +181,7 @@
             <td class="adminData">
                 @Html.EditorFor(model => model.OrderGuid)
             </td>
-        </tr>
+        </tr>*@
         <tr>
             <td class="adminTitle">
                 @Html.NopLabelFor(model => model.GoDirectlyToNumber):
@@ -286,7 +286,7 @@
                                     width: 200
                                 },</text>
                                 }
-                                {
+                                @*{
                                     field: "CustomerEmail",
                                     title: "@T("Admin.Orders.Fields.Customer")",
                                     width: 300,
@@ -295,7 +295,7 @@
                                     field: "StoreName",
                                     title: "@T("Admin.Orders.Fields.Store")",
                                     width: 200
-                                }, {
+                                },*@ {
                                     field: "Commission",
                                     title: "Commission",
                                     width: 200
