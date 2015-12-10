@@ -88,7 +88,7 @@ namespace Nop.Plugin.Misc.GroupDeals
             {
                 _groupDealsContext.Install();
             }
-            catch (Exception e) { }
+            catch (Exception) {  }
             base.Install();
         }
 
@@ -98,7 +98,7 @@ namespace Nop.Plugin.Misc.GroupDeals
             {
                 _groupDealsContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Uninstall();
         }
 

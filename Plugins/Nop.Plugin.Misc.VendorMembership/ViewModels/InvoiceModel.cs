@@ -23,6 +23,9 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 
         public bool IsLoggedInAsVendor { get; set; }
 
+        [Display(Name = "Commission")]
+        public decimal Commission { get; set; }
+        
         //identifiers
         [NopResourceDisplayName("Admin.Orders.Fields.ID")]
         public override int Id { get; set; }

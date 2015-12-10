@@ -25,6 +25,7 @@ using Nop.Services.Security;
 using Nop.Services.Shipping;
 using Nop.Services.Stores;
 using Nop.Services.Vendors;
+using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Kendoui;
 using System;
@@ -216,42 +217,42 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             //order statuses
             var model = new InvoiceListModel();
-            //model.AvailableOrderStatuses = OrderStatus.Pending.ToSelectList(false).ToList();
-            //model.AvailableOrderStatuses.Insert(0, new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
-            //if (orderStatusId.HasValue)
-            //{
-            //    //pre-select value?
-            //    var item = model.AvailableOrderStatuses.FirstOrDefault(x => x.Value == orderStatusId.Value.ToString());
-            //    if (item != null)
-            //        item.Selected = true;
-            //}
+            model.AvailableOrderStatuses = OrderStatus.Pending.ToSelectList(false).ToList();
+            model.AvailableOrderStatuses.Insert(0, new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            if (orderStatusId.HasValue)
+            {
+                //pre-select value?
+                var item = model.AvailableOrderStatuses.FirstOrDefault(x => x.Value == orderStatusId.Value.ToString());
+                if (item != null)
+                    item.Selected = true;
+            }
 
-            ////payment statuses
-            //model.AvailablePaymentStatuses = PaymentStatus.Pending.ToSelectList(false).ToList();
-            //model.AvailablePaymentStatuses.Insert(0, new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
-            //if (paymentStatusId.HasValue)
-            //{
-            //    //pre-select value?
-            //    var item = model.AvailablePaymentStatuses.FirstOrDefault(x => x.Value == paymentStatusId.Value.ToString());
-            //    if (item != null)
-            //        item.Selected = true;
-            //}
+            //payment statuses
+            model.AvailablePaymentStatuses = PaymentStatus.Pending.ToSelectList(false).ToList();
+            model.AvailablePaymentStatuses.Insert(0, new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            if (paymentStatusId.HasValue)
+            {
+                //pre-select value?
+                var item = model.AvailablePaymentStatuses.FirstOrDefault(x => x.Value == paymentStatusId.Value.ToString());
+                if (item != null)
+                    item.Selected = true;
+            }
 
-            ////shipping statuses
-            //model.AvailableShippingStatuses = ShippingStatus.NotYetShipped.ToSelectList(false).ToList();
-            //model.AvailableShippingStatuses.Insert(0, new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
-            //if (shippingStatusId.HasValue)
-            //{
-            //    //pre-select value?
-            //    var item = model.AvailableShippingStatuses.FirstOrDefault(x => x.Value == shippingStatusId.Value.ToString());
-            //    if (item != null)
-            //        item.Selected = true;
-            //}
+            //shipping statuses
+            model.AvailableShippingStatuses = ShippingStatus.NotYetShipped.ToSelectList(false).ToList();
+            model.AvailableShippingStatuses.Insert(0, new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            if (shippingStatusId.HasValue)
+            {
+                //pre-select value?
+                var item = model.AvailableShippingStatuses.FirstOrDefault(x => x.Value == shippingStatusId.Value.ToString());
+                if (item != null)
+                    item.Selected = true;
+            }
 
-            ////stores
-            //model.AvailableStores.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
-            //foreach (var s in _storeService.GetAllStores())
-            //    model.AvailableStores.Add(new SelectListItem { Text = s.Name, Value = s.Id.ToString() });
+            //stores
+            model.AvailableStores.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
+            foreach (var s in _storeService.GetAllStores())
+                model.AvailableStores.Add(new SelectListItem { Text = s.Name, Value = s.Id.ToString() });
 
             ////vendors
             //model.AvailableVendors.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "0" });
@@ -263,10 +264,10 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             //foreach (var w in _shippingService.GetAllWarehouses())
             //    model.AvailableWarehouses.Add(new SelectListItem { Text = w.Name, Value = w.Id.ToString() });
 
-            ////payment methods
-            //model.AvailablePaymentMethods.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "" });
-            //foreach (var pm in _paymentService.LoadAllPaymentMethods())
-            //    model.AvailablePaymentMethods.Add(new SelectListItem { Text = pm.PluginDescriptor.FriendlyName, Value = pm.PluginDescriptor.SystemName });
+            //payment methods
+            model.AvailablePaymentMethods.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = "" });
+            foreach (var pm in _paymentService.LoadAllPaymentMethods())
+                model.AvailablePaymentMethods.Add(new SelectListItem { Text = pm.PluginDescriptor.FriendlyName, Value = pm.PluginDescriptor.SystemName });
 
             ////billing countries
             //foreach (var c in _countryService.GetAllCountriesForBilling(true))
@@ -310,7 +311,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             //load orders
             var invoices = _invoiceService.SearchInvoices(storeId: model.StoreId,
-                vendorId: model.VendorId,
+                //vendorId: model.VendorId,
                 productId: filterByProductId,
                 warehouseId: model.WarehouseId,
                 billingCountryId: model.BillingCountryId,
@@ -338,9 +339,10 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                         OrderStatus = x.OrderStatus.GetLocalizedEnum(_localizationService, _workContext),
                         PaymentStatus = x.PaymentStatus.GetLocalizedEnum(_localizationService, _workContext),
                         ShippingStatus = x.ShippingStatus.GetLocalizedEnum(_localizationService, _workContext),
-                        CustomerEmail = x.BillingAddress.Email,
-                        CustomerFullName = string.Format("{0} {1}", x.BillingAddress.FirstName, x.BillingAddress.LastName),
-                        CreatedOn = _dateTimeHelper.ConvertToUserTime(x.CreatedOnUtc, DateTimeKind.Utc)
+            //            CustomerEmail = x.BillingAddress.Email,
+            //            CustomerFullName = string.Format("{0} {1}", x.BillingAddress.FirstName, x.BillingAddress.LastName),
+                        CreatedOn = _dateTimeHelper.ConvertToUserTime(x.CreatedOnUtc, DateTimeKind.Utc),
+                        Commission = x.Commission
                     };
                 }),
                 Total = invoices.TotalCount

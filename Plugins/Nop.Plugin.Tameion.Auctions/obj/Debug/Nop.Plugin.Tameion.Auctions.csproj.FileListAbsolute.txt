@@ -10,6 +10,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Public\Views\Auctions\Index.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Nop.Plugin.Tameion.Auctions.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Nop.Plugin.Tameion.Auctions.pdb
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.csprojResolveAssemblyReference.cache

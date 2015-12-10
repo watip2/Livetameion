@@ -1,17 +1,12 @@
 ﻿using Nop.Core.Data;
 using Nop.Core.Domain.Catalog;
-using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
 using Nop.Services.Catalog;
 using Nop.Services.Common;
 using Nop.Web.Framework.Controllers;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using Nop.Services.Common;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Public.Controllers
 {

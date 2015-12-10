@@ -4,8 +4,6 @@ using Nop.Core.Domain.Discounts;
 using Nop.Data;
 using Nop.Data.Mapping.Catalog;
 using Nop.Data.Mapping.Discounts;
-using Nop.Plugin.Misc.GroupDeals.Maps;
-using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Tameion.Auctions.DomainModels;
 using Nop.Plugin.Tameion.Auctions.Helpers;
 using Nop.Plugin.Tameion.Auctions.Maps;
@@ -112,10 +110,7 @@ namespace Nop.Plugin.Tameion.Auctions.Infrastructure
 
             modelBuilder.Configurations.Add(new ProductWarehouseInventoryMap());
             modelBuilder.Ignore<ProductWarehouseInventory>();
-
-            modelBuilder.Configurations.Add(new GroupDealMap());
-            modelBuilder.Ignore<GroupDeal>();
-
+            
             //modelBuilder.Entity<GroupDealProduct>().Ignore(gdp =>gdp.ProductAttributeMappings);
 
             base.OnModelCreating(modelBuilder);

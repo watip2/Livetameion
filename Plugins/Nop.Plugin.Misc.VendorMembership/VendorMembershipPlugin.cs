@@ -87,7 +87,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             {
                 _vendorMembershipContext.Install();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel", "Your Name");
             this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel.Hint", "Please provide a name.");
@@ -109,7 +109,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             {
                 _vendorMembershipContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel");
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel.Hint");

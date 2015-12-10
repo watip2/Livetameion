@@ -64,7 +64,7 @@ namespace Nop.Plugin.Tameion.BridgePay
             {
                 _bridgePayContext.Install();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Install();
         }
 
@@ -74,7 +74,7 @@ namespace Nop.Plugin.Tameion.BridgePay
             {
                 _bridgePayContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Uninstall();
         }
         
@@ -237,7 +237,7 @@ namespace Nop.Plugin.Tameion.BridgePay
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             { }
 
             var result = new ProcessPaymentResult();

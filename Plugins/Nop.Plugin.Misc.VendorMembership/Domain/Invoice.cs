@@ -25,5 +25,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
         public ShippingStatus ShippingStatus { get; internal set; }
         public Address BillingAddress { get; internal set; }
         public DateTime CreatedOnUtc { get; internal set; }
+        public string PaymentMethodSystemName { get; set; }
     }
 }

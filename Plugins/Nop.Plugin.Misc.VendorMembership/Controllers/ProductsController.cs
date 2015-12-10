@@ -53,9 +53,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
     [VendorAuthorize]
     public class ProductsController : BasePluginController
     {
-        private IRepository<Vendor> _vendorRepo;
         private List<Nop.Plugin.Misc.VendorMembership.DTOs.Category> _categories;
-        private IRepository<VendorBusinessType> _vendorBusinessTypeRepository;
         private readonly IProductService _productService;
         private readonly IProductTemplateService _productTemplateService;
         private readonly ICategoryService _categoryService;
@@ -433,7 +431,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         public ActionResult Dashboard()
         {
             return RedirectToAction("Index", "VendorOrders");
-            return View();
         }
 
         [HttpGet]

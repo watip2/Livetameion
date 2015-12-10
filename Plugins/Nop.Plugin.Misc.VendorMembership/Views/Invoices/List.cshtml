@@ -260,17 +260,17 @@
                                 },
                                 {
                                     field: "Id",
-                                    title: "@T("Admin.Orders.Fields.ID")",
-                                width: 50
+                                    title: "Invoice ID",
+                                    width: 50
                                 },
                                 @if (!Model.IsLoggedInAsVendor)
                                 {
                                     //a vendor does not have access to this functionality
                                     <text>{
                                     field: "OrderStatus",
-                                title: "@T("Admin.Orders.Fields.OrderStatus")",
-                            width: 200
-                        },</text>
+                                    title: "@T("Admin.Orders.Fields.OrderStatus")",
+                                    width: 200
+                                },</text>
                                 }
                                 {
                                     field: "PaymentStatus",
@@ -282,19 +282,22 @@
                                     //a vendor does not have access to this functionality
                                     <text>{
                                     field: "ShippingStatus",
-                                        title: "@T("Admin.Orders.Fields.ShippingStatus")",
-                            width: 200
-                        },</text>
+                                    title: "@T("Admin.Orders.Fields.ShippingStatus")",
+                                    width: 200
+                                },</text>
                                 }
                                 {
                                     field: "CustomerEmail",
                                     title: "@T("Admin.Orders.Fields.Customer")",
                                     width: 300,
                                     template: '#=CustomerFullName# (#=CustomerEmail#)'
-                                },
-                                {
+                                }, {
                                     field: "StoreName",
                                     title: "@T("Admin.Orders.Fields.Store")",
+                                    width: 200
+                                }, {
+                                    field: "Commission",
+                                    title: "Commission",
                                     width: 200
                                 }, {
                                     field: "CreatedOn",
@@ -319,9 +322,9 @@
                                 }
                                 {
                                     field: "Id",
-                                    title: "@T("Admin.Common.Edit")",
+                                    title: "Pay Invoice",
                                     width: 100,
-                                    template: '<a href="Edit/#=Id#">@T("Admin.Common.Edit")</a>'
+                                    template: '<a href="PayInvoice/#=Id#">Pay</a>'
                                 }
                             ]
                         } );

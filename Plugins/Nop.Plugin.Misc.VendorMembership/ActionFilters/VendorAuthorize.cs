@@ -8,7 +8,6 @@ namespace Nop.Plugin.Misc.VendorMembership.ActionFilters
 {
     public class VendorAuthorize : ActionFilterAttribute, IActionFilter
     {
-        private IIndVendorService _vendorService;
         private IWorkContext _workContext;
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)

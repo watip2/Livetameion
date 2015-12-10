@@ -258,9 +258,9 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\S
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\Login.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Account\Register.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Invoices\List.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Account\Index.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Account\Index.cshtml

@@ -30,7 +30,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
                         dest_prop.SetValue(destEntity, source_prop.GetValue(sourceEntity), null);
                     }
                 }
-                catch (Exception exc) { }
+                catch (Exception) { }
             }
 
             return destEntity;

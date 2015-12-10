@@ -17,8 +17,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\MiniProfiler.Mvc.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Newtonsoft.Json.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Core.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Data.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Tameion.SupportTicketSystem.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Services.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Web.Framework.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Recaptcha.dll
@@ -41,9 +39,7 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\EPPlus.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\ImageResizer.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\UserAgentStringLibrary.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\itextsharp.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\PerlRegex.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Core.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Data.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Services.pdb
@@ -63,9 +59,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\MiniProfiler.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\MiniProfiler.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\MiniProfiler.Mvc.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Newtonsoft.Json.xml
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.GroupDeals.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.VendorMembership.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Tameion.SupportTicketSystem.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Recaptcha.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\RestSharp.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Net.Http.Extensions.xml
@@ -83,9 +76,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.Razor.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\EPPlus.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\ImageResizer.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\itextsharp.xml
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Admin.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\AutoMapper.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\da\FluentValidation.resources.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\de\FluentValidation.resources.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\es\FluentValidation.resources.dll
@@ -104,4 +94,3 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csproj.App.config
 E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\obj\Debug\Nop.Web.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Plugin.Misc.GroupDeals.dll

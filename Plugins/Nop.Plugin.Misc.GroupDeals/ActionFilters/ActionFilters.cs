@@ -28,6 +28,10 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
             {
                 return new List<System.Web.Mvc.Filter>() { new System.Web.Mvc.Filter(this, FilterScope.Action, 0) };
             }
+            var a = actionDescriptor.GetCustomAttributes(true);
+            var b = actionDescriptor.GetFilterAttributes(true);
+            var c = actionDescriptor.GetParameters();
+
             return new List<System.Web.Mvc.Filter>();
         }
         
@@ -66,8 +70,14 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
                 http://stackoverflow.com/questions/3570886/asp-net-mvc-return-viewresult
                 http://stackoverflow.com/questions/29693402/changing-filtercontext-result-in-onresultexecuting
             */
-            base.OnActionExecuted(filterContext);
+            if ((filterContext.Controller is ProductController || filterContext.Controller is ProductsController) &&
+                filterContext.RequestContext.RouteData.Values["action"].ToString().Equals("ProductList",
+                StringComparison.InvariantCultureIgnoreCase))
+            {
+                var a = 2;    
+            }
 
+            base.OnActionExecuted(filterContext);
             var result = filterContext.Result as ViewResultBase;
             var result1 = filterContext.Result as JsonResult;
             var d = result1.Data as DataSourceResult;

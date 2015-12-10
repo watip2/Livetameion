@@ -82,7 +82,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
             {
                 _supportTicketSystemContext.Install();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Install();
         }
 
@@ -92,7 +92,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
             {
                 _supportTicketSystemContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Uninstall();
         }
 
