@@ -44,9 +44,10 @@ using Nop.Web.Framework;
 using Nop.Web.Framework.Kendoui;
 using Nop.Web.Framework.Mvc;
 using Nop.Plugin.Misc.GroupDeals.Models;
-using Nop.Plugin.Misc.VendorMembership.ActionFilters;
+using Nop.Plugin.Misc.VendorMembership;
 using Nop.Plugin.Misc.VendorMembership.Services;
 using Nop.Plugin.Misc.GroupDeals.Services;
+using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
@@ -54,7 +55,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
     public class ProductsController : BasePluginController
     {
         private List<Nop.Plugin.Misc.VendorMembership.DTOs.Category> _categories;
-        private readonly IProductService _productService;
+        private readonly Nop.Services.Catalog.IProductService _productService;
         private readonly IProductTemplateService _productTemplateService;
         private readonly ICategoryService _categoryService;
         private readonly IManufacturerService _manufacturerService;
@@ -98,7 +99,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private IGenericAttributeService _genericAttributeService;
 		private IGroupDealService _groupDealService;
 
-		public ProductsController(IProductService productService, 
+		public ProductsController(Nop.Services.Catalog.IProductService productService, 
             IProductTemplateService productTemplateService,
             ICategoryService categoryService, 
             IManufacturerService manufacturerService,
@@ -336,7 +337,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.ZipPostalCode,
 						model.ZipPostalCode);
 
-					var productServiceCore = EngineContext.Current.Resolve<IProductService>();
+					var productServiceCore = EngineContext.Current.Resolve<Nop.Services.Catalog.IProductService>();
 
 					foreach (var BusinessTypeId in model.BusinessTypeIds)
 					{

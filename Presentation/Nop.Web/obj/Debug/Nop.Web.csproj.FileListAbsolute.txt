@@ -35,11 +35,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.Deployment.dl
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.Razor.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\WebGrease.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\EPPlus.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\ImageResizer.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\UserAgentStringLibrary.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\itextsharp.dll
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\PerlRegex.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Core.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Data.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\Nop.Services.pdb
@@ -73,9 +68,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.Razor.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.Deployment.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\System.Web.WebPages.Razor.xml
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\EPPlus.xml
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\ImageResizer.xml
-E:\GitHub\Livetameion\Presentation\Nop.Web\bin\itextsharp.xml
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\da\FluentValidation.resources.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\de\FluentValidation.resources.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\bin\es\FluentValidation.resources.dll

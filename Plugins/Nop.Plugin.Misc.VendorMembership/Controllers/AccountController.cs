@@ -47,11 +47,11 @@ using Nop.Services.Vendors;
 using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.Services;
+using Nop.Plugin.Misc.VendorMembership;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
-    [VendorAuthorize]
     public partial class AccountController : BasePublicController
     {
         #region Fields
@@ -196,6 +196,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region Utilities
 
+        [VendorAuthorize]
         public ActionResult Index()
         {
             var accountModel = new AccountModel();
@@ -1015,7 +1016,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.ZipPostalCode,
                     vrmodel.ZipPostalCode);
 
-                var productServiceCore = EngineContext.Current.Resolve<IProductService>();
+                var productServiceCore = EngineContext.Current.Resolve<Nop.Services.Catalog.IProductService>();
 
                 foreach (var BusinessTypeId in vrmodel.BusinessTypeIds)
                 {

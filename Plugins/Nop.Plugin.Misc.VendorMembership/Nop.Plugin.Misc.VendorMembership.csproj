@@ -109,6 +109,8 @@
     <Compile Include="Mapping\InvoiceMap.cs" />
     <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
+    <Compile Include="Services\IMtProductService.cs" />
+    <Compile Include="Services\MtProductService.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />

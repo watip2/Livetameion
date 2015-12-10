@@ -4,15 +4,9 @@ using Nop.Core.Data;
 using Nop.Core.Infrastructure;
 using Nop.Core.Infrastructure.DependencyManagement;
 using Nop.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Nop.Web.Framework.Mvc;
 using Nop.Plugin.Misc.VendorMembership.Data;
 using Nop.Plugin.Misc.VendorMembership.Domain;
-using Nop.Core.Domain.Vendors;
 using Nop.Plugin.Misc.VendorMembership.Services;
 
 namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
@@ -67,6 +61,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
             // services
             builder.RegisterType<IndVendorService>().As<IIndVendorService>().InstancePerLifetimeScope();
             builder.RegisterType<InvoiceService>().As<IInvoiceService>().InstancePerLifetimeScope();
+            builder.RegisterType<MtProductService>().As<IMtProductService>().InstancePerLifetimeScope();
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 

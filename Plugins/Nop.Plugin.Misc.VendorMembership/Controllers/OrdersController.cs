@@ -38,8 +38,9 @@ using Nop.Web.Framework.Kendoui;
 using Nop.Web.Framework.Mvc;
 using System.Web;
 using Nop.Plugin.Misc.VendorMembership.Helpers;
-using Nop.Plugin.Misc.VendorMembership.ActionFilters;
+using Nop.Plugin.Misc.VendorMembership;
 using Nop.Core.Infrastructure;
+using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {

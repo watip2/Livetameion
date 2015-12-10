@@ -5,6 +5,7 @@ using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Payments;
 using Nop.Core.Domain.Shipping;
 using Nop.Core.Domain.Tax;
+using Nop.Plugin.Misc.VendorMembership;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Plugin.Misc.VendorMembership.Services;
@@ -54,7 +55,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly IAddressService _addressService;
         private readonly ICountryService _countryService;
         private readonly IStateProvinceService _stateProvinceService;
-        private readonly IProductService _productService;
+        private readonly Nop.Services.Catalog.IProductService _productService;
         private readonly IExportManager _exportManager;
         private readonly IPermissionService _permissionService;
         private readonly IWorkflowMessageService _workflowMessageService;
@@ -100,7 +101,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             IAddressService addressService,
             ICountryService countryService,
             IStateProvinceService stateProvinceService,
-            IProductService productService,
+            Nop.Services.Catalog.IProductService productService,
             IExportManager exportManager,
             IPermissionService permissionService,
             IWorkflowMessageService workflowMessageService,
