@@ -12,6 +12,12 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 {
     public class VendorRegisterViewModel
     {
+        public VendorRegisterViewModel()
+        {
+            AvailableCountries = new List<SelectListItem>();
+            AvailableStateProvinces = new List<SelectListItem>();
+        }
+
         [Display(Name="Shop Name")]
         [Required]
         public string Name { get; set; }
@@ -102,6 +108,12 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public int[] SelectedItems { get; set; }
 
         public List<SelectListItem> Options { get; set; }
+        public List<SelectListItem> AvailableCountries { get; private set; }
+        public List<SelectListItem> AvailableStateProvinces { get; private set; }
+        [Display(Name = "State/Province")]
+        public int StateProvinceId { get; internal set; }
+        [Display(Name = "Country")]
+        public int CountryId { get; internal set; }
 
         ///// <summary>
         ///// Gets or sets the description

@@ -876,16 +876,57 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             //check whether registration is allowed
             if (_customerSettings.UserRegistrationType == UserRegistrationType.Disabled)
                 return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
-
+            
             VendorRegisterViewModel model = new VendorRegisterViewModel();
-            model = PrepareVendorRegisterModel(model);
+            PrepareVendorRegisterModel(model);
             return View(model);
         }
 
         [NonAction]
-        private VendorRegisterViewModel PrepareVendorRegisterModel(VendorRegisterViewModel model)
+        protected virtual void PrepareVendorRegisterModel(VendorRegisterViewModel model)
         {
             model.Countries = VendorMembershipHelper.GetCountriesNames();
+            
+            //countries and states
+            //if (_customerSettings.CountryEnabled)
+            {
+                model.AvailableCountries.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectCountry"), Value = "0" });
+                foreach (var c in _countryService.GetAllCountries())
+                {
+                    model.AvailableCountries.Add(new SelectListItem
+                    {
+                        Text = c.GetLocalized(x => x.Name),
+                        Value = c.Id.ToString(),
+                        Selected = c.Id == model.CountryId
+                    });
+                }
+
+                //if (_customerSettings.StateProvinceEnabled)
+                {
+                    //states
+                    var states = _stateProvinceService.GetStateProvincesByCountryId(model.CountryId).ToList();
+                    if (states.Count > 0)
+                    {
+                        model.AvailableStateProvinces.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectState"), Value = "0" });
+
+                        foreach (var s in states)
+                        {
+                            model.AvailableStateProvinces.Add(new SelectListItem { Text = s.GetLocalized(x => x.Name), Value = s.Id.ToString(), Selected = (s.Id == model.StateProvinceId) });
+                        }
+                    }
+                    else
+                    {
+                        bool anyCountrySelected = model.AvailableCountries.Any(x => x.Selected);
+
+                        model.AvailableStateProvinces.Add(new SelectListItem
+                        {
+                            Text = _localizationService.GetResource(anyCountrySelected ? "Address.OtherNonUS" : "Address.SelectState"),
+                            Value = "0"
+                        });
+                    }
+
+                }
+            }
 
             var categoryService = EngineContext.Current.Resolve<ICategoryService>();
             var AllCategories = categoryService.GetAllCategories();
@@ -928,7 +969,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 }
             }
 
-            return model;
+            //return model;
         }
 
         [HttpPost]
@@ -946,13 +987,19 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 vendor.Active = true;
                 var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
                 vendorServiceCore.InsertVendor(vendor);
-
-                //Address address = new Address
-                //{
-                //     City = vrmodel.City,
-                //     //CountryId = vrmodel.Country,
-
-                //};
+                
+                Address address = new Address
+                {
+                    City = vrmodel.City,
+                    CountryId = vrmodel.CountryId,
+                    StateProvinceId = vrmodel.StateProvinceId,
+                    PhoneNumber = vrmodel.PhoneNumber,
+                    CreatedOnUtc = DateTime.UtcNow,
+                    Email = vrmodel.Email,
+                    ZipPostalCode = vrmodel.ZipPostalCode,
+                     Address1 = vrmodel.StreetAddressLine1,
+                     Address2 = vrmodel.StreetAddressLine2
+                };
 
                 _genericAttributeService.SaveAttribute(
                     vendor,
@@ -1311,7 +1358,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             }
             
             //If we got this far, something failed, redisplay form
-            vrmodel = PrepareVendorRegisterModel(vrmodel);
+            PrepareVendorRegisterModel(vrmodel);
             return View(vrmodel);
         }
 
@@ -1340,6 +1387,14 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             return isModelValid;
         }
+
+        [NonAction]
+        protected virtual void PrepareVendorRegisterModel(VendorRegisterViewModel model, bool excludeProperties,
+                        string overrideCustomCustomerAttributesXml = "")
+        {
+            
+        }
+
 
         public ActionResult RegisterResult(int resultId)
         {

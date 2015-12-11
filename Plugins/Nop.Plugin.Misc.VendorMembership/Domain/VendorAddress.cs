@@ -11,5 +11,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
     {
         public int VendorId { get; set; }
         public int AddressId { get; set; }
+        public AddressType AddressType { get; set; }
     }
 }
