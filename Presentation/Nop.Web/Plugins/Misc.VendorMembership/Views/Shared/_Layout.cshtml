@@ -55,14 +55,14 @@
             </div>
             <div>
                 <ul class="nav navbar-nav">
-                    <li class="activee"><a href="/Vendor/Orders">Orders</a></li>
-                    <li><a href="/Vendor/Invoices">Invoices</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Stock</a></li>
-                    <li><a href="/Vendor/Products">Products</a></li>
-                    <li><a href="/Vendor/GroupDeals">Group Deals</a></li>
-                    <li><a href="/Vendor/SelectSell">Select & Sell</a></li>
-                    <li><a href="/Vendor/Account">Account</a></li>
+                    <li class="activee"><a href="@Url.Action("Orders", "Vendor")">Orders</a></li>
+                    <li><a href="@Url.Action("Invoices", "Vendor", new { area = "Vendor" })">Invoices</a></li>
+                    <li><a href="@Url.Action("Returns", "Vendor", new { area = "Vendor" })">Returns</a></li>
+                    <li><a href="@Url.Action("Stock", "Vendor", new { area = "Vendor" })">Stock</a></li>
+                    <li><a href="@Url.Action("Products", "Vendor", new { area = "Vendor" })">Products</a></li>
+                    <li><a href="@Url.Action("GroupDeals", "Vendor", new { area = "Vendor" })">Group Deals</a></li>
+                    <li><a href="@Url.Action("SelectSell", "Vendor", new { area = "Vendor" })">Select & Sell</a></li>
+                    <li><a href="@Url.Action("Account", "Vendor", new { area = "Vendor" })">Account</a></li>
                 </ul>
             </div>
         </div>

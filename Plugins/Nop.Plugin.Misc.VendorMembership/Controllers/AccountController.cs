@@ -869,7 +869,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region Register
 
-        [NopHttpsRequirement(SslRequirement.Yes)]
+        //[NopHttpsRequirement(SslRequirement.Yes)]
         public ActionResult Register()
         {
             //check whether registration is allowed
@@ -931,10 +931,11 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         }
 
         [HttpPost]
-        [CaptchaValidator]
-        [HoneypotValidator]
-        [PublicAntiForgery]
-        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
+        //[CaptchaValidator]
+        //[HoneypotValidator]
+        //[PublicAntiForgery]
+        //[ValidateInput(false)]
         public ActionResult Register(VendorRegisterViewModel vrmodel, string returnUrl, bool captchaValid, FormCollection form)
         {
             if (ValidateVendorModel(vrmodel))
@@ -1040,7 +1041,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                         StockQuantity = 1,
                         Price = 20,
                         Name = vrmodel.Name + " group deal",
-                        VendorId = vendor.Id,
                         VisibleIndividually = true,
                         OrderMaximumQuantity = int.MaxValue,
                         AllowCustomerReviews = true,
