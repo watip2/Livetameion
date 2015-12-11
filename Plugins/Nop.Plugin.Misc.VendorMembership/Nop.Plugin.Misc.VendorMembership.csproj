@@ -106,11 +106,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Domain\Invoice.cs" />
+    <Compile Include="Domain\VendorAddress.cs" />
     <Compile Include="Mapping\InvoiceMap.cs" />
+    <Compile Include="Mapping\VendorAddressMap.cs" />
     <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Services\IMtProductService.cs" />
     <Compile Include="Services\MtProductService.cs" />
+    <Compile Include="Services\IVendorAddressService.cs" />
+    <Compile Include="Services\VendorAddressService.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />

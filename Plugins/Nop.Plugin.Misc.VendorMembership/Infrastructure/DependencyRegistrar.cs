@@ -56,12 +56,20 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
                 .As<IRepository<Invoice>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
+
+            //override required repository with our custom context
+            builder.RegisterType<EfRepository<VendorAddress>>()
+                .As<IRepository<VendorAddress>>()
+                .WithParameter(ResolvedParameter.ForNamed<IDbContext>(VENDOR_MEMBERSHIP_CONTEXT_NAME))
+                .InstancePerLifetimeScope();
+
             ///////////////////////////////////////////////////////////////////////////////////////////////
 
             // services
             builder.RegisterType<IndVendorService>().As<IIndVendorService>().InstancePerLifetimeScope();
             builder.RegisterType<InvoiceService>().As<IInvoiceService>().InstancePerLifetimeScope();
             builder.RegisterType<MtProductService>().As<IMtProductService>().InstancePerLifetimeScope();
+            builder.RegisterType<VendorAddressService>().As<IVendorAddressService>().InstancePerLifetimeScope();
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 

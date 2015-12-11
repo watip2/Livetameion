@@ -66,7 +66,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         [AllowHtml]
         public string OrderGuid { get; set; }
 
-        [NopResourceDisplayName("Go directly to invoice #")]
+        [Display(Name = "Go directly to invoice #")]
         [AllowHtml]
         public int GoDirectlyToNumber { get; set; }
 

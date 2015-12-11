@@ -869,6 +869,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region Register
 
+        [HttpGet]
         //[NopHttpsRequirement(SslRequirement.Yes)]
         public ActionResult Register()
         {
@@ -931,11 +932,10 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        //[CaptchaValidator]
-        //[HoneypotValidator]
-        //[PublicAntiForgery]
-        //[ValidateInput(false)]
+        [CaptchaValidator]
+        [HoneypotValidator]
+        [PublicAntiForgery]
+        [ValidateInput(false)]
         public ActionResult Register(VendorRegisterViewModel vrmodel, string returnUrl, bool captchaValid, FormCollection form)
         {
             if (ValidateVendorModel(vrmodel))
@@ -947,6 +947,13 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
                 vendorServiceCore.InsertVendor(vendor);
 
+                //Address address = new Address
+                //{
+                //     City = vrmodel.City,
+                //     //CountryId = vrmodel.Country,
+
+                //};
+
                 _genericAttributeService.SaveAttribute(
                     vendor,
                     Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.AttentionTo,
@@ -956,7 +963,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     vendor,
                     Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.City,
                     vrmodel.City);
-
+                
                 _genericAttributeService.SaveAttribute(
                     vendor,
                     Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Password,

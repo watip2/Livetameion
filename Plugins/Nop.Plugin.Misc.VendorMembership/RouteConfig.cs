@@ -48,6 +48,8 @@ namespace Nop.Plugin.Misc.VendorMembership
                 new { area = "Vendor", controller = "Account", action = "Index" },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }
