@@ -907,18 +907,18 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     var states = _stateProvinceService.GetStateProvincesByCountryId(model.CountryId).ToList();
                     if (states.Count > 0)
                     {
-                        model.AvailableStateProvinces.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectState"), Value = "0" });
+                        model.AvailableStates.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectState"), Value = "0" });
 
                         foreach (var s in states)
                         {
-                            model.AvailableStateProvinces.Add(new SelectListItem { Text = s.GetLocalized(x => x.Name), Value = s.Id.ToString(), Selected = (s.Id == model.StateProvinceId) });
+                            model.AvailableStates.Add(new SelectListItem { Text = s.GetLocalized(x => x.Name), Value = s.Id.ToString(), Selected = (s.Id == model.StateProvinceId) });
                         }
                     }
                     else
                     {
                         bool anyCountrySelected = model.AvailableCountries.Any(x => x.Selected);
 
-                        model.AvailableStateProvinces.Add(new SelectListItem
+                        model.AvailableStates.Add(new SelectListItem
                         {
                             Text = _localizationService.GetResource(anyCountrySelected ? "Address.OtherNonUS" : "Address.SelectState"),
                             Value = "0"

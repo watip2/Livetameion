@@ -1,5 +1,6 @@
 ﻿using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Vendors;
+using Nop.Web.Framework.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,12 +11,12 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 {
-    public class VendorRegisterViewModel
+    public class VendorRegisterViewModel : BaseNopEntityModel
     {
         public VendorRegisterViewModel()
         {
             AvailableCountries = new List<SelectListItem>();
-            AvailableStateProvinces = new List<SelectListItem>();
+            AvailableStates = new List<SelectListItem>();
         }
 
         [Display(Name="Shop Name")]
@@ -109,7 +110,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 
         public List<SelectListItem> Options { get; set; }
         public List<SelectListItem> AvailableCountries { get; private set; }
-        public List<SelectListItem> AvailableStateProvinces { get; private set; }
+        public List<SelectListItem> AvailableStates { get; private set; }
         [Display(Name = "State/Province")]
         public int StateProvinceId { get; internal set; }
         [Display(Name = "Country")]

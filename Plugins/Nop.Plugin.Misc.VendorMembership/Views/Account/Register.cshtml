@@ -1,5 +1,13 @@
-﻿@using System;
+﻿@using Nop.Core.Domain.Catalog
+@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
 @using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Web.Models.Common;
 @using Nop.Plugin.Misc.VendorMembership.ViewModels;
 @model VendorRegisterViewModel
 
@@ -190,7 +198,7 @@
                         <div class="form-group row">
                             @Html.LabelFor(model => model.StateProvinceId, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
-                                @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStateProvinces)
+                                @Html.DropDownListFor(model => model.StateProvinceId, Model.AvailableStates)
                                 @Html.ValidationMessageFor(model => model.StateProvinceId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -336,7 +344,7 @@
 =========================================================================================================
 @*@model AddressModel*@
 @using Nop.Web.Models.Common;
-@if (Model.CountryEnabled && Model.StateProvinceEnabled)
+@*@if (Model.CountryEnabled && Model.StateProvinceEnabled)*@
 {
     <script type="text/javascript">
         $(function () {
@@ -370,10 +378,10 @@
 <div class="form-horizontal">
     <div class="form-group">
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <div class="">
                 @Html.LabelFor(model => model.FirstName, new { @class = "" }, " :")
-                @*@Html.RequiredHint()*@
+                @Html.RequiredHint()
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -381,14 +389,14 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
             @Html.ValidationMessageFor(model => model.FirstName, string.Empty, new { @class = "text-danger" })
-        </div>
+        </div>*@
     </div>
     <div class="form-group inputs">
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <div class="">
                 @Html.LabelFor(model => model.LastName, new { @class = "" }, " :")
-                @*@Html.RequiredHint()*@
+                @Html.RequiredHint()
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -396,7 +404,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
             @Html.ValidationMessageFor(model => model.LastName, string.Empty, new { @class = "text-danger" })
-        </div>
+        </div>*@
     </div>
     <div class="form-group inputs">
 
@@ -417,7 +425,7 @@
     {
         <div class="form-group inputs">
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                 <div class="">
                     @Html.LabelFor(model => model.Company, new { @class = "" }, " :")
                     @if (Model.CompanyRequired)
@@ -431,7 +439,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
                 @Html.ValidationMessageFor(model => model.Company, string.Empty, new { @class = "text-danger" })
-            </div>
+            </div>*@
         </div>
     }
     @*@if (Model.CountryEnabled)*@
