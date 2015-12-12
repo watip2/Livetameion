@@ -66,11 +66,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 
         [Display(Name = "City")]
         public string City { get; set; }
-
-        [Display(Name = "State/Province")]
-        [Required(ErrorMessage = "This is a required field")]
-        public string StateProvince { get; set; }
-
+        
         [Display(Name = "Country")]
         public string Country { get; set; }
 
@@ -113,8 +109,12 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public List<SelectListItem> Options { get; set; }
         public List<SelectListItem> AvailableCountries { get; private set; }
         public List<SelectListItem> AvailableStates { get; private set; }
+
+        [Required(ErrorMessage = "This is a required field")]
         [Display(Name = "State/Province")]
         public int StateProvinceId { get; internal set; }
+
+        [Required(ErrorMessage = "This is a required field")]
         [Display(Name = "Country")]
         public int CountryId { get; internal set; }
         

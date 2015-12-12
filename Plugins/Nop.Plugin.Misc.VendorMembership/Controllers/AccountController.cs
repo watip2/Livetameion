@@ -199,14 +199,13 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region Utilities
 
-        [VendorAuthorize]
+        //[VendorAuthorize]
         public ActionResult Index()
         {
             var accountModel = new AccountModel();
             accountModel.Name = _workContext.CurrentVendor.Name;
             accountModel.Email = _workContext.CurrentVendor.Email;
             accountModel.Password = _workContext.CurrentCustomer.Password;
-            accountModel.PhoneNumber = _workContext.CurrentVendor.GetAttribute<string>(Domain.VendorAttributes.PhoneNumber, _genericAttributeService);
             accountModel.VacationMode = null;
             accountModel.VacationEndsAt = DateTime.Parse("01/01/2017");
             return View();
@@ -982,215 +981,181 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         [ValidateInput(false)]
         public ActionResult Register(VendorRegisterViewModel vrmodel, string returnUrl, bool captchaValid, FormCollection form)
         {
-            if (ValidateVendorModel(vrmodel))
+            if (ModelState.IsValid)
             {
-                Vendor vendor = new Vendor();
-                vendor.Name = vrmodel.Name;
-                vendor.Email = vrmodel.Email;
-                vendor.Active = true;
-                var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
-                vendorServiceCore.InsertVendor(vendor);
-                
-                Address address = new Address
+                if (ValidateVendorModel(vrmodel))
                 {
-                    City = vrmodel.City,
-                    CountryId = vrmodel.CountryId,
-                    StateProvinceId = vrmodel.StateProvinceId,
-                    PhoneNumber = vrmodel.PhoneNumber,
-                    CreatedOnUtc = DateTime.UtcNow,
-                    Email = vrmodel.Email,
-                    ZipPostalCode = vrmodel.ZipPostalCode,
-                    Address1 = vrmodel.Address1,
-                    Address2 = vrmodel.Address2
-                };
-                _addressService.InsertAddress(address);
-                _vendorAddressService.InsertVendorAddress(new VendorAddress
-                {
-                    VendorId = vendor.Id,
-                    AddressId = address.Id,
-                    AddressType = AddressType.Address
-                });
+                    Vendor vendor = new Vendor();
+                    vendor.Name = vrmodel.Name;
+                    vendor.Email = vrmodel.Email;
+                    vendor.Active = true;
+                    var vendorServiceCore = EngineContext.Current.Resolve<IVendorService>();
+                    vendorServiceCore.InsertVendor(vendor);
 
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.AttentionTo,
-                    vrmodel.AttentionTo);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.City,
-                    vrmodel.City);
-                
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Password,
-                    vrmodel.Password);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Country,
-                    vrmodel.Country);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.EnableGoogleAnalytics,
-                    vrmodel.EnableGoogleAnalytics);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.GoogleAnalyticsAccountNumber,
-                    vrmodel.GoogleAnalyticsAccountNumber);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.LogoImage,
-                    vrmodel.LogoImage);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PhoneNumber,
-                    vrmodel.PhoneNumber);
-
-                //_genericAttributeService.SaveAttribute(
-                //    vendor,
-                //    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredShippingCarrier,
-                //    model.PreferredShippingCarrier);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredSubdomainName,
-                    vrmodel.PreferredSubdomainName);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StateProvince,
-                    vrmodel.StateProvince);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine1,
-                    vrmodel.Address1);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine2,
-                    vrmodel.Address2);
-
-                _genericAttributeService.SaveAttribute(
-                    vendor,
-                    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.ZipPostalCode,
-                    vrmodel.ZipPostalCode);
-
-                var productServiceCore = EngineContext.Current.Resolve<Nop.Services.Catalog.IProductService>();
-
-                foreach (var BusinessTypeId in vrmodel.BusinessTypeIds)
-                {
-                    var vb = new VendorBusinessType();
-                    //var vendorServiceExt = new VendorService(_vendorBusinessTypeRepository);
-                    vb.VendorId = vendor.Id;
-                    vb.BusinessTypeId = BusinessTypeId;
-                    //vendorServiceExt.InsertVendorBusinessType(vb);
-                }
-
-                // create groupdeals
-                for (int i = 0; i < 5; i++)
-                {
-                    var groupDealProduct = new Product
+                    Address address = new Address
                     {
-                        DisplayOrder = 1,
-                        ShortDescription = "short description",
-                        FullDescription = "full description",
-                        Published = true,
-                        DisplayStockQuantity = true,
-                        StockQuantity = 1,
-                        Price = 20,
-                        Name = vrmodel.Name + " group deal",
-                        VisibleIndividually = true,
-                        OrderMaximumQuantity = int.MaxValue,
-                        AllowCustomerReviews = true,
-
-                        // datetime fields
-                        AvailableStartDateTimeUtc = DateTime.Now,
-                        AvailableEndDateTimeUtc = DateTime.Parse("01-01-2016"),
-                        CreatedOnUtc = DateTime.Now,
-                        UpdatedOnUtc = DateTime.Now,
-                        SpecialPrice = 10,
-                        SpecialPriceStartDateTimeUtc = DateTime.Now,
-                        SpecialPriceEndDateTimeUtc = DateTime.Parse("01-01-2016")
+                        City = vrmodel.City,
+                        CountryId = vrmodel.CountryId,
+                        StateProvinceId = vrmodel.StateProvinceId,
+                        PhoneNumber = vrmodel.PhoneNumber,
+                        CreatedOnUtc = DateTime.UtcNow,
+                        Email = vrmodel.Email,
+                        ZipPostalCode = vrmodel.ZipPostalCode,
+                        Address1 = vrmodel.Address1,
+                        Address2 = vrmodel.Address2
                     };
-
-                    _groupDealService.InsertGroupDealProduct(groupDealProduct);
-                    // generic attributes for the groupdeal product
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.IsGroupDeal, true);
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.SeName, "dummy-SeName");
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.CouponCode, "12345");
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Country, "Pakistan");
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.StateOrProvince, "KPK");
-                    _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.City, "Kamra");
-
-                    foreach (var categoryId in vrmodel.BusinessTypeIds)
+                    _addressService.InsertAddress(address);
+                    _vendorAddressService.InsertVendorAddress(new VendorAddress
                     {
-                        var productCategory = new ProductCategory
-                        {
-                            ProductId = groupDealProduct.Id,
-                            CategoryId = categoryId,
-                            IsFeaturedProduct = false,
-                            DisplayOrder = 0
-                        };
-                        _categoryService.InsertProductCategory(productCategory);
+                        VendorId = vendor.Id,
+                        AddressId = address.Id,
+                        AddressType = AddressType.Address
+                    });
+
+                    _genericAttributeService.SaveAttribute(
+                        vendor,
+                        Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.AttentionTo,
+                        vrmodel.AttentionTo);
+
+                    _genericAttributeService.SaveAttribute(
+                        vendor,
+                        Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Password,
+                        vrmodel.Password);
+
+                    _genericAttributeService.SaveAttribute(
+                        vendor,
+                        Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.EnableGoogleAnalytics,
+                        vrmodel.EnableGoogleAnalytics);
+
+                    _genericAttributeService.SaveAttribute(
+                        vendor,
+                        Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.GoogleAnalyticsAccountNumber,
+                        vrmodel.GoogleAnalyticsAccountNumber);
+
+                    _genericAttributeService.SaveAttribute(
+                        vendor,
+                        Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.LogoImage,
+                        vrmodel.LogoImage);
+
+                    //_genericAttributeService.SaveAttribute(
+                    //    vendor,
+                    //    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredShippingCarrier,
+                    //    model.PreferredShippingCarrier);
+
+                    _genericAttributeService.SaveAttribute(
+                        vendor,
+                        Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredSubdomainName,
+                        vrmodel.PreferredSubdomainName);
+
+                    var productServiceCore = EngineContext.Current.Resolve<Nop.Services.Catalog.IProductService>();
+
+                    foreach (var BusinessTypeId in vrmodel.BusinessTypeIds)
+                    {
+                        var vb = new VendorBusinessType();
+                        //var vendorServiceExt = new VendorService(_vendorBusinessTypeRepository);
+                        vb.VendorId = vendor.Id;
+                        vb.BusinessTypeId = BusinessTypeId;
+                        //vendorServiceExt.InsertVendorBusinessType(vb);
                     }
-                }
 
-                var model = new RegisterModel();
-                PrepareCustomerRegisterModel(model, false);
-                //enable newsletter by default
-                model.Newsletter = _customerSettings.NewsletterTickedByDefault;
-                model = vrmodel.ToRegisterModel(model);
+                    // create groupdeals
+                    for (int i = 0; i < 5; i++)
+                    {
+                        var groupDealProduct = new Product
+                        {
+                            DisplayOrder = 1,
+                            ShortDescription = "short description",
+                            FullDescription = "full description",
+                            Published = true,
+                            DisplayStockQuantity = true,
+                            StockQuantity = 1,
+                            Price = 20,
+                            Name = vrmodel.Name + " group deal",
+                            VisibleIndividually = true,
+                            OrderMaximumQuantity = int.MaxValue,
+                            AllowCustomerReviews = true,
 
-                // core code starts
-                //check whether registration is allowed
-                if (_customerSettings.UserRegistrationType == UserRegistrationType.Disabled)
-                    return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
+                            // datetime fields
+                            AvailableStartDateTimeUtc = DateTime.Now,
+                            AvailableEndDateTimeUtc = DateTime.Parse("01-01-2016"),
+                            CreatedOnUtc = DateTime.Now,
+                            UpdatedOnUtc = DateTime.Now,
+                            SpecialPrice = 10,
+                            SpecialPriceStartDateTimeUtc = DateTime.Now,
+                            SpecialPriceEndDateTimeUtc = DateTime.Parse("01-01-2016")
+                        };
 
-                if (_workContext.CurrentCustomer.IsRegistered())
-                {
-                    //Already registered customer. 
-                    _authenticationService.SignOut();
+                        _groupDealService.InsertGroupDealProduct(groupDealProduct);
+                        // generic attributes for the groupdeal product
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.IsGroupDeal, true);
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.SeName, "dummy-SeName");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.CouponCode, "12345");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Country, "Pakistan");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.StateOrProvince, "KPK");
+                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.City, "Kamra");
 
-                    //Save a new record
-                    _workContext.CurrentCustomer = _customerService.InsertGuestCustomer();
-                }
-                var customer = _workContext.CurrentCustomer;
-                
-                //add to 'Vendors' role
-                var vendorRole = _customerService.GetCustomerRoleBySystemName(SystemCustomerRoleNames.Vendors);
-                if (vendorRole == null)
-                    throw new NopException("'Vendors' role could not be loaded");
-                customer.CustomerRoles.Add(vendorRole);
-                customer.VendorId = vendor.Id;
+                        foreach (var categoryId in vrmodel.BusinessTypeIds)
+                        {
+                            var productCategory = new ProductCategory
+                            {
+                                ProductId = groupDealProduct.Id,
+                                CategoryId = categoryId,
+                                IsFeaturedProduct = false,
+                                DisplayOrder = 0
+                            };
+                            _categoryService.InsertProductCategory(productCategory);
+                        }
+                    }
 
-                //custom customer attributes
-                var customerAttributesXml = ParseCustomCustomerAttributes(form);
-                var customerAttributeWarnings = _customerAttributeParser.GetAttributeWarnings(customerAttributesXml);
-                foreach (var error in customerAttributeWarnings)
-                {
-                    ModelState.AddModelError("", error);
-                }
+                    var model = new RegisterModel();
+                    PrepareCustomerRegisterModel(model, false);
+                    //enable newsletter by default
+                    model.Newsletter = _customerSettings.NewsletterTickedByDefault;
+                    model = vrmodel.ToRegisterModel(model);
 
-                //validate CAPTCHA
-                if (_captchaSettings.Enabled && _captchaSettings.ShowOnRegistrationPage && !captchaValid)
-                {
-                    ModelState.AddModelError("", _localizationService.GetResource("Common.WrongCaptcha"));
-                }
+                    // core code starts
+                    //check whether registration is allowed
+                    if (_customerSettings.UserRegistrationType == UserRegistrationType.Disabled)
+                        return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.Disabled });
 
-                if (ModelState.IsValid)
-                {
+                    if (_workContext.CurrentCustomer.IsRegistered())
+                    {
+                        //Already registered customer. 
+                        _authenticationService.SignOut();
+
+                        //Save a new record
+                        _workContext.CurrentCustomer = _customerService.InsertGuestCustomer();
+                    }
+                    var customer = _workContext.CurrentCustomer;
+
+                    //add to 'Vendors' role
+                    var vendorRole = _customerService.GetCustomerRoleBySystemName(SystemCustomerRoleNames.Vendors);
+                    if (vendorRole == null)
+                        throw new NopException("'Vendors' role could not be loaded");
+                    customer.CustomerRoles.Add(vendorRole);
+                    customer.VendorId = vendor.Id;
+
+                    //custom customer attributes
+                    var customerAttributesXml = ParseCustomCustomerAttributes(form);
+                    var customerAttributeWarnings = _customerAttributeParser.GetAttributeWarnings(customerAttributesXml);
+                    foreach (var error in customerAttributeWarnings)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+
+                    //validate CAPTCHA
+                    if (_captchaSettings.Enabled && _captchaSettings.ShowOnRegistrationPage && !captchaValid)
+                    {
+                        ModelState.AddModelError("", _localizationService.GetResource("Common.WrongCaptcha"));
+                    }
+
+
                     if (_customerSettings.UsernamesEnabled && model.Username != null)
                     {
                         model.Username = model.Username.Trim();
                     }
-                    
+
                     bool isApproved = _customerSettings.UserRegistrationType == UserRegistrationType.Standard;
                     var registrationRequest = new CustomerRegistrationRequest(customer, model.Email,
                         _customerSettings.UsernamesEnabled ? model.Username : model.Email, model.Password, _customerSettings.DefaultPasswordFormat, isApproved);
@@ -1366,8 +1331,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                         ModelState.AddModelError("", error);
                 }
             }
-            
             //If we got this far, something failed, redisplay form
+            
             PrepareVendorRegisterModel(vrmodel);
             return View(vrmodel);
         }

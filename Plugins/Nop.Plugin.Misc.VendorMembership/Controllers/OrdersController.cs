@@ -44,7 +44,7 @@ using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
-    [VendorAuthorize]
+    //[VendorAuthorize]
     public partial class OrdersController : BasePluginController
     {
         #region Fields

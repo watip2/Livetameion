@@ -35,7 +35,7 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
-    [VendorAuthorize]
+    //[VendorAuthorize]
     public class InvoicesController : BasePluginController
     {
         private readonly IOrderService _orderService;

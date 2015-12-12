@@ -51,7 +51,7 @@ using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
-    [VendorAuthorize]
+    //[VendorAuthorize]
     public class ProductsController : BasePluginController
     {
         private List<Nop.Plugin.Misc.VendorMembership.DTOs.Category> _categories;
@@ -271,22 +271,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.AttentionTo,
 						model.AttentionTo);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.City,
-						model.City);
-
+                    
 					_genericAttributeService.SaveAttribute(
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Password,
 						model.Password);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.Country,
-						model.Country);
-
+                    
 					_genericAttributeService.SaveAttribute(
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.EnableGoogleAnalytics,
@@ -301,12 +291,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.LogoImage,
 						model.LogoImage);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PhoneNumber,
-						model.PhoneNumber);
-
+                    
 					//_genericAttributeService.SaveAttribute(
 					//    vendor,
 					//    Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredShippingCarrier,
@@ -316,27 +301,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.PreferredSubdomainName,
 						model.PreferredSubdomainName);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StateProvince,
-						model.StateProvince);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine1,
-						model.Address1);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine2,
-						model.Address2);
-
-					_genericAttributeService.SaveAttribute(
-						vendor,
-						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.ZipPostalCode,
-						model.ZipPostalCode);
-
+                    
 					var productServiceCore = EngineContext.Current.Resolve<Nop.Services.Catalog.IProductService>();
 
 					foreach (var BusinessTypeId in model.BusinessTypeIds)
