@@ -199,6 +199,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region Utilities
 
+        [HttpGet]
         //[VendorAuthorize]
         public ActionResult Index()
         {
@@ -208,6 +209,9 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             accountModel.Password = _workContext.CurrentCustomer.Password;
             accountModel.VacationMode = null;
             accountModel.VacationEndsAt = DateTime.Parse("01/01/2017");
+
+            accountModel.AttentionTo = _workContext.CurrentCustomer.GetAttribute<string>(Domain.VendorAttributes.AttentionTo, _genericAttributeService);
+
             var vendorAddress = _vendorAddressService.GetVendorAddressByVendorId(_workContext.CurrentVendor.Id);
             var address = _addressService.GetAddressById(vendorAddress.Id);
             accountModel.ShippingAddress.Address1 = address.Address1;
@@ -218,6 +222,38 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             PrepareAccountModel(accountModel);
 
             return View(accountModel);
+        }
+
+        [HttpPost]
+        //[VendorAuthorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(AccountModel model)
+        {
+            if (model == null)
+                throw new ArgumentNullException();
+
+            if (ModelState.IsValid)
+            {
+                var vendor = _vendorService.GetVendorById(_workContext.CurrentVendor.Id);
+                vendor.Email = model.Email;
+                vendor.Name = model.Name;
+                _vendorService.UpdateVendor(vendor);
+
+                _genericAttributeService.SaveAttribute(vendor, Domain.VendorAttributes.AttentionTo, model.AttentionTo);
+
+                var vendorAddress = _vendorAddressService.GetVendorAddressByVendorId(vendor.Id);
+                var address = _addressService.GetAddressById(vendorAddress.AddressId);
+                address.Address1 = model.ShippingAddress.Address1;
+                address.City = model.ShippingAddress.City;
+                address.ZipPostalCode = model.ShippingAddress.ZipPostalCode;
+                address.CountryId = model.ShippingAddress.CountryId;
+                _addressService.UpdateAddress(address);
+
+                RedirectToAction("Index");
+            }
+
+            PrepareAccountModel(model);
+            return View(model);
         }
 
         protected virtual void PrepareAccountModel(AccountModel model)
@@ -263,22 +299,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 }
             }
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Save(AccountModel model)
-        {
-            if (model == null)
-                throw new ArgumentNullException();
-
-            if (ModelState.IsValid)
-            {
-
-            }
-
-            return View();
-        }
-
+        
         [NonAction]
         protected virtual void TryAssociateAccountWithExternalAccount(Customer customer)
         {

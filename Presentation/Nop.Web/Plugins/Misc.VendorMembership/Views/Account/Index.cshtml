@@ -35,7 +35,7 @@
     ViewBag.Title = "Account Information";
 }
 
-@using (Html.BeginForm("Save", "Account"))
+@using (Html.BeginForm(null, null, FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     <container>

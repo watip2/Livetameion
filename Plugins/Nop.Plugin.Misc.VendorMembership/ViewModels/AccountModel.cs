@@ -25,7 +25,6 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public string VacationMode { get; set; }
         public DateTime VacationEndsAt { get; set; }
         public Address ShippingAddress { get; set; }
-        public int CountryId { get; set; }
         public List<SelectListItem> AvailableCountries { get; set; }
         public List<SelectListItem> AvailableStates { get; set; }
     }
