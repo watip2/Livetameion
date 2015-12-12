@@ -99,6 +99,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly IIndVendorService _vendorService;
         private readonly IGroupDealService _groupDealService;
         private readonly ICategoryService _categoryService;
+        private readonly IVendorAddressService _vendorAddressService;
 
         #endregion
 
@@ -145,7 +146,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             ExternalAuthenticationSettings externalAuthenticationSettings,
             IIndVendorService vendorService,
             IGroupDealService groupDealService,
-            ICategoryService categoryService)
+            ICategoryService categoryService,
+            IVendorAddressService vendorAddressService)
         {
             this._authenticationService = authenticationService;
             this._dateTimeHelper = dateTimeHelper;
@@ -190,6 +192,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             this._vendorService = vendorService;
             this._groupDealService = groupDealService;
             this._categoryService = categoryService;
+            this._vendorAddressService = vendorAddressService;
         }
 
         #endregion
@@ -997,9 +1000,16 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     CreatedOnUtc = DateTime.UtcNow,
                     Email = vrmodel.Email,
                     ZipPostalCode = vrmodel.ZipPostalCode,
-                     Address1 = vrmodel.StreetAddressLine1,
-                     Address2 = vrmodel.StreetAddressLine2
+                    Address1 = vrmodel.Address1,
+                    Address2 = vrmodel.Address2
                 };
+                _addressService.InsertAddress(address);
+                _vendorAddressService.InsertVendorAddress(new VendorAddress
+                {
+                    VendorId = vendor.Id,
+                    AddressId = address.Id,
+                    AddressType = AddressType.Address
+                });
 
                 _genericAttributeService.SaveAttribute(
                     vendor,
@@ -1059,12 +1069,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 _genericAttributeService.SaveAttribute(
                     vendor,
                     Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine1,
-                    vrmodel.StreetAddressLine1);
+                    vrmodel.Address1);
 
                 _genericAttributeService.SaveAttribute(
                     vendor,
                     Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine2,
-                    vrmodel.StreetAddressLine2);
+                    vrmodel.Address2);
 
                 _genericAttributeService.SaveAttribute(
                     vendor,

@@ -1,5 +1,7 @@
 ﻿using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Vendors;
+using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Web.Framework.Mvc;
 using System;
 using System.Collections.Generic;
@@ -54,10 +56,10 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public string AttentionTo { get; set; }
 
         [Display(Name = "Street Address Line 1")]
-        public string StreetAddressLine1 { get; set; }
+        public string Address1 { get; set; }
 
         [Display(Name = "Street Address Line 2")]
-        public string StreetAddressLine2 { get; set; }
+        public string Address2 { get; set; }
 
         [Display(Name = "Zip/Postal Code")]
         public string ZipPostalCode { get; set; }
@@ -115,7 +117,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public int StateProvinceId { get; internal set; }
         [Display(Name = "Country")]
         public int CountryId { get; internal set; }
-
+        
         ///// <summary>
         ///// Gets or sets the description
         ///// </summary>

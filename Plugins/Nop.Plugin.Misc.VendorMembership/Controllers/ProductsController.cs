@@ -325,12 +325,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 					_genericAttributeService.SaveAttribute(
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine1,
-						model.StreetAddressLine1);
+						model.Address1);
 
 					_genericAttributeService.SaveAttribute(
 						vendor,
 						Nop.Plugin.Misc.VendorMembership.Domain.VendorAttributes.StreetAddressLine2,
-						model.StreetAddressLine2);
+						model.Address2);
 
 					_genericAttributeService.SaveAttribute(
 						vendor,

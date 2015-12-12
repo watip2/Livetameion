@@ -107,43 +107,6 @@
                                 @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            @Html.LabelFor(model => model.EnableGoogleAnalytics, htmlAttributes: new { @class = "control-label col-md-4", style = "text-align:left" })
-                            <div class="col-md-3">
-                                @Html.CheckBoxFor(model => model.EnableGoogleAnalytics, new { @class = "checkbox" })
-                                @Html.ValidationMessageFor(model => model.EnableGoogleAnalytics, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            @Html.LabelFor(model => model.GoogleAnalyticsAccountNumber, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
-                            <div class="col-md-12">
-                                @Html.EditorFor(model => model.GoogleAnalyticsAccountNumber, new { htmlAttributes = new { @Value = "111111111" } })
-                                @Html.ValidationMessageFor(model => model.GoogleAnalyticsAccountNumber, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        @*<div class="form-group row">
-                @Html.LabelFor(model => model.PreferredShippingCarrier, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
-                <div class="col-md-9">
-                    @Html.EnumDropDownListFor(model => model.PreferredShippingCarrier, "Please select", new { })
-                    @Html.ValidationMessageFor(model => model.PreferredShippingCarrier, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-                        <div class="form-group row">
-                            @Html.LabelFor(model => model.PreferredSubdomainName, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
-                            <div class="col-md-12">
-                                @Html.EditorFor(model => model.PreferredSubdomainName, new { htmlAttributes = new { } })
-                                @Html.ValidationMessageFor(model => model.PreferredSubdomainName, "", new { @class = "text-danger" })
-                            </div><div class="col-md-3">.livetameion.com</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12" id="SubdomainCheckMsg">
-                                <img src="~/Plugins/Nop.Plugin.Misc.VendorMembership/Images/ajax-loader.gif" />
-                            </div>
-                        </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -154,20 +117,65 @@
                                 @Html.ValidationMessageFor(model => model.AttentionTo, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            @Html.LabelFor(model => model.StreetAddressLine1, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                        <div class="form-group 12">
+                            @Html.LabelFor(model => model.LogoImage, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
-                                @Html.EditorFor(model => model.StreetAddressLine1, new { htmlAttributes = new { @Value = "201 Street" } })
-                                @Html.ValidationMessageFor(model => model.StreetAddressLine1, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.LogoImage, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.LogoImage, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.EnableGoogleAnalytics, htmlAttributes: new { @class = "control-label col-md-4", style = "text-align:left" })
+                            <div class="col-md-3">
+                                @Html.CheckBoxFor(model => model.EnableGoogleAnalytics, new { @class = "checkbox" })
+                                @Html.ValidationMessageFor(model => model.EnableGoogleAnalytics, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.GoogleAnalyticsAccountNumber, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.GoogleAnalyticsAccountNumber, new { htmlAttributes = new { @Value = "111111111" } })
+                                @Html.ValidationMessageFor(model => model.GoogleAnalyticsAccountNumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @*<div class="form-group row">
+                            @Html.LabelFor(model => model.PreferredShippingCarrier, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                            <div class="col-md-9">
+                                @Html.EnumDropDownListFor(model => model.PreferredShippingCarrier, "Please select", new { })
+                                @Html.ValidationMessageFor(model => model.PreferredShippingCarrier, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.PreferredSubdomainName, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.PreferredSubdomainName, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.PreferredSubdomainName, "", new { @class = "text-danger" })
+                            </div><div class="col-md-3">.livetameion.com</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" id="SubdomainCheckMsg">
+                                <img src="~/Plugins/Misc.VendorMembership/Images/ajax-loader.gif" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Address</h3>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Address1, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.Address1, new { htmlAttributes = new { @Value = "201 Street" } })
+                                @Html.ValidationMessageFor(model => model.Address1, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            @Html.LabelFor(model => model.StreetAddressLine2, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                            @Html.LabelFor(model => model.Address2, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
-                                @Html.EditorFor(model => model.StreetAddressLine2, new { htmlAttributes = new { @Value = "Islamabad" } })
-                                @Html.ValidationMessageFor(model => model.StreetAddressLine2, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Address2, new { htmlAttributes = new { @Value = "Islamabad" } })
+                                @Html.ValidationMessageFor(model => model.Address2, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -178,7 +186,8 @@
                                 @Html.ValidationMessageFor(model => model.ZipPostalCode, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="form-group row">
                             @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
@@ -186,7 +195,6 @@
                                 @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
                         @*<div class="form-group row">
                             @Html.LabelFor(model => model.StateProvince, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
@@ -194,7 +202,6 @@
                                 @Html.ValidationMessageFor(model => model.StateProvince, "", new { @class = "text-danger" })
                             </div>
                         </div>*@
-
                         <div class="form-group row">
                             @Html.LabelFor(model => model.StateProvinceId, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
@@ -202,28 +209,18 @@
                                 @Html.ValidationMessageFor(model => model.StateProvinceId, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
                         @*<div class="form-group row">
-                            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
-                            <div class="col-md-12">
-                                @Html.DropDownList("Country", new SelectList(Model.Countries), new { })
-                                @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
-                            </div>
-                        </div>*@
-
+                                @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("Country", new SelectList(Model.Countries), new { })
+                                    @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                                </div>
+                            </div>*@
                         <div class="form-group row">
                             @Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
                             <div class="col-md-12">
                                 @Html.DropDownListFor(model => model.CountryId, Model.AvailableCountries)
                                 @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group 12">
-                            @Html.LabelFor(model => model.LogoImage, htmlAttributes: new { @class = "control-label col-md-12", style = "text-align:left" })
-                            <div class="col-md-12">
-                                @Html.EditorFor(model => model.LogoImage, new { htmlAttributes = new { } })
-                                @Html.ValidationMessageFor(model => model.LogoImage, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -340,274 +337,3 @@
         });
     });
 </script>
-
-=========================================================================================================
-@*@model AddressModel*@
-@using Nop.Web.Models.Common;
-@*@if (Model.CountryEnabled && Model.StateProvinceEnabled)*@
-{
-    <script type="text/javascript">
-        $(function () {
-            $("#@Html.FieldIdFor(model => model.CountryId)").change(function () {
-                var selectedItem = $(this).val();
-                var ddlStates = $("#@Html.FieldIdFor(model => model.StateProvinceId)");
-                var statesProgress = $("#states-loading-progress");
-                statesProgress.show();
-                $.ajax({
-                    cache: false,
-                    type: "GET",
-                    url: "@(Url.RouteUrl("GetStatesByCountryId"))",
-                    data: { "countryId": selectedItem, "addSelectStateItem": "true" },
-                    success: function (data) {
-                        ddlStates.html('');
-                        $.each(data, function (id, option) {
-                            ddlStates.append($('<option></option>').val(option.id).html(option.name));
-                        });
-                        statesProgress.hide();
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        alert('Failed to retrieve states.');
-                        statesProgress.hide();
-                    }
-                });
-            });
-        });
-    </script>
-}
-@Html.HiddenFor(model => model.Id)
-<div class="form-horizontal">
-    <div class="form-group">
-
-        @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="">
-                @Html.LabelFor(model => model.FirstName, new { @class = "" }, " :")
-                @Html.RequiredHint()
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            @Html.TextBoxFor(model => model.FirstName, new { @class = "gray-input", autofocus = "autofocus" })
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-            @Html.ValidationMessageFor(model => model.FirstName, string.Empty, new { @class = "text-danger" })
-        </div>*@
-    </div>
-    <div class="form-group inputs">
-
-        @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="">
-                @Html.LabelFor(model => model.LastName, new { @class = "" }, " :")
-                @Html.RequiredHint()
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            @Html.TextBoxFor(model => model.LastName, new { @class = "gray-input", autofocus = "autofocus" })
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-            @Html.ValidationMessageFor(model => model.LastName, string.Empty, new { @class = "text-danger" })
-        </div>*@
-    </div>
-    <div class="form-group inputs">
-
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <div class="">
-                @Html.LabelFor(model => model.Email, new { @class = "" }, " :")
-                @*@Html.RequiredHint()*@
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-9 col-sm-9 col-xs-9">
-            @Html.TextBoxFor(model => model.Email, new { @class = "gray-input", autofocus = "autofocus" })
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-            @Html.ValidationMessageFor(model => model.Email, string.Empty, new { @class = "text-danger" })
-        </div>
-    </div>
-    @*@if (Model.CompanyEnabled)*@
-    {
-        <div class="form-group inputs">
-
-            @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="">
-                    @Html.LabelFor(model => model.Company, new { @class = "" }, " :")
-                    @if (Model.CompanyRequired)
-                    {
-                        @Html.RequiredHint()
-                    }
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.Company, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.Company, string.Empty, new { @class = "text-danger" })
-            </div>*@
-        </div>
-    }
-    @*@if (Model.CountryEnabled)*@
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-                <div class="">
-                    @Html.LabelFor(model => model.CountryId, new { @class = "" }, " :")
-                    @*@Html.RequiredHint()*@
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.DropDownList("CountryId", Model.AvailableCountries, new { @class = "gray-dropdown" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.CountryId, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @*@if (Model.CountryEnabled && Model.StateProvinceEnabled)*@
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="">
-                    @Html.LabelFor(model => model.StateProvinceId, new { @class = "control-label" }, " :")
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.DropDownList("StateProvinceId", Model.AvailableStates, new { @class = "gray-dropdown" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <span id="states-loading-progress" style="display: none;" class="text-info">@T("Common.Wait...")</span>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.StateProvinceId, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @*@if (Model.CityEnabled)*@
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="">
-                    @Html.LabelFor(model => model.City, new { @class = "" }, " :")
-                    @*@if (Model.CityRequired)
-                    {
-                        @Html.RequiredHint()
-                    }*@
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.City, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.City, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @*@if (Model.StreetAddressEnabled)
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="">
-                    @Html.LabelFor(model => model.Address1, new { @class = "" }, " :")
-                    @if (Model.StreetAddressRequired)
-                    {
-                        @Html.RequiredHint()
-                    }
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.Address1, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.Address1, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @if (Model.StreetAddress2Enabled)
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="">
-                    @Html.LabelFor(model => model.Address2, new { @class = "control-label" }, " :")
-                    @if (Model.StreetAddress2Required)
-                    {
-                        @Html.RequiredHint()
-                    }
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.Address2, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.Address2, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @if (Model.ZipPostalCodeEnabled)
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-                <div class="">
-                    @Html.LabelFor(model => model.ZipPostalCode, new { @class = "control-label" }, " :")
-                    @if (Model.ZipPostalCodeRequired)
-                    {
-                        @Html.RequiredHint()
-                    }
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.ZipPostalCode, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.ZipPostalCode, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @if (Model.PhoneEnabled)
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="">
-                    @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label" }, " :")
-                    @if (Model.PhoneRequired)
-                    {
-                        @Html.RequiredHint()
-                    }
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.PhoneNumber, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @if (Model.FaxEnabled)
-    {
-        <div class="form-group inputs">
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
-                <div class="">
-                    @Html.LabelFor(model => model.FaxNumber, new { @class = "control-label" }, " :")
-                    @if (Model.FaxRequired)
-                    {
-                        @Html.RequiredHint()
-                    }
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                @Html.TextBoxFor(model => model.FaxNumber, new { @class = "gray-input", autofocus = "autofocus" })
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-left">
-                @Html.ValidationMessageFor(model => model.FaxNumber, string.Empty, new { @class = "text-danger" })
-            </div>
-        </div>
-    }
-    @if (Model.CustomAddressAttributes.Count > 0)
-    {
-        @Html.Partial("_AddressAttributes", Model.CustomAddressAttributes)
-    }*@
-</div>
