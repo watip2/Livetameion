@@ -208,7 +208,60 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             accountModel.Password = _workContext.CurrentCustomer.Password;
             accountModel.VacationMode = null;
             accountModel.VacationEndsAt = DateTime.Parse("01/01/2017");
-            return View();
+            var vendorAddress = _vendorAddressService.GetVendorAddressByVendorId(_workContext.CurrentVendor.Id);
+            var address = _addressService.GetAddressById(vendorAddress.Id);
+            accountModel.ShippingAddress.Address1 = address.Address1;
+            accountModel.ShippingAddress.City = address.City;
+            accountModel.ShippingAddress.ZipPostalCode = address.ZipPostalCode;
+            accountModel.ShippingAddress.CountryId = address.CountryId;
+
+            PrepareAccountModel(accountModel);
+
+            return View(accountModel);
+        }
+
+        protected virtual void PrepareAccountModel(AccountModel model)
+        {
+            //countries and states
+            //if (_customerSettings.CountryEnabled)
+            {
+                model.AvailableCountries.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectCountry"), Value = "0" });
+                foreach (var c in _countryService.GetAllCountries())
+                {
+                    model.AvailableCountries.Add(new SelectListItem
+                    {
+                        Text = c.GetLocalized(x => x.Name),
+                        Value = c.Id.ToString(),
+                        Selected = c.Id == model.ShippingAddress.CountryId
+                    });
+                }
+
+                //if (_customerSettings.StateProvinceEnabled)
+                {
+                    //states
+                    var states = _stateProvinceService.GetStateProvincesByCountryId((int)model.ShippingAddress.CountryId).ToList();
+                    if (states.Count > 0)
+                    {
+                        model.AvailableStates.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectState"), Value = "0" });
+
+                        foreach (var s in states)
+                        {
+                            model.AvailableStates.Add(new SelectListItem { Text = s.GetLocalized(x => x.Name), Value = s.Id.ToString(), Selected = (s.Id == model.ShippingAddress.StateProvinceId) });
+                        }
+                    }
+                    else
+                    {
+                        bool anyCountrySelected = model.AvailableCountries.Any(x => x.Selected);
+
+                        model.AvailableStates.Add(new SelectListItem
+                        {
+                            Text = _localizationService.GetResource(anyCountrySelected ? "Address.OtherNonUS" : "Address.SelectState"),
+                            Value = "0"
+                        });
+                    }
+
+                }
+            }
         }
 
         [HttpPost]
@@ -1362,15 +1415,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             return isModelValid;
         }
-
-        [NonAction]
-        protected virtual void PrepareVendorRegisterModel(VendorRegisterViewModel model, bool excludeProperties,
-                        string overrideCustomCustomerAttributesXml = "")
-        {
-            
-        }
-
-
+        
         public ActionResult RegisterResult(int resultId)
         {
             var resultText = "";

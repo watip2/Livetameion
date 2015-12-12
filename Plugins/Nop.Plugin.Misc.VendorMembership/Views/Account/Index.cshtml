@@ -38,7 +38,6 @@
 @using (Html.BeginForm("Save", "Account"))
 {
     @Html.AntiForgeryToken()
-    @*Account Information*@
     <container>
         Account Information
         <div class="row">
@@ -70,36 +69,25 @@
             @Html.EditorFor(model => model.VacationEndsAt)
         </div>*@
     </container>
-    @*Shipping Origin Address*@
-    @*<container>
+    <container>
         Shipping Origin Address
         <div class="row">
-            @Html.LabelFor(model => model.Name) :
-            @Html.EditorFor(model => model.Name)
+            @Html.LabelFor(model => model.ShippingAddress.Address1) :
+            @Html.EditorFor(model => model.ShippingAddress.Address1)
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.AttentionTo) :
-            @Html.EditorFor(model => model.AttentionTo)
+            @Html.LabelFor(model => model.ShippingAddress.City) :
+            @Html.EditorFor(model => model.ShippingAddress.City)
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.Email) :
-            @Html.EditorFor(model => model.Email)
+            @Html.LabelFor(model => model.ShippingAddress.ZipPostalCode) :
+            @Html.EditorFor(model => model.ShippingAddress.ZipPostalCode)
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.Password) :
-            @Html.EditorFor(model => model.Password)
+            @Html.LabelFor(model => model.ShippingAddress.CountryId) :
+            @Html.DropDownListFor(model => model.ShippingAddress.CountryId, Model.AvailableCountries)
         </div>
-        <div class="row">
-            @Html.LabelFor(model => model.PhoneNumber) :
-            @Html.EditorFor(model => model.PhoneNumber)
-        </div>
-        <div class="row">
-            @Html.LabelFor(model => model.VacationMode) :
-            @Html.EditorFor(model => model.VacationMode)
-        </div>
-        <div class="row">
-            @Html.LabelFor(model => model.VacationEndsAt) :
-            @Html.EditorFor(model => model.VacationEndsAt)
-        </div>
-    </container>*@
+    </container>
+
+    <input type="submit" value="Save" />
 }

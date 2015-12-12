@@ -43,7 +43,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
 
         public VendorAddress GetVendorAddressByVendorId(int vendorId)
         {
-            throw new NotImplementedException();
+            return _vendorAddressRepo.Table.SingleOrDefault(va => va.VendorId == vendorId && va.AddressType == AddressType.Address);
         }
 
         public void InsertVendorAddress(VendorAddress vendorAddress)
