@@ -83,8 +83,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\SupportTicketResponsesController.cs" />
-    <Compile Include="Controllers\SupportTicketTopicsController.cs" />
+    <Compile Include="AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\SupportTicketResponsesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SupportTicketTopicsController.cs" />
     <Compile Include="Helpers\SupportTicketHelper.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Infrastructure\CustomViewEngine.cs" />
@@ -95,15 +96,17 @@
     <Compile Include="Infrastructure\SupportTicketTopicMap.cs" />
     <Compile Include="Interfaces\ISupportTicketService.cs" />
     <Compile Include="Interfaces\SupportTicketService.cs" />
-    <Compile Include="Models\SupportTicket.cs" />
-    <Compile Include="Models\SupportTicketTopic.cs" />
-    <Compile Include="Models\SupportTicketResponse.cs" />
-    <Compile Include="Models\SupportTicketStatus.cs" />
-    <Compile Include="Plugin.cs" />
+    <Compile Include="DomainModels\SupportTicket.cs" />
+    <Compile Include="DomainModels\SupportTicketTopic.cs" />
+    <Compile Include="DomainModels\SupportTicketResponse.cs" />
+    <Compile Include="DomainModels\SupportTicketStatus.cs" />
+    <Compile Include="PluginConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteConfig.cs" />
+    <Compile Include="VendorAreaRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Vendor\" />
     <Folder Include="Views\SupportTicketResponses\" />
   </ItemGroup>
   <ItemGroup>

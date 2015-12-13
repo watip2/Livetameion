@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nop.Plugin.Tameion.SupportTicketSystem.Models
+namespace Nop.Plugin.Tameion.SupportTicketSystem.DomainModels
 {
     public class SupportTicketTopic : SupportTicket
     {

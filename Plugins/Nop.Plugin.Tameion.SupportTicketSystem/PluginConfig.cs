@@ -2,7 +2,7 @@
 using Nop.Core.Plugins;
 using Nop.Plugin.Tameion.SupportTicketSystem.Helpers;
 using Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure;
-using Nop.Plugin.Tameion.SupportTicketSystem.Models;
+using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using Nop.Web.Framework.Menu;
 using System;
 using System.Collections.Generic;
@@ -13,11 +13,11 @@ using System.Web.Routing;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem
 {
-    public class Plugin : BasePlugin, IAdminMenuPlugin
+    public class PluginConfig : BasePlugin, IAdminMenuPlugin
     {
         SupportTicketSystemContext _supportTicketSystemContext;
         
-        public Plugin(
+        public PluginConfig(
             SupportTicketSystemContext supportTicketSystemContext
         )
         {

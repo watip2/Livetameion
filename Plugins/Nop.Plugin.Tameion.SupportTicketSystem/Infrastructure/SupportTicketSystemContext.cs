@@ -1,7 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Data;
 using Nop.Plugin.Tameion.SupportTicketSystem.Helpers;
-using Nop.Plugin.Tameion.SupportTicketSystem.Models;
+using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

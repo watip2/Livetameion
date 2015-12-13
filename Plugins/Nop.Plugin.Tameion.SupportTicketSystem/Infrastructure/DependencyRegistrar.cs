@@ -4,15 +4,9 @@ using Nop.Core.Data;
 using Nop.Core.Infrastructure;
 using Nop.Core.Infrastructure.DependencyManagement;
 using Nop.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Nop.Web.Framework.Mvc;
-using Nop.Core.Domain.Vendors;
 using Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure;
-using Nop.Plugin.Tameion.SupportTicketSystem.Models;
+using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using Nop.Plugin.Tameion.SupportTicketSystem.Interfaces;
 
 namespace Nop.Plugin.Misc.GroupDeals.DataAccess

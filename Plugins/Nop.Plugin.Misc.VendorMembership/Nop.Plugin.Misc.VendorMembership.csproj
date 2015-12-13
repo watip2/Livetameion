@@ -105,6 +105,7 @@
     <Compile Include="ActionFilters\VendorAuthorize.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Domain\AddressType.cs" />
     <Compile Include="Domain\Invoice.cs" />
     <Compile Include="Domain\VendorAddress.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="ViewModels\InvoiceListModel.cs" />
     <Compile Include="ViewModels\InvoiceModel.cs" />
     <Compile Include="ViewModels\RegisterModel.cs" />
+    <Compile Include="ViewModels\SettingsModel.cs" />
     <Compile Include="ViewModels\VendorLoginModel.cs" />
     <Compile Include="ViewModels\VendorRegisterModelExtensions.cs" />
     <Compile Include="ViewModels\VendorRegisterViewModel.cs" />
@@ -414,6 +416,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Settings\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -264,3 +264,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plu
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Settings\Index.cshtml

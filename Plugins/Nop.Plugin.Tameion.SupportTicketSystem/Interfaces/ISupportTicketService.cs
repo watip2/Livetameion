@@ -1,5 +1,5 @@
 ﻿using Nop.Core.Data;
-using Nop.Plugin.Tameion.SupportTicketSystem.Models;
+using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

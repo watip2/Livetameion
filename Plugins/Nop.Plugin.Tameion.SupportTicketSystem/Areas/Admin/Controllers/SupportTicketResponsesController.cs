@@ -1,8 +1,5 @@
 ﻿using Nop.Admin.Controllers;
-using Nop.Core.Domain.Catalog;
-using Nop.Core.Infrastructure;
-using Nop.Plugin.Tameion.SupportTicketSystem.Models;
-using Nop.Services.Catalog;
+using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using Nop.Web.Framework.Controllers;
 using System;
 using System.Collections.Generic;
@@ -11,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Nop.Plugin.Tameion.SupportTicketSystem.Controllers
+namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
 {
-    public class SupportTicketTopicsController : BasePluginController
+    public class SupportTicketResponsesController : BasePluginController
     {
         [HttpGet]
         public ActionResult Index()
@@ -24,25 +21,25 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View("CreateTicket");
+            return View("CreateResponse");
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Create(SupportTicketTopic model)
+        public ActionResult Create(SupportTicketResponse model)
         {
-            return View("CreateTicket");
+            return View("CreateResponse");
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View("EditTicket");
+            return View("EditResponse");
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Edit(SupportTicketTopic model)
+        public ActionResult Edit(SupportTicketResponse model)
         {
-            return View("EditTicket");
+            return View("EditResponse");
         }
 
         public ActionResult Delete()

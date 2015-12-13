@@ -15,6 +15,8 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
             ViewLocationFormats = new[] {
                 "~/Plugins/Tameion.SupportTicketTopics/Views/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketTopics/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketTopics/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketTopics/Areas/Vendor/Views/{1}/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketResponses/Views/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketResponses/Views/{1}/{0}.cshtml"
             };
@@ -22,6 +24,8 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
             PartialViewLocationFormats = new[] {
                 "~/Plugins/Tameion.SupportTicketTopics/Views/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketTopics/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketTopics/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketTopics/Areas/Vendor/Views/{1}/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketResponses/Views/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketResponses/Views/{1}/{0}.cshtml"
             };
