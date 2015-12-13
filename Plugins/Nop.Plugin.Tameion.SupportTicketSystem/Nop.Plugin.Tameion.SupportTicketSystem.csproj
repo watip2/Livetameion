@@ -106,8 +106,8 @@
     <Compile Include="VendorAreaRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Admin\Views\SupportTicketResponses\" />
     <Folder Include="Areas\Vendor\" />
-    <Folder Include="Views\SupportTicketResponses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Description.txt">
@@ -120,14 +120,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SupportTicketTopics\CreateTicket.cshtml">
+    <Content Include="Areas\Admin\Views\SupportTicketTopics\CreateTicket.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SupportTicketTopics\EditTicket.cshtml">
+    <Content Include="Areas\Admin\Views\SupportTicketTopics\EditTicket.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Areas\Admin\Views\SupportTicketTopics\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

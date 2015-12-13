@@ -19,18 +19,38 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
 
         public void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute("Plugin.Tameion.SupportTicketSystem.SupportTicketTopicsController",
-                "SupportTickets/{action}/{id}",
-                new { controller = "SupportTicketTopics", action = "Index", id = UrlParameter.Optional },
-                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Controllers" }
+            var route = routes.MapRoute("Plugin.Tameion.SupportTicketSystem.Areas.Admin.SupportTicketTopicsController",
+                "Admin/SupportTickets/{action}/{id}",
+                new { area = "Admin", controller = "SupportTicketTopics", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers" }
             );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
-            routes.MapRoute("Plugin.Tameion.SupportTicketSystem.SupportTicketResponsesController",
-                "SupportTicketResponses/{action}/{id}",
-                new { controller = "SupportTicketResponses", action = "Index", id = UrlParameter.Optional },
-                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Controllers" }
+            route = routes.MapRoute("Plugin.Tameion.SupportTicketSystem.Areas.Vendor.SupportTicketTopicsController",
+                "Vendor/SupportTickets/{action}/{id}",
+                new { area = "Vendor", controller = "SupportTicketTopics", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Vendor.Controllers" }
             );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
+            route = routes.MapRoute("Plugin.Tameion.SupportTicketSystem.Areas.Admin.SupportTicketResponsesController",
+                "Admin/SupportTicketResponses/{action}/{id}",
+                new { area = "Admin", controller = "SupportTicketResponses", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+
+            route = routes.MapRoute("Plugin.Tameion.SupportTicketSystem.Areas.Vendor.SupportTicketResponsesController",
+                "Vendor/SupportTicketResponses/{action}/{id}",
+                new { area = "Vendor", controller = "SupportTicketResponses", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Vendor.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+            
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }
     }

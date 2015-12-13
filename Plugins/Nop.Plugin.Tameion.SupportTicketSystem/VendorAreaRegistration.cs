@@ -17,8 +17,8 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
             context.MapRoute(
                 "Vendor_SupportTickets_default",
                 "Vendor/SupportTickets/{action}/{id}",
-                new { controller = "SupportTickets", action = "Index", area = "Vendor", id = "" },
-                new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Vendor.Controllers" }
+                new { controller = "SupportTicketTopics", action = "Index", area = "Vendor", id = "" },
+                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Vendor.Controllers" }
             );
         }
     }

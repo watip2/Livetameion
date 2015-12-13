@@ -15,10 +15,10 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Admin_GroupDeals_default",
-                "Admin/GroupDeals/{action}/{id}",
-                new { controller = "GroupDeals", action = "Index", area = "Admin", id = "" },
-                new[] { "Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers" }
+                "Admin_SupportTickets_default",
+                "Admin/SupportTickets/{action}/{id}",
+                new { controller = "SupportTicketTopics", action = "Index", area = "Admin", id = "" },
+                new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers" }
             );
         }
     }

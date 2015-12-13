@@ -15,6 +15,11 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
 {
     public class SupportTicketTopicsController : BasePluginController
     {
+        public SupportTicketTopicsController()
+        {
+                
+        }
+
         [HttpGet]
         public ActionResult Index()
         {
