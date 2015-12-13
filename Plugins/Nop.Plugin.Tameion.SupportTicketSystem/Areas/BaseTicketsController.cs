@@ -1,4 +1,5 @@
-﻿using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
+﻿using Nop.Core;
+using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using Nop.Plugin.Tameion.SupportTicketSystem.Interfaces;
 using Nop.Plugin.Tameion.SupportTicketSystem.Models;
 using Nop.Plugin.Tameion.SupportTicketSystem.ViewModels;
@@ -15,10 +16,13 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
     public class BaseTicketsController : BasePluginController
     {
         private readonly ITicketService _ticketService;
+        private readonly IWorkContext _workContext;
 
-        public BaseTicketsController(ITicketService ticketService)
+        public BaseTicketsController(ITicketService ticketService,
+            IWorkContext workContext)
         {
             _ticketService = ticketService;
+            _workContext = workContext;
         }
 
         [HttpGet]
@@ -44,6 +48,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
                 var ticket = new ModelsMapper().CreateMap<TicketModel, Ticket>(model);
                 ticket.CreatedOnUtc = DateTime.Now;
                 ticket.Status = TicketStatus.Open;
+                ticket.VendorId = _workContext.CurrentVendor.Id;
 
                 _ticketService.InsertTicket(ticket);
                 return RedirectToAction("Index");
@@ -57,11 +62,12 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
         {
             var ticket = _ticketService.GetTicketById(Id);
             var ticketModel = new ModelsMapper().CreateMap<Ticket, TicketModel>(ticket);
-            
+
             var model = new TicketDetailsModel
             {
-             TicketModel = ticketModel,
-             Replies = ticket.Replies
+                TicketModel = ticketModel,
+                Replies = (ticket.Replies == null) ? new List<Reply>() : ticket.Replies,
+                TicketId = ticket.Id
             };
 
             return View(model);

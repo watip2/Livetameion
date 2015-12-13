@@ -13,5 +13,6 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.DomainModels
         public string Message { get; set; }
         public DateTime CreatedOnUtc { get; set; }
         public int CustomerId { get; set; }
+        public int VendorId { get; set; }
     }
 }

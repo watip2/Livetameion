@@ -1,5 +1,4 @@
-﻿using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem.ViewModels
 {
-    public class TicketDetailsModel
+    public class ReplyModel
     {
-        public TicketModel TicketModel { get; set; }
-        public ICollection<Reply> Replies { get; set; }
         public int TicketId { get; set; }
         public string Message { get; set; }
     }
