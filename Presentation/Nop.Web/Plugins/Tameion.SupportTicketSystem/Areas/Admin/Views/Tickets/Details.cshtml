@@ -1,0 +1,24 @@
+﻿@using Nop.Plugin.Tameion.SupportTicketSystem.ViewModels;
+@model TicketDetailsModel
+@{
+    var areaName = HttpContext.Current.Request.RequestContext.RouteData.Values["area"].ToString();
+    if (areaName == "Vendor")
+    {
+        Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "_AdminLayout";
+    }
+}
+
+<div class="container">
+    <div class="row">
+        <div class="md-col-12">
+            @Model.TicketModel.Title
+        </div>
+        <div class="md-col-12">
+            @Model.TicketModel.Message
+        </div>
+    </div>
+</div>

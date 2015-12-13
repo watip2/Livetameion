@@ -23,7 +23,6 @@ Shipping.UPS
 Shipping.USPS
 Mobile.SMS.Verizon
 Tameion.BridgePay
-Tameion.SupportTicketSystem
 Tax.FixedRate
 Tax.CountryStateZip
 Widgets.GoogleAnalytics
@@ -31,3 +30,4 @@ Widgets.NivoSlider
 Misc.GroupDeals
 Tameion.Auctions
 Misc.VendorMembership
+Tameion.SupportTicketSystem

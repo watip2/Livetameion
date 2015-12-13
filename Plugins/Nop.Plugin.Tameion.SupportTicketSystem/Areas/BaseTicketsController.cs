@@ -46,14 +46,29 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
                 ticket.Status = TicketStatus.Open;
 
                 _ticketService.InsertTicket(ticket);
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
 
             return View("Create");
         }
 
         [HttpGet]
-        public ActionResult Edit(int id)
+        public ActionResult Details(int Id)
+        {
+            var ticket = _ticketService.GetTicketById(Id);
+            var ticketModel = new ModelsMapper().CreateMap<Ticket, TicketModel>(ticket);
+            
+            var model = new TicketDetailsModel
+            {
+             TicketModel = ticketModel,
+             Replies = ticket.Replies
+            };
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int Id)
         {
             return View("Edit");
         }

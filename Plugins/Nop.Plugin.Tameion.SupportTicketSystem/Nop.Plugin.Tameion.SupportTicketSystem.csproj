@@ -107,6 +107,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteConfig.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
+    <Compile Include="ViewModels\TicketDetailsModel.cs" />
     <Compile Include="ViewModels\TicketModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +137,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\Tickets\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Tickets\Details.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
