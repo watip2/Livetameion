@@ -1,0 +1,35 @@
+﻿@using Nop.Plugin.Tameion.SupportTicketSystem.ViewModels;
+@model TicketModel
+@{
+    var areaName = HttpContext.Current.Request.RequestContext.RouteData.Values["area"].ToString();
+    if (areaName == "Vendor")
+    {
+        Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "_AdminLayout";
+    }
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="md-col-12">
+                @Html.LabelFor(model => model.Title)
+            </div>
+            <div class="md-col-12">
+                @Html.EditorFor(model => model.Title)
+            </div>
+            <div class="md-col-12">
+                @Html.LabelFor(model => model.Message)
+            </div>
+            <div class="md-col-12">
+                @Html.TextAreaFor(model => model.Message)
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </div>
+}

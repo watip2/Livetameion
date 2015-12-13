@@ -42,7 +42,7 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
             ///////////////////////////////////////////////////////////////////////////////////////////////
             
             // services
-            builder.RegisterType<SupportTicketService>().As<ISupportTicketService>().InstancePerLifetimeScope();
+            builder.RegisterType<TicketService>().As<ITicketService>().InstancePerLifetimeScope();
             ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 

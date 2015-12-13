@@ -13,21 +13,17 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
         public CustomViewEngine()
         {
             ViewLocationFormats = new[] {
-                "~/Plugins/Tameion.SupportTicketTopics/Views/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketTopics/Views/{1}/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketTopics/Areas/Admin/Views/{1}/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketTopics/Areas/Vendor/Views/{1}/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketResponses/Views/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketResponses/Views/{1}/{0}.cshtml"
+                "~/Plugins/Tameion.SupportTicketSystem/Views/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketSystem/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketSystem/Areas/Vendor/Views/{1}/{0}.cshtml"
             };
             
             PartialViewLocationFormats = new[] {
-                "~/Plugins/Tameion.SupportTicketTopics/Views/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketTopics/Views/{1}/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketTopics/Areas/Admin/Views/{1}/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketTopics/Areas/Vendor/Views/{1}/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketResponses/Views/{0}.cshtml",
-                "~/Plugins/Tameion.SupportTicketResponses/Views/{1}/{0}.cshtml"
+                "~/Plugins/Tameion.SupportTicketSystem/Views/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketSystem/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Tameion.SupportTicketSystem/Areas/Vendor/Views/{1}/{0}.cshtml"
             };
         }
     }

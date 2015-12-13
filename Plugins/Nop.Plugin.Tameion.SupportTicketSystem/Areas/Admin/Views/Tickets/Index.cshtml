@@ -1,5 +1,20 @@
-﻿@*@using Nop.Plugin.Misc.VendorMembership.ViewModels;
-@model SettingsModel*@
+﻿@using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
+@model IEnumerable<Ticket>
 @{
-    Layout = "_AdminLayout";
+    var areaName = HttpContext.Current.Request.RequestContext.RouteData.Values["area"].ToString();
+    if (areaName == "Vendor")
+    {
+        Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "_AdminLayout";
+    }
 }
+
+<ul>
+@foreach (var ticket in Model)
+{
+    <li><a href="@Url.Action("Details", "Tickets", new { area = areaName, Id = ticket.Id })">@ticket.Title</a></li>    
+}
+</ul>

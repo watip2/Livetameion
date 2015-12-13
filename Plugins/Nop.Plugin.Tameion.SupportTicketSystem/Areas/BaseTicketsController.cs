@@ -1,4 +1,7 @@
 ﻿using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
+using Nop.Plugin.Tameion.SupportTicketSystem.Interfaces;
+using Nop.Plugin.Tameion.SupportTicketSystem.Models;
+using Nop.Plugin.Tameion.SupportTicketSystem.ViewModels;
 using Nop.Web.Framework.Controllers;
 using System;
 using System.Collections.Generic;
@@ -11,33 +14,48 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
 {
     public class BaseTicketsController : BasePluginController
     {
-        public BaseTicketsController()
-        {
+        private readonly ITicketService _ticketService;
 
+        public BaseTicketsController(ITicketService ticketService)
+        {
+            _ticketService = ticketService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var tickets = _ticketService.GetAllTickets();
+
+            return View(tickets);
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            return View("CreateTicket");
+            var model = new TicketModel();
+            return View(model);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Create(Ticket model)
+        public ActionResult Create(TicketModel model)
         {
-            return View("CreateTicket");
+            if (ModelState.IsValid)
+            {
+                var ticket = new ModelsMapper().CreateMap<TicketModel, Ticket>(model);
+                ticket.CreatedOnUtc = DateTime.Now;
+                ticket.Status = TicketStatus.Open;
+
+                _ticketService.InsertTicket(ticket);
+                RedirectToAction("Index");
+            }
+
+            return View("Create");
         }
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View("EditTicket");
+            return View("Edit");
         }
 
         [HttpPost, ValidateAntiForgeryToken]

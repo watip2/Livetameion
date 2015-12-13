@@ -2,6 +2,7 @@
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Infrastructure;
 using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
+using Nop.Plugin.Tameion.SupportTicketSystem.Interfaces;
 using Nop.Services.Catalog;
 using Nop.Web.Framework.Controllers;
 using System;
@@ -15,6 +16,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
 {
     public class TicketsController : BaseTicketsController
     {
-        
+        public TicketsController(ITicketService ticketService) : base(ticketService)
+        { }
     }
 }

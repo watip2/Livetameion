@@ -17,7 +17,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
             ToTable("SupportTickets");
             HasKey(st => st.Id);
 
-            Property(st => st.Name);
+            Property(st => st.Title);
             Property(st => st.Message);
             Property(st => st.Status);
             Property(st => st.CreatedOnUtc);
