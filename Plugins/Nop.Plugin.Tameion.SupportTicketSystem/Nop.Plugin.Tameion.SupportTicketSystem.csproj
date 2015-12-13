@@ -130,7 +130,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Areas\Admin\Views\SupportTicketTopics\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SupportTicketTopics\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
