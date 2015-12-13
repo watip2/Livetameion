@@ -84,30 +84,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\SupportTicketResponsesController.cs" />
-    <Compile Include="Areas\Admin\Controllers\SupportTicketTopicsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RepliesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TicketsController.cs" />
+    <Compile Include="Areas\BaseRepliesController.cs" />
+    <Compile Include="Areas\BaseTicketsController.cs" />
     <Compile Include="Helpers\SupportTicketHelper.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Infrastructure\CustomViewEngine.cs" />
     <Compile Include="Infrastructure\DependencyRegistrar.cs" />
     <Compile Include="Infrastructure\EfStartUpTask.cs" />
     <Compile Include="Infrastructure\SupportTicketSystemContext.cs" />
-    <Compile Include="Infrastructure\SupportTicketResponseMap.cs" />
-    <Compile Include="Infrastructure\SupportTicketTopicMap.cs" />
+    <Compile Include="Infrastructure\ReplyMap.cs" />
+    <Compile Include="Infrastructure\TicketMap.cs" />
     <Compile Include="Interfaces\ISupportTicketService.cs" />
     <Compile Include="Interfaces\SupportTicketService.cs" />
     <Compile Include="DomainModels\SupportTicket.cs" />
-    <Compile Include="DomainModels\SupportTicketTopic.cs" />
-    <Compile Include="DomainModels\SupportTicketResponse.cs" />
-    <Compile Include="DomainModels\SupportTicketStatus.cs" />
+    <Compile Include="DomainModels\Ticket.cs" />
+    <Compile Include="DomainModels\Reply.cs" />
+    <Compile Include="DomainModels\TicketStatus.cs" />
     <Compile Include="PluginConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteConfig.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\SupportTicketResponses\" />
-    <Folder Include="Areas\Vendor\" />
+    <Folder Include="Areas\Admin\Views\Replies\" />
+    <Folder Include="Areas\Vendor\Controllers\" />
+    <Folder Include="Areas\Vendor\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Description.txt">
@@ -120,17 +123,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\SupportTicketTopics\CreateTicket.cshtml">
+    <Content Include="Areas\Admin\Views\Tickets\CreateTicket.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\SupportTicketTopics\EditTicket.cshtml">
+    <Content Include="Areas\Admin\Views\Tickets\EditTicket.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\SupportTicketTopics\Index.cshtml">
+    <Content Include="Areas\Admin\Views\Tickets\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

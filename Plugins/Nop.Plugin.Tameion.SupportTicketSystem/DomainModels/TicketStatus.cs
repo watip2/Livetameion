@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem.DomainModels
 {
-    public enum SupportTicketStatus
+    public enum TicketStatus
     {
         [Display(Name = "Open")]
         Open,

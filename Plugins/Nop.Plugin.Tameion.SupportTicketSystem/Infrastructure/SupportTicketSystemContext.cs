@@ -33,8 +33,8 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
              * core map class to this context like we did below for vendor
              */
 
-            modelBuilder.Configurations.Add(new SupportTicketTopicMap());
-            modelBuilder.Configurations.Add(new SupportTicketResponseMap());
+            modelBuilder.Configurations.Add(new TicketMap());
+            modelBuilder.Configurations.Add(new ReplyMap());
             //modelBuilder.Configurations.Add(new GroupdealPictureMap());
             //modelBuilder.Configurations.Add(new Nop.Data.Mapping.Vendors.VendorMap());
             //modelBuilder.Configurations.Add(new Nop.Data.Mapping.Catalog.CategoryMap());
@@ -96,10 +96,10 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
 
         public void Uninstall()
         {
-            var dbScript = "DROP TABLE " + PluginHelper.GetTableName<SupportTicketTopic>(this);
+            var dbScript = "DROP TABLE " + PluginHelper.GetTableName<Ticket>(this);
             Database.ExecuteSqlCommand(dbScript);
 
-            dbScript = "DROP TABLE " + PluginHelper.GetTableName<SupportTicketResponse>(this);
+            dbScript = "DROP TABLE " + PluginHelper.GetTableName<Reply>(this);
             Database.ExecuteSqlCommand(dbScript);
 
             SaveChanges();

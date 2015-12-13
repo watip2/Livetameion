@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem.DomainModels
 {
-    public class SupportTicketTopic : SupportTicket
+    public class Ticket : SupportTicket
     {
         public string Name { get; set; }
-        public SupportTicketStatus Status { get; set; }
+        public TicketStatus Status { get; set; }
 
-        public ICollection<SupportTicketResponse> SupportTicketResponses { get; set; }
+        public ICollection<Reply> Replies { get; set; }
     }
 }

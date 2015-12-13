@@ -29,14 +29,14 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
             
             // repositories
             //override required repository with our custom context
-            builder.RegisterType<EfRepository<SupportTicketTopic>>()
-                .As<IRepository<SupportTicketTopic>>()
+            builder.RegisterType<EfRepository<Ticket>>()
+                .As<IRepository<Ticket>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(SUPPORT_TICKET_SYSTEM_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
 
             //override required repository with our custom context
-            builder.RegisterType<EfRepository<SupportTicketResponse>>()
-                .As<IRepository<SupportTicketResponse>>()
+            builder.RegisterType<EfRepository<Reply>>()
+                .As<IRepository<Reply>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(SUPPORT_TICKET_SYSTEM_CONTEXT_NAME))
                 .InstancePerLifetimeScope();
             ///////////////////////////////////////////////////////////////////////////////////////////////

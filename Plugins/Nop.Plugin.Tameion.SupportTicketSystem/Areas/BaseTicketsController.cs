@@ -1,8 +1,4 @@
-﻿using Nop.Admin.Controllers;
-using Nop.Core.Domain.Catalog;
-using Nop.Core.Infrastructure;
-using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
-using Nop.Services.Catalog;
+﻿using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using Nop.Web.Framework.Controllers;
 using System;
 using System.Collections.Generic;
@@ -11,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
+namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
 {
-    public class SupportTicketTopicsController : BasePluginController
+    public class BaseTicketsController : BasePluginController
     {
-        public SupportTicketTopicsController()
+        public BaseTicketsController()
         {
-                
+
         }
 
         [HttpGet]
@@ -33,7 +29,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Create(SupportTicketTopic model)
+        public ActionResult Create(Ticket model)
         {
             return View("CreateTicket");
         }
@@ -45,7 +41,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Edit(SupportTicketTopic model)
+        public ActionResult Edit(Ticket model)
         {
             return View("EditTicket");
         }

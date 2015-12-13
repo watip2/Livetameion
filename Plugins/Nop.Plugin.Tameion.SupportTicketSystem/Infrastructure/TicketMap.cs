@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
 {
-    public class SupportTicketTopicMap : EntityTypeConfiguration<SupportTicketTopic>
+    public class TicketMap : EntityTypeConfiguration<Ticket>
     {
-        public SupportTicketTopicMap()
+        public TicketMap()
         {
             // the Install() method of ObjectContext class will create table with the following name
             // this table name is overwritten by the name of navigational property in parent class
-            ToTable("SupportTicketTopics");
+            ToTable("SupportTickets");
             HasKey(st => st.Id);
 
             Property(st => st.Name);

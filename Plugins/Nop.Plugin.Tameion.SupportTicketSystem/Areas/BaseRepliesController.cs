@@ -1,5 +1,4 @@
-﻿using Nop.Admin.Controllers;
-using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
+﻿using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
 using Nop.Web.Framework.Controllers;
 using System;
 using System.Collections.Generic;
@@ -8,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
+namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
 {
-    public class SupportTicketResponsesController : BasePluginController
+    public class BaseRepliesController : BasePluginController
     {
         [HttpGet]
         public ActionResult Index()
@@ -25,7 +24,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Create(SupportTicketResponse model)
+        public ActionResult Create(Reply model)
         {
             return View("CreateResponse");
         }
@@ -37,7 +36,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas.Admin.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public ActionResult Edit(SupportTicketResponse model)
+        public ActionResult Edit(Reply model)
         {
             return View("EditResponse");
         }

@@ -15,9 +15,9 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Vendor_SupportTickets_default",
-                "Vendor/SupportTickets/{action}/{id}",
-                new { controller = "SupportTicketTopics", action = "Index", area = "Vendor", id = "" },
+                "Vendor_Tickets_default",
+                "Vendor/Tickets/{action}/{id}",
+                new { controller = "Tickets", action = "Index", area = "Vendor", id = "" },
                 new[] { "Nop.Plugin.Tameion.SupportTicketSystem.Areas.Vendor.Controllers" }
             );
         }

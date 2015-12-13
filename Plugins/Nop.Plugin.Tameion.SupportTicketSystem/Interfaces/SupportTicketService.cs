@@ -10,53 +10,53 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Interfaces
 {
     public class SupportTicketService : ISupportTicketService
     {
-        IRepository<SupportTicketTopic> _ticketRepo;
-        IRepository<SupportTicketResponse> _responseRepo;
+        IRepository<Ticket> _ticketRepo;
+        IRepository<Reply> _responseRepo;
 
         public SupportTicketService(
-            IRepository<SupportTicketTopic> ticketRepo,
-            IRepository<SupportTicketResponse> responseRepo)
+            IRepository<Ticket> ticketRepo,
+            IRepository<Reply> responseRepo)
         {
             _ticketRepo = ticketRepo;
             _responseRepo = responseRepo;
         }
         
-        public SupportTicketTopic GetTicketTopicById(int ticketId)
+        public Ticket GetTicketTopicById(int ticketId)
         {
             return _ticketRepo.GetById(ticketId);
         }
 
-        public SupportTicketResponse GetTicketResponseById(int responseId)
+        public Reply GetTicketResponseById(int responseId)
         {
             return _responseRepo.GetById(responseId);
         }
 
-        public IEnumerable<SupportTicketTopic> GetAllTicketTopics()
+        public IEnumerable<Ticket> GetAllTicketTopics()
         {
             return _ticketRepo.Table.ToList();
         }
 
-        public IEnumerable<SupportTicketResponse> GetAllTicketResponses()
+        public IEnumerable<Reply> GetAllTicketResponses()
         {
             return _responseRepo.Table.ToList();
         }
 
-        public void InsertTicketTopic(SupportTicketTopic ticketTopic)
+        public void InsertTicketTopic(Ticket ticketTopic)
         {
             _ticketRepo.Insert(ticketTopic);
         }
 
-        public void InsertTicketResponse(SupportTicketResponse ticketResponse)
+        public void InsertTicketResponse(Reply ticketResponse)
         {
             _responseRepo.Insert(ticketResponse);
         }
 
-        public void DeleteTicketTopic(SupportTicketTopic ticketTopic)
+        public void DeleteTicketTopic(Ticket ticketTopic)
         {
             _ticketRepo.Delete(ticketTopic);
         }
 
-        public void DeleteTicketResponse(SupportTicketResponse ticketResponse)
+        public void DeleteTicketResponse(Reply ticketResponse)
         {
             _responseRepo.Delete(ticketResponse);
         }

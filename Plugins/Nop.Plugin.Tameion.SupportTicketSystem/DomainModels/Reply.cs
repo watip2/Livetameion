@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem.DomainModels
 {
-    public class SupportTicketResponse : SupportTicket
+    public class Reply : SupportTicket
     {
-        public int SupportTicketTopicId { get; set; }
-        public virtual SupportTicketTopic SupportTicketTopic { get; set; }
+        public int TicketId { get; set; }
+        public virtual Ticket Ticket { get; set; }
     }
 }

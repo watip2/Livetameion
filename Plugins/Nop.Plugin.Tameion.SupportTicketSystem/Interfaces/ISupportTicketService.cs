@@ -10,13 +10,13 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Interfaces
 {
     public interface ISupportTicketService
     {
-        SupportTicketTopic GetTicketTopicById(int ticketId);
-        SupportTicketResponse GetTicketResponseById(int ticketId);
-        IEnumerable<SupportTicketTopic> GetAllTicketTopics();
-        IEnumerable<SupportTicketResponse> GetAllTicketResponses();
-        void InsertTicketTopic(SupportTicketTopic ticketTopic);
-        void InsertTicketResponse(SupportTicketResponse ticketResponse);
-        void DeleteTicketTopic(SupportTicketTopic ticketTopic);
-        void DeleteTicketResponse(SupportTicketResponse ticketResponse);
+        Ticket GetTicketTopicById(int ticketId);
+        Reply GetTicketResponseById(int ticketId);
+        IEnumerable<Ticket> GetAllTicketTopics();
+        IEnumerable<Reply> GetAllTicketResponses();
+        void InsertTicketTopic(Ticket ticketTopic);
+        void InsertTicketResponse(Reply ticketResponse);
+        void DeleteTicketTopic(Ticket ticketTopic);
+        void DeleteTicketResponse(Reply ticketResponse);
     }
 }

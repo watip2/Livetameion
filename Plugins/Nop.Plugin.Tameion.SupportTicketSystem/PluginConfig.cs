@@ -37,29 +37,29 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem
                 SystemName = "Tameion.SupportTicketSystem",
                 Title = "Support Tickets",
                 Visible = true,
-                RouteValues = new RouteValueDictionary() { { "area", null } },
+                RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
                 ChildNodes = new List<SiteMapNode>
                 {
                     new SiteMapNode()
                     {
                         SystemName = "Tameion.SupportTicketSystem",
                         Title = "Tickets",
-                        Url = "/SupportTickets/Index",
-                        ControllerName = "SupportTickets",
+                        Url = "Admin/Tickets/Index",
+                        ControllerName = "Tickets",
                         ActionName = "Index",
                         Visible = true,
-                        RouteValues = new RouteValueDictionary() { { "area", null } },
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
                     },
 
                     new SiteMapNode()
                     {
                         SystemName = "Tameion.SupportTicketSystem",
                         Title = "Create Ticket",
-                        Url = "/SupportTickets/Create",
-                        ControllerName = "SupportTickets",
+                        Url = "Admin/Tickets/Create",
+                        ControllerName = "Tickets",
                         ActionName = "Create",
                         Visible = true,
-                        RouteValues = new RouteValueDictionary() { { "area", null } },
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
                     }
                 }
             };

@@ -15,11 +15,10 @@ C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-I
 C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.pdb
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Description.txt
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\web.config
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Areas\Admin\Views\SupportTicketTopics\CreateTicket.cshtml
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Areas\Admin\Views\SupportTicketTopics\EditTicket.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Areas\Admin\Views\Tickets\CreateTicket.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Areas\Admin\Views\Tickets\EditTicket.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Areas\Admin\Views\Tickets\Index.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Nop.Plugin.Tameion.SupportTicketSystem.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Nop.Plugin.Tameion.SupportTicketSystem.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.pdb
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Areas\Admin\Views\SupportTicketTopics\Index.cshtml
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.csprojResolveAssemblyReference.cache

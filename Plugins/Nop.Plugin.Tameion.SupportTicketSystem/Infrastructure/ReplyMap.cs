@@ -3,19 +3,19 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
 {
-    public class SupportTicketResponseMap : EntityTypeConfiguration<SupportTicketResponse>
+    public class ReplyMap : EntityTypeConfiguration<Reply>
     {
-        public SupportTicketResponseMap()
+        public ReplyMap()
         {
             // the Install() method of ObjectContext class will create table with the following name
             // this table name is overwritten by the name of navigational property in parent class
-            ToTable("SupportTicketResponses");
+            ToTable("SupportTicketReplies");
             HasKey(st => st.Id);
 
             Property(st => st.Message);
             Property(st => st.CreatedOnUtc);
             Property(st => st.CustomerId);
-            Property(st => st.SupportTicketTopicId);
+            Property(st => st.TicketId);
         }
     }
 }
