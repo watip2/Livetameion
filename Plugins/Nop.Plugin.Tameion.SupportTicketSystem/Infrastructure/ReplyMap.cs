@@ -16,6 +16,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
             Property(st => st.CreatedOnUtc);
             Property(st => st.CustomerId);
             Property(st => st.TicketId);
+            Property(st => st.VendorId);
         }
     }
 }

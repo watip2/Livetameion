@@ -96,10 +96,10 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
 
         public void Uninstall()
         {
-            var dbScript = "DROP TABLE " + PluginHelper.GetTableName<Ticket>(this);
+            var dbScript = "DROP TABLE " + PluginHelper.GetTableName<Reply>(this);
             Database.ExecuteSqlCommand(dbScript);
 
-            dbScript = "DROP TABLE " + PluginHelper.GetTableName<Reply>(this);
+            dbScript = "DROP TABLE " + PluginHelper.GetTableName<Ticket>(this);
             Database.ExecuteSqlCommand(dbScript);
 
             SaveChanges();

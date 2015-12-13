@@ -44,6 +44,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
             {
                 var reply = new ModelsMapper().CreateMap<ReplyModel, Reply>(model);
                 reply.VendorId = _workContext.CurrentVendor.Id;
+                reply.CreatedOnUtc = DateTime.Now;
                 _ticketService.InsertReply(reply);
                 return RedirectToAction("Details", "Tickets", new { Id = model.TicketId });
             }
