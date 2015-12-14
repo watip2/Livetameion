@@ -1,0 +1,23 @@
+﻿@model ProductModel
+
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+
+@if (Model.AvailableDiscounts != null && Model.AvailableDiscounts.Count > 0)
+{
+    foreach (var discount in Model.AvailableDiscounts)
+    {
+        <input type="checkbox" name="SelectedDiscountIds" value="@discount.Id"
+               @if (Model.SelectedDiscountIds != null && Model.SelectedDiscountIds.Contains(discount.Id)) { <text> checked="checked" </text>  } />@discount.Name
+            <br />
+    }
+}
+else
+{
+    @T("Admin.Catalog.Products.Discounts.NoDiscounts")
+}

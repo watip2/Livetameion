@@ -83,6 +83,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly AddressSettings _addressSettings;
         private readonly ShippingSettings _shippingSettings;
         private readonly IInvoiceService _invoiceService;
+        private readonly IGenericAttributeService _genericAttributeService;
+        private readonly IProductTemplateService _productTemplateService;
 
         public InvoicesController(IOrderService orderService,
             IOrderReportService orderReportService,
@@ -127,7 +129,9 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             MeasureSettings measureSettings,
             AddressSettings addressSettings,
             ShippingSettings shippingSettings,
-            IInvoiceService invoiceService)
+            IInvoiceService invoiceService,
+            IGenericAttributeService genericAttributeService,
+            IProductTemplateService productTemplateService)
         {
             this._orderService = orderService;
             this._orderReportService = orderReportService;
@@ -174,6 +178,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             this._addressSettings = addressSettings;
             this._shippingSettings = shippingSettings;
             this._invoiceService = invoiceService;
+            this._genericAttributeService = genericAttributeService;
+            this._productTemplateService = productTemplateService;
         }
 
         public ActionResult Index()
@@ -194,6 +200,20 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             foreach (var order in orders)
             {
+                decimal commission = new decimal(0);
+
+                foreach (var item in order.OrderItems)
+                {
+                    var productTemplates = _productTemplateService.GetAllProductTemplates();
+                    foreach (var template in productTemplates)
+                    {
+                        if (template.Id == item.Product.ProductTemplateId)
+                        {
+
+                        }
+                    }
+                }
+
                 var invoice = new Invoice
                 {
                     OrderId = order.Id,
@@ -498,7 +518,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         public ActionResult Pay(int invoiceId)
         {
-            _invoiceService.GetInvoiceById(invoiceId);
+            var invoice = _invoiceService.GetInvoiceById(invoiceId);
 
             return View();
         }

@@ -1,0 +1,142 @@
+﻿@using Nop.Core.Domain.Catalog;
+@using Nop.Services.Catalog;
+@using System.Text;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Plugin.Tameion.Auctions.ViewModels;
+@model AuctionModel
+
+
+    @if (Model.Id > 0)
+    {
+            
+    <table class="adminContent">
+        <tr>
+            <td>
+                <div id="relatedproducts-grid"></div>
+
+                <script>
+                    $(document).ready(function () {
+                        $("#relatedproducts-grid").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("AuctionProductList", "Auctions", new { auctionId = Model.Id, area = "Admin" }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    },
+                                    update: {
+                                        url:"@Html.Raw(Url.Action("AuctionProductUpdate", "Auctions", new { area = "Admin" }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    },
+                                    destroy: {
+                                        url: "@Html.Raw(Url.Action("AuctionProductDelete", "Auctions", new { area = "Admin" }))",
+                                        type: "POST",
+                                        dataType: "json",
+                                        data: addAntiForgeryToken
+                                    }
+                                },
+                                schema: {
+                                    data: "Data",
+                                    total: "Total",
+                                    errors: "Errors",
+                                    model: {
+                                        id: "Id",
+                                        fields: {
+                                            ProductName: { editable: false, type: "string" },
+                                            Status: { editable: false, type: "string" },
+                                            //DisplayOrder: {editable: true, type: "number" },
+                                            ProductId: { editable: false, type: "number" }
+                                        }
+                                    }
+                                },
+                                requestEnd: function(e) {
+                                    if(e.type=="update") {
+                                        this.read();
+                                    }
+                                },
+                                error: function(e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: true
+                            },
+                            pageable: {
+                                refresh: true,
+                                numeric: false,
+                                previousNext: false,
+                                info: false
+                            },
+                            editable: {
+                                confirmation: false,
+                                mode: "inline"
+                            },
+                            scrollable: false,
+                            columns: [{
+                                field: "ProductName",
+                                title: "@T("Admin.Catalog.Products.RelatedProducts.Fields.Product")"
+                            },{
+                                field: "Status",
+                                title: "Status"
+                            }, @*{
+                                field: "DisplayOrder",
+                                title: "@T("Admin.Catalog.Products.RelatedProducts.Fields.DisplayOrder")",
+                                //integer format
+                                format: "{0:0}",
+                                width: 150
+                            },*@ {
+                                field: "ProductId",
+                                title: "@T("Admin.Common.View")",
+                                width: 100,
+                                template: '<a href="@Url.Content("~/Admin/Product/Edit/")#=ProductId#">@T("Admin.Common.View")</a>'
+                            }, {
+                                command: [@*{
+                                    name: "edit",
+                                    text: "@T("Admin.Common.Edit")"
+                                },*@ {
+                                    name: "destroy",
+                                    text: "@T("Admin.Common.Delete")"
+                                }],
+                                width: 200
+                            }]
+                        });
+                    });
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%">
+                <input type="submit" id="btnAddNewRelatedProduct" value="@T("Admin.Catalog.Products.RelatedProducts.AddNew")" onclick="javascript:OpenWindow('@(Url.Action("RelatedProductAddPopup", "Auctions", new { area = "Admin", auctionId = Model.Id, btnId = "btnRefreshRelatedProducts", formId = "product-form" }))    ', 800, 800, true); return false;" class="k-button" />
+                <input type="submit" id="btnRefreshRelatedProducts" style="display: none" />
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#btnRefreshRelatedProducts').click(function () {
+                            //refresh grid
+                            var grid = $("#relatedproducts-grid").data('kendoGrid');
+                            grid.dataSource.read();
+
+                            //return false to don't reload a page
+                            return false;
+                        });
+                    });
+                </script>
+            </td>
+        </tr>
+    </table>
+    }
+    else
+    {
+    @T("Admin.Catalog.Products.RelatedProducts.SaveBeforeEdit")
+    }

@@ -100,6 +100,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly IGroupDealService _groupDealService;
         private readonly ICategoryService _categoryService;
         private readonly IVendorAddressService _vendorAddressService;
+        private readonly IProductService _productService;
 
         #endregion
 
@@ -147,7 +148,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             IIndVendorService vendorService,
             IGroupDealService groupDealService,
             ICategoryService categoryService,
-            IVendorAddressService vendorAddressService)
+            IVendorAddressService vendorAddressService,
+            IProductService productService)
         {
             this._authenticationService = authenticationService;
             this._dateTimeHelper = dateTimeHelper;
@@ -193,6 +195,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             this._groupDealService = groupDealService;
             this._categoryService = categoryService;
             this._vendorAddressService = vendorAddressService;
+            this._productService = productService;
         }
 
         #endregion
@@ -200,7 +203,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         #region Utilities
 
         [HttpGet]
-        //[VendorAuthorize]
+        [VendorAuthorize]
         public ActionResult Index()
         {
             var accountModel = new AccountModel();
@@ -221,11 +224,14 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             PrepareAccountModel(accountModel);
 
+            var vendorMembershipProduct = _productService.GetProductById(1);
+            _shoppingCartService.AddToCart(_workContext.CurrentCustomer, vendorMembershipProduct, ShoppingCartType.ShoppingCart, 0);
+
             return View(accountModel);
         }
 
         [HttpPost]
-        //[VendorAuthorize]
+        [VendorAuthorize]
         [ValidateAntiForgeryToken]
         public ActionResult Index(AccountModel model)
         {

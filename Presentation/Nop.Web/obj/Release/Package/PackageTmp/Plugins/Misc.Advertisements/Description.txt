@@ -1,0 +1,8 @@
+﻿Group: Misc
+FriendlyName: Advertisements
+SystemName: Misc.Advertisements
+Version: 1.0
+SupportedVersions: 3.60
+Author: Muhammad Sohail
+DisplayOrder: 1
+FileName: Nop.Plugin.Misc.Advertisements.dll

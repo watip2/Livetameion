@@ -7,7 +7,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlMAe3C95rU2SNKQTNpCMPAAAAAACAAAAAAAQZgAAAAEAACAAAAA+yc3WaBOvF6z0yBnyeCloNuCWHmyRl3/4ESOuG4sNsgAAAAAOgAAAAAIAACAAAAAIUH0BMiSqX1WJwcXvitdvVawK8N0OHfTmSHu8dJTA9SAAAABKftG/DynznFg/8DQUMRUkoVbjhIb1mCtVjE71dremkEAAAACXLmkHDHdSEcu57UiapGeI85xzpsVuBHpTClrV7tskRv5dbGdSekpwV8wSMI/jS8SUjm/negeb5Yxt7SsnKnrF</EncryptedPassword>
-    <_PublishTargetUrl>E:\pub.livetameion.com</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\GitHub\Livetameion\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Administration/Content/images/1pix.gif">
@@ -1162,6 +1162,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="App_Data/Localization/Installation/installation.zhs.xml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="App_Data/local_settings/Settings.txt">
+      <publishTime>12/12/2015 15:17:32</publishTime>
+    </File>
     <File Include="App_Data/Pdf/FreeSerif.ttf">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
@@ -1313,7 +1316,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/09/2015 15:06:51</publishTime>
     </File>
     <File Include="bin/Nop.Web.dll">
-      <publishTime>12/09/2015 14:57:25</publishTime>
+      <publishTime>12/14/2015 21:44:08</publishTime>
     </File>
     <File Include="bin/Nop.Web.Framework.dll">
       <publishTime>12/09/2015 14:52:14</publishTime>
@@ -4232,7 +4235,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/13/2015 23:12:10</publishTime>
     </File>
     <File Include="license.txt">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4247,7 +4250,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.CustomerRoles/Nop.Plugin.DiscountRules.CustomerRoles.dll">
-      <publishTime>12/09/2015 14:56:18</publishTime>
+      <publishTime>12/14/2015 11:05:41</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.CustomerRoles/Nop.Plugin.DiscountRules.CustomerRoles.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4265,7 +4268,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.HadSpentAmount/Nop.Plugin.DiscountRules.HadSpentAmount.dll">
-      <publishTime>12/09/2015 14:56:19</publishTime>
+      <publishTime>12/14/2015 11:05:43</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.HadSpentAmount/Nop.Plugin.DiscountRules.HadSpentAmount.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4283,7 +4286,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.HasAllProducts/Nop.Plugin.DiscountRules.HasAllProducts.dll">
-      <publishTime>12/09/2015 14:56:20</publishTime>
+      <publishTime>12/14/2015 11:05:44</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.HasAllProducts/Nop.Plugin.DiscountRules.HasAllProducts.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4304,7 +4307,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.HasOneProduct/Nop.Plugin.DiscountRules.HasOneProduct.dll">
-      <publishTime>12/09/2015 14:56:20</publishTime>
+      <publishTime>12/14/2015 11:05:44</publishTime>
     </File>
     <File Include="Plugins/DiscountRules.HasOneProduct/Nop.Plugin.DiscountRules.HasOneProduct.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4325,7 +4328,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/ExchangeRate.McExchange/Nop.Plugin.ExchangeRate.McExchange.dll">
-      <publishTime>12/09/2015 14:56:30</publishTime>
+      <publishTime>12/14/2015 11:05:49</publishTime>
     </File>
     <File Include="Plugins/ExchangeRate.McExchange/Nop.Plugin.ExchangeRate.McExchange.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4385,10 +4388,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/ExternalAuth.Facebook/Nop.Plugin.ExternalAuth.Facebook.dll">
-      <publishTime>12/09/2015 14:56:27</publishTime>
+      <publishTime>12/14/2015 11:05:49</publishTime>
     </File>
     <File Include="Plugins/ExternalAuth.Facebook/Nop.Plugin.ExternalAuth.Facebook.dll.config">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/10/2015 11:36:04</publishTime>
     </File>
     <File Include="Plugins/ExternalAuth.Facebook/Org.Mentalis.Security.Cryptography.dll">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4415,7 +4418,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Feed.Froogle/Nop.Plugin.Feed.Froogle.dll">
-      <publishTime>12/09/2015 14:56:19</publishTime>
+      <publishTime>12/14/2015 11:05:43</publishTime>
     </File>
     <File Include="Plugins/Feed.Froogle/Nop.Plugin.Feed.Froogle.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4430,7 +4433,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.Advertisements/Nop.Plugin.Misc.Advertisements.dll">
-      <publishTime>12/09/2015 14:55:45</publishTime>
+      <publishTime>12/14/2015 19:44:04</publishTime>
     </File>
     <File Include="Plugins/Misc.Advertisements/web.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4463,7 +4466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.FacebookShop/Nop.Plugin.Misc.FacebookShop.dll">
-      <publishTime>12/09/2015 14:56:28</publishTime>
+      <publishTime>12/14/2015 11:05:49</publishTime>
     </File>
     <File Include="Plugins/Misc.FacebookShop/Nop.Plugin.Misc.FacebookShop.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4514,7 +4517,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Index.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/09/2015 21:33:31</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4592,10 +4595,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/09/2015 14:55:48</publishTime>
+      <publishTime>12/14/2015 20:15:47</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/09/2015 23:36:45</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Scripts/public.groupdeal.ajaxcart.js">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4721,10 +4724,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Microsoft.Web.Infrastructure.dll">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>07/09/2013 04:15:08</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Microsoft.Web.Infrastructure.xml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>10/02/2013 07:09:30</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/mk/FluentValidation.resources.dll">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4739,22 +4742,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Nop.Admin.dll">
-      <publishTime>12/09/2015 14:56:10</publishTime>
+      <publishTime>12/14/2015 11:05:39</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Nop.Core.dll">
-      <publishTime>12/09/2015 14:55:28</publishTime>
+      <publishTime>12/13/2015 23:40:50</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Nop.Data.dll">
-      <publishTime>12/09/2015 14:55:29</publishTime>
+      <publishTime>12/13/2015 23:41:02</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Nop.Plugin.Misc.TaxGroups.dll">
-      <publishTime>12/09/2015 14:56:36</publishTime>
+      <publishTime>12/14/2015 11:05:50</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Nop.Services.dll">
-      <publishTime>12/09/2015 14:55:31</publishTime>
+      <publishTime>12/13/2015 23:41:08</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/Nop.Web.Framework.dll">
-      <publishTime>12/09/2015 14:55:50</publishTime>
+      <publishTime>12/13/2015 23:41:18</publishTime>
     </File>
     <File Include="Plugins/Misc.TaxGroups/PerlRegex.dll">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4916,13 +4919,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/09/2015 14:56:10</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/09/2015 14:55:48</publishTime>
+      <publishTime>12/10/2015 00:25:21</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/09/2015 14:56:54</publishTime>
+      <publishTime>12/14/2015 19:44:10</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Web.dll">
-      <publishTime>12/09/2015 14:56:06</publishTime>
+      <publishTime>12/09/2015 23:37:14</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Web.Framework.dll">
       <publishTime>12/09/2015 14:55:50</publishTime>
@@ -4945,14 +4948,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.VendorMembership/System.Web.Optimization.xml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Account/Index.cshtml">
+      <publishTime>12/13/2015 00:31:15</publishTime>
+    </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Account/Register.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/12/2015 17:35:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Dashboard.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Invoices/List.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/14/2015 16:10:04</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/AddProductToOrder.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4985,7 +4991,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/List.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/14/2015 16:52:29</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/NeverSoldReport.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5107,8 +5113,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.VendorMembership/Views/Register.cshtml">
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
+    <File Include="Plugins/Misc.VendorMembership/Views/Settings/Index.cshtml">
+      <publishTime>12/13/2015 08:29:54</publishTime>
+    </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/14/2015 18:04:15</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/CreateProduct.cshtml">
       <publishTime>11/14/2015 00:15:48</publishTime>
@@ -5273,7 +5282,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.AuthorizeNet/Nop.Plugin.Payments.AuthorizeNet.dll">
-      <publishTime>12/09/2015 14:56:24</publishTime>
+      <publishTime>12/14/2015 11:05:48</publishTime>
     </File>
     <File Include="Plugins/Payments.AuthorizeNet/Nop.Plugin.Payments.AuthorizeNet.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5294,7 +5303,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.CheckMoneyOrder/Nop.Plugin.Payments.CheckMoneyOrder.dll">
-      <publishTime>12/09/2015 14:56:22</publishTime>
+      <publishTime>12/14/2015 11:05:47</publishTime>
     </File>
     <File Include="Plugins/Payments.CheckMoneyOrder/Nop.Plugin.Payments.CheckMoneyOrder.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5315,7 +5324,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.Manual/Nop.Plugin.Payments.Manual.dll">
-      <publishTime>12/09/2015 14:56:18</publishTime>
+      <publishTime>12/14/2015 11:05:42</publishTime>
     </File>
     <File Include="Plugins/Payments.Manual/Nop.Plugin.Payments.Manual.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5336,7 +5345,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.PayPalDirect/Nop.Plugin.Payments.PayPalDirect.dll">
-      <publishTime>12/09/2015 14:56:27</publishTime>
+      <publishTime>12/14/2015 11:05:48</publishTime>
     </File>
     <File Include="Plugins/Payments.PayPalDirect/Nop.Plugin.Payments.PayPalDirect.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5363,7 +5372,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.PayPalStandard/Nop.Plugin.Payments.PayPalStandard.dll">
-      <publishTime>12/09/2015 14:56:24</publishTime>
+      <publishTime>12/14/2015 11:05:48</publishTime>
     </File>
     <File Include="Plugins/Payments.PayPalStandard/Nop.Plugin.Payments.PayPalStandard.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5384,7 +5393,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.PurchaseOrder/Nop.Plugin.Payments.PurchaseOrder.dll">
-      <publishTime>12/09/2015 14:56:23</publishTime>
+      <publishTime>12/14/2015 11:05:47</publishTime>
     </File>
     <File Include="Plugins/Payments.PurchaseOrder/Nop.Plugin.Payments.PurchaseOrder.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5405,7 +5414,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.AustraliaPost/Nop.Plugin.Shipping.AustraliaPost.dll">
-      <publishTime>12/09/2015 14:56:17</publishTime>
+      <publishTime>12/14/2015 11:05:40</publishTime>
     </File>
     <File Include="Plugins/Shipping.AustraliaPost/Nop.Plugin.Shipping.AustraliaPost.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5423,7 +5432,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.ByWeight/Nop.Plugin.Shipping.ByWeight.dll">
-      <publishTime>12/09/2015 14:56:22</publishTime>
+      <publishTime>12/14/2015 11:05:45</publishTime>
     </File>
     <File Include="Plugins/Shipping.ByWeight/Nop.Plugin.Shipping.ByWeight.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5450,7 +5459,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.CanadaPost/Nop.Plugin.Shipping.CanadaPost.dll">
-      <publishTime>12/09/2015 14:56:20</publishTime>
+      <publishTime>12/14/2015 11:05:45</publishTime>
     </File>
     <File Include="Plugins/Shipping.CanadaPost/Nop.Plugin.Shipping.CanadaPost.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5468,7 +5477,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.Fedex/Nop.Plugin.Shipping.Fedex.dll">
-      <publishTime>12/09/2015 14:56:22</publishTime>
+      <publishTime>12/14/2015 11:05:46</publishTime>
     </File>
     <File Include="Plugins/Shipping.Fedex/Nop.Plugin.Shipping.Fedex.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5486,7 +5495,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.FixedRateShipping/Nop.Plugin.Shipping.FixedRateShipping.dll">
-      <publishTime>12/09/2015 14:56:17</publishTime>
+      <publishTime>12/14/2015 11:05:41</publishTime>
     </File>
     <File Include="Plugins/Shipping.FixedRateShipping/Nop.Plugin.Shipping.FixedRateShipping.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5504,7 +5513,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.UPS/Nop.Plugin.Shipping.UPS.dll">
-      <publishTime>12/09/2015 14:56:21</publishTime>
+      <publishTime>12/14/2015 11:05:45</publishTime>
     </File>
     <File Include="Plugins/Shipping.UPS/Nop.Plugin.Shipping.UPS.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5522,7 +5531,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Shipping.USPS/Nop.Plugin.Shipping.USPS.dll">
-      <publishTime>12/09/2015 14:56:20</publishTime>
+      <publishTime>12/14/2015 11:05:44</publishTime>
     </File>
     <File Include="Plugins/Shipping.USPS/Nop.Plugin.Shipping.USPS.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5540,7 +5549,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/SMS.Verizon/Nop.Plugin.SMS.Verizon.dll">
-      <publishTime>12/09/2015 14:56:18</publishTime>
+      <publishTime>12/14/2015 11:05:42</publishTime>
     </File>
     <File Include="Plugins/SMS.Verizon/Nop.Plugin.SMS.Verizon.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5597,7 +5606,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Plugin.Tameion.Auctions.dll">
-      <publishTime>12/09/2015 14:56:46</publishTime>
+      <publishTime>12/14/2015 11:05:53</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Nop.Plugin.Tameion.SupportTicketSystem.dll">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5618,7 +5627,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tameion.BridgePay/Nop.Plugin.Tameion.BridgePay.dll">
-      <publishTime>12/09/2015 14:56:52</publishTime>
+      <publishTime>12/14/2015 11:05:53</publishTime>
     </File>
     <File Include="Plugins/Tameion.BridgePay/Views/BridgePay/Configure.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5629,11 +5638,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Tameion.BridgePay/web.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Plugins/Tameion.SelectAndSell/Nop.Plugin.Tameion.SelectAndSell.dll">
+      <publishTime>12/10/2015 11:35:50</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/Tickets/Create.cshtml">
+      <publishTime>12/13/2015 17:59:45</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/Tickets/Details.cshtml">
+      <publishTime>12/13/2015 20:40:53</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/Tickets/Edit.cshtml">
+      <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/Tickets/Index.cshtml">
+      <publishTime>12/13/2015 18:29:30</publishTime>
+    </File>
     <File Include="Plugins/Tameion.SupportTicketSystem/Description.txt">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tameion.SupportTicketSystem/Nop.Plugin.Tameion.SupportTicketSystem.dll">
-      <publishTime>12/09/2015 14:56:30</publishTime>
+      <publishTime>12/14/2015 11:05:50</publishTime>
     </File>
     <File Include="Plugins/Tameion.SupportTicketSystem/Views/SupportTicketTopics/CreateTicket.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5651,7 +5675,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tax.CountryStateZip/Nop.Plugin.Tax.CountryStateZip.dll">
-      <publishTime>12/09/2015 14:56:19</publishTime>
+      <publishTime>12/14/2015 11:05:43</publishTime>
     </File>
     <File Include="Plugins/Tax.CountryStateZip/Nop.Plugin.Tax.CountryStateZip.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5669,7 +5693,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tax.FixedRate/Nop.Plugin.Tax.FixedRate.dll">
-      <publishTime>12/09/2015 14:56:14</publishTime>
+      <publishTime>12/14/2015 11:05:40</publishTime>
     </File>
     <File Include="Plugins/Tax.FixedRate/Nop.Plugin.Tax.FixedRate.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5687,7 +5711,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Widgets.GoogleAnalytics/Nop.Plugin.Widgets.GoogleAnalytics.dll">
-      <publishTime>12/09/2015 14:56:27</publishTime>
+      <publishTime>12/14/2015 11:05:49</publishTime>
     </File>
     <File Include="Plugins/Widgets.GoogleAnalytics/Nop.Plugin.Widgets.GoogleAnalytics.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5777,7 +5801,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Widgets.NivoSlider/Nop.Plugin.Widgets.NivoSlider.dll">
-      <publishTime>12/09/2015 14:56:28</publishTime>
+      <publishTime>12/14/2015 11:05:49</publishTime>
     </File>
     <File Include="Plugins/Widgets.NivoSlider/Nop.Plugin.Widgets.NivoSlider.dll.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5850,6 +5874,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/jquery-1.10.2.min.map">
       <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.intellisense.js">
+      <publishTime>12/09/2015 16:16:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>12/09/2015 16:15:58</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>12/09/2015 16:15:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>12/09/2015 16:15:47</publishTime>
     </File>
     <File Include="Scripts/jquery-migrate-1.2.1.js">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7373,7 +7409,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/09/2015 17:10:22</publishTime>
     </File>
     <File Include="Themes/DefaultClean/Content/css/ie8.css">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8368,6 +8404,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Themes/NopShop/Views/Product/ProductTemplate.Grouped.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Themes/NopShop/Views/Product/ProductTemplate.Restaurant.cshtml">
+      <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
     <File Include="Themes/NopShop/Views/Product/ProductTemplate.Simple.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
@@ -9113,7 +9152,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/14/2015 21:44:39</publishTime>
     </File>
   </ItemGroup>
 </Project>
