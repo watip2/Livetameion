@@ -104,5 +104,10 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Interfaces
 
             _eventPublisher.EntityUpdated(ticket);
         }
+
+        public ICollection<Reply> GetRepliesByTicketId(int ticketId)
+        {
+            return _replyRepo.Table.Where(rep => rep.TicketId == ticketId).ToList();
+        }
     }
 }

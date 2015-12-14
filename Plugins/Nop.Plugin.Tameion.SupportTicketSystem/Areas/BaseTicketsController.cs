@@ -62,11 +62,12 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
         {
             var ticket = _ticketService.GetTicketById(Id);
             var ticketModel = new ModelsMapper().CreateMap<Ticket, TicketModel>(ticket);
-
+            var replies = _ticketService.GetRepliesByTicketId(ticket.Id);
+            
             var model = new TicketDetailsModel
             {
                 TicketModel = ticketModel,
-                Replies = (ticket.Replies == null) ? new List<Reply>() : ticket.Replies,
+                Replies = replies,
                 TicketId = ticket.Id
             };
 

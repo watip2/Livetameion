@@ -495,5 +495,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         //        return RedirectToAction("List");
         //    }
         //}
+
+        public ActionResult Pay(int invoiceId)
+        {
+            _invoiceService.GetInvoiceById(invoiceId);
+
+            return View();
+        }
     }
 }

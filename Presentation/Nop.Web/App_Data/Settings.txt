@@ -1,2 +1,2 @@
 DataProvider: sqlserver
-DataConnectionString: Data Source=sohail\sqlexpress;Initial Catalog=tameion_test;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123456
+DataConnectionString: Data Source=sohail\sqlexpress;Initial Catalog=tameion_dev;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123456

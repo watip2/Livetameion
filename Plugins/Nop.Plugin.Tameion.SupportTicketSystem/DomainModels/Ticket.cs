@@ -17,6 +17,6 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.DomainModels
             get { return (TicketStatus)this.TicketStatusId; }
             set { this.TicketStatusId = (int)value; }
         }
-        public ICollection<Reply> Replies { get; set; }
+        public virtual ICollection<Reply> Replies { get; set; }
     }
 }

@@ -20,5 +20,6 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Interfaces
         void DeleteReply(Reply reply);
         void UpdateTicket(Ticket ticket);
         void UpdateReply(Reply reply);
+        ICollection<Reply> GetRepliesByTicketId(int ticketId);
     }
 }
