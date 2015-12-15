@@ -35,8 +35,8 @@ namespace Nop.Plugin.Tameion.BridgePay.Models
         public bool MerchantKey_OverrideForStore { get; set; }
 
         [Display(Name = "Gateway URL")]
-        public string GatewayURL { get; set; }
-        public bool GatewayURL_OverrideForStore { get; set; }
+        public string GatewayUrl { get; set; }
+        public bool GatewayUrl_OverrideForStore { get; set; }
 
         [NopResourceDisplayName("Plugins.Payments.AuthorizeNet.Fields.AdditionalFee")]
         public decimal AdditionalFee { get; set; }

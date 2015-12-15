@@ -88,6 +88,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly IInvoiceService _invoiceService;
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly IProductTemplateService _productTemplateService;
+        private readonly IStoreContext _storeContext;
 
         public InvoicesController(IOrderService orderService,
             IOrderReportService orderReportService,
@@ -134,7 +135,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             ShippingSettings shippingSettings,
             IInvoiceService invoiceService,
             IGenericAttributeService genericAttributeService,
-            IProductTemplateService productTemplateService)
+            IProductTemplateService productTemplateService,
+            IStoreContext storeContext)
         {
             this._orderService = orderService;
             this._orderReportService = orderReportService;
@@ -183,6 +185,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             this._invoiceService = invoiceService;
             this._genericAttributeService = genericAttributeService;
             this._productTemplateService = productTemplateService;
+            this._storeContext = storeContext;
         }
 
         public ActionResult Index()
@@ -571,15 +574,26 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
                             invoice.ProductId = invoiceProduct.Id;
                             _invoiceService.UpdateInvoice(invoice);
+
                             // add invoice product to cart
+                            _shoppingCartService.AddToCart(_workContext.CurrentCustomer,
+                                invoiceProduct, 
+                                ShoppingCartType.ShoppingCart, 
+                                _storeContext.CurrentStore.Id);
                         }
                         else
                         {
                             var invoiceProduct = _productService.GetProductById((int)invoice.ProductId);
                             // add invoice product to cart
+                            // add invoice product to cart
+                            _shoppingCartService.AddToCart(_workContext.CurrentCustomer,
+                                invoiceProduct,
+                                ShoppingCartType.ShoppingCart,
+                                _storeContext.CurrentStore.Id);
                         }
 
                         transaction.Commit();
+                        return RedirectToRoute("ShoppingCart");
                     }
                     catch (Exception)
                     {
