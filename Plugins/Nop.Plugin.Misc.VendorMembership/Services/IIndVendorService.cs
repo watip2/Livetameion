@@ -1,4 +1,5 @@
 ﻿using Nop.Core.Domain.Vendors;
+using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Services.Vendors;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,21 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
         Vendor GetVendorByEmail(string email);
         bool IsVendorLoggedIn();
         Vendor GetLoggedInVendor();
-	}
+
+        #region VendoeType
+        void InsertVendorType(VendorType vendorType);
+        void UpdateVendorType(VendorType vendorType);
+        void DeleteVendorType(VendorType vendorType);
+        VendorType GetVendorTypeById(int vendorTypeId);
+        IList<VendorType> GetAllVendorTypes();
+        #endregion
+
+        #region VendorVendorTypes
+        void InsertVendorVendorType(VendorVendorType vendorVendorType);
+        void UpdateVendorVendorType(VendorVendorType vendorVendorType);
+        void DeleteVendorVendorType(VendorVendorType vendorVendorType);
+        VendorVendorType GetVendorVendorTypeById(int vendorVendorTypeId);
+        IList<VendorVendorType> GetAllVendorVendorTypes();
+        #endregion
+    }
 }

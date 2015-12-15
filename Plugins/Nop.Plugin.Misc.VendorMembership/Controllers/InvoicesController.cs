@@ -1,4 +1,5 @@
 ﻿using Nop.Core;
+using Nop.Core.Data;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Directory;
@@ -527,53 +528,64 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             var invoice = _invoiceService.GetInvoiceById((int)id);
             if (invoice != null)
             {
-                using (var transaction = new VendorMembershipContext().Database.BeginTransaction)
+                var dataSettingsManager = new DataSettingsManager();
+                var dataProviderSettings = dataSettingsManager.LoadSettings();
+                var context = new VendorMembershipContext(dataProviderSettings.DataConnectionString);
+                using (var transaction = context.Database.BeginTransaction())
                 {
+                    try
+                    {
+                        if (invoice.ProductId == 0 || invoice.ProductId == null)
+                        {
+                            var invoiceProduct = new Product
+                            {
+                                DisplayOrder = 1,
+                                ShortDescription = "Invoiced Commission Product",
+                                FullDescription = "Invoiced Commission Product",
+                                Published = true,
+                                DisplayStockQuantity = true,
+                                StockQuantity = 1,
+                                Price = invoice.Commission,
+                                Name = "Invoiced Commission",
+                                VisibleIndividually = true,
+                                OrderMinimumQuantity = 1,
+                                OrderMaximumQuantity = int.MaxValue,
+                                AllowCustomerReviews = true,
+                                ProductType = ProductType.SimpleProduct,
 
+                                // datetime fields
+                                AvailableStartDateTimeUtc = DateTime.UtcNow,
+                                AvailableEndDateTimeUtc = DateTime.MaxValue,
+                                CreatedOnUtc = DateTime.UtcNow,
+                                UpdatedOnUtc = DateTime.UtcNow,
+                            };
+                            _productService.InsertProduct(invoiceProduct);
+
+                            var _category = _categoryService.GetCategoryById(13);
+                            var productCategory = new ProductCategory
+                            {
+                                CategoryId = _category.Id,
+                                ProductId = invoiceProduct.Id
+                            };
+                            _categoryService.InsertProductCategory(productCategory);
+
+                            invoice.ProductId = invoiceProduct.Id;
+                            _invoiceService.UpdateInvoice(invoice);
+                            // add invoice product to cart
+                        }
+                        else
+                        {
+                            var invoiceProduct = _productService.GetProductById((int)invoice.ProductId);
+                            // add invoice product to cart
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                    }
                 }
-                    if (invoice.ProductId == 0 || invoice.ProductId == null)
-                    {
-                        var invoiceProduct = new Product
-                        {
-                            DisplayOrder = 1,
-                            ShortDescription = "Invoiced Commission Product",
-                            FullDescription = "Invoiced Commission Product",
-                            Published = true,
-                            DisplayStockQuantity = true,
-                            StockQuantity = 1,
-                            Price = invoice.Commission,
-                            Name = "Invoiced Commission",
-                            VisibleIndividually = true,
-                            OrderMinimumQuantity = 1,
-                            OrderMaximumQuantity = int.MaxValue,
-                            AllowCustomerReviews = true,
-                            ProductType = ProductType.SimpleProduct,
-
-                            // datetime fields
-                            AvailableStartDateTimeUtc = DateTime.UtcNow,
-                            AvailableEndDateTimeUtc = DateTime.MaxValue,
-                            CreatedOnUtc = DateTime.UtcNow,
-                            UpdatedOnUtc = DateTime.UtcNow,
-                        };
-                        _productService.InsertProduct(invoiceProduct);
-
-                        var _category = _categoryService.GetCategoryById(13);
-                        var productCategory = new ProductCategory
-                        {
-                            CategoryId = _category.Id,
-                            ProductId = invoiceProduct.Id
-                        };
-                        _categoryService.InsertProductCategory(productCategory);
-
-                        invoice.ProductId = invoiceProduct.Id;
-                        _invoiceService.UpdateInvoice(invoice);
-                        // add invoice product to cart
-                    }
-                    else
-                    {
-                        var invoiceProduct = _productService.GetProductById((int)invoice.ProductId);
-                        // add invoice product to cart
-                    }
             }
             return View();
         }

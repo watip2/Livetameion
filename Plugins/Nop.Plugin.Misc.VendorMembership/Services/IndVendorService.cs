@@ -1,6 +1,7 @@
 ﻿using Nop.Core.Data;
 using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Vendors;
+using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Services.Common;
 using Nop.Services.Events;
 using Nop.Services.Vendors;
@@ -15,18 +16,24 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
 {
     public class IndVendorService : Nop.Services.Vendors.VendorService, Nop.Plugin.Misc.VendorMembership.Services.IIndVendorService
     {
-        private IRepository<Vendor> _vendorRepository;
-        private IEventPublisher _eventPublisher;
-        private IRepository<GenericAttribute> _genericAttributeRepo;
+        private readonly IRepository<Vendor> _vendorRepository;
+        private readonly IEventPublisher _eventPublisher;
+        private readonly IRepository<GenericAttribute> _genericAttributeRepo;
+        private readonly IRepository<VendorType> _vendorTypeRepository;
+        private readonly IRepository<VendorVendorType> _vendorVendorTypeRepository;
 
         public IndVendorService(IRepository<Vendor> vendorRepository,
             IEventPublisher eventPublisher,
-            IRepository<GenericAttribute> genericAttributeRepo)
+            IRepository<GenericAttribute> genericAttributeRepo,
+            IRepository<VendorType> vendorTypeRepository,
+            IRepository<VendorVendorType> vendorVendorTypeRepository)
             : base(vendorRepository, eventPublisher)
         {
             _vendorRepository = vendorRepository;
             _eventPublisher = eventPublisher;
             _genericAttributeRepo = genericAttributeRepo;
+            _vendorTypeRepository = vendorTypeRepository;
+            _vendorVendorTypeRepository = vendorVendorTypeRepository;
         }
 
         public override void InsertVendor(Vendor vendor)
@@ -133,5 +140,89 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
         {
             throw new NotImplementedException();
         }
+
+        #region VendorType
+        public void InsertVendorType(VendorType vendorType)
+        {
+            if (vendorType == null)
+                throw new ArgumentNullException();
+
+            _vendorTypeRepository.Insert(vendorType);
+
+            _eventPublisher.EntityInserted(vendorType);
+        }
+
+        public void UpdateVendorType(VendorType vendorType)
+        {
+            if (vendorType == null)
+                throw new ArgumentNullException();
+
+            _vendorTypeRepository.Update(vendorType);
+
+            _eventPublisher.EntityUpdated(vendorType);
+        }
+
+        public void DeleteVendorType(VendorType vendorType)
+        {
+            if (vendorType == null)
+                throw new ArgumentNullException();
+
+            _vendorTypeRepository.Delete(vendorType);
+
+            _eventPublisher.EntityDeleted(vendorType);
+        }
+
+        public VendorType GetVendorTypeById(int vendorTypeId)
+        {
+            return _vendorTypeRepository.GetById(vendorTypeId);
+        }
+
+        public IList<VendorType> GetAllVendorTypes()
+        {
+            return _vendorTypeRepository.Table.ToList();
+        }
+        #endregion
+
+        #region VendorVendorType
+        public void InsertVendorVendorType(VendorVendorType vendorVendorType)
+        {
+            if (vendorVendorType == null)
+                throw new ArgumentNullException();
+
+            _vendorVendorTypeRepository.Insert(vendorVendorType);
+
+            _eventPublisher.EntityInserted(vendorVendorType);
+        }
+
+        public void UpdateVendorVendorType(VendorVendorType vendorVendorType)
+        {
+            if (vendorVendorType == null)
+                throw new ArgumentNullException();
+
+            _vendorVendorTypeRepository.Update(vendorVendorType);
+
+            _eventPublisher.EntityUpdated(vendorVendorType);
+        }
+
+        public void DeleteVendorVendorType(VendorVendorType vendorVendorType)
+        {
+            if (vendorVendorType == null)
+                throw new ArgumentNullException();
+
+            _vendorVendorTypeRepository.Delete(vendorVendorType);
+
+            _eventPublisher.EntityDeleted(vendorVendorType);
+        }
+
+        public VendorVendorType GetVendorVendorTypeById(int vendorVendorTypeId)
+        {
+            return _vendorVendorTypeRepository.GetById(vendorVendorTypeId);
+        }
+
+        public IList<VendorVendorType> GetAllVendorVendorTypes()
+        {
+            return _vendorVendorTypeRepository.Table.ToList();
+        }
+        #endregion
     }
 }
