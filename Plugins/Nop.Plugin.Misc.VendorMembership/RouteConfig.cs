@@ -67,6 +67,14 @@ namespace Nop.Plugin.Misc.VendorMembership
             routes.Remove(route);
             routes.Insert(0, route);
 
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.InvoicesController",
+                "Vendor/Invoices",
+                new { area = "Vendor", controller = "Invoices", action = "Index" },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }
     }

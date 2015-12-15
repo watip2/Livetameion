@@ -1,4 +1,5 @@
 ﻿using Nop.Core;
+using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Orders;
@@ -7,6 +8,7 @@ using Nop.Core.Domain.Shipping;
 using Nop.Core.Domain.Tax;
 using Nop.Plugin.Misc.VendorMembership;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
+using Nop.Plugin.Misc.VendorMembership.Data;
 using Nop.Plugin.Misc.VendorMembership.Domain;
 using Nop.Plugin.Misc.VendorMembership.Services;
 using Nop.Plugin.Misc.VendorMembership.ViewModels;
@@ -225,6 +227,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     ShippingStatus = order.ShippingStatus,
                     BillingAddress = order.BillingAddress,
                     OrderStatus = order.OrderStatus,
+                    ProductId = 0
                 };
                 if (_invoiceService.GetInvoicesByOrderId(order.Id) == null)
                 {
@@ -516,10 +519,62 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         //    }
         //}
 
-        public ActionResult Pay(int invoiceId)
+        public ActionResult Pay(int? id)
         {
-            var invoice = _invoiceService.GetInvoiceById(invoiceId);
+            if (id == null)
+                throw new ArgumentNullException();
 
+            var invoice = _invoiceService.GetInvoiceById((int)id);
+            if (invoice != null)
+            {
+                using (var transaction = new VendorMembershipContext().Database.BeginTransaction)
+                {
+
+                }
+                    if (invoice.ProductId == 0 || invoice.ProductId == null)
+                    {
+                        var invoiceProduct = new Product
+                        {
+                            DisplayOrder = 1,
+                            ShortDescription = "Invoiced Commission Product",
+                            FullDescription = "Invoiced Commission Product",
+                            Published = true,
+                            DisplayStockQuantity = true,
+                            StockQuantity = 1,
+                            Price = invoice.Commission,
+                            Name = "Invoiced Commission",
+                            VisibleIndividually = true,
+                            OrderMinimumQuantity = 1,
+                            OrderMaximumQuantity = int.MaxValue,
+                            AllowCustomerReviews = true,
+                            ProductType = ProductType.SimpleProduct,
+
+                            // datetime fields
+                            AvailableStartDateTimeUtc = DateTime.UtcNow,
+                            AvailableEndDateTimeUtc = DateTime.MaxValue,
+                            CreatedOnUtc = DateTime.UtcNow,
+                            UpdatedOnUtc = DateTime.UtcNow,
+                        };
+                        _productService.InsertProduct(invoiceProduct);
+
+                        var _category = _categoryService.GetCategoryById(13);
+                        var productCategory = new ProductCategory
+                        {
+                            CategoryId = _category.Id,
+                            ProductId = invoiceProduct.Id
+                        };
+                        _categoryService.InsertProductCategory(productCategory);
+
+                        invoice.ProductId = invoiceProduct.Id;
+                        _invoiceService.UpdateInvoice(invoice);
+                        // add invoice product to cart
+                    }
+                    else
+                    {
+                        var invoiceProduct = _productService.GetProductById((int)invoice.ProductId);
+                        // add invoice product to cart
+                    }
+            }
             return View();
         }
     }

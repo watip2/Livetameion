@@ -38,6 +38,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Data
             modelBuilder.Configurations.Add(new VendorrrMap());
             modelBuilder.Configurations.Add(new PayoutMethodMap());
             modelBuilder.Configurations.Add(new InvoiceMap());
+            modelBuilder.Configurations.Add(new VendorTypeMap());
             modelBuilder.Configurations.Add(new Nop.Data.Mapping.Vendors.VendorMap());
             modelBuilder.Configurations.Add(new Nop.Plugin.Misc.VendorMembership.Mapping.VendorAddressMap());
             modelBuilder.Configurations.Add(new VendorPayoutMethodMap());
@@ -144,6 +145,9 @@ namespace Nop.Plugin.Misc.VendorMembership.Data
             Database.ExecuteSqlCommand(dbScript);
 
             dbScript = "DROP TABLE VendorAddresses";
+            Database.ExecuteSqlCommand(dbScript);
+
+            dbScript = "DROP TABLE VendorTypes";
             Database.ExecuteSqlCommand(dbScript);
 
             SaveChanges();

@@ -71,7 +71,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Services
 
         public Invoice GetInvoiceById(int invoiceId)
         {
-            throw new NotImplementedException();
+            return _invoiceRepository.GetById(invoiceId);
         }
 
         public IList<Invoice> GetInvoicesByVendorId()

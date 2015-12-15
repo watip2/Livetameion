@@ -15,6 +15,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
     {
         public int OrderId { get; set; }
         public int VendorId { get; set; }
+        public int? ProductId { get; set; } // invoiced product id
         public string DeliveryMethod { get; set; }
         public decimal Commission { get; set; }
         public bool IsCommissionPaid { get; set; }

@@ -109,8 +109,10 @@
     <Compile Include="Domain\AddressType.cs" />
     <Compile Include="Domain\Invoice.cs" />
     <Compile Include="Domain\VendorAddress.cs" />
+    <Compile Include="Domain\VendorType.cs" />
     <Compile Include="Mapping\InvoiceMap.cs" />
     <Compile Include="Mapping\VendorAddressMap.cs" />
+    <Compile Include="Mapping\VendorTypeMap.cs" />
     <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Services\IMtProductService.cs" />

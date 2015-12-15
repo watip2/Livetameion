@@ -224,8 +224,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
             PrepareAccountModel(accountModel);
 
-            var vendorMembershipProduct = _productService.GetProductById(1);
-            _shoppingCartService.AddToCart(_workContext.CurrentCustomer, vendorMembershipProduct, ShoppingCartType.ShoppingCart, 0);
+            var vendorMembershipProduct = _productService.GetProductById(88);
+            _shoppingCartService.AddToCart(_workContext.CurrentCustomer, vendorMembershipProduct, ShoppingCartType.ShoppingCart, _storeContext.CurrentStore.Id);
 
             return View(accountModel);
         }
@@ -1139,7 +1139,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     }
 
                     // create groupdeals
-                    for (int i = 0; i < 5; i++)
+                    for (int i = 0; i < 10; i++)
                     {
                         var groupDealProduct = new Product
                         {
@@ -1149,20 +1149,22 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                             Published = true,
                             DisplayStockQuantity = true,
                             StockQuantity = 1,
-                            Price = 20,
+                            Price = 25,
+                            SpecialPrice = 15,
                             Name = vrmodel.Name + " group deal",
                             VisibleIndividually = true,
+                            OrderMinimumQuantity = 1,
                             OrderMaximumQuantity = int.MaxValue,
                             AllowCustomerReviews = true,
+                            ProductType = ProductType.SimpleProduct,
 
                             // datetime fields
-                            AvailableStartDateTimeUtc = DateTime.Now,
-                            AvailableEndDateTimeUtc = DateTime.Parse("01-01-2016"),
-                            CreatedOnUtc = DateTime.Now,
-                            UpdatedOnUtc = DateTime.Now,
-                            SpecialPrice = 10,
-                            SpecialPriceStartDateTimeUtc = DateTime.Now,
-                            SpecialPriceEndDateTimeUtc = DateTime.Parse("01-01-2016")
+                            AvailableStartDateTimeUtc = DateTime.UtcNow,
+                            AvailableEndDateTimeUtc = DateTime.UtcNow.AddYears(1),
+                            CreatedOnUtc = DateTime.UtcNow,
+                            UpdatedOnUtc = DateTime.UtcNow,
+                            SpecialPriceStartDateTimeUtc = DateTime.UtcNow,
+                            SpecialPriceEndDateTimeUtc = DateTime.UtcNow.AddYears(1)
                         };
 
                         _groupDealService.InsertGroupDealProduct(groupDealProduct);
