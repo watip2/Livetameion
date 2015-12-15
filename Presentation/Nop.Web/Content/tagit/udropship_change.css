@@ -1,0 +1,324 @@
+.left_bar {
+    float: left;
+    width: 18%;
+    margin-top: 13px;
+    background: #fff;
+   /* padding-bottom: 10px;*/
+    position: fixed;
+    z-index: 11;
+}
+.cont_rgt {
+    width: 80%;
+    float: right;
+    margin-top: 15px;
+    margin: 15px 1% 0px 0;
+}
+.head_out {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.clr {
+    clear: both;
+}
+.fl {
+    float: left;
+}
+.header {
+    width: 100%;
+    background: #fff;
+    height: 68px;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.25);
+}
+.header_in {
+    margin: 0 auto;
+    width: 100%;
+}
+.logo_out {
+    width: 18%;
+    float: left;
+    height: 68px;
+    /* babackground: #ffdcc5; */
+}
+.logo_change {
+    margin: 5px 5%;
+    width: 90%;
+}
+.header-logo-image{
+    width: 200px;
+    height: 55px;
+}
+.logo_change img {
+    max-width: 98%;
+}
+.head_rgt {
+    float: right;
+    margin: 17px 1% 0 0;
+}
+.form-list{
+    text-align: left!important;
+}
+.merc_login{
+    clear: both;
+    background: #1b1e24;
+    margin: 0px;
+    padding: 10px 3%;
+    float: left;
+    width: 94%;
+}
+.con_out {
+    width: 100%;
+}
+.clr {
+    clear: both;
+}
+.con_in {
+    margin: 0 auto;
+    width: 100%;
+}
+.con_bdy {
+    float: left;
+    clear: both;
+    margin: 0;
+    width: 100%;
+    min-height: 515px;
+    padding: 0 0% 15px 0;
+}
+.empty {
+   /* float: left;*/
+    width: 100%;
+    height: 55px;
+}
+.merc_login {
+    clear: both;
+    background: #1b1e24;
+    margin: 0px;
+    padding: 10px 3%;
+    float: left;
+    width: 100%;
+}
+.user_img {
+    float: left;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    border: 5px solid #5b5b5b;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+.user_d_left {
+    float: left;
+    color: #fff;
+    width: 128px;
+    padding-left: 15px;
+}
+.user_d_left strong {
+    color: #c99546;
+    font: normal 14px Arial;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.user_d_left span {
+    display: block;
+    color: #fff;
+    text-align: left;
+}
+.user_d_left a.logout_left {
+    background: #4d4e51;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 5px 10px;
+    clear: both;
+    float: left;
+    display: block;
+    margin-top: 10px;
+}
+.header_welcome{
+    text-align: right;
+    margin-right: 20px;
+    padding-top: 10px;
+}
+ul.main-nav {
+    width: 100%;
+    clear: both;
+    float: left;
+    margin-top: 0px;
+}
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+ul.main-nav li, .main-nav li {
+    float: left;
+    clear: both;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #ebebeb;
+}
+ul.main-nav li a {
+    float: left;
+    padding: 9px 5%;
+    width: 100%;
+    color: #645e5e;
+    font-size: 12px;
+    text-align: left;
+}
+ul.main-nav li a:hover,ul.main-nav li a.active {
+    color: #eaecf0;
+    background: #454f77;
+}
+.main-nav li.active a { color:#eaecf0; background:#454f77; }
+.main-nav .fa {
+    float: left;
+    margin-right: 5px;
+    font-size: 13px;
+    margin-top: 1px;
+}
+.cont_container{
+    background: #fff;
+    width: 100%;
+    float: left;
+    clear: both;
+    border: 1px solid #e1e1e1;
+}
+.container_rgt_head {
+    float: left;
+    clear: both;
+    width: 100%;
+    background: #1b1e24;
+}
+.content_middle {
+    float: left;
+    clear: both;
+    width: 100%;
+    background: #fff;
+    padding: 0 0%;
+}
+.container_rgt_head h1 {
+    color: #fff;
+    font: normal 16px/50px Arial;
+    margin: 0 0px 0px 15px;
+    text-transform: uppercase;
+    text-align: left;
+}
+.login-change{
+    margin-top:70px;
+    margin-left: 25%;
+}
+.register-change{
+    margin-top: 30px;
+}
+.reset-div{
+    margin-top: 50px;
+    margin-left: 35%;
+}
+.admin_menu {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+}
+.admin_menu ul.deal_icob {
+    float: left;
+    margin-left: 2%;
+}
+.admin_menu ul {
+    width: 47%;
+    float: left;
+}
+.dash_active_mid {
+    float: left;
+    width: 116px;
+    height: 106px;
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    position: relative;
+    width: 100%;
+}
+.dash_act_img{
+    width: 50px;
+    text-align: center;
+    height: 50px;
+    top: -22px;
+    position: absolute;
+    left: 26%;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    border: 1px solid #d7d7d7;
+    background: #fff;
+}
+.admin_menu div.dash_active_mid .dash_icons {
+    width: auto;
+    display: inline-block;
+    margin: 13px auto;
+}
+.admin_menu ul li a {
+    width: 150px;
+    line-height: 22px;
+    font: normal 16px arial;
+    color: #000;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+}
+.admin_menu div.dash_active_mid a {
+    display: block;
+    font: 14px/15px 'helveticaneue_condensedRg';
+    color: #000;
+    text-align: center;
+    width: 85px;
+    margin: 40px auto 0px auto;
+    padding: 0px;
+    height: 33px;
+    text-transform: uppercase;
+}
+
+
+.admin_menu h2 span {
+    font: 16px "helveticaneue_condensedRg";
+    background: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.admin_menu h2 {
+    text-align: center;
+    background: url(/skin/frontend/default/udropship/images/vendor_dashboard/title_bg_re.png) left center repeat-x;
+    color: #000;
+}
+.dash_icons {
+    width: auto!important;
+    display: inline-block!important;
+    margin: 13px auto!important;
+}
+.dash_active_mid span {
+    width: 100%;
+    text-align: center;
+    float: left;
+    font: 14px/28px 'helveticaneue_condensedRg';
+    color: #000;
+    background: #f3f3f3;
+    border-top: 1px solid #d7d7d7;
+    height: 32px;
+    border-radius: 0px 0px 3px 3px;
+    -webkit-border-radius: 0px 0px 3px 3px;
+}
+.admin_menu ul li {
+    float: left;
+    padding: 0px 2% 15px 0px;
+    width: 22%;
+    margin: 40px 1% 40px 0px;
+}
+.section-header{
+	margin-top:15px;
+}
