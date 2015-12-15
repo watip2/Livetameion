@@ -46,6 +46,7 @@ namespace Nop.Plugin.Tameion.BridgePay.Controller
             model.Username = authorizeNetPaymentSettings.Username;
             model.Password = authorizeNetPaymentSettings.Password;
             model.MerchantKey = authorizeNetPaymentSettings.MerchantKey;
+            model.GatewayUrl = authorizeNetPaymentSettings.GatewayUrl;
             model.AdditionalFee = authorizeNetPaymentSettings.AdditionalFee;
             model.AdditionalFeePercentage = authorizeNetPaymentSettings.AdditionalFeePercentage;
             //model.TransactModeValues = authorizeNetPaymentSettings.TransactMode.ToSelectList();
@@ -59,6 +60,7 @@ namespace Nop.Plugin.Tameion.BridgePay.Controller
                 model.Username_OverrideForStore = _settingService.SettingExists(authorizeNetPaymentSettings, x => x.Username, storeScope);
                 model.Password_OverrideForStore = _settingService.SettingExists(authorizeNetPaymentSettings, x => x.Password, storeScope);
                 model.MerchantKey_OverrideForStore = _settingService.SettingExists(authorizeNetPaymentSettings, x => x.MerchantKey, storeScope);
+                model.GatewayUrl_OverrideForStore = _settingService.SettingExists(authorizeNetPaymentSettings, x => x.GatewayUrl, storeScope);
                 model.AdditionalFee_OverrideForStore = _settingService.SettingExists(authorizeNetPaymentSettings, x => x.AdditionalFee, storeScope);
                 model.AdditionalFeePercentage_OverrideForStore = _settingService.SettingExists(authorizeNetPaymentSettings, x => x.AdditionalFeePercentage, storeScope);
             }
@@ -85,6 +87,7 @@ namespace Nop.Plugin.Tameion.BridgePay.Controller
             bridgePaySettings.Username = model.Username;
             bridgePaySettings.Password = model.Password;
             bridgePaySettings.MerchantKey = model.MerchantKey;
+            bridgePaySettings.GatewayUrl = model.GatewayUrl;
             bridgePaySettings.AdditionalFee = model.AdditionalFee;
             bridgePaySettings.AdditionalFeePercentage = model.AdditionalFeePercentage;
 
@@ -120,6 +123,11 @@ namespace Nop.Plugin.Tameion.BridgePay.Controller
                 _settingService.SaveSetting(bridgePaySettings, x => x.MerchantKey, storeScope, false);
             else if (storeScope > 0)
                 _settingService.DeleteSetting(bridgePaySettings, x => x.MerchantKey, storeScope);
+
+            if (model.GatewayUrl_OverrideForStore || storeScope == 0)
+                _settingService.SaveSetting(bridgePaySettings, x => x.GatewayUrl, storeScope, false);
+            else if (storeScope > 0)
+                _settingService.DeleteSetting(bridgePaySettings, x => x.GatewayUrl, storeScope);
 
             if (model.AdditionalFee_OverrideForStore || storeScope == 0)
                 _settingService.SaveSetting(bridgePaySettings, x => x.AdditionalFee, storeScope, false);

@@ -191,11 +191,16 @@ namespace Nop.Plugin.Tameion.BridgePay
         public ProcessPaymentResult ProcessPayment(ProcessPaymentRequest processPaymentRequest)
         {
             TransactionResponse TransactionResponse = null;
-            string serviceUrl = string.Format("https://gatewaystage.itstgate.com/SmartPayments/transact.asmx/ProcessCreditCard?" +
-                "UserName=Gyne4392&Password=J4066nh8&"+
+            var authorizeNetPaymentSettings = _settingService.LoadSetting<BridgePaySettings>();
+            var twoDigitMonth = processPaymentRequest.CreditCardExpireMonth.ToString("00");
+            var twoDigitYear = processPaymentRequest.CreditCardExpireYear.ToString().Substring(2, 2);
+
+            string serviceUrl = string.Format(authorizeNetPaymentSettings.GatewayUrl + "?" +
+                "UserName=" + authorizeNetPaymentSettings.Username + "&" +
+                "Password=" + authorizeNetPaymentSettings.Password + "&" +
                 "TransType=Sale&"+
                 "CardNum=" + processPaymentRequest.CreditCardNumber + "&"+
-                "ExpDate=" + processPaymentRequest.CreditCardExpireMonth + processPaymentRequest.CreditCardExpireYear + "&"+
+                "ExpDate=" + twoDigitMonth + twoDigitYear + "&"+
                 "MagData=data&" +
                 "NameOnCard=" + processPaymentRequest.CreditCardName + "&" +
                 "Amount=" + processPaymentRequest.OrderTotal + "&" +
@@ -264,7 +269,7 @@ namespace Nop.Plugin.Tameion.BridgePay
                         result.AddError(string.Format("Error: {0}", TransactionResponse.Message));
                         break;
                     case 110:
-                        result.AddError(string.Format("Error: {0}", TransactionResponse.Message));
+                        result.AddError(string.Format("Error: {0}", TransactionResponse.RespMSG));
                         break;
 
                 }
