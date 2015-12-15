@@ -27,6 +27,7 @@
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>f94c814a</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -103,6 +104,10 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nop.Plugin.Misc.VendorMembership">
+      <HintPath>Plugins\Misc.VendorMembership\Nop.Plugin.Misc.VendorMembership.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Recaptcha">
       <HintPath>..\..\packages\recaptcha.1.0.5.0\lib\.NetFramework 4.0\Recaptcha.dll</HintPath>
@@ -194,13 +199,13 @@
     <Compile Include="Controllers\BasePublicController.cs" />
     <Compile Include="Controllers\BoardsController.cs" />
     <Compile Include="Controllers\BackInStockSubscriptionController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\BackwardCompatibility1XController.cs" />
     <Compile Include="Controllers\BackwardCompatibility2XController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ReturnRequestController.cs" />
     <Compile Include="Controllers\KeepAliveController.cs" />
     <Compile Include="Controllers\ExternalAuthenticationController.cs" />
@@ -2192,11 +2197,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>15536</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2451/</IISUrl>
+          <IISUrl>http://localhost:15536/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

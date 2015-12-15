@@ -5,3 +5,17 @@ D:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugi
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.csprojResolveAssemblyReference.cache
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.dll
 D:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.pdb
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.csprojResolveAssemblyReference.cache
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.pdb
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.Advertisements\Description.txt
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.Advertisements\web.config
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugin.Misc.Advertisements.dll
+C:\Users\sohail\Downloads\Compressed\Livetameion-InstallingPlugins\Livetameion-InstallingPlugins\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugin.Misc.Advertisements.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugin.Misc.Advertisements.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.Advertisements\Nop.Plugin.Misc.Advertisements.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.csprojResolveAssemblyReference.cache
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.Advertisements\obj\Debug\Nop.Plugin.Misc.Advertisements.pdb

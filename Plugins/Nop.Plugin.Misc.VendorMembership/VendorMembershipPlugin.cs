@@ -52,22 +52,22 @@ namespace Nop.Plugin.Misc.VendorMembership
             {
                 this.Install();
             }
-            //var menuItem = new SiteMapNode()
-            //{
-            //    SystemName = "Misc.VendorMembership",
-            //    Title = "Vendor Membership",
-            //    Url = "/VendorMembership/Register",
-            //    ControllerName = "VendorMembership",
-            //    ActionName = "Register",
-            //    Visible = true,
-            //    RouteValues = new RouteValueDictionary() { { "area", null } },
-            //};
+            var menuItem = new SiteMapNode()
+            {
+                SystemName = "Misc.VendorMembership",
+                Title = "Vendor Membership",
+                Url = "/Vendor/Settings",
+                ControllerName = "VendorMembership",
+                ActionName = "Register",
+                Visible = true,
+                RouteValues = new RouteValueDictionary() { { "area", "Vendor" } },
+            };
 
-            //var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Misc.VendorMembership");
-            //if (pluginNode != null)
-            //    pluginNode.ChildNodes.Add(menuItem);
-            //else
-            //    rootNode.ChildNodes.Add(menuItem);
+            var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Misc.VendorMembership");
+            if (pluginNode != null)
+                pluginNode.ChildNodes.Add(menuItem);
+            else
+                rootNode.ChildNodes.Add(menuItem);
         }
 
         public bool Authenticate()
@@ -87,7 +87,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             {
                 _vendorMembershipContext.Install();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
 
             this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel", "Your Name");
             this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel.Hint", "Please provide a name.");
@@ -109,7 +109,7 @@ namespace Nop.Plugin.Misc.VendorMembership
             {
                 _vendorMembershipContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel");
             this.DeletePluginLocaleResource("Plugins.Widgets.VendorMembership.NameLabel.Hint");

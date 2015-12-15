@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Nop.Plugin.Misc.TrialTracker
+namespace Nop.Plugin.Misc.VendorMembership
 {
     public class RouteConfig : IRouteProvider
     {
@@ -19,29 +19,53 @@ namespace Nop.Plugin.Misc.TrialTracker
 
         public void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute("Plugin.Misc.VendorMembership.VendorMembershipController",
-                "VendorMembership/{action}/{id}",
-                new { controller = "VendorMembership", action = "Dashboard", id = UrlParameter.Optional },
+            //var route = routes.MapRoute("Plugin.Misc.VendorMembership.VendorMembershipController",
+            //    "VendorMembership/{action}/{id}",
+            //    new { controller = "VendorMembership", action = "Dashboard", id = UrlParameter.Optional },
+            //    new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            //);
+            //routes.Remove(route);
+            //routes.Insert(0, route);
+
+            var route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.ProductsController",
+                "Vendor/Products/{action}/{id}",
+                new { area = "Vendor", controller = "Products", action = "ListProducts", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
-            routes.MapRoute("Plugin.Misc.VendorMembership.OrdersController",
-                "VendorOrders/{action}/{id}",
-                new { controller = "VendorOrders", action = "Index", id = UrlParameter.Optional },
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.OrdersController",
+                "Vendor/Orders/{action}/{id}",
+                new { area = "Vendor", controller = "Orders", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
-            //routes.MapRoute("Plugin.Misc.TrialTracker.UpdateTrial",
-            //    "TrialTracker/UpdateTrial",
-            //    new { controller = "TrialTracker", action = "UpdateTrial" },
-            //    new[] { "Nop.Plugin.Misc.TrialTracker.Controllers" }
-            //);
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.AccountController",
+                "Vendor/Account/{action}",
+                new { area = "Vendor", controller = "Account", action = "Index" },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
-            //routes.MapRoute("Plugin.Misc.TrialTracker.DeleteTrial",
-            //    "TrialTracker/DeleteTrial",
-            //    new { controller = "TrialTracker", action = "DeleteTrial" },
-            //    new[] { "Nop.Plugin.Misc.TrialTracker.Controllers" }
-            //);
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.Dashboard",
+                "Vendor",
+                new { area = "Vendor", controller = "Orders", action = "Index" },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.SettingsController",
+                "Vendor/Settings",
+                new { area = "Vendor", controller = "Settings", action = "Index" },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
 
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }

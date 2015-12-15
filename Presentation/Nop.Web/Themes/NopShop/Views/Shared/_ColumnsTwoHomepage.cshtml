@@ -1,0 +1,229 @@
+﻿@{
+    Layout = "~/Views/Shared/_Root.cshtml";
+}
+
+@{
+    //current category ID
+    int currentCategoryId = 0;
+    if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.RequestContext.RouteData.Values["action"].ToString().Equals("category", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentCategoryId = Convert.ToInt32(Url.RequestContext.RouteData.Values["categoryId"].ToString());
+    }
+
+
+    //current manufacturer ID
+    int currentManufacturerId = 0;
+    if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.RequestContext.RouteData.Values["action"].ToString().Equals("manufacturer", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentManufacturerId = Convert.ToInt32(Url.RequestContext.RouteData.Values["manufacturerId"].ToString());
+    }
+
+
+    //current product ID
+    int currentProductId = 0;
+    if (Url.RequestContext.RouteData.Values["controller"].ToString().Equals("catalog", StringComparison.InvariantCultureIgnoreCase) &&
+        Url.RequestContext.RouteData.Values["action"].ToString().Equals("product", StringComparison.InvariantCultureIgnoreCase))
+    {
+        currentProductId = Convert.ToInt32(Url.RequestContext.RouteData.Values["productId"].ToString());
+    }
+}
+
+
+<!--slider--<section id="slider">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+						
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<h1><span>E</span>-SHOPPER</h1>
+									<h2>Free E-Commerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-primary get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="~/Themes/NopShop/Content/css/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+									<img src="~/Themes/NopShop/Content/css/images/home/pricing.png"  class="pricing" alt="" />
+								</div>
+							</div>
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>E</span>-SHOPPER</h1>
+									<h2>100% Responsive Design</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-primary get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="~/Themes/NopShop/Content/css/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+									<img src="~/Themes/NopShop/Content/css/images/home/pricing.png"  class="pricing" alt="" />
+								</div>
+							</div>
+							
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>E</span>-SHOPPER</h1>
+									<h2>Free Ecommerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-primary get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="~/Themes/NopShop/Content/css/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+									<img src="~/Themes/NopShop/Content/css/images/home/pricing.png" class="pricing" alt="" />
+								</div>
+							</div>
+							
+						</div>
+						
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>--slider-->
+
+<div class="container silde-show-container">
+    <div class="row">
+        <div class="col-lg-12">
+            @Html.Widget("home_page_top")
+        </div>
+    
+    </div>
+</div>
+<div class="space15px"></div>
+<style>
+	*, *::before, *::after {
+		box-sizing: border-box;
+		margin: 0px;
+		padding: 0px;
+	}
+	.home-promotion-wrap {
+		padding: 0px;
+		background-color: #FFF;
+		border-width: 4px 1px 1px;
+		border-style: solid;
+		border-color: #C99945 #C7C7C7 #C7C7C7;
+		-moz-border-top-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-bottom-colors: none;
+		-moz-border-left-colors: none;
+		border-image: none;
+		max-width: 80%;
+		float: none;
+		margin: 0px auto;
+	}
+	.home-promotion-wrap .row {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	.home-promotion-inner {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.home-promotion-inner .promotion-product h6 {
+		padding-top: 10px;
+		font-size: 15.5px;
+		color: #000;
+		text-align: center;
+	}
+	.home-promotion-inner .pad-right0 {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.home-promotion-wrap div.big-category-image img {
+		width: 100% !important;
+	}
+	img {
+		display: inline-block;
+		max-width: 100%;
+	}
+	.pad0 {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.home-promotion-inner .promotion-product {
+		padding-left: 10px;
+		border-width: 0px 0px 1px 1px;
+		border-style: none none solid solid;
+		border-color: -moz-use-text-color -moz-use-text-color #CCC #CCC;
+		-moz-border-top-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-bottom-colors: none;
+		-moz-border-left-colors: none;
+		border-image: none;
+	}
+	.home-promotion-inner .promotion-product h6 {
+		padding-top: 10px;
+		font-size: 15.5px;
+		color: #000;
+		text-align: center;
+	}
+	.Promotions-single .Promotions-title, .home-promotion-inner .promotion-product h6 {
+		text-transform: capitalize;
+		padding-left: 0px;
+	}
+	.home-promotion-inner .promotion-product img {
+		height: auto;
+	}
+	.home-promotion-hover-wrap .promotion-product img {
+		max-width: 100%;
+	}
+	.home-promotion-inner .promotion-product img {
+	}
+	.sub-cat-promotion-wrap img, .home-promotion img, .GAMES-MUSIC-bg img {
+		width: 100%;
+	}
+	img {
+		display: inline-block;
+		max-width: 100%;
+	}
+</style>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-lg-3 col-md-4 col-sm-4 hidden-xs">
+            <div class="left-sidebar">
+                @if (IsSectionDefined("left"))
+                {
+                    @RenderSection("left")
+                }
+                else
+                {
+                    
+                    @Html.Widget("left_side_column_before")
+                    @Html.Action("CategoryNavigation", "Catalog", new { currentCategoryId = currentCategoryId, currentProductId = currentProductId })
+                    @Html.Widget("left_side_column_after_category_navigation")
+                    @Html.Action("ManufacturerNavigation", "Catalog", new { currentManufacturerId = currentManufacturerId })
+                    @Html.Action("VendorNavigation", "Catalog")
+                    @Html.Action("RecentlyViewedProductsBlock", "Product", new { productThumbPictureSize = 64 })
+                    @Html.Action("PopularProductTags", "Catalog")
+                    @Html.Action("PollBlock", "Poll", new { systemKeyword = "LeftColumnPoll" })
+                    @Html.Widget("left_side_column_after")
+
+                }
+            </div>
+
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 padding-right">
+            @Html.Widget("main_column_before")
+            @RenderBody()
+            @Html.Widget("main_column_after")
+        </div>
+                
+    </div>
+</div>
+

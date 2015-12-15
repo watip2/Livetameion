@@ -1,0 +1,15 @@
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Description.txt
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\web.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\Create.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\Index.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\_CreateOrUpdate.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\_CreateOrUpdate.Info.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\_CreateOrUpdate.RelatedProducts.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\Edit.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Admin\Views\Auctions\RelatedProductAddPopup.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Areas\Public\Views\Auctions\Index.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Nop.Plugin.Tameion.Auctions.dll
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Nop.Plugin.Tameion.Auctions.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.dll
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.csprojResolveAssemblyReference.cache

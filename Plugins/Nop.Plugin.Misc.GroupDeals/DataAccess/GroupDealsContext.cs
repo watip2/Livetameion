@@ -1,5 +1,9 @@
 ﻿using Nop.Core;
+using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Discounts;
 using Nop.Data;
+using Nop.Data.Mapping.Catalog;
+using Nop.Data.Mapping.Discounts;
 using Nop.Plugin.Misc.GroupDeals.Helpers;
 using Nop.Plugin.Misc.GroupDeals.Maps;
 using Nop.Plugin.Misc.GroupDeals.Models;
@@ -35,6 +39,7 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
              */
 
             modelBuilder.Configurations.Add(new GroupDealMap());
+            modelBuilder.Configurations.Add(new GroupDealProductMap());
             modelBuilder.Configurations.Add(new GroupdealPictureMap());
             modelBuilder.Configurations.Add(new Nop.Data.Mapping.Vendors.VendorMap());
             modelBuilder.Configurations.Add(new Nop.Data.Mapping.Catalog.CategoryMap());
@@ -72,13 +77,47 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
             modelBuilder.Ignore<Nop.Core.Domain.Vendors.Vendor>();
             modelBuilder.Ignore<Nop.Core.Domain.Catalog.Category>();
             modelBuilder.Ignore<Nop.Core.Domain.Shipping.Warehouse>();
-            modelBuilder.Ignore<Nop.Core.Domain.Catalog.ProductWarehouseInventory>();
-            modelBuilder.Ignore<Nop.Core.Domain.Catalog.TierPrice>();
             modelBuilder.Ignore<Nop.Core.Domain.Directory.StateProvince>();
             modelBuilder.Ignore<Nop.Core.Domain.Shipping.Shipment>();
             modelBuilder.Ignore<Nop.Core.Domain.Shipping.ShipmentItem>();
             modelBuilder.Ignore<Nop.Core.Domain.Media.Picture>();
+            modelBuilder.Ignore<Core.Domain.Catalog.ProductAttributeMapping>();
 
+            modelBuilder.Configurations.Add(new ProductAttributeMappingMap());
+            modelBuilder.Ignore<Core.Domain.Catalog.ProductAttributeMapping>();
+
+            modelBuilder.Configurations.Add(new ProductCategoryMap());
+            modelBuilder.Ignore<Core.Domain.Catalog.ProductCategory>();
+
+            modelBuilder.Configurations.Add(new ProductManufacturerMap());
+            modelBuilder.Ignore<ProductManufacturer>();
+
+            modelBuilder.Configurations.Add(new ProductPictureMap());
+            modelBuilder.Ignore<ProductPicture>();
+
+            modelBuilder.Configurations.Add(new ProductReviewMap());
+            modelBuilder.Ignore<ProductReview>();
+
+            modelBuilder.Configurations.Add(new ProductSpecificationAttributeMap());
+            modelBuilder.Ignore<ProductSpecificationAttribute>();
+
+            modelBuilder.Configurations.Add(new ProductTagMap());
+            modelBuilder.Ignore<ProductTag>();
+
+            modelBuilder.Configurations.Add(new ProductAttributeCombinationMap());
+            modelBuilder.Ignore<ProductAttributeCombination>();
+
+            modelBuilder.Configurations.Add(new TierPriceMap());
+            modelBuilder.Ignore<TierPrice>();
+
+            modelBuilder.Configurations.Add(new DiscountMap());
+            modelBuilder.Ignore<Discount>();
+
+            modelBuilder.Configurations.Add(new ProductWarehouseInventoryMap());
+            modelBuilder.Ignore<ProductWarehouseInventory>();
+
+            //modelBuilder.Entity<GroupDealProduct>().Ignore(gdp =>gdp.ProductAttributeMappings);
+            
             base.OnModelCreating(modelBuilder);
         }
 
@@ -100,6 +139,9 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
             Database.ExecuteSqlCommand(dbScript);
 
             dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDeal>(this);
+            Database.ExecuteSqlCommand(dbScript);
+
+            dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDealProduct>(this);
             Database.ExecuteSqlCommand(dbScript);
 
             SaveChanges();

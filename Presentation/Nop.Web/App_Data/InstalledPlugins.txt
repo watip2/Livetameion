@@ -4,10 +4,12 @@ DiscountRequirement.HasOneProduct
 DiscountRequirement.MustBeAssignedToCustomerRole
 CurrencyExchange.MoneyConverter
 ExternalAuth.Facebook
+Misc.Advertisements
 Misc.FacebookShop
+Misc.TaxGroups
 Payments.CheckMoneyOrder
-Payments.Manual
 Payments.PayPalDirect
+Payments.Manual
 Payments.AuthorizeNet
 Payments.PayPalStandard
 Payments.PurchaseOrder
@@ -20,9 +22,12 @@ Shipping.ByWeight
 Shipping.UPS
 Shipping.USPS
 Mobile.SMS.Verizon
+Tameion.BridgePay
 Tax.FixedRate
 Tax.CountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
-Misc.Advertisements
 Misc.GroupDeals
+Tameion.Auctions
+Misc.VendorMembership
+Tameion.SupportTicketSystem

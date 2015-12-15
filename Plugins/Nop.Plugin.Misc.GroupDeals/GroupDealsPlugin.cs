@@ -1,18 +1,10 @@
 ﻿using Nop.Core.Data;
-using Nop.Core.Domain.Messages;
-using Nop.Core.Events;
 using Nop.Core.Plugins;
-using Nop.Services.Configuration;
-using Nop.Services.Events;
 using Nop.Web.Framework.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
 using System.Web.Routing;
-using Nop.Services.Localization;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.DataAccess;
 using Nop.Plugin.Misc.GroupDeals.Helpers;
@@ -45,39 +37,32 @@ namespace Nop.Plugin.Misc.GroupDeals
             {
                 SystemName = "Misc.GroupDeals",
                 Title = "Group Deals",
-                Url = "/VendorGroupDeals/Index",
-                ControllerName = "VendorGroupDeals",
-                ActionName = "Index",
                 Visible = true,
-                RouteValues = new RouteValueDictionary() { { "area", null } },
-            };
+                ChildNodes = new List<SiteMapNode>
+                {
+                    new SiteMapNode()
+                    {
+                        SystemName = "Misc.GroupDeals",
+                        Title = "Manage Group Deals",
+                        Url = "/Groupdeals/Index",
+                        ControllerName = "Groupdeals",
+                        ActionName = "Index",
+                        Visible = true,
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
+                    },
 
-            var ManageGroupDeals = new SiteMapNode()
-            {
-                SystemName = "Misc.GroupDeals",
-                Title = "Manage Group Deals",
-                Url = "/VendorGroupDeals/Index",
-                ControllerName = "VendorGroupDeals",
-                ActionName = "Index",
-                Visible = true,
-                RouteValues = new RouteValueDictionary() { { "area", null } },
+                    new SiteMapNode()
+                    {
+                        SystemName = "Misc.GroupDeals",
+                        Title = "Add New",
+                        Url = "/Groupdeals/Create",
+                        ControllerName = "Groupdeals",
+                        ActionName = "Create",
+                        Visible = true,
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } },
+                    }
+                }
             };
-
-            var AddNew = new SiteMapNode()
-            {
-                SystemName = "Misc.GroupDeals",
-                Title = "Add New",
-                Url = "/VendorGroupDeals/AddNew",
-                ControllerName = "VendorGroupDeals",
-                ActionName = "AddNew",
-                Visible = true,
-                RouteValues = new RouteValueDictionary() { { "area", null } },
-            };
-
-            List<SiteMapNode> SubMenus = new List<SiteMapNode>();
-            SubMenus.Add(AddNew);
-            SubMenus.Add(ManageGroupDeals);
-            RootMenu.ChildNodes = SubMenus;
 
             var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Misc.GroupDeals");
             if (pluginNode != null)
@@ -93,7 +78,7 @@ namespace Nop.Plugin.Misc.GroupDeals
 
         public Web.Framework.Menu.SiteMapNode BuildMenuItem()
         {
-            SiteMapNode node = new SiteMapNode { Visible = true, Title = "Group Deals", Url = "/VendorGroupDeals/Index" };
+            SiteMapNode node = new SiteMapNode { Visible = true, Title = "Group Deals", Url = "/Groupdeals/Index" };
             return node;
         }
 
@@ -103,7 +88,7 @@ namespace Nop.Plugin.Misc.GroupDeals
             {
                 _groupDealsContext.Install();
             }
-            catch (Exception e) { }
+            catch (Exception) {  }
             base.Install();
         }
 
@@ -113,7 +98,7 @@ namespace Nop.Plugin.Misc.GroupDeals
             {
                 _groupDealsContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Uninstall();
         }
 

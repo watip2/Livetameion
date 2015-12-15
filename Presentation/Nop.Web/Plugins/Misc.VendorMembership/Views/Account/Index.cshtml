@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml";
+}
+@using Nop.Core.Domain.Catalog
+@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Web.Framework.Events;
+@using Nop.Core.Infrastructure;
+@using Nop.Services.Events;
+@using Nop.Admin.Models.Catalog;
+@using Nop.Plugin.Misc.VendorMembership.ViewModels;
+@model AccountModel
+
+<link href="http://localhost:15536/Administration/Content/styles.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.common.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.default.min.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
+
+<script src="http://localhost:15536/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/admin.common.js" type="text/javascript"></script>
+<script src="http://localhost:15536/Scripts/kendo/2014.1.318/kendo.web.min.js" type="text/javascript"></script>
+
+@{
+    var defaultGridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().DefaultGridPageSize;
+    var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
+
+    //page title
+    ViewBag.Title = "Account Information";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <container>
+        Account Information
+        <div class="row">
+            @Html.LabelFor(model => model.Name) :
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.AttentionTo) :
+            @Html.EditorFor(model => model.AttentionTo)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Email) :
+            @Html.EditorFor(model => model.Email)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.Password) :
+            @Html.EditorFor(model => model.Password)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.PhoneNumber) :
+            @Html.EditorFor(model => model.PhoneNumber)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.VacationMode) :
+            @Html.EditorFor(model => model.VacationMode)
+        </div>
+        @*<div class="row">
+            @Html.LabelFor(model => model.VacationEndsAt) :
+            @Html.EditorFor(model => model.VacationEndsAt)
+        </div>*@
+    </container>
+    <container>
+        Shipping Origin Address
+        <div class="row">
+            @Html.LabelFor(model => model.ShippingAddress.Address1) :
+            @Html.EditorFor(model => model.ShippingAddress.Address1)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.ShippingAddress.City) :
+            @Html.EditorFor(model => model.ShippingAddress.City)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.ShippingAddress.ZipPostalCode) :
+            @Html.EditorFor(model => model.ShippingAddress.ZipPostalCode)
+        </div>
+        <div class="row">
+            @Html.LabelFor(model => model.ShippingAddress.CountryId) :
+            @Html.DropDownListFor(model => model.ShippingAddress.CountryId, Model.AvailableCountries)
+        </div>
+    </container>
+
+    <input type="submit" value="Save" />
+}

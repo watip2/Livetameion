@@ -1,5 +1,7 @@
 ﻿using Nop.Core;
 using Nop.Core.Data;
+using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Common;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Services.Common;
 using Nop.Services.Events;
@@ -18,9 +20,13 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
 
         private readonly IRepository<GroupDeal> _groupDealRepo;
         private readonly IEventPublisher _eventPublisher;
-        private IGenericAttributeService _genericAttributeService;
-        private IVendorService _vendorService;
-        private IRepository<GroupdealPicture> _groupdealPictureRepo;
+        private readonly IGenericAttributeService _genericAttributeService;
+        private readonly IVendorService _vendorService;
+        private readonly IRepository<GroupdealPicture> _groupdealPictureRepo;
+
+        private readonly IRepository<Product> _productRepo;
+        private readonly IRepository<ProductPicture> _groupDealProductPictureRepo;
+        private readonly IRepository<GenericAttribute> _genericAttributeRepo;
 
         #endregion
 
@@ -31,44 +37,36 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
             IEventPublisher eventPublisher,
             IGenericAttributeService genericAttributeService,
             IVendorService vendorService,
-            IRepository<GroupdealPicture> groupdealPictureRepo)
+            IRepository<GroupdealPicture> groupdealPictureRepo,
+            IRepository<Product> groupDealProductRepo,
+            IRepository<ProductPicture> groupDealProductPictureRepo,
+            IRepository<GenericAttribute> genericAttributeRepo)
         {
             this._groupDealRepo = groupDealRepository;
             this._eventPublisher = eventPublisher;
             this._genericAttributeService = genericAttributeService;
-            _vendorService = vendorService;
-            _groupdealPictureRepo = groupdealPictureRepo;
+            this._vendorService = vendorService;
+            this._groupdealPictureRepo = groupdealPictureRepo;
+            this._productRepo = groupDealProductRepo;
+            this._groupDealProductPictureRepo = groupDealProductPictureRepo;
+            this._genericAttributeRepo = genericAttributeRepo;
         }
 
         #endregion
 
         #region Methods
 
-        public GroupDeal GetById(int groupDealId)
+        public GroupDeal GetGroupDealById(int groupDealId)
         {
             if (groupDealId == 0)
                 return null;
 
             var groupdeal = _groupDealRepo.GetById(groupDealId);
             // getting generic attributes
-            groupdeal.Name = _groupDealRepo.GetById(groupDealId).GetAttribute<string>(GroupDealAttributes.Name, _genericAttributeService);
-            groupdeal.AllowBackInStockSubscriptions = _groupDealRepo.GetById(groupDealId).GetAttribute<bool>(GroupDealAttributes.AllowBackInStockSubscriptions, _genericAttributeService);
-            groupdeal.AvailableStartDateTimeUtc = _groupDealRepo.GetById(groupDealId).GetAttribute<DateTime>(GroupDealAttributes.AvailableStartDateTimeUtc, _genericAttributeService);
-            groupdeal.AvailableEndDateTimeUtc = _groupDealRepo.GetById(groupDealId).GetAttribute<DateTime>(GroupDealAttributes.AvailableEndDateTimeUtc, _genericAttributeService);
             groupdeal.Country = _groupDealRepo.GetById(groupDealId).GetAttribute<string>(GroupDealAttributes.Country, _genericAttributeService);
             groupdeal.StateOrProvince = _groupDealRepo.GetById(groupDealId).GetAttribute<string>(GroupDealAttributes.StateOrProvince, _genericAttributeService);
             groupdeal.City = _groupDealRepo.GetById(groupDealId).GetAttribute<string>(GroupDealAttributes.City, _genericAttributeService);
-            groupdeal.DisplayStockAvailability = _groupDealRepo.GetById(groupDealId).GetAttribute<bool>(GroupDealAttributes.DisplayStockAvailability, _genericAttributeService);
-            groupdeal.DisplayStockQuantity = _groupDealRepo.GetById(groupDealId).GetAttribute<bool>(GroupDealAttributes.DisplayStockQuantity, _genericAttributeService);
-            groupdeal.GroupDealCost = _groupDealRepo.GetById(groupDealId).GetAttribute<decimal>(GroupDealAttributes.GroupDealCost, _genericAttributeService);
-            groupdeal.MinStockQuantity = _groupDealRepo.GetById(groupDealId).GetAttribute<int>(GroupDealAttributes.MinStockQuantity, _genericAttributeService);
-            groupdeal.OldPrice = _groupDealRepo.GetById(groupDealId).GetAttribute<decimal>(GroupDealAttributes.OldPrice, _genericAttributeService);
-            groupdeal.Price = _groupDealRepo.GetById(groupDealId).GetAttribute<decimal>(GroupDealAttributes.Price, _genericAttributeService);
-            groupdeal.SpecialPrice = _groupDealRepo.GetById(groupDealId).GetAttribute<decimal>(GroupDealAttributes.SpecialPrice, _genericAttributeService);
-            groupdeal.StockQuantity = _groupDealRepo.GetById(groupDealId).GetAttribute<int>(GroupDealAttributes.StockQuantity, _genericAttributeService);
-            groupdeal.ShortDescription = _groupDealRepo.GetById(groupDealId).GetAttribute<string>(GroupDealAttributes.ShortDescription, _genericAttributeService);
-            groupdeal.FullDescription = _groupDealRepo.GetById(groupDealId).GetAttribute<string>(GroupDealAttributes.FullDescription, _genericAttributeService);
-
+            
             return groupdeal;
         }
 
@@ -101,7 +99,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
             List<GroupDeal> _groupdeals = new List<GroupDeal>();
             foreach (var groupDeal in groupDeals)
             {
-                _groupdeals.Add(this.GetById(groupDeal.Id));
+                _groupdeals.Add(this.GetGroupDealById(groupDeal.Id));
             }
 
             return _groupdeals.Where(gd => !gd.Deleted);
@@ -110,7 +108,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         public void InsertGroupDeal(GroupDeal groupDeal)
         {
             if (groupDeal == null)
-                throw new ArgumentNullException("GroupDeal");
+                throw new ArgumentNullException("groupDeal");
             
             _groupDealRepo.Insert(groupDeal);
             SaveGenericAttributes(groupDeal);
@@ -130,7 +128,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
             List<GroupDeal> groupdeals = new List<GroupDeal>();
             foreach (var _groupDeal in _groupDeals)
             {
-                groupdeals.Add(this.GetById(_groupDeal.Id));
+                groupdeals.Add(this.GetGroupDealById(_groupDeal.Id));
             }
 
             return groupdeals;
@@ -138,23 +136,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
 
         private void SaveGenericAttributes(GroupDeal groupDeal)
         {
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.Name, groupDeal.Name);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.AllowBackInStockSubscriptions, groupDeal.AllowBackInStockSubscriptions);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.AvailableStartDateTimeUtc, groupDeal.AvailableStartDateTimeUtc);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.AvailableEndDateTimeUtc, groupDeal.AvailableEndDateTimeUtc);
             _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.Country, groupDeal.Country);
             _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.StateOrProvince, groupDeal.StateOrProvince);
             _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.City, groupDeal.City);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.DisplayStockAvailability, groupDeal.DisplayStockAvailability);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.DisplayStockQuantity, groupDeal.DisplayStockQuantity);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.GroupDealCost, groupDeal.GroupDealCost);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.MinStockQuantity, groupDeal.MinStockQuantity);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.OldPrice, groupDeal.OldPrice);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.Price, groupDeal.Price);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.SpecialPrice, groupDeal.SpecialPrice);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.StockQuantity, groupDeal.StockQuantity);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.ShortDescription, groupDeal.ShortDescription);
-            _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.FullDescription, groupDeal.FullDescription);
         }
 
         public IList<GroupdealPicture> GetGroupdealPicturesByGroupdealId(int GroupdealId)
@@ -191,7 +175,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
             if (groupDeal == null)
                 throw new ArgumentNullException("groupDeal");
 
-            var gd = this.GetById(groupDeal.Id);
+            var gd = this.GetGroupDealById(groupDeal.Id);
             gd.Id = groupDeal.Id;
             gd.CreatedOnUtc = groupDeal.CreatedOnUtc;
             gd.UpdatedOnUtc = groupDeal.UpdatedOnUtc;
@@ -245,5 +229,115 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        public void InsertGroupDealProduct(Product groupDealProduct)
+        {
+            if (groupDealProduct == null)
+                throw new ArgumentNullException("GroupDeal");
+
+            _productRepo.Insert(groupDealProduct);
+            //SaveGroupDealProductGenericAttributes(groupDealProduct);
+
+            //event notification
+            _eventPublisher.EntityInserted(groupDealProduct);
+        }
+
+        private void SaveGroupDealProductGenericAttributes(Product groupDealProduct)
+        {
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.SeName, "dummy-SeName");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.CouponCode, "12345");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Country, "Pakistan");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.StateOrProvince, "KPK");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.City, "Kamra");
+        }
+
+        public Product GetGroupDealProductById(int groupDealProductId)
+        {
+            if (groupDealProductId == 0)
+                return null;
+            
+            var groupDealGenericEntity = _genericAttributeRepo.Table.FirstOrDefault(ga => ga.EntityId == groupDealProductId && ga.KeyGroup == "Product");
+            if (groupDealGenericEntity == null) return null;
+
+            return _productRepo.GetById(groupDealGenericEntity.EntityId);
+            // getting generic attributes
+            //groupdeal.Country = _groupDealRepo.GetById(groupDealProductId).GetAttribute<string>(GroupDealAttributes.Country, _genericAttributeService);
+            //groupdeal.StateOrProvince = _groupDealRepo.GetById(groupDealProductId).GetAttribute<string>(GroupDealAttributes.StateOrProvince, _genericAttributeService);
+            //groupdeal.City = _groupDealRepo.GetById(groupDealProductId).GetAttribute<string>(GroupDealAttributes.City, _genericAttributeService);
+        }
+
+        public void DeleteGroupDealProduct(Product groupDealProduct)
+        {
+            if (groupDealProduct == null)
+                throw new ArgumentNullException("groupDeal");
+
+            groupDealProduct.Deleted = true;
+            UpdateGroupDealProduct(groupDealProduct);
+        }
+
+        public IEnumerable<GroupDeal> GetAllGroupDealProductsByVendorId(int vendorId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetAllGroupDealProducts()
+        {
+            var groupDealGenericEntities = _genericAttributeRepo.Table.Where(ga => ga.KeyGroup.Equals("Product") && ga.Key.Equals(GroupDealAttributes.IsGroupDeal) && ga.Value.Equals("True")).ToList();
+            var products = new List<Product>();
+            foreach (var entity in groupDealGenericEntities)
+            {
+                products.Add(_productRepo.GetById(entity.EntityId));
+            }
+
+            return products;
+        }
+
+        public void UpdateGroupDealProduct(Product groupDealProduct)
+        {
+            if (groupDealProduct == null)
+                throw new ArgumentNullException("groupDealProduct");
+
+            _productRepo.Update(groupDealProduct);
+            
+            //event notification
+            _eventPublisher.EntityUpdated(groupDealProduct);
+        }
+
+        public IList<GroupdealPicture> GetGroupDealProductPicturesByGroupDealId(int groupDealProductId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public GroupdealPicture GetGroupDealProductPictureById(int groupDealPictureId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateGroupDealProductPicture(GroupdealPicture groupDealProductPicture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteGroupDealProductPicture(GroupdealPicture groupDealPicture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InsertGroupDealProductPicture(GroupdealPicture groupDealProductPicture)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GenerateGroupDealProductCouponCode()
+        {
+            int length = 13;
+            string result = Guid.NewGuid().ToString();
+            if (result.Length > length)
+                result = result.Substring(0, length);
+            return result;
+        }
+
     }
 }

@@ -1,5 +1,8 @@
 ﻿using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Vendors;
+using Nop.Plugin.Misc.VendorMembership.Domain;
+using Nop.Web.Framework.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,13 +13,20 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 {
-    public class VendorRegisterViewModel
+    public class VendorRegisterViewModel : BaseNopEntityModel
     {
+        public VendorRegisterViewModel()
+        {
+            AvailableCountries = new List<SelectListItem>();
+            AvailableStates = new List<SelectListItem>();
+        }
+
         [Display(Name="Shop Name")]
         [Required]
         public string Name { get; set; }
 
         [Display(Name = "Email Address")]
+        [Required]
         public string Email { get; set; }
 
         [Display(Name = "Phone Number")]
@@ -34,10 +44,11 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         [Display(Name = "Google Analytics Account Number")]
         public string GoogleAnalyticsAccountNumber { get; set; }
 
-        [Display(Name = "Preferred Shipping Carrier")]
-        public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
+        //[Display(Name = "Preferred Shipping Carrier")]
+        //public PreferredShippingCarrier PreferredShippingCarrier { get; set; }
 
         [Display(Name = "Preferred Subdomain Name")]
+		[Required(ErrorMessage = "This is a required field")]
         public string PreferredSubdomainName { get; set; }
 
         [Display(Name = "Attention To")]
@@ -45,21 +56,17 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public string AttentionTo { get; set; }
 
         [Display(Name = "Street Address Line 1")]
-        public string StreetAddressLine1 { get; set; }
+        public string Address1 { get; set; }
 
         [Display(Name = "Street Address Line 2")]
-        public string StreetAddressLine2 { get; set; }
+        public string Address2 { get; set; }
 
         [Display(Name = "Zip/Postal Code")]
         public string ZipPostalCode { get; set; }
 
         [Display(Name = "City")]
         public string City { get; set; }
-
-        [Display(Name = "State/Province")]
-        [Required(ErrorMessage = "This is a required field")]
-        public string StateProvince { get; set; }
-
+        
         [Display(Name = "Country")]
         public string Country { get; set; }
 
@@ -100,7 +107,17 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public int[] SelectedItems { get; set; }
 
         public List<SelectListItem> Options { get; set; }
+        public List<SelectListItem> AvailableCountries { get; private set; }
+        public List<SelectListItem> AvailableStates { get; private set; }
 
+        [Required(ErrorMessage = "This is a required field")]
+        [Display(Name = "State/Province")]
+        public int StateProvinceId { get; internal set; }
+
+        [Required(ErrorMessage = "This is a required field")]
+        [Display(Name = "Country")]
+        public int CountryId { get; internal set; }
+        
         ///// <summary>
         ///// Gets or sets the description
         ///// </summary>
