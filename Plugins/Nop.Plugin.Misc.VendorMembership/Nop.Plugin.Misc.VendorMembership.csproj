@@ -113,8 +113,8 @@
     <Compile Include="Domain\VendorVendorType.cs" />
     <Compile Include="Mapping\InvoiceMap.cs" />
     <Compile Include="Mapping\VendorAddressMap.cs" />
-    <Compile Include="Mapping\VendorVendorTypeMap.cs" />
     <Compile Include="Mapping\VendorTypeMap.cs" />
+    <Compile Include="Mapping\VendorVendorTypeMap.cs" />
     <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Services\IMtProductService.cs" />

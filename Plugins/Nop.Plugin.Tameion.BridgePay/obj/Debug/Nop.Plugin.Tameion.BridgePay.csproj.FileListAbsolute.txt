@@ -7,3 +7,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\Nop.Plugin.
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.BridgePay\obj\Debug\Nop.Plugin.Tameion.BridgePay.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.BridgePay\obj\Debug\Nop.Plugin.Tameion.BridgePay.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.BridgePay\obj\Debug\Nop.Plugin.Tameion.BridgePay.csprojResolveAssemblyReference.cache
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.BridgePay\logo.jpg
