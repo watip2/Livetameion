@@ -110,6 +110,7 @@
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Domain\AddressType.cs" />
     <Compile Include="Domain\Invoice.cs" />
+    <Compile Include="Domain\SalesCommissionSettings.cs" />
     <Compile Include="Domain\VendorAddress.cs" />
     <Compile Include="Domain\VendorType.cs" />
     <Compile Include="Domain\VendorVendorType.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="ViewModels\AccountModel.cs" />
     <Compile Include="ViewModels\InvoiceListModel.cs" />
     <Compile Include="ViewModels\InvoiceModel.cs" />
+    <Compile Include="ViewModels\MultitenancySettingsModel.cs" />
     <Compile Include="ViewModels\RegisterModel.cs" />
     <Compile Include="ViewModels\SettingsModel.cs" />
     <Compile Include="ViewModels\VendorLoginModel.cs" />
