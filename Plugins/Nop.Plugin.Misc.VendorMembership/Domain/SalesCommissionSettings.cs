@@ -9,5 +9,10 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
 {
     public class SalesCommissionSettings : ISettings
     {
+        public decimal SimpleProductFee { get; set; }
+        public decimal GroupedProductFee { get; set; }
+        public decimal GroupDealFee { get; set; }
+        public decimal RestaurantFee { get; set; }
+        public decimal VehicleFee { get; set; }
     }
 }
