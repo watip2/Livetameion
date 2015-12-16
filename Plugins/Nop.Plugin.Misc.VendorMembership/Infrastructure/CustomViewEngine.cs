@@ -14,13 +14,17 @@ namespace Nop.Plugin.Misc.VendorMembership.Infrastructure
         {
             ViewLocationFormats = new[] {
                 "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml",
-                "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml"
+                "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Areas/Vendor/Views/{1}/{0}.cshtml"
             };
             
             PartialViewLocationFormats = new[] {
                 "~/Plugins/Misc.VendorMembership/Views/{0}.cshtml",
                 "~/Plugins/Misc.VendorMembership/Views/{1}/{0}.cshtml",
-                "~/Plugins/Misc.VendorMembership/Views/Shared/{0}.cshtml"
+                "~/Plugins/Misc.VendorMembership/Views/Shared/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Areas/Admin/Views/{1}/{0}.cshtml",
+                "~/Plugins/Misc.VendorMembership/Areas/Vendor/Views/{1}/{0}.cshtml"
             };
         }
     }

@@ -551,7 +551,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
                 while (decimal.Parse(currentBalanceSetting.Value) > 20)
                 {
-                    _groupDealService.CreateGroupDealProduct(_workContext.CurrentVendor.Name);
+                    _groupDealService.CreateGroupDealProduct(_workContext.CurrentVendor.Name, 20m);
                     _settingService.SetSetting<decimal>("MiniBankBalance", decimal.Parse(currentBalanceSetting.Value) - 20);
                 }
 

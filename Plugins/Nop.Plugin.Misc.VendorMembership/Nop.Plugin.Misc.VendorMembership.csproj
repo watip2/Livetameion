@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFilters\VendorAuthorize.cs" />
+    <Compile Include="Areas\Admin\Controllers\MultitenancyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VendorTypesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Services\MtProductService.cs" />
     <Compile Include="Services\IVendorAddressService.cs" />
     <Compile Include="Services\VendorAddressService.cs" />
+    <Compile Include="AdminAreaRegistration.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
@@ -173,7 +176,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\" />
     <Folder Include="Areas\Public\" />
     <Folder Include="Areas\Vendor\" />
     <Folder Include="Test\" />
@@ -425,6 +427,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Settings\Index.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Multitenancy\Settings.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\VendorTypes\Index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

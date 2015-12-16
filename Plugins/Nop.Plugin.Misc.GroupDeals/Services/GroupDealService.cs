@@ -342,9 +342,10 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="groupDealName">GroupDeal Name (Title)</param>
+        /// <param name="Name">GroupDeal Name (Title)</param>
+        /// <param name="Price">GroupDeal Price</param>
         /// <returns>GroupDeal Id</returns>
-        public int CreateGroupDealProduct(string groupDealName)
+        public int CreateGroupDealProduct(string Name, decimal Price)
         {
             var groupDealProduct = new Product
             {
@@ -354,9 +355,9 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
                 Published = true,
                 DisplayStockQuantity = true,
                 StockQuantity = 1,
-                Price = 25,
-                SpecialPrice = 15,
-                Name = groupDealName + " group deal",
+                Price = Price,
+                SpecialPrice = Price - (0.40m * Price),
+                Name = Name + " group deal",
                 VisibleIndividually = true,
                 OrderMinimumQuantity = 1,
                 OrderMaximumQuantity = int.MaxValue,

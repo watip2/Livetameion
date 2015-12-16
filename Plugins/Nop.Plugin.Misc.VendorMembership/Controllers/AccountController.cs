@@ -1141,7 +1141,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     // create groupdeals
                     for (int i = 0; i < 10; i++)
                     {
-                        int groupDealProductId = _groupDealService.CreateGroupDealProduct(vrmodel.Name);
+                        int groupDealProductId = _groupDealService.CreateGroupDealProduct(vrmodel.Name, 25m);
                         foreach (var categoryId in vrmodel.BusinessTypeIds)
                         {
                             var productCategory = new ProductCategory

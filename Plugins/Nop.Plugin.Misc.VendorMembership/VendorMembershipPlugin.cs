@@ -52,15 +52,36 @@ namespace Nop.Plugin.Misc.VendorMembership
             {
                 this.Install();
             }
+
             var menuItem = new SiteMapNode()
             {
                 SystemName = "Misc.VendorMembership",
                 Title = "Vendor Membership",
-                Url = "/Vendor/Settings",
-                ControllerName = "VendorMembership",
-                ActionName = "Register",
                 Visible = true,
-                RouteValues = new RouteValueDictionary() { { "area", "Vendor" } },
+                ChildNodes = new List<SiteMapNode>
+                {
+                    new SiteMapNode()
+                    {
+                        SystemName = "Misc.VendorMembership",
+                        Title = "Settings",
+                        Url = "/Admin/Multitenancy/Settings",
+                        ControllerName = "Multitenancy",
+                        ActionName = "Settings",
+                        Visible = true,
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } }
+                    },
+
+                    new SiteMapNode()
+                    {
+                        SystemName = "Misc.VendorMembership",
+                        Title = "Vendor Types",
+                        Url = "/Admin/VendorTypes/Index",
+                        ControllerName = "VendorTypes",
+                        ActionName = "Index",
+                        Visible = true,
+                        RouteValues = new RouteValueDictionary() { { "area", "Admin" } }
+                    }
+                }
             };
 
             var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Misc.VendorMembership");
