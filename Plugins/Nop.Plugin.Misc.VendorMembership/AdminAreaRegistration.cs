@@ -16,7 +16,7 @@ namespace Nop.Plugin.Misc.VendorMembership
         {
             context.MapRoute(
                 "Admin_vendormembership_default",
-                "Admin/{controller}/{action}/{id}",
+                "Admin/Multitenancy/{action}/{id}",
                 new { controller = "Multitenancy", action = "Settings", area = "Admin", id = "" },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Areas.Admin.Controllers" }
             );
