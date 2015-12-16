@@ -67,7 +67,7 @@ namespace Nop.Plugin.Tameion.Auctions
             {
                 _auctionsContext.Install();
             }
-            catch (Exception e)  { }
+            catch (Exception)  { }
             base.Install();
         }
 
@@ -77,7 +77,7 @@ namespace Nop.Plugin.Tameion.Auctions
             {
                 _auctionsContext.Uninstall();
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             base.Uninstall();
         }
     }

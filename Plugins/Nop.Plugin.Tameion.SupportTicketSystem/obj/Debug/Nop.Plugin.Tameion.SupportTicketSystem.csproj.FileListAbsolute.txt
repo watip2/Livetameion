@@ -23,4 +23,3 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\N
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Nop.Plugin.Tameion.SupportTicketSystem.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.pdb
-E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.csprojResolveAssemblyReference.cache

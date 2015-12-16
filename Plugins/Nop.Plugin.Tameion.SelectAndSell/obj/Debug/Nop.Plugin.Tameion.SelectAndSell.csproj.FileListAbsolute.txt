@@ -1,3 +1,4 @@
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SelectAndSell\Views\List.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SelectAndSell\Nop.Plugin.Tameion.SelectAndSell.dll
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SelectAndSell\Nop.Plugin.Tameion.SelectAndSell.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SelectAndSell\obj\Debug\Nop.Plugin.Tameion.SelectAndSell.dll
