@@ -339,5 +339,51 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
             return result;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="groupDealName">GroupDeal Name (Title)</param>
+        /// <returns>GroupDeal Id</returns>
+        public int CreateGroupDealProduct(string groupDealName)
+        {
+            var groupDealProduct = new Product
+            {
+                DisplayOrder = 1,
+                ShortDescription = "short description",
+                FullDescription = "full description",
+                Published = true,
+                DisplayStockQuantity = true,
+                StockQuantity = 1,
+                Price = 25,
+                SpecialPrice = 15,
+                Name = groupDealName + " group deal",
+                VisibleIndividually = true,
+                OrderMinimumQuantity = 1,
+                OrderMaximumQuantity = int.MaxValue,
+                AllowCustomerReviews = true,
+                ProductType = ProductType.SimpleProduct,
+
+                // datetime fields
+                AvailableStartDateTimeUtc = DateTime.UtcNow,
+                AvailableEndDateTimeUtc = DateTime.UtcNow.AddYears(1),
+                CreatedOnUtc = DateTime.UtcNow,
+                UpdatedOnUtc = DateTime.UtcNow,
+                SpecialPriceStartDateTimeUtc = DateTime.UtcNow,
+                SpecialPriceEndDateTimeUtc = DateTime.UtcNow.AddYears(1)
+            };
+
+            this.InsertGroupDealProduct(groupDealProduct);
+            // generic attributes for the groupdeal product
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.IsGroupDeal, true);
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.SeName, "dummy-SeName");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.CouponCode, "12345");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Country, "Pakistan");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.StateOrProvince, "KPK");
+            _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.City, "Kamra");
+
+            return groupDealProduct.Id;
+        }
+
     }
 }

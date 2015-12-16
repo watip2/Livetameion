@@ -40,5 +40,6 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         void DeleteGroupDealProductPicture(GroupdealPicture groupDealPicture);
         void InsertGroupDealProductPicture(GroupdealPicture groupDealProductPicture);
         string GenerateGroupDealProductCouponCode();
+        int CreateGroupDealProduct(string groupDealName);
     }
 }

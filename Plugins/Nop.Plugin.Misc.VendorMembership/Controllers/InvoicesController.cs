@@ -7,6 +7,7 @@ using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Payments;
 using Nop.Core.Domain.Shipping;
 using Nop.Core.Domain.Tax;
+using Nop.Plugin.Misc.GroupDeals.Services;
 using Nop.Plugin.Misc.VendorMembership;
 using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 using Nop.Plugin.Misc.VendorMembership.Data;
@@ -16,6 +17,7 @@ using Nop.Plugin.Misc.VendorMembership.ViewModels;
 using Nop.Services.Affiliates;
 using Nop.Services.Catalog;
 using Nop.Services.Common;
+using Nop.Services.Configuration;
 using Nop.Services.Directory;
 using Nop.Services.Discounts;
 using Nop.Services.ExportImport;
@@ -89,6 +91,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly IProductTemplateService _productTemplateService;
         private readonly IStoreContext _storeContext;
+        private readonly ISettingService _settingService;
+        private readonly IGroupDealService _groupDealService;
 
         public InvoicesController(IOrderService orderService,
             IOrderReportService orderReportService,
@@ -136,7 +140,9 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             IInvoiceService invoiceService,
             IGenericAttributeService genericAttributeService,
             IProductTemplateService productTemplateService,
-            IStoreContext storeContext)
+            IStoreContext storeContext,
+            ISettingService settingService,
+            IGroupDealService groupDealService)
         {
             this._orderService = orderService;
             this._orderReportService = orderReportService;
@@ -186,6 +192,8 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             this._genericAttributeService = genericAttributeService;
             this._productTemplateService = productTemplateService;
             this._storeContext = storeContext;
+            this._settingService = settingService;
+            this._groupDealService = groupDealService;
         }
 
         public ActionResult Index()
@@ -527,79 +535,95 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         {
             if (id == null)
                 throw new ArgumentNullException();
-
+            
             var invoice = _invoiceService.GetInvoiceById((int)id);
             if (invoice != null)
             {
-                var dataSettingsManager = new DataSettingsManager();
-                var dataProviderSettings = dataSettingsManager.LoadSettings();
-                var context = new VendorMembershipContext(dataProviderSettings.DataConnectionString);
-                using (var transaction = context.Database.BeginTransaction())
+                var currentBalanceSetting = _settingService.GetSetting("MiniBankBalance");
+                if (currentBalanceSetting == null)
                 {
-                    try
-                    {
-                        if (invoice.ProductId == 0 || invoice.ProductId == null)
-                        {
-                            var invoiceProduct = new Product
-                            {
-                                DisplayOrder = 1,
-                                ShortDescription = "Invoiced Commission Product",
-                                FullDescription = "Invoiced Commission Product",
-                                Published = true,
-                                DisplayStockQuantity = true,
-                                StockQuantity = 1,
-                                Price = invoice.Commission,
-                                Name = "Invoiced Commission",
-                                VisibleIndividually = true,
-                                OrderMinimumQuantity = 1,
-                                OrderMaximumQuantity = int.MaxValue,
-                                AllowCustomerReviews = true,
-                                ProductType = ProductType.SimpleProduct,
-
-                                // datetime fields
-                                AvailableStartDateTimeUtc = DateTime.UtcNow,
-                                AvailableEndDateTimeUtc = DateTime.MaxValue,
-                                CreatedOnUtc = DateTime.UtcNow,
-                                UpdatedOnUtc = DateTime.UtcNow,
-                            };
-                            _productService.InsertProduct(invoiceProduct);
-
-                            var _category = _categoryService.GetCategoryById(13);
-                            var productCategory = new ProductCategory
-                            {
-                                CategoryId = _category.Id,
-                                ProductId = invoiceProduct.Id
-                            };
-                            _categoryService.InsertProductCategory(productCategory);
-
-                            invoice.ProductId = invoiceProduct.Id;
-                            _invoiceService.UpdateInvoice(invoice);
-
-                            // add invoice product to cart
-                            _shoppingCartService.AddToCart(_workContext.CurrentCustomer,
-                                invoiceProduct, 
-                                ShoppingCartType.ShoppingCart, 
-                                _storeContext.CurrentStore.Id);
-                        }
-                        else
-                        {
-                            var invoiceProduct = _productService.GetProductById((int)invoice.ProductId);
-                            // add invoice product to cart
-                            // add invoice product to cart
-                            _shoppingCartService.AddToCart(_workContext.CurrentCustomer,
-                                invoiceProduct,
-                                ShoppingCartType.ShoppingCart,
-                                _storeContext.CurrentStore.Id);
-                        }
-
-                        transaction.Commit();
-                        return RedirectToRoute("ShoppingCart");
-                    }
-                    catch (Exception)
-                    {
-                        transaction.Rollback();
-                    }
+                    _settingService.SetSetting<decimal>("MiniBankBalance", invoice.Commission);
                 }
+                else
+                {
+                    _settingService.SetSetting<decimal>("MiniBankBalance", decimal.Parse(currentBalanceSetting.Value) + invoice.Commission);
+                }
+
+                while (decimal.Parse(currentBalanceSetting.Value) > 20)
+                {
+                    _groupDealService.CreateGroupDealProduct(_workContext.CurrentVendor.Name);
+                    _settingService.SetSetting<decimal>("MiniBankBalance", decimal.Parse(currentBalanceSetting.Value) - 20);
+                }
+
+                //var dataSettingsManager = new DataSettingsManager();
+                //var dataProviderSettings = dataSettingsManager.LoadSettings();
+                //var context = new VendorMembershipContext(dataProviderSettings.DataConnectionString);
+                //using (var transaction = context.Database.BeginTransaction())
+                //{
+                //    try
+                //    {
+                //        if (invoice.ProductId == 0 || invoice.ProductId == null)
+                //        {
+                //            var invoiceProduct = new Product
+                //            {
+                //                DisplayOrder = 1,
+                //                ShortDescription = "Invoiced Commission Product",
+                //                FullDescription = "Invoiced Commission Product",
+                //                Published = true,
+                //                DisplayStockQuantity = true,
+                //                StockQuantity = 1,
+                //                Price = invoice.Commission,
+                //                Name = "Invoiced Commission",
+                //                VisibleIndividually = true,
+                //                OrderMinimumQuantity = 1,
+                //                OrderMaximumQuantity = int.MaxValue,
+                //                AllowCustomerReviews = true,
+                //                ProductType = ProductType.SimpleProduct,
+
+                //                // datetime fields
+                //                AvailableStartDateTimeUtc = DateTime.UtcNow,
+                //                AvailableEndDateTimeUtc = DateTime.MaxValue,
+                //                CreatedOnUtc = DateTime.UtcNow,
+                //                UpdatedOnUtc = DateTime.UtcNow,
+                //            };
+                //            _productService.InsertProduct(invoiceProduct);
+
+                //            var _category = _categoryService.GetCategoryById(13);
+                //            var productCategory = new ProductCategory
+                //            {
+                //                CategoryId = _category.Id,
+                //                ProductId = invoiceProduct.Id
+                //            };
+                //            _categoryService.InsertProductCategory(productCategory);
+
+                //            invoice.ProductId = invoiceProduct.Id;
+                //            _invoiceService.UpdateInvoice(invoice);
+
+                //            // add invoice product to cart
+                //            _shoppingCartService.AddToCart(_workContext.CurrentCustomer,
+                //                invoiceProduct, 
+                //                ShoppingCartType.ShoppingCart, 
+                //                _storeContext.CurrentStore.Id);
+                //        }
+                //        else
+                //        {
+                //            var invoiceProduct = _productService.GetProductById((int)invoice.ProductId);
+                //            // add invoice product to cart
+                //            // add invoice product to cart
+                //            _shoppingCartService.AddToCart(_workContext.CurrentCustomer,
+                //                invoiceProduct,
+                //                ShoppingCartType.ShoppingCart,
+                //                _storeContext.CurrentStore.Id);
+                //        }
+
+                //        transaction.Commit();
+                //        return RedirectToRoute("ShoppingCart");
+                //    }
+                //    catch (Exception)
+                //    {
+                //        transaction.Rollback();
+                //    }
+                //}
             }
             return View();
         }

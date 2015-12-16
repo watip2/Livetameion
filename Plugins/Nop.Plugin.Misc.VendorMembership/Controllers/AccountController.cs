@@ -1141,47 +1141,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     // create groupdeals
                     for (int i = 0; i < 10; i++)
                     {
-                        var groupDealProduct = new Product
-                        {
-                            DisplayOrder = 1,
-                            ShortDescription = "short description",
-                            FullDescription = "full description",
-                            Published = true,
-                            DisplayStockQuantity = true,
-                            StockQuantity = 1,
-                            Price = 25,
-                            SpecialPrice = 15,
-                            Name = vrmodel.Name + " group deal",
-                            VisibleIndividually = true,
-                            OrderMinimumQuantity = 1,
-                            OrderMaximumQuantity = int.MaxValue,
-                            AllowCustomerReviews = true,
-                            ProductType = ProductType.SimpleProduct,
-
-                            // datetime fields
-                            AvailableStartDateTimeUtc = DateTime.UtcNow,
-                            AvailableEndDateTimeUtc = DateTime.UtcNow.AddYears(1),
-                            CreatedOnUtc = DateTime.UtcNow,
-                            UpdatedOnUtc = DateTime.UtcNow,
-                            SpecialPriceStartDateTimeUtc = DateTime.UtcNow,
-                            SpecialPriceEndDateTimeUtc = DateTime.UtcNow.AddYears(1)
-                        };
-
-                        _groupDealService.InsertGroupDealProduct(groupDealProduct);
-                        // generic attributes for the groupdeal product
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.IsGroupDeal, true);
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.SeName, "dummy-SeName");
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.CouponCode, "12345");
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Country, "Pakistan");
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.StateOrProvince, "KPK");
-                        _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.City, "Kamra");
-
+                        int groupDealProductId = _groupDealService.CreateGroupDealProduct(vrmodel.Name);
                         foreach (var categoryId in vrmodel.BusinessTypeIds)
                         {
                             var productCategory = new ProductCategory
                             {
-                                ProductId = groupDealProduct.Id,
+                                ProductId = groupDealProductId,
                                 CategoryId = categoryId,
                                 IsFeaturedProduct = false,
                                 DisplayOrder = 0
