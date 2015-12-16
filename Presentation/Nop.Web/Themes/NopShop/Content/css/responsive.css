@@ -379,7 +379,7 @@ ul.sub-menu{
 ul.sub-menu{
   position: relative;
   width: auto;
-  display: block;
+  display: none;
   background: transparent;
   box-shadow: none;
   top: 0;

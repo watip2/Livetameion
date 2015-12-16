@@ -15,7 +15,7 @@ namespace Nop.Web.Models.Catalog
             SubCategories = new List<SubCategoryModel>();
             CategoryBreadcrumb = new List<CategoryModel>();
         }
-
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string MetaKeywords { get; set; }

@@ -13,6 +13,89 @@
     if (!string.IsNullOrEmpty(pictureUrl))
     {
         if (!string.IsNullOrEmpty(link))
+        {                        
+            <a href="@link">
+                <img src="@pictureUrl" style="width:100%" data-thumb="@pictureUrl" data-transition="@dataTransition" alt="" title="@text" />
+            </a>
+        }
+        else
+        {
+            <img src="@pictureUrl" style="width:100%" data-thumb="@pictureUrl" data-transition="@dataTransition" alt="" title="@text" />
+        }
+    }
+}
+
+
+<div class="sldie">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @if(Model.Picture1Url != null && Model.Picture1Url != "")
+        { <li data-target="#myCarousel" data-slide-to="0" class="active"></li> }
+        
+        @if(Model.Picture2Url != null && Model.Picture2Url != "")
+        { <li data-target="#myCarousel" data-slide-to="1"></li> }
+      
+        @if(Model.Picture3Url != null && Model.Picture3Url != "")
+        {
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        }
+      
+         @if(Model.Picture4Url != null && Model.Picture4Url != "")
+        {  <li data-target="#myCarousel" data-slide-to="3"></li> }
+      
+        @if(Model.Picture5Url != null && Model.Picture5Url != "")
+        { <li data-target="#myCarousel" data-slide-to="4"></li> }
+      
+    </ol>
+    <div class="carousel-inner">
+        @if(Model.Picture1Url != null && Model.Picture1Url != "")
+        {
+                 <div class="item active"> 
+                 @RenderSliderLine(Model.Picture1Url, Model.Text1, Model.Link1)                 
+                
+        </div>
+        }
+        @if(Model.Picture2Url != null && Model.Picture2Url != "")
+        {
+                 <div class="item"> 
+                   @RenderSliderLine(Model.Picture2Url, Model.Text2, Model.Link2)
+         </div>
+        }
+        @if(Model.Picture3Url != null && Model.Picture3Url != "")
+        {
+                 <div class="item"> 
+                  @RenderSliderLine(Model.Picture3Url, Model.Text3, Model.Link3, "slideInLeft")
+         </div>
+        }
+        @if(Model.Picture4Url != null && Model.Picture4Url != "")
+        { 
+                 <div class="item"> 
+                 @RenderSliderLine(Model.Picture4Url, Model.Text4, Model.Link4)
+         </div>
+        }
+        @if(Model.Picture5Url != null && Model.Picture5Url != "")
+        {
+                 <div class="item"> 
+                  @RenderSliderLine(Model.Picture5Url, Model.Text5, Model.Link5)
+         </div>
+        }
+    </div>
+
+
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"><i class="fa fa-angle-left"></i></span></a> <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"><i class="fa fa-angle-right"></i></span></a> </div>
+</div>
+
+
+
+
+
+@*@helper RenderSliderLine(string pictureUrl, string text, string link, string dataTransition = "")
+{
+    if (!string.IsNullOrEmpty(pictureUrl))
+    {
+        if (!string.IsNullOrEmpty(link))
         {
             <a href="@link">
                 <img src="@pictureUrl" data-thumb="@pictureUrl" data-transition="@dataTransition" alt="" title="@text" />
@@ -37,4 +120,4 @@
     $(window).load(function () {
         $('#nivo-slider').nivoSlider();
     });
-</script>
+</script>*@

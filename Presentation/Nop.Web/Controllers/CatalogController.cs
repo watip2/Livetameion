@@ -345,7 +345,10 @@ namespace Nop.Web.Controllers
                     Id = category.Id,
                     Name = category.GetLocalized(x => x.Name),
                     SeName = category.GetSeName(),
-                    IncludeInTopMenu = category.IncludeInTopMenu
+                    IncludeInTopMenu = category.IncludeInTopMenu,
+                    //for nop.shop theme
+                    Description = category.Description,
+                    MetaDescription = category.MetaDescription
                 };
 
                 //product number for each category
@@ -676,7 +679,113 @@ namespace Nop.Web.Controllers
             };
             return PartialView(model);
         }
-        
+
+        public PictureModel CustomPictureModelDetail(int Id, string Name)
+        {
+            PictureModel CurrentModel = new PictureModel();
+
+            int pictureSize = _mediaSettings.CategoryThumbPictureSize;
+            var CategoryPicture = string.Format(ModelCacheEventConsumer.CATEGORY_PICTURE_MODEL_KEY, Id, pictureSize, true, _workContext.WorkingLanguage.Id, _webHelper.IsCurrentConnectionSecured(), _storeContext.CurrentStore.Id);
+
+            CurrentModel = _cacheManager.Get(CategoryPicture, () =>
+            {
+                var Picture = _pictureService.GetPictureById(Id);
+                var picturemodel = new PictureModel()
+                {
+                    FullSizeImageUrl = _pictureService.GetPictureUrl(Picture),
+                    ImageUrl = _pictureService.GetPictureUrl(Picture, pictureSize),
+                    Title = string.Format(_localizationService.GetResource("Media.Category.ImageLinkTitleFormat"), Name),
+                    AlternateText = string.Format(_localizationService.GetResource("Media.Category.ImageAlternateTextFormat"), Name)
+                };
+
+                return picturemodel;
+            });
+
+
+            return CurrentModel;
+        }
+
+
+        [ChildActionOnly]
+        public ActionResult HomePageCatgoryBoxDetails()
+        {
+            string categoryCacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_MENU_MODEL_KEY,
+            _workContext.WorkingLanguage.Id,
+            string.Join(",", _workContext.CurrentCustomer.GetCustomerRoleIds()),
+            _storeContext.CurrentStore.Id);
+
+            var cachedCategoriesModel = _cacheManager.Get(categoryCacheKey, () => PrepareCategorySimpleModels(0));
+
+            List<CategoryModel> CheckList = new List<CategoryModel>();
+
+            foreach (var data in cachedCategoriesModel)
+            {
+                CategoryModel custom = new CategoryModel();
+                custom.Name = data.Name;
+                custom.SeName = data.SeName;
+                custom.Description = data.Description;
+                custom.MetaDescription = data.MetaDescription;
+
+                custom.SubCategories = data.SubCategories.Select(x => new Nop.Web.Models.Catalog.CategoryModel.SubCategoryModel
+                {
+                    Name = x.Name,
+                    SeName = x.SeName,
+                    PictureModel = CustomPictureModelDetail(x.Id, x.Name)
+                }).ToList();
+
+                custom.PictureModel = CustomPictureModelDetail(data.Id, data.Name);
+                CheckList.Add(custom);
+            }
+
+
+            return PartialView(CheckList);
+        }
+
+        [ChildActionOnly]
+        public ActionResult SearchByCatgory()
+        {
+
+
+            string categoryCacheKey = string.Format(ModelCacheEventConsumer.CATEGORY_MENU_MODEL_KEY,
+                        _workContext.WorkingLanguage.Id,
+                        string.Join(",", _workContext.CurrentCustomer.GetCustomerRoleIds()),
+                        _storeContext.CurrentStore.Id);
+
+            var cachedCategoriesModel = _cacheManager.Get(categoryCacheKey, () => PrepareCategorySimpleModels(0));
+
+            List<CategoryModel> CheckList = new List<CategoryModel>();
+
+            foreach (var data in cachedCategoriesModel)
+            {
+                CategoryModel custom = new CategoryModel();
+                custom.Id = data.Id;
+                custom.Name = data.Name;
+                custom.SeName = data.SeName;
+                custom.Description = data.Description;
+                custom.MetaDescription = data.MetaDescription;
+
+                custom.SubCategories = data.SubCategories.Select(x => new Nop.Web.Models.Catalog.CategoryModel.SubCategoryModel
+                {
+                    Name = x.Name,
+                    SeName = x.SeName,
+                    PictureModel = CustomPictureModelDetail(x.Id, x.Name)
+                }).ToList();
+
+                custom.PictureModel = CustomPictureModelDetail(data.Id, data.Name);
+                CheckList.Add(custom);
+            }
+
+            SearchBoxModel Searching = new SearchBoxModel();
+
+            Searching.AutoCompleteEnabled = _catalogSettings.ProductSearchAutoCompleteEnabled;
+            Searching.ShowProductImagesInSearchAutoComplete = _catalogSettings.ShowProductImagesInSearchAutoComplete;
+            Searching.SearchTermMinimumLength = _catalogSettings.ProductSearchTermMinimumLength;
+            ViewBag.HomePageCatgoryList = CheckList.ToList();
+
+            return PartialView(Searching);
+        }
+
+
         [ChildActionOnly]
         public ActionResult HomepageCategories()
         {
@@ -926,6 +1035,43 @@ namespace Nop.Web.Controllers
                 return Content("");
             
             return PartialView(cacheModel);
+        }
+
+
+        [ChildActionOnly]
+        public ActionResult HomePageManufacturer()
+        {
+            var model = new List<ManufacturerModel>();
+
+
+            var AllManufacturerDetails = _manufacturerService.GetAllManufacturers("", 0, 30, false);
+
+            var PublishManufacturers = from k in AllManufacturerDetails where k.Published == true select k;
+
+
+            foreach (var manufacturer in PublishManufacturers)
+            {
+                if (manufacturer.PictureId != 0)
+                {
+                    var modelMan = manufacturer.ToModel();
+                    //prepare picture model
+                    int pictureSize = _mediaSettings.ManufacturerThumbPictureSize;
+                    var manufacturerPictureCacheKey = string.Format(ModelCacheEventConsumer.MANUFACTURER_PICTURE_MODEL_KEY, manufacturer.Id, pictureSize, true, _workContext.WorkingLanguage.Id, _webHelper.IsCurrentConnectionSecured(), _storeContext.CurrentStore.Id);
+                    modelMan.PictureModel = _cacheManager.Get(manufacturerPictureCacheKey, () =>
+                    {
+                        var pictureModel = new PictureModel()
+                        {
+                            FullSizeImageUrl = _pictureService.GetPictureUrl(manufacturer.PictureId),
+                            ImageUrl = _pictureService.GetPictureUrl(manufacturer.PictureId, pictureSize),
+                            Title = string.Format(_localizationService.GetResource("Media.Manufacturer.ImageLinkTitleFormat"), modelMan.Name),
+                            AlternateText = string.Format(_localizationService.GetResource("Media.Manufacturer.ImageAlternateTextFormat"), modelMan.Name)
+                        };
+                        return pictureModel;
+                    });
+                    model.Add(modelMan);
+                }
+            }
+            return PartialView(model);
         }
 
         #endregion

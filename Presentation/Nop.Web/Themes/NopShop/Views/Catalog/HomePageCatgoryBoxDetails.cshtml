@@ -1,0 +1,114 @@
+﻿@model IList<CategoryModel>
+
+@using Nop.Web.Models.Catalog;
+@if (Model.Count > 0)
+{
+    var counter = 1;
+    var i=2;
+    var AddClass ="";
+    var j=1;
+
+foreach(var data in Model)
+{
+
+    <div class="box-title-@i title-show">
+        <div class="container">
+            <div class="row">
+              <div class="pord-text">
+                <div class="col-md-6">
+                  <p class="text-left-title">@data.Name</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="show-box pull-right"> <a href=@data.SeName><i class="fa fa-th"></i> Show all</a> </p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="box-@i product">
+      <div class="container">
+        <div class="all-product-file">
+          <div class="row">
+              <div class="col-md-4 col-sm-6">
+              <div class="part-1">
+                
+                 @if(data.SubCategories.Count() >0)
+                {
+                 <h3>Pick up a category:</h3>
+                 <ul>
+                   @foreach (var item in data.SubCategories)
+                   {                        
+                       
+                            <li><a href="@item.SeName">> @item.Name</a></li>
+                      
+                   }              
+                 </ul>
+                }
+              </div>
+            </div>
+             <div class="col-md-4 col-sm-6">
+                <div class="part-2">
+                     <div class="box-text">
+                  <h2>@data.Name</h2>
+                  <p> @Html.Raw(data.Description) </p>
+                </div>      
+                    
+                            <img alt="@data.PictureModel.AlternateText" src="@data.PictureModel.ImageUrl"
+                                             title="@data.PictureModel.Title" />                                                     
+                </div>
+            </div>
+             <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="part-3">
+                  <ul class="img-left">
+                  @{counter=1;j=1;} 
+                  
+                  @foreach(var item in data.SubCategories)
+                  {
+                        
+                        if(counter >0 && counter <4)
+                        {
+                            
+                             if(counter >0 && counter <= 2)
+                             { AddClass="class=img-left"; }
+                        
+                             if(counter >2 && counter <= 4)
+                             { AddClass="class=img-right"; }
+                                                          
+                        
+                             <ul @AddClass>
+                                <li>
+                                    <a style="color:black" href=@item.SeName>
+                                         <p class="text-@j">@item.Name</p>
+                                         <img src="@item.PictureModel.ImageUrl" />
+                                    </a>
+                                </li>
+                             </ul>    
+                            
+                            j++;
+                        }
+                       
+                  }
+                  </ul>
+                      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    counter++;
+    i++;
+}        
+
+
+  
+}
+
+
+
+
+
+

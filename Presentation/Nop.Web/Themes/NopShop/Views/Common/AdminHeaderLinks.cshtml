@@ -11,7 +11,8 @@
         }
         @if (Model.DisplayAdminLink)
         {
-            <a href="@Url.Content("~/admin")" ><i class="fa fa-cog"></i>@T("Account.Administration")</a>
+            <a href="@Url.Content("~/admin")" >@T("Account.Administration")</a>
+            @*<i class="fa fa-cog"></i>*@
         }
     </li>
 }
