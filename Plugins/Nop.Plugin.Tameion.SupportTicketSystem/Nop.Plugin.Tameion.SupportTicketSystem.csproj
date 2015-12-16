@@ -38,6 +38,9 @@
       <HintPath>..\..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>False</Private>
@@ -88,6 +91,8 @@
     <Compile Include="Areas\Admin\Controllers\TicketsController.cs" />
     <Compile Include="Areas\BaseRepliesController.cs" />
     <Compile Include="Areas\BaseTicketsController.cs" />
+    <Compile Include="Areas\Vendor\Controllers\TicketsController.cs" />
+    <Compile Include="AutoMapperWebConfiguration.cs" />
     <Compile Include="DomainModels\ModelsMapper.cs" />
     <Compile Include="Helpers\SupportTicketHelper.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
@@ -110,10 +115,10 @@
     <Compile Include="ViewModels\ReplyModel.cs" />
     <Compile Include="ViewModels\TicketDetailsModel.cs" />
     <Compile Include="ViewModels\TicketModel.cs" />
+    <Compile Include="ViewModels\TicketsListModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Replies\" />
-    <Folder Include="Areas\Vendor\Controllers\" />
     <Folder Include="Areas\Vendor\Views\" />
   </ItemGroup>
   <ItemGroup>
