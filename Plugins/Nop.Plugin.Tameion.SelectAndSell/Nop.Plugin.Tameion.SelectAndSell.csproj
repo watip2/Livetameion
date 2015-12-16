@@ -75,7 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SelectSellController.cs" />
     <Compile Include="Extensions\SelectSellExtensions.cs" />
     <Compile Include="Infrastructure\CustomViewEngine.cs" />
     <Compile Include="PluginConfig.cs" />
