@@ -8,26 +8,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <link href="http://localhost:15536/Administration/Content/styles.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.default.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/tagit/jquery.tagit.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Scripts/fineuploader/fineuploader-4.2.2.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/tagit/udropship_change.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost:15536/Content/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Administration/Content/styles.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.318/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.318/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.318/kendo.rtl.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/tagit/jquery.tagit.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Scripts/fineuploader/fineuploader-4.2.2.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/tagit/udropship_change.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/font-awesome/css/font-awesome.css")" rel="stylesheet" type="text/css" />
 
-    <script src="http://localhost:15536/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/admin.common.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/kendo/2014.1.318/kendo.web.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/tag-it.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Content/tinymce/tinymce.min.js" type="text/javascript"></script>
-    <script src="http://localhost:15536/Scripts/fineuploader/jquery.fineuploader-4.2.2.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.10.3.custom.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-migrate-1.2.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/admin.common.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2014.1.318/kendo.web.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/tag-it.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/tinymce/tinymce.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/fineuploader/jquery.fineuploader-4.2.2.min.js")" type="text/javascript"></script>
 
     <style>
         .container {
@@ -55,7 +55,7 @@
                 <div class="header_in">
                     <div class="logo_out">
                         <a href="/Vendor" class="fl logo_change">
-                            <img alt="Uni-ecommerce" src="http://localhost:15536/Themes/NopShop/Content/css/images/orange_logo.png" class="header-logo-image">
+                            <img alt="Uni-ecommerce" src="@Url.Content("~/Themes/NopShop/Content/css/images/orange_logo.png")" class="header-logo-image">
                         </a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="header">
                         <div class="merc_login">
                             <div class="user_img">
-                                <img border="0" src="http://localhost:15536/Themes/NopShop/Content/css/images/merchant_user.png" alt="" width="60" height="60">
+                                <img border="0" src="@Url.Content("~/Themes/NopShop/Content/css/images/merchant_user.png")" alt="" width="60" height="60">
                             </div>
                             <div class="user_d_left">
                                 <strong>Welcome</strong>
@@ -81,28 +81,120 @@
                                 }
 
                             </div>
-
+                           
                         </div>
                         <div class="clear"></div>
                         <ul class="main-nav">
-                            <li class="first  @(Request.RawUrl == "/Vendor/Orders/List" ? "active": "")">
-                                <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
-                            </li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/Invoices/List" ? "active": "")"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/Returns/List" ? "active": "")"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/Stock/List" ? "active": "")"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/Products/List" ? "active": "")"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/GroupDeals/List" ? "active": "")"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/SelectSell/List" ? "active": "")"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/Account/List" ? "active": "")"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
-                            <li class="first  @(Request.RawUrl == "/Vendor/Tickets/Index" ? "active": "")"><a href="@Url.Action("Index", "Tickets", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Support Tickets</a></li>
+                            @{
+
+                                if (Request.RawUrl != null)
+                                {
+                                    string s1 = Request.RawUrl;
+                                    string s2 = "Orders";
+                                    bool b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active">
+                                            <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                                        </li>
+                                    }
+                                    else {
+                                        <li class="first">
+                                            <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                                        </li>
+                                    }
+                                    s2 = "Invoices";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                                    }
+                                    else {
+                                        <li class="first"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                                    }
+                                    s2 = "Returns";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="first"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                                    }
+                                    s2 = "Stock";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="first"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                                    }
+                                    s2 = "Products";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                                    }
+                                    else {
+                                        <li class="first"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                                    }
+                                    s2 = "GroupDeals";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="first"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                                    }
+                                    s2 = "SelectSell";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                                    }
+                                    else {
+                                        <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                                    }
+                                    s2 = "Account";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                                    }
+                                    else {
+                                        <li class="first"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                                    }
+
+                                }
+                                else {
+                                    <li class="first">
+                                        <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                                    </li>
+                                    <li class="first"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                                    <li class="first"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                                    <li class="first"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                                    <li class="first"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                                    <li class="first"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                                    <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                                    <li class="first"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                                }
+
+                            }
+
+                                           
                         </ul>
                     </div>
                 </div>
                 <div class="cont_rgt">
-                    @RenderBody()
-                </div>
-            </div>
+                     @RenderBody()
+                  
+               </div>
+             </div>
         </div>
     </div>
 
