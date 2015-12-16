@@ -28,7 +28,9 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
         [HttpGet]
         public ActionResult Index()
         {
-            var tickets = _ticketService.GetAllTickets();
+            AutoMapperWebConfiguration.Configure();
+            var tickets =
+                AutoMapper.Mapper.Map<IEnumerable<Ticket>, TicketsListModel>(_ticketService.GetAllTickets());
 
             return View(tickets);
         }
@@ -43,12 +45,13 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Areas
         [HttpPost, ValidateAntiForgeryToken]
         public ActionResult Create(TicketModel model)
         {
+            AutoMapperWebConfiguration.Configure();
             if (ModelState.IsValid)
             {
-                var ticket = new ModelsMapper().CreateMap<TicketModel, Ticket>(model);
-                ticket.CreatedOnUtc = DateTime.Now;
+                var ticket = AutoMapper.Mapper.Map<TicketModel, Ticket>(model);
+                ticket.CreatedOnUtc = DateTime.UtcNow;
                 ticket.Status = TicketStatus.Open;
-                ticket.VendorId = _workContext.CurrentVendor.Id;
+                ticket.VendorId = _workContext.CurrentVendor!=null?_workContext.CurrentVendor.Id:-1;
 
                 _ticketService.InsertTicket(ticket);
                 return RedirectToAction("Index");

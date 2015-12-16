@@ -10,6 +10,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.ViewModels
     public class TicketModel
     {
         public string Title { get; set; }
+        public int Id { get; set; }
         public int TicketStatusId { get; set; }
         public TicketStatus Status { get; set; }
         public string Message { get; set; }

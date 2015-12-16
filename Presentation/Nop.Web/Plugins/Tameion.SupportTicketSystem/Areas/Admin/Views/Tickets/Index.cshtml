@@ -1,5 +1,4 @@
-﻿@using Nop.Plugin.Tameion.SupportTicketSystem.DomainModels;
-@model IEnumerable<Ticket>
+﻿@model Nop.Plugin.Tameion.SupportTicketSystem.ViewModels.TicketsListModel
 @{
     var areaName = HttpContext.Current.Request.RequestContext.RouteData.Values["area"].ToString();
     if (areaName == "Vendor")
@@ -13,8 +12,9 @@
 }
 
 <ul>
-@foreach (var ticket in Model)
-{
-    <li><a href="@Url.Action("Details", "Tickets", new { area = areaName, Id = ticket.Id })">@ticket.Title</a></li>    
-}
+    @foreach (var ticket in Model.Tickets)
+    {
+        <li><a href="@Url.Action("Details", "Tickets", new { area = areaName, Id = ticket.Id })">@ticket.Title</a></li>
+    }
 </ul>
+@Html.ActionLink("Create ticket", "Create")
