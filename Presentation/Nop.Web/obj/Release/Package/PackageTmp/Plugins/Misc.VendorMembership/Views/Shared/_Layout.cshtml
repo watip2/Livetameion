@@ -15,6 +15,8 @@
     <link href="http://localhost:15536/Content/kendo/2014.1.318/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
     <link href="http://localhost:15536/Content/tagit/jquery.tagit.css" rel="stylesheet" type="text/css" />
     <link href="http://localhost:15536/Scripts/fineuploader/fineuploader-4.2.2.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:15536/Content/tagit/udropship_change.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:15536/Content/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
     <script src="http://localhost:15536/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
     <script src="http://localhost:15536/Scripts/jquery.validate.min.js" type="text/javascript"></script>
@@ -46,38 +48,62 @@
         }
     </style>
 </head>
-<body style="height:1500px">
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/Vendor">Vendor Dashboard</a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li class="activee"><a href="@Url.Action("Index", "Orders", new { area = "Vendor" })">Orders</a></li>
-                    <li><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })">Invoices</a></li>
-                    <li><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })">Returns</a></li>
-                    <li><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })">Stock</a></li>
-                    <li><a href="@Url.Action("Index", "Products", new { area = "Vendor" })">Products</a></li>
-                    <li><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })">Group Deals</a></li>
-                    <li><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })">Select & Sell</a></li>
-                    <li><a href="@Url.Action("Index", "Account", new { area = "Vendor" })">Account</a></li>
-                    <li><a href="@Url.Action("Index", "Tickets", new { area = "Vendor" })">Support Tickets</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                @if (ViewBag.CurrentVendorEmail != null)
-                {
-                    <p>Logged in as @ViewBag.CurrentVendorEmail | <a href="/Customer/Logout">Logout</a></p>
-                }
-                @RenderBody()
+<body style="height:1500px; background:#f3f3f3">
+    <div class="head_out fl clr">
+        <div class="head_in">
+            <div class="header fl clr">
+                <div class="header_in">
+                    <div class="logo_out">
+                        <a href="/Vendor" class="fl logo_change">
+                            <img alt="Uni-ecommerce" src="http://localhost:15536/Themes/NopShop/Content/css/images/orange_logo.png" class="header-logo-image">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="empty">&nbsp;</div>
+    <div class="con_out fl clr">
+        <div class="con_in">
+            <div class="con_body fl">
+                <div class="left_bar">
+                    <div class="header">
+                        <div class="merc_login">
+                            <div class="user_img">
+                                <img border="0" src="http://localhost:15536/Themes/NopShop/Content/css/images/merchant_user.png" alt="" width="60" height="60">
+                            </div>
+                            <div class="user_d_left">
+                                <strong>Welcome</strong>
+                                @if (ViewBag.CurrentVendorEmail != null)
+                                {
+                                    <span>Logged in as @ViewBag.CurrentVendorEmail</span>
+                                    <a href="/Customer/Logout" class="logout_left" title="Logout">Log out</a>
+                                }
+
+                            </div>
+
+                        </div>
+                        <div class="clear"></div>
+                        <ul class="main-nav">
+                            <li class="first  @(Request.RawUrl == "/Vendor/Orders/List" ? "active": "")">
+                                <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                            </li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/Invoices/List" ? "active": "")"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/Returns/List" ? "active": "")"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/Stock/List" ? "active": "")"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/Products/List" ? "active": "")"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/GroupDeals/List" ? "active": "")"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/SelectSell/List" ? "active": "")"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                            <li class="first  @(Request.RawUrl == "/Vendor/Account/List" ? "active": "")"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cont_rgt">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿a.logo { background: url("../images/orange_logo.png") no-repeat 0 0; background-size: 120px; }
+﻿a.logo { background: url("../images/orange_logo.png") no-repeat 0 0; }
 
 body a:hover, a:focus, a:active { color: #FE980F; }
 .rating-area a { color: #FE980F; }
@@ -11,7 +11,7 @@ a#scrollUp { background: #FE980F; }
 
 .usa:active, .usa.active { background: none repeat scroll 0 0 #FE980F; }
 
-.dropdown-menu li a:hover, .dropdown-menu li a:focus { background-color: #FE980F; }
+.dropdown-menu li a:hover, .dropdown-menu li a:focus { background-color: #FE980F; color:#ffffff;}
 
 
 

@@ -4,7 +4,98 @@
 @if (Model.Count > 0)
 {
     var cat_i = 0;
-    <div class="recommended_items"><!--recommended_items-->
+    var AddClass ="";
+    var k=1;
+
+    <div class="box-title-1 title-show">
+  <div class="container">
+    <div class="row">
+      <div class="pord-text">
+        <div class="col-md-6">
+          <p class="text-left-title">Features Category</p>
+        </div>
+        <div class="col-md-6">
+          <p class="show-box pull-right"> @*<a href="#"><i class="fa fa-th"></i> Show all</a>*@ </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="box-1 product">
+      <div class="container">
+        <div class="all-product-file">
+          <div class="row">
+              <div class="col-md-4 col-sm-6">
+              <div class="part-1">
+                <h3>Pick up a category:</h3>
+                <ul>
+                   @foreach (var item in Model)
+                   {
+                        var abc = Model.Count();
+                        <li><a href=@item.SeName>> @item.Name</a></li>
+                   }              
+                </ul>
+              </div>
+            </div>
+              <div class="col-md-4 col-sm-6">
+              <div class="part-2">
+                     <div class="box-text">
+                  <h2>Features Category</h2>
+                  <p>Shop a Top Product </p>
+                </div>      
+                    @if(Model.Count() >0)
+                    {
+                        var FirstRecord = Model.FirstOrDefault();
+                            <img alt="@FirstRecord.PictureModel.AlternateText" src="@FirstRecord.PictureModel.ImageUrl"
+                                             title="@FirstRecord.PictureModel.Title" />                                                     
+                    }
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <div class="part-3">
+              
+            
+
+                  @foreach(var item in Model)
+                  {
+                    
+                        if(cat_i > 0  && cat_i <= 4)
+                        {
+                            if(cat_i >0 && cat_i <= 2)
+                            { AddClass="class=img-left"; }
+                        
+                            if(cat_i >2 && cat_i <= 4)
+                            { AddClass="class=img-right"; }
+                                                          
+                        
+                            <ul @AddClass>
+                                    <li>
+                                        <a style="color:black" href=@item.SeName>
+                                            <p class="text-@k">@item.Name</p>
+                                            <img src="@item.PictureModel.ImageUrl" />
+                                        </a>
+                                    </li>
+                            </ul>    
+                            k++;
+                        }
+                        cat_i++;
+                  }
+              
+                      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+@*<div class="recommended_items"><!--recommended_items-->
         <h2 class="title text-center">Featured Categories</h2>
 						
         <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
@@ -63,7 +154,7 @@
             }
            			
         </div>
-    </div>
+    </div>*@
 
 
    

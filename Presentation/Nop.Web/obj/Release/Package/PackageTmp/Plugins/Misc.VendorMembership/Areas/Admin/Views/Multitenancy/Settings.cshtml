@@ -1,0 +1,177 @@
+﻿@using Nop.Plugin.Misc.VendorMembership.ViewModels;
+@model SettingsModel
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Search Filter
+                </a><i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <table width="100%">
+                    <tr>
+                        <td class="adminTitle">
+                            @Html.Label("abccc"):
+                        </td>
+                        <td class="adminData">
+                            @Html.Editor("abccc")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminTitle">
+                            @Html.Label("abccc"):
+                        </td>
+                        <td class="adminData">
+                            @Html.Editor("abccc")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="adminTitle">
+                            @Html.Label("abccc"):
+                        </td>
+                        <td class="adminData">
+                            @Html.Editor("abccc")
+                        </td>
+                    </tr>
+                    @*<tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.OrderStatusId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("OrderStatusId", Model.AvailableOrderStatuses)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.PaymentStatusId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("PaymentStatusId", Model.AvailablePaymentStatuses)
+                            </td>
+                        </tr>
+                        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.ShippingStatusId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("ShippingStatusId", Model.AvailableShippingStatuses)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.StoreId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("StoreId", Model.AvailableStores)
+                            </td>
+                        </tr>
+                        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.VendorId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("VendorId", Model.AvailableVendors)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.WarehouseId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("WarehouseId", Model.AvailableWarehouses)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.BillingCountryId):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("BillingCountryId", Model.AvailableCountries)
+                            </td>
+                        </tr>
+                        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.PaymentMethodSystemName):
+                            </td>
+                            <td class="adminData">
+                                @Html.DropDownList("PaymentMethodSystemName", Model.AvailablePaymentMethods)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.ProductId):
+                            </td>
+                            <td class="adminData">
+                                <input type="text" id="search-product-name" autocomplete="off" />
+                                <span id="search-product-friendly-name"></span>
+                                <input type="button" id="search-product-clear" class="k-button" style="display:none;" value="@T("Admin.Common.Clear")" />
+
+                                @Html.TextBoxFor(model => model.ProductId, new { autocomplete = "off", style = "display:none;" })
+                                <script type="text/javascript">
+                                        $(document).ready(function() {
+                                            $('#search-product-name').autocomplete({
+                                                delay: 500,
+                                                minLength: 3,
+                                                source: '@(Url.Action("ProductSearchAutoComplete"))',
+                                                select: function(event, ui) {
+                                                    $('#@Html.FieldIdFor(model => model.ProductId)').val(ui.item.productid);
+                                                    $('#search-product-friendly-name').text(ui.item.label);
+
+                                                    $('#search-product-clear').show();
+                                                    return false;
+                                                }
+                                            });
+
+                                            //remove button
+                                            $('#search-product-clear').click(function () {
+                                                $('#@Html.FieldIdFor(model => model.ProductId)').val('0');
+                                                $('#search-product-friendly-name').text('');
+                                                $('#search-product-clear').hide();
+                                                return false;
+                                            });
+                                        });
+                                </script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.OrderNotes):
+                            </td>
+                            <td class="adminData">
+                                @Html.EditorFor(model => model.OrderNotes)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.OrderGuid):
+                            </td>
+                            <td class="adminData">
+                                @Html.EditorFor(model => model.OrderGuid)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="adminTitle">
+                                @Html.NopLabelFor(model => model.GoDirectlyToNumber):
+                            </td>
+                            <td class="adminData">
+                                @Html.EditorFor(model => model.GoDirectlyToNumber)
+                                <input type="submit" name="go-to-order-by-number" class="k-button" value="@T("Admin.Common.Go")" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="button" id="search-orders" class="k-button" value="@T("Admin.Common.Search")" />
+                            </td>
+                        </tr>*@
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1292,7 +1292,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="bin/Nop.Admin.dll">
-      <publishTime>12/09/2015 14:56:10</publishTime>
+      <publishTime>12/14/2015 11:05:39</publishTime>
     </File>
     <File Include="bin/Nop.Core.dll">
       <publishTime>12/09/2015 14:52:01</publishTime>
@@ -1316,7 +1316,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/09/2015 15:06:51</publishTime>
     </File>
     <File Include="bin/Nop.Web.dll">
-      <publishTime>12/14/2015 21:44:08</publishTime>
+      <publishTime>12/16/2015 16:09:48</publishTime>
     </File>
     <File Include="bin/Nop.Web.Framework.dll">
       <publishTime>12/09/2015 14:52:14</publishTime>
@@ -1533,6 +1533,108 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/files/Index.htm">
       <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Content/font-awesome/css/font-awesome.css">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/css/font-awesome.min.css">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.eot">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.svg">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.ttf">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.woff">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/fontawesome-webfont.woff2">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/fonts/FontAwesome.otf">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/animated.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/bordered-pulled.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/core.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/fixed-width.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/font-awesome.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/icons.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/larger.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/list.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/mixins.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/path.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/rotated-flipped.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/stacked.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/less/variables.less">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/font-awesome.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_animated.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_bordered-pulled.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_core.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_fixed-width.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_icons.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_larger.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_list.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_mixins.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_path.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_rotated-flipped.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_stacked.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
+    <File Include="Content/font-awesome/scss/_variables.scss">
+      <publishTime>12/15/2015 22:50:03</publishTime>
     </File>
     <File Include="Content/Images/default-avatar.jpg">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -3934,6 +4036,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/tagit/jquery.tagit.css">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Content/tagit/udropship_change.css">
+      <publishTime>12/15/2015 22:50:03</publishTime>
+    </File>
     <File Include="Content/tinymce/langs/readme.md">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
@@ -4235,7 +4340,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>12/13/2015 23:12:10</publishTime>
+      <publishTime>12/15/2015 19:49:38</publishTime>
     </File>
     <File Include="license.txt">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4517,16 +4622,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Index.cshtml">
-      <publishTime>12/09/2015 21:33:31</publishTime>
+      <publishTime>12/15/2015 20:29:30</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/_CreateOrUpdate.Categories.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:31:58</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/_CreateOrUpdate.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:31:58</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/_CreateOrUpdate.Info.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4544,7 +4649,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Admin/Views/Groupdeals/_CreateOrUpdate.Stores.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:31:58</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Public/Groupdeals/Edit.cshtml">
       <publishTime>11/28/2015 10:27:40</publishTime>
@@ -4559,7 +4664,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Public/Views/GroupDeals/GroupDealTemplate.Simple.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:30:03</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Public/Views/GroupDeals/Index.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4571,13 +4676,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Vendor/Views/Groupdeals/Index.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:31:54</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Vendor/Views/Groupdeals/Inmnbdex_quick_edit.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Vendor/Views/Groupdeals/_CreateOrUpdate.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:30:31</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Areas/Vendor/Views/Groupdeals/_CreateOrUpdate.Info.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4595,7 +4700,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.GroupDeals.dll">
-      <publishTime>12/14/2015 20:15:47</publishTime>
+      <publishTime>12/16/2015 16:05:32</publishTime>
     </File>
     <File Include="Plugins/Misc.GroupDeals/Nop.Plugin.Misc.VendorMembership.dll">
       <publishTime>12/09/2015 23:36:45</publishTime>
@@ -4861,6 +4966,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Misc.VendorMembership/Areas/Admin/Views/GroupDeals/_CreateOrUpdate.Stores.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Plugins/Misc.VendorMembership/Areas/Admin/Views/Multitenancy/Settings.cshtml">
+      <publishTime>12/16/2015 12:58:10</publishTime>
+    </File>
+    <File Include="Plugins/Misc.VendorMembership/Areas/Admin/Views/VendorTypes/Index.cshtml">
+      <publishTime>12/16/2015 14:20:37</publishTime>
+    </File>
     <File Include="Plugins/Misc.VendorMembership/Areas/Public/Views/GroupDeals/Edit.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
@@ -4922,7 +5033,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/10/2015 00:25:21</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Plugin.Misc.VendorMembership.dll">
-      <publishTime>12/14/2015 19:44:10</publishTime>
+      <publishTime>12/16/2015 16:05:36</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Nop.Web.dll">
       <publishTime>12/09/2015 23:37:14</publishTime>
@@ -4949,7 +5060,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Account/Index.cshtml">
-      <publishTime>12/13/2015 00:31:15</publishTime>
+      <publishTime>12/15/2015 20:12:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Account/Register.cshtml">
       <publishTime>12/12/2015 17:35:24</publishTime>
@@ -4970,7 +5081,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/AddShipment.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:11:36</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/BestsellersBriefReportByAmount.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -4985,10 +5096,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/Edit.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:12:22</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/Index.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:12:56</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/List.cshtml">
       <publishTime>12/14/2015 16:52:29</publishTime>
@@ -5006,7 +5117,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/ShipmentDetails.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:20:31</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Orders/ShipmentList.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5042,13 +5153,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/CreateProduct.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:24:54</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/CrossSellProductAddPopup.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/EditProduct.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:24:47</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/ListProducts.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5075,7 +5186,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/_CreateOrUpdate.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:21:22</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Products/_CreateOrUpdate.Discounts.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5114,10 +5225,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/24/2015 00:20:26</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Settings/Index.cshtml">
-      <publishTime>12/13/2015 08:29:54</publishTime>
+      <publishTime>12/16/2015 14:58:55</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/Shared/_Layout.cshtml">
-      <publishTime>12/14/2015 18:04:15</publishTime>
+      <publishTime>12/15/2015 22:50:03</publishTime>
     </File>
     <File Include="Plugins/Misc.VendorMembership/Views/VendorMembership/CreateProduct.cshtml">
       <publishTime>11/14/2015 00:15:48</publishTime>
@@ -5366,7 +5477,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Payments.PayPalStandard/Description.txt">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 19:54:25</publishTime>
     </File>
     <File Include="Plugins/Payments.PayPalStandard/logo.jpg">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5573,7 +5684,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Areas/Admin/Views/Auctions/_CreateOrUpdate.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 20:01:40</publishTime>
     </File>
     <File Include="Plugins/Tameion.Auctions/Areas/Admin/Views/Auctions/_CreateOrUpdate.Info.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5620,6 +5731,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Plugins/Tameion.BridgePay/Description.txt">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Plugins/Tameion.BridgePay/logo.jpg">
+      <publishTime>12/15/2015 18:58:52</publishTime>
+    </File>
     <File Include="Plugins/Tameion.BridgePay/Newtonsoft.Json.dll">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
@@ -5627,10 +5741,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Tameion.BridgePay/Nop.Plugin.Tameion.BridgePay.dll">
-      <publishTime>12/14/2015 11:05:53</publishTime>
+      <publishTime>12/16/2015 01:01:51</publishTime>
     </File>
     <File Include="Plugins/Tameion.BridgePay/Views/BridgePay/Configure.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/15/2015 18:36:48</publishTime>
     </File>
     <File Include="Plugins/Tameion.BridgePay/Views/BridgePay/PaymentInfo.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -5813,7 +5927,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Plugins/Widgets.NivoSlider/Views/WidgetsNivoSlider/PublicInfo.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Plugins/Widgets.NivoSlider/web.config">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7580,7 +7694,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap.min.css">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/bootstrap-3.2.0/css/bootstrap.rtl.css">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7619,7 +7733,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/color-styles/orange.css">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/color-styles/red.css">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7713,6 +7827,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Themes/NopShop/Content/css/images/download-sample-bg.gif">
       <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/footer-logo.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/images/forum-footer-bg.gif">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7873,8 +7990,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Themes/NopShop/Content/css/images/logo.gif">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Themes/NopShop/Content/css/images/logo.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
     <File Include="Themes/NopShop/Content/css/images/logo.png">
       <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/css/images/merchant_user.png">
+      <publishTime>12/15/2015 22:50:03</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/images/nextlabel.gif">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7964,7 +8087,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/main.css">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/prettyPhoto.css">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7976,7 +8099,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/responsive.css">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Content/css/styles.css">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -7998,6 +8121,33 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Themes/NopShop/Content/font-awosome-4.0.3/fonts/FontAwesome.otf">
       <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/arrow.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-1.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-2.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-3.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-4.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-5.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-6.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-7.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Content/images/images-bg-8.jpg">
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/preview.jpg">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8126,7 +8276,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Catalog/HomepageCategories.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/HomePageCatgoryBoxDetails.cshtml">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Catalog/HomePageManufacturer.cshtml">
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Catalog/ManufacturerAll.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8152,8 +8308,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Themes/NopShop/Views/Catalog/SearchBox.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
+    <File Include="Themes/NopShop/Views/Catalog/SearchByCatgory.cshtml">
+      <publishTime>12/16/2015 14:54:46</publishTime>
+    </File>
     <File Include="Themes/NopShop/Views/Catalog/TopMenu.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Catalog/Vendor.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8216,7 +8375,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/AdminHeaderLinks.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/ContactUs.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8231,16 +8390,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/Footer.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/HeaderLinks.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/JavaScriptDisabledWarning.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/LanguageSelector.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
+    </File>
+    <File Include="Themes/NopShop/Views/Common/MiddleHeaderLinks.cshtml">
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Common/PageNotFound.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8318,7 +8480,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Home/index.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Install/Index.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8495,16 +8657,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/Head.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/Header.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/LanguageAttributes.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/TopHeader.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/_AddressAttributes.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8519,7 +8681,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/_ColumnsTwoHomepage.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Shared/_CreateOrUpdateAddress.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8582,7 +8744,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Topic/TopicBlock.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Themes/NopShop/Views/Topic/TopicDetails.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
@@ -8597,7 +8759,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/07/2015 05:47:24</publishTime>
     </File>
     <File Include="Views/Blog/BlogMonths.cshtml">
-      <publishTime>12/07/2015 05:47:24</publishTime>
+      <publishTime>12/16/2015 14:54:46</publishTime>
     </File>
     <File Include="Views/Blog/BlogPost.cshtml">
       <publishTime>12/07/2015 05:47:24</publishTime>
