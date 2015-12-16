@@ -1,0 +1,89 @@
+﻿@model SearchBoxModel
+@using Nop.Web.Models.Catalog;
+@{ var i =1;}
+
+@using (Html.BeginRouteForm("ProductSearch", FormMethod.Get, new { onsubmit = "return check_small_search_form()" }))
+{
+ 
+
+    
+        <div class="input-group" id="adv-search">
+                    <input type="text" id="small-searchterms" @(Model.AutoCompleteEnabled ? Html.Raw(" autocomplete=\"off\"") : null) class="form-control form-box " placeholder="i'm shopping for..." 
+                         value="@T("Search.SearchBox.Tooltip")" name="q"  onfocus="if(this.value=='@T("Search.SearchBox.Tooltip")')this.value=''" onblur="if(this.value=='') {this.value = '@T("Search.SearchBox.Tooltip")';}"/>
+                    <span class="search-arrow"><i class="fa fa-search"></i></span>
+                    <div class="input-group-btn">
+                      <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                          <select id="cid" name="cid" class="form-control">
+                           
+                            @foreach(var data in ViewBag.HomePageCatgoryList)
+                            {
+                                if(i == 1)
+                                {  <option  value="0">All Categories</option>
+                                }
+                                i++;
+                                <option value=@data.Id> @data.Name</option>
+                            }
+                    
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary hack-search"><span aria-hidden="true"><i class="fa fa-search"></i></span></button>
+                      </div>
+                    </div>
+                  </div>
+
+        <script type="text/javascript">
+
+            $("#cid").change(function(){
+                 
+                var IsChange  = $("#cid").val();
+                if(IsChange > 0)
+                {
+                   // $("#adv").val(true);
+                }
+            });
+            
+        function check_small_search_form() {
+            var search_terms = $("#small-searchterms");
+            if (search_terms.val() == "") {
+                alert('@Html.Raw(HttpUtility.JavaScriptStringEncode(T("Search.EnterSearchTerms").Text))');
+                search_terms.focus();
+             
+                return false;
+            }
+
+            return true;
+        }
+ </script>
+            if (Model.AutoCompleteEnabled)
+            {
+                <text>
+ <script type="text/javascript">
+        $(function () {
+           
+            $('#small-searchterms').autocomplete({
+              
+                delay: 500,
+                minLength: @(Model.SearchTermMinimumLength.ToString()),
+                source: '@(Url.RouteUrl("ProductSearchAutoComplete"))',
+                select: function( event, ui ) {
+                    $("#small-searchterms").val(ui.item.label);
+                    setLocation(ui.item.producturl);
+                    return false;
+                }
+            })
+                    .data("ui-autocomplete")._renderItem = function( ul, item ) {
+                        var t = item.label;
+                        //html encode
+                        t = htmlEncode(t);
+                        return $("<li></li>")
+                        .data("item.autocomplete", item)
+                        .append("<a>@(Model.ShowProductImagesInSearchAutoComplete ? Html.Raw("<img src='\" + item.productpictureurl + \"'>") : null)" + t + "</a>")
+                    .appendTo(ul);
+                    };
+        });
+</script>
+        </text>
+            }
+   
+}

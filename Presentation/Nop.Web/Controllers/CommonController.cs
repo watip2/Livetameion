@@ -192,6 +192,59 @@ namespace Nop.Web.Controllers
             return View();
         }
 
+        //MiddleHeader
+        [ChildActionOnly]
+        public ActionResult MiddleHeaderLinks()
+        {
+            var customer = _workContext.CurrentCustomer;
+
+            var unreadMessageCount = GetUnreadPrivateMessages();
+            var unreadMessage = string.Empty;
+            var alertMessage = string.Empty;
+            if (unreadMessageCount > 0)
+            {
+                unreadMessage = string.Format(_localizationService.GetResource("PrivateMessages.TotalUnread"), unreadMessageCount);
+
+                //notifications here
+                if (_forumSettings.ShowAlertForPM &&
+                    !customer.GetAttribute<bool>(SystemCustomerAttributeNames.NotifiedAboutNewPrivateMessages, _storeContext.CurrentStore.Id))
+                {
+                    _genericAttributeService.SaveAttribute(customer, SystemCustomerAttributeNames.NotifiedAboutNewPrivateMessages, true, _storeContext.CurrentStore.Id);
+                    alertMessage = string.Format(_localizationService.GetResource("PrivateMessages.YouHaveUnreadPM"), unreadMessageCount);
+                }
+            }
+
+
+
+
+            var model = new HeaderLinksModel
+            {
+                IsAuthenticated = customer.IsRegistered(),
+                CustomerEmailUsername = customer.IsRegistered() ? (_customerSettings.UsernamesEnabled ? customer.Username : customer.Email) : "",
+                ShoppingCartEnabled = _permissionService.Authorize(StandardPermissionProvider.EnableShoppingCart),
+                WishlistEnabled = _permissionService.Authorize(StandardPermissionProvider.EnableWishlist),
+                AllowPrivateMessages = customer.IsRegistered() && _forumSettings.AllowPrivateMessages,
+                UnreadPrivateMessages = unreadMessage,
+                AlertMessage = alertMessage,
+            };
+            //performance optimization (use "HasShoppingCartItems" property)
+            if (customer.HasShoppingCartItems)
+            {
+                model.ShoppingCartItems = customer.ShoppingCartItems
+                    .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
+                    .LimitPerStore(_storeContext.CurrentStore.Id)
+                    .ToList()
+                    .GetTotalProducts();
+                model.WishlistItems = customer.ShoppingCartItems
+                    .Where(sci => sci.ShoppingCartType == ShoppingCartType.Wishlist)
+                    .LimitPerStore(_storeContext.CurrentStore.Id)
+                    .ToList()
+                    .GetTotalProducts();
+            }
+
+            return PartialView(model);
+        }
+
         //language
         [ChildActionOnly]
         public ActionResult LanguageSelector()

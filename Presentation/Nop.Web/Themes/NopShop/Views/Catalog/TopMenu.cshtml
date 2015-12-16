@@ -15,8 +15,85 @@
     @Html.Raw(@result)
 }
 
+            @*new theme change content *@
 
 @helper RenderSubCategoryLine(CategorySimpleModel category, int level)
+{
+      <li class="dropdown">
+        <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"> <i class="fa fa-plus hidden-lg hidden-md pull-right"></i> @category.Name</a>
+     
+        <ul class="sub-menu dropdown-menu">                 
+                         @foreach (var subCategory in category.SubCategories)
+                         {
+                            @RenderCategoryLine(subCategory, level + 1)
+                         }                   	                       
+        </ul>
+
+        </li>
+
+          
+}
+
+@helper RenderCategoryLine(CategorySimpleModel category, int level)
+{
+
+    if (category.SubCategories.Count > 0)
+    {
+        @RenderSubCategoryLine(category, 0)
+    }
+    else
+    {
+
+        <li>
+              <a href="@Url.RouteUrl("Category", new { SeName = category.SeName })">@category.Name  </a>
+        </li>                    
+        
+    }
+
+}
+
+
+<div class="head-bottom">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="menu">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbartest" > <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        </div>
+                         <div class="collapse navbar-collapse" id="myNavbartest">
+                            <ul class="top menu nav navbar-nav">
+  <li><a href="@Url.RouteUrl("HomePage")">Home</a></li>                                
+                                 @{
+                                       var rootCategories = Model.Categories.Where(x => x.IncludeInTopMenu).ToList();
+                                  }
+                                 @foreach (var category in rootCategories)
+                                  {
+                                    
+                                      @RenderCategoryLine(category, 0)
+                                   
+                                  }
+
+                                  @foreach (var topic in Model.Topics)
+                                  {
+                                         <li><a href="@Url.RouteUrl("Topic", new {SeName = topic.SeName})">@topic.Name</a></li>
+
+                                  }                                 
+                            </ul>   
+                         </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+             @*old content*@
+        
+@*@helper RenderSubCategoryLine(CategorySimpleModel category, int level)
 {
     <li>
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -109,7 +186,7 @@
             </ul>
         </div><!--/.nav-collapse -->
     </div>
-</div>
+</div>*@
 
 
 <script>

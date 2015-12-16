@@ -1,8 +1,31 @@
 ﻿
-<div class="header_top"><!--header_top-->
+<div class="head-top"><!--header_top-->
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+
+            @*new changes in theme *@
+              <div class="col-md-3 hidden-sm hidden-xs">
+                  <p>Call us: <span><i class="fa fa-phone"></i></span> 888.777.666</p>
+                </div>
+            <div class="col-md-9">
+              <div class="menu">
+                <nav class="navbar navbar-inverse">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="float:left;"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                      <a class="navbar-brand hidden-lg hidden-md">
+                      <p>Call us: <span><i class="fa fa-phone"></i></span> 888.777.666</p>
+                      </a> </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                            @Html.Action("HeaderLinks","Common")
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+
+             @*old nopshop theme *@
+           @* <div class="col-sm-6">
                 <div class="contactinfo">
                     <ul class="nav nav-pills">
                         <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
@@ -20,7 +43,7 @@
                         <li><a href="https://plus.google.com/+nopcommerce" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>
