@@ -160,6 +160,15 @@
                                     else {
                                         <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
                                     }
+                                    s2 = "Support Tickets";
+                                    b = s1.Contains(s2);
+                                    if (b)
+                                    {
+                                        <li class="first active"><a href="@Url.Action("Index", "Tickets", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Support Tickets</a></li>
+                                    }
+                                    else {
+                                        <li class="first"><a href="@Url.Action("Index", "Tickets", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Support Tickets</a></li>
+                                    }
                                     s2 = "Account";
                                     b = s1.Contains(s2);
                                     if (b)

@@ -24,3 +24,10 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\N
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.SupportTicketSystem\obj\Debug\Nop.Plugin.Tameion.SupportTicketSystem.csprojResolveAssemblyReference.cache
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Scripts\jquery-2.1.4.intellisense.js
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Scripts\jquery-2.1.4.js
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Scripts\jquery-2.1.4.min.js
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Scripts\jquery-2.1.4.min.map
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Nop.Plugin.Tameion.SupportTicketSystem.dll.config
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Views\Shared\_Grid.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.SupportTicketSystem\Views\Shared\_GridPager.cshtml
