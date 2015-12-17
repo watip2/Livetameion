@@ -14,28 +14,30 @@
 
 <div class="container">
     <div class="row">
-        <div class="md-col-12">
-            @Model.TicketModel.Title
-        </div>
-        <div class="md-col-12">
-            @Model.TicketModel.Message
-        </div>
-        @foreach (var reply in Model.Replies)
-        {
-            <div class="md-col-12">
-                @reply.Message
-            </div>
-        }
-        @using (Html.BeginForm("Create", "Replies", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <div class="md-col-12">
-                @Html.HiddenFor(model => model.TicketId)
-            </div>
-            <div class="md-col-12">
-                @Html.TextAreaFor(model => model.Message)
-            </div>
-            <input type="submit" value="Submit" />
-        }
+    <div class="md-col-12">
+        <h2>@Model.TicketModel.Title</h2>
     </div>
+    <div class="md-col-12">
+        @Model.TicketModel.Message
+    </div>
+    <hr @(new { style = "width:40%" }) />
+    <h3>Replies:</h3>
+    @foreach (var reply in Model.Replies)
+    {
+        <div class="md-col-12">
+            @reply.Message
+        </div>
+    }
+    @using (Html.BeginForm("Create", "Replies", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="md-col-12">
+            @Html.HiddenFor(model => model.TicketId)
+        </div>
+        <div class="md-col-12">
+            @Html.TextAreaFor(model => model.Message, new { style = "width:40%;min-height:120px" })
+        </div>
+            <input type="submit" value="Submit" />
+    }
+</div>
 </div>

@@ -21,13 +21,13 @@
                 @Html.LabelFor(model => model.Title)
             </div>
             <div class="md-col-12">
-                @Html.EditorFor(model => model.Title)
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { style = "width:40%" } })
             </div>
             <div class="md-col-12">
                 @Html.LabelFor(model => model.Message)
             </div>
             <div class="md-col-12">
-                @Html.TextAreaFor(model => model.Message)
+                @Html.TextAreaFor(model => model.Message, new { style = "width:40%;min-height:120px" })
             </div>
         </div>
         <input type="submit" value="Submit">
