@@ -25,19 +25,19 @@
                             type: "json",
                             transport: {
                                 read: {
-                                    url: "@Html.Raw(Url.Action("ProductSpecAttrList", "VendorMembership", new { productId = Model.Id }))",
+                                    url: "@Html.Raw(Url.Action("ProductSpecAttrList", "Products", new { productId = Model.Id, area = "Vendor" }))",
                                     type: "POST",
                                     dataType: "json",
                                     data: addAntiForgeryToken
                                 },
                                 update: {
-                                    url: "@Html.Raw(Url.Action("ProductSpecAttrUpdate", "VendorMembership"))",
+                                    url: "@Html.Raw(Url.Action("ProductSpecAttrUpdate", "Products", new { area = "Vendor" }))",
                                     type: "POST",
                                     dataType: "json",
                                     data: addAntiForgeryToken
                                 },
                                 destroy: {
-                                    url: "@Html.Raw(Url.Action("ProductSpecAttrDelete", "VendorMembership"))",
+                                    url: "@Html.Raw(Url.Action("ProductSpecAttrDelete", "Products", new { area = "Vendor" }))",
                                     type: "POST",
                                     dataType: "json",
                                     data: addAntiForgeryToken

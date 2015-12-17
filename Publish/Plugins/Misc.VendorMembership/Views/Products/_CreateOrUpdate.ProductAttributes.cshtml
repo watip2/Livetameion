@@ -62,7 +62,7 @@ else
                     type: "json",
                     transport: {
                         read: {
-                            url: "@Html.Raw(Url.Action("ProductAttributeMappingList", "Productsv", new { productId = Model.Id }))",
+                            url: "@Html.Raw(Url.Action("ProductAttributeMappingList", "Products", new { productId = Model.Id }))",
                             type: "POST",
                             dataType: "json",
                             data: addAntiForgeryToken
