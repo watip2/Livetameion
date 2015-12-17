@@ -734,15 +734,11 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         #endregion
 
         #region Login / logout
-
-        [NopHttpsRequirement(SslRequirement.Yes)]
-        public ActionResult Login(bool? checkoutAsGuest)
+        
+        [HttpGet]
+        public ActionResult Login()
         {
-            var model = new LoginModel();
-            model.UsernamesEnabled = _customerSettings.UsernamesEnabled;
-            model.CheckoutAsGuest = checkoutAsGuest.GetValueOrDefault();
-            model.DisplayCaptcha = _captchaSettings.Enabled && _captchaSettings.ShowOnLoginPage;
-            return View(model);
+            return RedirectToAction("Login", "Customer");
         }
 
         [HttpPost]
@@ -1385,11 +1381,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             
             PrepareVendorRegisterModel(vrmodel);
             return View(vrmodel);
-        }
-
-        public ActionResult Login()
-        {
-            return RedirectToAction("Login", "Customer");
         }
 
         [NonAction]
