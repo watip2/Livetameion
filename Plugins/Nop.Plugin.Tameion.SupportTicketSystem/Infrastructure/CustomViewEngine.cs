@@ -13,6 +13,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
         public CustomViewEngine()
         {
             ViewLocationFormats = new[] {
+                "~/Plugins/Tameion.SupportTicketSystem/Views/Shared/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketSystem/Views/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketSystem/Views/{1}/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/{1}/{0}.cshtml",
@@ -20,6 +21,7 @@ namespace Nop.Plugin.Tameion.SupportTicketSystem.Infrastructure
             };
             
             PartialViewLocationFormats = new[] {
+                "~/Plugins/Tameion.SupportTicketSystem/Views/Shared/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketSystem/Views/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketSystem/Views/{1}/{0}.cshtml",
                 "~/Plugins/Tameion.SupportTicketSystem/Areas/Admin/Views/{1}/{0}.cshtml",
