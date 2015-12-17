@@ -1,4 +1,5 @@
-﻿@model Nop.Plugin.Tameion.SupportTicketSystem.ViewModels.TicketsListModel
+﻿@using GridMvc.Html
+@model Nop.Plugin.Tameion.SupportTicketSystem.ViewModels.TicketsListModel
 @{
     var areaName = HttpContext.Current.Request.RequestContext.RouteData.Values["area"].ToString();
     if (areaName == "Vendor")
@@ -11,10 +12,8 @@
     }
 }
 
-<ul>
-    @foreach (var ticket in Model.Tickets)
-    {
-        <li><a href="@Url.Action("Details", "Tickets", new { area = areaName, Id = ticket.Id })">@ticket.Title</a></li>
-    }
-</ul>
-@Html.ActionLink("Create ticket", "Create")
+@Html.Grid(Model.Tickets).Columns(columns =>
+{
+    columns.Add(ticket => ticket.Title).Titled("Title").SetWidth(200);
+}).WithPaging(20)
+@Html.ActionLink("Create ticket", "Create", areaName+"/Tickets")
