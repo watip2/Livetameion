@@ -205,7 +205,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\CreateProduct.cshtml">
+    <Content Include="Views\Products\Create.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -215,12 +215,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\ListProducts.cshtml">
+    <Content Include="Views\Products\List.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Products\EditProduct.cshtml">
+    <Content Include="Views\Products\Edit.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

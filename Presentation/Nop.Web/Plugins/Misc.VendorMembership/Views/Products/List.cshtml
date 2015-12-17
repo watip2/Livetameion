@@ -28,7 +28,7 @@
             @T("Admin.Catalog.Products.Manage")
         </div>
         <div class="options">
-            <a href="@Url.Action("CreateProduct")" class="k-button">@T("Admin.Common.AddNew")</a>
+            <a href="@Url.Action("Create")" class="k-button">@T("Admin.Common.AddNew")</a>
             <input type="submit" name="download-catalog-pdf" class="k-button" value="@T("Admin.Catalog.Products.List.DownloadPDF")" />
             <input type="submit" name="exportxml-all" class="k-button" value="@T("Admin.Common.ExportToXml.All")" />
             <input type="button" id="exportxml-selected" class="k-button" value="@T("Admin.Common.ExportToXml.Selected")" />
@@ -238,7 +238,7 @@
                                     field: "Id",
                                     title: "@T("Admin.Common.Edit")",
                                     width: 100,
-                                    template: '<a href="Products/EditProduct/#=Id#">@T("Admin.Common.Edit")</a>'
+                                    template: '<a href="Products/Edit/#=Id#">@T("Admin.Common.Edit")</a>'
                                 }
                             ]
                         } );

@@ -193,7 +193,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
 		public ActionResult Index()
 		{
-			return RedirectToAction("ListProducts");
+			return RedirectToAction("List");
 		}
 
         [HttpGet]
@@ -1300,7 +1300,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         }
         
         [AcceptVerbs("GET")]
-        public ActionResult ListProducts()
+        public ActionResult List()
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
             //    return AccessDeniedView();
@@ -2023,7 +2023,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
                     return RedirectToAction("EditProduct", new { id = product.Id });
                 }
-                return RedirectToAction("ListProducts");
+                return RedirectToAction("List");
             }
 
             //If we got this far, something failed, redisplay form
@@ -2046,7 +2046,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
                 //a vendor should have access only to his products
                 if (_workContext.CurrentVendor != null && originalProduct.VendorId != _workContext.CurrentVendor.Id)
-                    return RedirectToAction("ListProducts");
+                    return RedirectToAction("List");
 
                 var newProduct = _copyProductService.CopyProduct(originalProduct,
                     copyModel.Name, copyModel.Published, copyModel.CopyImages);

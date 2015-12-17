@@ -206,10 +206,7 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Scripts
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Styles\bootstrap.css
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\Register.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Dashboard.cshtml
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\CreateProduct.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\_CreateOrUpdate.cshtml
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\ListProducts.cshtml
-E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\EditProduct.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\_CreateOrUpdate.Pictures.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\_CreateOrUpdate.Acl.cshtml
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\_CreateOrUpdate.Categories.cshtml
@@ -267,3 +264,6 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Nop.Plu
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.csprojResolveAssemblyReference.cache
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Misc.VendorMembership\obj\Debug\Nop.Plugin.Misc.VendorMembership.pdb
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\Create.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\List.cshtml
+E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Misc.VendorMembership\Views\Products\Edit.cshtml
