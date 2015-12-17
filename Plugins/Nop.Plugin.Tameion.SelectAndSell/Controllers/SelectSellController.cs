@@ -39,7 +39,7 @@ using Nop.Plugin.Tameion.SelectAndSell.Extensions;
 
 namespace Nop.Plugin.Tameion.SelectAndSell.Controllers
 {
-    public partial class ProductController : BasePluginController
+    public partial class SelectSellController : BasePluginController
     {
         #region Fields
 
@@ -88,7 +88,7 @@ namespace Nop.Plugin.Tameion.SelectAndSell.Controllers
 
         #region Constructors
 
-        public ProductController(IProductService productService,
+        public SelectSellController(IProductService productService,
             IProductTemplateService productTemplateService,
             ICategoryService categoryService,
             IManufacturerService manufacturerService,

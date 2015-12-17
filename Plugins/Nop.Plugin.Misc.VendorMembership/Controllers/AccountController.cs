@@ -1350,11 +1350,13 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                                     _workflowMessageService.SendCustomerEmailValidationMessage(customer, _workContext.WorkingLanguage.Id);
 
                                     //result
-                                    return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.EmailValidation });
+                                    //return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.EmailValidation });
+                                    return RedirectToAction("Index", "Orders", new { area = "Vendor" });
                                 }
                             case UserRegistrationType.AdminApproval:
                                 {
-                                    return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.AdminApproval });
+                                    //return RedirectToRoute("RegisterResult", new { resultId = (int)UserRegistrationType.AdminApproval });
+                                    return RedirectToAction("Index", "Orders", new { area = "Vendor" });
                                 }
                             case UserRegistrationType.Standard:
                                 {
@@ -1364,11 +1366,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                                     var redirectUrl = Url.RouteUrl("RegisterResult", new { resultId = (int)UserRegistrationType.Standard });
                                     if (!String.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                                         redirectUrl = _webHelper.ModifyQueryString(redirectUrl, "returnurl=" + HttpUtility.UrlEncode(returnUrl), null);
-                                    return Redirect(redirectUrl);
+                                    //return Redirect(redirectUrl);
+                                    return RedirectToAction("Index", "Orders", new { area = "Vendor" });
                                 }
                             default:
                                 {
-                                    return RedirectToRoute("Vendor");
+                                    return RedirectToAction("Index", "Orders", new { area = "Vendor" });
                                 }
                         }
                     }

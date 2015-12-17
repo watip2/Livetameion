@@ -16,7 +16,7 @@ namespace Nop.Plugin.Tameion.SelectAndSell
         {
             context.MapRoute(
                 "Vendor_SelectAndSell_default",
-                "Vendor/{controller}/{action}/{id}",
+                "Vendor/SelectSell/{action}/{id}",
                 new { controller = "SelectSell", action = "Index", area = "Vendor", id = "" },
                 new[] { "Nop.Plugin.Tameion.SelectAndSell.Controllers" }
             );

@@ -51,7 +51,7 @@ using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
-    //[VendorAuthorize]
+    [VendorAuthorize]
     public class ProductsController : BasePluginController
     {
         private List<Nop.Plugin.Misc.VendorMembership.DTOs.Category> _categories;
@@ -1298,7 +1298,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 model.ProductAttributes.Add(attributeModel);
             }
         }
-
+        
         [AcceptVerbs("GET")]
         public ActionResult ListProducts()
         {

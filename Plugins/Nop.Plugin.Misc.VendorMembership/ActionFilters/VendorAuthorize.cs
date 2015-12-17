@@ -12,16 +12,23 @@ namespace Nop.Plugin.Misc.VendorMembership.ActionFilters
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            _workContext = EngineContext.Current.Resolve<IWorkContext>();
-            if (_workContext.CurrentVendor == null)
+            var action = filterContext.ActionDescriptor.ActionName;
+            if (action == "Register" || action == "Login")
             {
-                RedirectToLoginPage(filterContext);
+                // do nothing
             }
             else
             {
-                filterContext.Controller.ViewBag.CurrentVendorEmail = _workContext.CurrentVendor.Email;
+                _workContext = EngineContext.Current.Resolve<IWorkContext>();
+                if (_workContext.CurrentVendor == null)
+                {
+                    RedirectToLoginPage(filterContext);
+                }
+                else
+                {
+                    filterContext.Controller.ViewBag.CurrentVendorEmail = _workContext.CurrentVendor.Email;
+                }
             }
-            
             //_vendorService = EngineContext.Current.Resolve<IIndVendorService>();
 
             //HttpCookie vendor_email_cookie = filterContext.HttpContext.Request.Cookies.Get("current_vendor_email");

@@ -16,7 +16,7 @@ namespace Nop.Plugin.Tameion.Auctions
         {
             context.MapRoute(
                 "Vendor_Auctions_default",
-                "Vendor/{controller}/{action}/{id}",
+                "Vendor/Auctions/{action}/{id}",
                 new { controller = "Auctions", action = "Index", area = "Vendor", id = "" },
                 new[] { "Nop.Plugin.Tameion.Auctions.Areas.Vendor.Controllers" }
             );
