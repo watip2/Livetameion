@@ -519,7 +519,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 _customerActivityService.InsertActivity("AddNewProduct", _localizationService.GetResource("ActivityLog.AddNewProduct"), product.Name);
 
                 SuccessNotification(_localizationService.GetResource("Admin.Catalog.Products.Added"));
-                return continueEditing ? RedirectToAction("EditProduct", new { id = product.Id }) : RedirectToAction("ListProducts");
+                return continueEditing ? RedirectToAction("Edit", new { id = product.Id }) : RedirectToAction("ListProducts");
             }
 
             //If we got this far, something failed, redisplay form
@@ -1416,6 +1416,32 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             return Json(gridModel);
         }
 
+        [HttpPost, ActionName("List")]
+        [FormValueRequired("go-to-product-by-sku")]
+        public ActionResult GoToSku(ProductListModel model)
+        {
+            string sku = model.GoDirectlyToSku;
+
+            //try to load a product entity
+            var product = _productService.GetProductBySku(sku);
+
+            //if not found, then try to load a product attribute combination
+            if (product == null)
+            {
+                var combination = _productAttributeService.GetProductAttributeCombinationBySku(sku);
+                if (combination != null)
+                {
+                    product = combination.Product;
+                }
+            }
+
+            if (product != null)
+                return RedirectToAction("Edit", "Products", new { id = product.Id, area = "Vendor" });
+
+            //not found
+            return List();
+        }
+
         [ValidateInput(false)]
         public ActionResult ProductPictureAdd(int pictureId, int displayOrder,
             string overrideAltAttribute, string overrideTitleAttribute,
@@ -1899,7 +1925,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
         #region EditProduct
         [AcceptVerbs("GET")]
-        public ActionResult EditProduct(int id)
+        public ActionResult Edit(int id)
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
             //    return AccessDeniedView();
@@ -1933,7 +1959,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         #endregion
 
         [HttpPost, ParameterBasedOnFormName("save-continue", "continueEditing")]
-        public ActionResult EditProduct(ProductModel model, bool continueEditing)
+        public ActionResult Edit(ProductModel model, bool continueEditing)
         {
             //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
             //    return AccessDeniedView();
@@ -2021,7 +2047,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                     //selected tab
                     SaveSelectedTabIndex();
 
-                    return RedirectToAction("EditProduct", new { id = product.Id });
+                    return RedirectToAction("Edit", new { id = product.Id });
                 }
                 return RedirectToAction("List");
             }
@@ -2051,12 +2077,12 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 var newProduct = _copyProductService.CopyProduct(originalProduct,
                     copyModel.Name, copyModel.Published, copyModel.CopyImages);
                 SuccessNotification("The product has been copied successfully");
-                return RedirectToAction("EditProduct", new { id = newProduct.Id });
+                return RedirectToAction("Edit", new { id = newProduct.Id });
             }
             catch (Exception exc)
             {
                 ErrorNotification(exc.Message);
-                return RedirectToAction("EditProduct", new { id = copyModel.Id });
+                return RedirectToAction("Edit", new { id = copyModel.Id });
             }
         }
 

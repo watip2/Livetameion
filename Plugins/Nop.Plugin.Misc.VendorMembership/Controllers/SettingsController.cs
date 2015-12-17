@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.VendorMembership.Controllers
 {
+    [AdminAuthorize]
     public class SettingsController : BasePluginController
     {
         private readonly ISettingService _settings;
