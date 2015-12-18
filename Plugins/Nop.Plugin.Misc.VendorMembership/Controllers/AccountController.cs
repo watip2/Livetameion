@@ -229,7 +229,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             accountModel.ShopName = _workContext.CurrentVendor.GetShopName();
             
             var vendorAddress = _vendorAddressService.GetVendorAddressByVendorId(_workContext.CurrentVendor.Id);
-            var address = _addressService.GetAddressById(vendorAddress.Id);
+            var address = _addressService.GetAddressById(vendorAddress.AddressId);
             accountModel.ShippingAddress.Address1 = address.Address1;
             accountModel.ShippingAddress.City = address.City;
             accountModel.ShippingAddress.ZipPostalCode = address.ZipPostalCode;
