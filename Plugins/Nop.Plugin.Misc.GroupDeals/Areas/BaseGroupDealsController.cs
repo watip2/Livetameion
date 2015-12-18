@@ -83,7 +83,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas
         protected readonly IProductAttributeParser _productAttributeParser;
         protected readonly IDownloadService _downloadService;
         protected readonly IRepository<GroupdealPicture> _groupdealPictureRepo;
-        protected IGroupDealService _groupdealService;
+        protected readonly IGroupDealService _groupdealService;
         protected readonly IGenericAttributeService _genericAttributeService;
 
         public BaseGroupDealsController(
@@ -182,7 +182,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas
         {
             var gdvm = new GroupDealViewModel();
             var area = ControllerContext.RouteData.Values["area"];
-            if (area.ToString() == "vendor")
+            if (area.ToString().ToLower() == "vendor")
             {
                 if (_workContext.CurrentVendor != null)
                     gdvm.IsLoggedInAsVendor = true;

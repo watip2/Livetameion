@@ -41,5 +41,53 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         void InsertGroupDealProductPicture(GroupdealPicture groupDealProductPicture);
         string GenerateGroupDealProductCouponCode();
         int CreateGroupDealProduct(string Name, decimal Price);
+        IPagedList<Product> SearchProducts(
+            int pageIndex = 0,
+            int pageSize = int.MaxValue,
+            IList<int> categoryIds = null,
+            int manufacturerId = 0,
+            int storeId = 0,
+            int vendorId = 0,
+            int warehouseId = 0,
+            ProductType? productType = null,
+            bool visibleIndividuallyOnly = false,
+            bool? featuredProducts = null,
+            decimal? priceMin = null,
+            decimal? priceMax = null,
+            int productTagId = 0,
+            string keywords = null,
+            bool searchDescriptions = false,
+            bool searchSku = true,
+            bool searchProductTags = false,
+            int languageId = 0,
+            IList<int> filteredSpecs = null,
+            ProductSortingEnum orderBy = ProductSortingEnum.Position,
+            bool showHidden = false,
+            bool? overridePublished = null);
+        IPagedList<Product> SearchProducts(
+            out IList<int> filterableSpecificationAttributeOptionIds,
+            bool loadFilterableSpecificationAttributeOptionIds = false,
+            int pageIndex = 0,
+            int pageSize = 2147483647,  //Int32.MaxValue
+            IList<int> categoryIds = null,
+            int manufacturerId = 0,
+            int storeId = 0,
+            int vendorId = 0,
+            int warehouseId = 0,
+            ProductType? productType = null,
+            bool visibleIndividuallyOnly = false,
+            bool? featuredProducts = null,
+            decimal? priceMin = null,
+            decimal? priceMax = null,
+            int productTagId = 0,
+            string keywords = null,
+            bool searchDescriptions = false,
+            bool searchSku = true,
+            bool searchProductTags = false,
+            int languageId = 0,
+            IList<int> filteredSpecs = null,
+            ProductSortingEnum orderBy = ProductSortingEnum.Position,
+            bool showHidden = false,
+            bool? overridePublished = null);
     }
 }

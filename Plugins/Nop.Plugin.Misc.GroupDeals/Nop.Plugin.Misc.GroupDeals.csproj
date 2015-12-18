@@ -121,6 +121,7 @@
     <Compile Include="DataAccess\GroupDealsContext.cs" />
     <Compile Include="Enums\GroupdealStatus.cs" />
     <Compile Include="Enums\GroupDealType.cs" />
+    <Compile Include="Extensions\GroupDealExtensions.cs" />
     <Compile Include="Helpers\PluginHelper.cs" />
     <Compile Include="Helpers\GroupDealsHelper.cs" />
     <Compile Include="Maps\GroupDealProductMap.cs" />

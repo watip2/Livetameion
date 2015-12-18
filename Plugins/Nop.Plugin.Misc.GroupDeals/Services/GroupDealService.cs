@@ -1,30 +1,83 @@
 ﻿using Nop.Core;
+using Nop.Core.Caching;
 using Nop.Core.Data;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Common;
+using Nop.Core.Domain.Localization;
+using Nop.Core.Domain.Security;
+using Nop.Core.Domain.Stores;
+using Nop.Data;
+using Nop.Plugin.Misc.GroupDeals.Extensions;
 using Nop.Plugin.Misc.GroupDeals.Models;
+using Nop.Services.Catalog;
 using Nop.Services.Common;
+using Nop.Services.Customers;
 using Nop.Services.Events;
+using Nop.Services.Localization;
+using Nop.Services.Messages;
+using Nop.Services.Security;
+using Nop.Services.Stores;
 using Nop.Services.Vendors;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Nop.Plugin.Misc.GroupDeals.Services
 {
-    public class GroupDealService : IGroupDealService
+    public class GroupDealService : ProductService, IGroupDealService
     {
+        #region Constants
+        /// <summary>
+        /// Key for caching
+        /// </summary>
+        /// <remarks>
+        /// {0} : product ID
+        /// </remarks>
+        private const string PRODUCTS_BY_ID_KEY = "Nop.product.id-{0}";
+        /// <summary>
+        /// Key pattern to clear cache
+        /// </summary>
+        private const string PRODUCTS_PATTERN_KEY = "Nop.product.";
+        #endregion
+
         #region Fields
 
-        private readonly IRepository<GroupDeal> _groupDealRepo;
+        private readonly IRepository<Product> _productRepository;
+        private readonly IRepository<RelatedProduct> _relatedProductRepository;
+        private readonly IRepository<CrossSellProduct> _crossSellProductRepository;
+        private readonly IRepository<TierPrice> _tierPriceRepository;
+        private readonly IRepository<LocalizedProperty> _localizedPropertyRepository;
+        private readonly IRepository<AclRecord> _aclRepository;
+        private readonly IRepository<StoreMapping> _storeMappingRepository;
+        private readonly IRepository<ProductPicture> _productPictureRepository;
+        private readonly IRepository<ProductSpecificationAttribute> _productSpecificationAttributeRepository;
+        private readonly IRepository<ProductReview> _productReviewRepository;
+        private readonly IRepository<ProductWarehouseInventory> _productWarehouseInventoryRepository;
+        private readonly IProductAttributeService _productAttributeService;
+        private readonly IProductAttributeParser _productAttributeParser;
+        private readonly ILanguageService _languageService;
+        private readonly IWorkflowMessageService _workflowMessageService;
+        private readonly IDataProvider _dataProvider;
+        private readonly IDbContext _dbContext;
+        private readonly ICacheManager _cacheManager;
+        private readonly IWorkContext _workContext;
+        private readonly IStoreContext _storeContext;
+        private readonly LocalizationSettings _localizationSettings;
+        private readonly CommonSettings _commonSettings;
+        private readonly CatalogSettings _catalogSettings;
         private readonly IEventPublisher _eventPublisher;
+        private readonly IAclService _aclService;
+        private readonly IStoreMappingService _storeMappingService;
+        private readonly IRepository<Product> _productRepo;
         private readonly IGenericAttributeService _genericAttributeService;
+        private readonly IRepository<GroupDeal> _groupDealRepo;
+        private readonly IRepository<GroupDeal> _groupDealRepository;
         private readonly IVendorService _vendorService;
         private readonly IRepository<GroupdealPicture> _groupdealPictureRepo;
-
-        private readonly IRepository<Product> _productRepo;
+        private readonly IRepository<Product> _groupDealProductRepo;
         private readonly IRepository<ProductPicture> _groupDealProductPictureRepo;
         private readonly IRepository<GenericAttribute> _genericAttributeRepo;
 
@@ -32,26 +85,132 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
 
         #region Ctor
 
-        public GroupDealService(
-            IRepository<GroupDeal> groupDealRepository,
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        /// <param name="cacheManager">Cache manager</param>
+        /// <param name="productRepository">Product repository</param>
+        /// <param name="relatedProductRepository">Related product repository</param>
+        /// <param name="crossSellProductRepository">Cross-sell product repository</param>
+        /// <param name="tierPriceRepository">Tier price repository</param>
+        /// <param name="localizedPropertyRepository">Localized property repository</param>
+        /// <param name="aclRepository">ACL record repository</param>
+        /// <param name="storeMappingRepository">Store mapping repository</param>
+        /// <param name="productPictureRepository">Product picture repository</param>
+        /// <param name="productSpecificationAttributeRepository">Product specification attribute repository</param>
+        /// <param name="productReviewRepository">Product review repository</param>
+        /// <param name="productWarehouseInventoryRepository">Product warehouse inventory repository</param>
+        /// <param name="productAttributeService">Product attribute service</param>
+        /// <param name="productAttributeParser">Product attribute parser service</param>
+        /// <param name="languageService">Language service</param>
+        /// <param name="workflowMessageService">Workflow message service</param>
+        /// <param name="dataProvider">Data provider</param>
+        /// <param name="dbContext">Database Context</param>
+        /// <param name="workContext">Work context</param>
+        /// <param name="storeContext">Store context</param>
+        /// <param name="localizationSettings">Localization settings</param>
+        /// <param name="commonSettings">Common settings</param>
+        /// <param name="catalogSettings">Catalog settings</param>
+        /// <param name="eventPublisher">Event published</param>
+        /// <param name="aclService">ACL service</param>
+        /// <param name="storeMappingService">Store mapping service</param>
+        public GroupDealService(ICacheManager cacheManager,
+            IRepository<Product> productRepository,
+            IRepository<RelatedProduct> relatedProductRepository,
+            IRepository<CrossSellProduct> crossSellProductRepository,
+            IRepository<TierPrice> tierPriceRepository,
+            IRepository<ProductPicture> productPictureRepository,
+            IRepository<LocalizedProperty> localizedPropertyRepository,
+            IRepository<AclRecord> aclRepository,
+            IRepository<StoreMapping> storeMappingRepository,
+            IRepository<ProductSpecificationAttribute> productSpecificationAttributeRepository,
+            IRepository<ProductReview> productReviewRepository,
+            IRepository<ProductWarehouseInventory> productWarehouseInventoryRepository,
+            IProductAttributeService productAttributeService,
+            IProductAttributeParser productAttributeParser,
+            ILanguageService languageService,
+            IWorkflowMessageService workflowMessageService,
+            IDataProvider dataProvider,
+            IDbContext dbContext,
+            IWorkContext workContext,
+            IStoreContext storeContext,
+            LocalizationSettings localizationSettings,
+            CommonSettings commonSettings,
+            CatalogSettings catalogSettings,
             IEventPublisher eventPublisher,
+            IAclService aclService,
+            IStoreMappingService storeMappingService,
+            IRepository<Product> productRepo,
             IGenericAttributeService genericAttributeService,
+            IRepository<GroupDeal> groupDealRepository,
             IVendorService vendorService,
             IRepository<GroupdealPicture> groupdealPictureRepo,
             IRepository<Product> groupDealProductRepo,
             IRepository<ProductPicture> groupDealProductPictureRepo,
             IRepository<GenericAttribute> genericAttributeRepo)
+            : base(cacheManager,
+                productRepository,
+                relatedProductRepository,
+                crossSellProductRepository,
+                tierPriceRepository,
+                productPictureRepository,
+                localizedPropertyRepository,
+                aclRepository,
+                storeMappingRepository,
+                productSpecificationAttributeRepository,
+                productReviewRepository,
+                productWarehouseInventoryRepository,
+                productAttributeService,
+                productAttributeParser,
+                languageService,
+                workflowMessageService,
+                dataProvider,
+                dbContext,
+                workContext,
+                storeContext,
+                localizationSettings,
+                commonSettings,
+                catalogSettings,
+                eventPublisher,
+                aclService,
+                storeMappingService)
         {
-            this._groupDealRepo = groupDealRepository;
+            this._cacheManager = cacheManager;
+            this._productRepository = productRepository;
+            this._relatedProductRepository = relatedProductRepository;
+            this._crossSellProductRepository = crossSellProductRepository;
+            this._tierPriceRepository = tierPriceRepository;
+            this._productPictureRepository = productPictureRepository;
+            this._localizedPropertyRepository = localizedPropertyRepository;
+            this._aclRepository = aclRepository;
+            this._storeMappingRepository = storeMappingRepository;
+            this._productSpecificationAttributeRepository = productSpecificationAttributeRepository;
+            this._productReviewRepository = productReviewRepository;
+            this._productWarehouseInventoryRepository = productWarehouseInventoryRepository;
+            this._productAttributeService = productAttributeService;
+            this._productAttributeParser = productAttributeParser;
+            this._languageService = languageService;
+            this._workflowMessageService = workflowMessageService;
+            this._dataProvider = dataProvider;
+            this._dbContext = dbContext;
+            this._workContext = workContext;
+            this._storeContext = storeContext;
+            this._localizationSettings = localizationSettings;
+            this._commonSettings = commonSettings;
+            this._catalogSettings = catalogSettings;
             this._eventPublisher = eventPublisher;
+            this._aclService = aclService;
+            this._storeMappingService = storeMappingService;
+            this._productRepo = productRepo;
             this._genericAttributeService = genericAttributeService;
+            this._genericAttributeService = genericAttributeService;
+            this._groupDealRepository = groupDealRepository;
             this._vendorService = vendorService;
             this._groupdealPictureRepo = groupdealPictureRepo;
-            this._productRepo = groupDealProductRepo;
+            this._groupDealProductRepo = groupDealProductRepo;
             this._groupDealProductPictureRepo = groupDealProductPictureRepo;
             this._genericAttributeRepo = genericAttributeRepo;
         }
-
         #endregion
 
         #region Methods
@@ -386,5 +545,43 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
             return groupDealProduct.Id;
         }
 
+        public override IPagedList<Product> SearchProducts(
+            int pageIndex = 0,
+            int pageSize = int.MaxValue,
+            IList<int> categoryIds = null,
+            int manufacturerId = 0,
+            int storeId = 0,
+            int vendorId = 0,
+            int warehouseId = 0,
+            ProductType? productType = null,
+            bool visibleIndividuallyOnly = false,
+            bool? featuredProducts = null,
+            decimal? priceMin = null,
+            decimal? priceMax = null,
+            int productTagId = 0,
+            string keywords = null,
+            bool searchDescriptions = false,
+            bool searchSku = true,
+            bool searchProductTags = false,
+            int languageId = 0,
+            IList<int> filteredSpecs = null,
+            ProductSortingEnum orderBy = ProductSortingEnum.Position,
+            bool showHidden = false,
+            bool? overridePublished = null)
+        {
+            IList<int> filterableSpecificationAttributeOptionIds;
+            var products = base.SearchProducts(out filterableSpecificationAttributeOptionIds, false,
+                pageIndex, pageSize, categoryIds, manufacturerId,
+                storeId, vendorId, warehouseId,
+                productType, visibleIndividuallyOnly, featuredProducts,
+                priceMin, priceMax, productTagId, keywords, searchDescriptions, searchSku,
+                searchProductTags, languageId, filteredSpecs,
+                orderBy, showHidden, overridePublished);
+
+            var query = products.Where(p => p.IsGroupDeal());
+            var groupDealProducts = new PagedList<Product>(query, products.PageIndex, products.PageSize, products.TotalCount);
+
+            return groupDealProducts;
+        }
     }
 }

@@ -114,6 +114,7 @@
     <Compile Include="Domain\VendorAddress.cs" />
     <Compile Include="Domain\VendorType.cs" />
     <Compile Include="Domain\VendorVendorType.cs" />
+    <Compile Include="Extensions\GroupDealExtensions.cs" />
     <Compile Include="Mapping\InvoiceMap.cs" />
     <Compile Include="Mapping\VendorAddressMap.cs" />
     <Compile Include="Mapping\VendorTypeMap.cs" />

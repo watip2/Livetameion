@@ -71,8 +71,8 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
                 http://stackoverflow.com/questions/29693402/changing-filtercontext-result-in-onresultexecuting
             */
             if ((filterContext.Controller is ProductController || filterContext.Controller is ProductsController) &&
-                filterContext.RequestContext.RouteData.Values["action"].ToString().Equals("ProductList",
-                StringComparison.InvariantCultureIgnoreCase))
+                filterContext.RequestContext.RouteData.Values["action"].ToString().Equals("ProductList", StringComparison.InvariantCultureIgnoreCase) &&
+                filterContext.RequestContext.RouteData.Values["area"].ToString().Equals("Admin", StringComparison.InvariantCultureIgnoreCase))
             {
                 var a = 2;    
             }

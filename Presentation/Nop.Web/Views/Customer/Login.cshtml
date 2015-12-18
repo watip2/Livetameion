@@ -105,6 +105,17 @@
                     </div>
                 }
             </div>
+            <div class="new-wrapper register-block">
+                <div class="title">
+                    <strong>New Vendor</strong>
+                </div>
+                <div class="text">
+                    By creating a vendor account on our website you will be able to sell faster, keep track of the orders you have previously received.
+                </div>
+                <div class="buttons">
+                    <input type="button" class="button-1 register-button" onclick="location.href='@Url.Action("Register", "Account", new { area = "Vendor" })'" value="@T("Account.Register")" />
+                </div>
+            </div>
         </div>
         <div class="external-authentication">
             @Html.Action("ExternalMethods", "ExternalAuthentication")

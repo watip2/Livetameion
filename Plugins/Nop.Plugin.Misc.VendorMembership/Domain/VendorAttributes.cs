@@ -8,7 +8,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
 {
     public class VendorAttributes
     {
-        public static string AttentionTo { get { return "AttentionTo"; } }
+        public static string ShopName { get { return "AttentionTo"; } }
         public static string Password { get { return "Password"; } }
         public static string Email { get { return "Email"; } }
         public static string EnableGoogleAnalytics { get { return "EnableGoogleAnalytics"; } }
@@ -16,5 +16,6 @@ namespace Nop.Plugin.Misc.VendorMembership.Domain
         public static string LogoImage { get { return "LogoImage"; } }
         public static string PreferredShippingCarrier { get { return "PreferredShippingCarrier"; } }
         public static string PreferredSubdomainName { get { return "PreferredSubdomainName"; } }
+        public static string HasPaidGroupDeals { get { return "HasPaidGroupDeals"; } }
     }
 }

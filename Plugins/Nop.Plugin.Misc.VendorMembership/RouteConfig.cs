@@ -29,7 +29,7 @@ namespace Nop.Plugin.Misc.VendorMembership
 
             var route = routes.MapRoute("Plugin.Misc.VendorMembership.Vendor.ProductsController",
                 "Vendor/Products/{action}/{id}",
-                new { area = "Vendor", controller = "Products", action = "ListProducts", id = UrlParameter.Optional },
+                new { area = "Vendor", controller = "Products", action = "Index", id = UrlParameter.Optional },
                 new[] { "Nop.Plugin.Misc.VendorMembership.Controllers" }
             );
             routes.Remove(route);

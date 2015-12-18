@@ -23,7 +23,7 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
 
         [Display(Name="Shop Name")]
         [Required]
-        public string Name { get; set; }
+        public string ShopName { get; set; }
 
         [Display(Name = "Email Address")]
         [Required]
