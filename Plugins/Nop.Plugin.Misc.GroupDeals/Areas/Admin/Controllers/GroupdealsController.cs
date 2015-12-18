@@ -21,7 +21,6 @@ using Nop.Services.Orders;
 using Nop.Services.Shipping;
 using Nop.Core.Domain.Common;
 using Nop.Services.Discounts;
-using Nop.Plugin.Misc.VendorMembership.ActionFilters;
 using Nop.Web.Framework.Controllers;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas.Admin.Controllers

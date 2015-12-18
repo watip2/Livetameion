@@ -1071,6 +1071,17 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         [ValidateInput(false)]
         public ActionResult Register(VendorRegisterViewModel vrmodel, string returnUrl, bool captchaValid, FormCollection form)
         {
+            if (vrmodel.CountryId == 0)
+            {
+                ModelState.AddModelError("CountryId", "This is a required field");
+                if (vrmodel.StateProvinceId == 0)
+                {
+                    ModelState.AddModelError("StateProvinceId", "This is a required field");
+                }                
+                PrepareVendorRegisterModel(vrmodel);
+                return View(vrmodel);
+            }
+
             var dataSettingsManager = new DataSettingsManager();
             var dataProviderSettings = dataSettingsManager.LoadSettings();
             var context = new VendorMembershipContext(dataProviderSettings.DataConnectionString);

@@ -110,11 +110,11 @@ namespace Nop.Plugin.Misc.VendorMembership.ViewModels
         public List<SelectListItem> AvailableCountries { get; private set; }
         public List<SelectListItem> AvailableStates { get; private set; }
 
-        [Required(ErrorMessage = "This is a required field")]
+        [Range(1, Int32.MaxValue, ErrorMessage = "This is a required field")]
         [Display(Name = "State/Province")]
         public int StateProvinceId { get; internal set; }
 
-        [Required(ErrorMessage = "This is a required field")]
+        [Range(1, Int32.MaxValue, ErrorMessage = "This is a required field")]
         [Display(Name = "Country")]
         public int CountryId { get; internal set; }
         
