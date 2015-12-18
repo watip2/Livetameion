@@ -19,6 +19,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
     {
         private IGenericAttributeService _genericAttributeService;
         private IGroupDealService _groupDealService;
+        private IGroupDealService _productService;
 
         public IEnumerable<System.Web.Mvc.Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
         {
@@ -87,7 +88,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
             _groupDealService = EngineContext.Current.Resolve<IGroupDealService>();
 
             var productModels = new List<ProductModel>();
-
+            
             foreach (ProductModel productModel in products)
             {
                 var groupDeal = _groupDealService.GetGroupDealProductById(productModel.Id);
@@ -99,7 +100,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ActionFilters
             
             var gridModel = new DataSourceResult();
             gridModel.Data = productModels;            
-            gridModel.Total = productModels.Count;
+            gridModel.Total = d.Total;
             filterContext.Result = new JsonResult{ Data = gridModel };
 
             if (result == null)

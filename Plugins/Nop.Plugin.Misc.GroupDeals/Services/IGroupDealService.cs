@@ -41,7 +41,7 @@ namespace Nop.Plugin.Misc.GroupDeals.Services
         void InsertGroupDealProductPicture(GroupdealPicture groupDealProductPicture);
         string GenerateGroupDealProductCouponCode();
         int CreateGroupDealProduct(string Name, decimal Price);
-        IPagedList<Product> SearchProducts(
+        IPagedList<Product> SearchGroupDeals(
             int pageIndex = 0,
             int pageSize = int.MaxValue,
             IList<int> categoryIds = null,

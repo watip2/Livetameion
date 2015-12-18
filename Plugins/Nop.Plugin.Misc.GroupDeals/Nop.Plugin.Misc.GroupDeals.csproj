@@ -143,6 +143,7 @@
     <Compile Include="PublicAreaRegistration.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="ViewModels\GroupDealDetailsModel.cs" />
+    <Compile Include="ViewModels\GroupDealListModel.cs" />
     <Compile Include="ViewModels\GroupdealPictureViewModel.cs" />
     <Compile Include="ViewModels\GroupDealViewModel.cs" />
     <Compile Include="Views\CustomViewEngine.cs" />
@@ -203,7 +204,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Views\GroupDeals\Index.cshtml">
+    <Content Include="Areas\Admin\Views\GroupDeals\Indexxxxxx.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -267,6 +268,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\GroupDeals\_CreateOrUpdate.Stores.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\GroupDeals\List.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

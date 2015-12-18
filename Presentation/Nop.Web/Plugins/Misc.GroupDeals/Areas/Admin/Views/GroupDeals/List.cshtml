@@ -10,7 +10,6 @@
     }
 }
 @using Nop.Core.Domain.Catalog
-
 @using Nop.Core.Infrastructure;
 @using System;
 @using Nop.Web.Framework;
@@ -35,13 +34,13 @@
 <script src="/Scripts/admin.common.js" type="text/javascript"></script>
 <script src="/Scripts/kendo/2014.1.318/kendo.web.min.js" type="text/javascript"></script>
 
-@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealViewModel
+@model Nop.Plugin.Misc.GroupDeals.ViewModels.GroupDealListModel
 @{
     var defaultGridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().DefaultGridPageSize;
     var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
 
     //page title
-    ViewBag.Title = "Manage Groupdeals";
+    ViewBag.Title = "Manage GroupDeals";
 }
 
 @using (Html.BeginForm())
@@ -50,116 +49,115 @@
     <div class="section-header">
         <div class="title">
             <img src="@Url.Content("~/Administration/Content/images/ico-catalog.png")" alt="" />
-            Manage Groupdeals
+            Manage GroupDeals
         </div>
         <div class="options">
-            <a href="@Url.Action("Create", "Groupdeals", new { area = "Admin" })" class="k-button">@T("Admin.Common.AddNew")</a>
+            <a href="@Url.Action("Create", "GroupDeals", new { area = "Admin" })" class="k-button">@T("Admin.Common.AddNew")</a>
             <input type="submit" name="download-catalog-pdf" class="k-button" value="@T("Admin.Catalog.Products.List.DownloadPDF")" />
             <input type="submit" name="exportxml-all" class="k-button" value="@T("Admin.Common.ExportToXml.All")" />
             <input type="button" id="exportxml-selected" class="k-button" value="@T("Admin.Common.ExportToXml.Selected")" />
             <input type="submit" name="exportexcel-all" class="k-button" value="@T("Admin.Common.ExportToExcel.All")" />
             <input type="button" id="exportexcel-selected" class="k-button" value="@T("Admin.Common.ExportToExcel.Selected")" />
-            @*@if (!Model.IsLoggedInAsVendor)
-                {
-                    //a vendor cannot import products
-                    <input type="button" id="importexcel" name="importexcel" class="k-button" value="@T("Admin.Common.ImportFromExcel")" />
-                }*@
+            @if (!Model.IsLoggedInAsVendor)
+            {
+                //a vendor cannot import products
+                <input type="button" id="importexcel" name="importexcel" class="k-button" value="@T("Admin.Common.ImportFromExcel")" />
+            }
             <input type="button" id="delete-selected" class="k-button" value="@T("Admin.Common.Delete.Selected")" />
         </div>
     </div>
-    @*<table width="100%">
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchProductName):
-                </td>
-                <td class="adminData">
-                    @Html.EditorFor(model => model.SearchProductName)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchCategoryId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchCategoryId", Model.AvailableCategories)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchIncludeSubCategories):
-                </td>
-                <td class="adminData">
-                    @Html.EditorFor(model => model.SearchIncludeSubCategories)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchManufacturerId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchManufacturerId", Model.AvailableManufacturers)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchStoreId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchStoreId", Model.AvailableStores)
-                </td>
-            </tr>
-            <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchVendorId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchVendorId", Model.AvailableVendors)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchWarehouseId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchWarehouseId", Model.AvailableWarehouses)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchProductTypeId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchProductTypeId", Model.AvailableProductTypes)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.SearchPublishedId):
-                </td>
-                <td class="adminData">
-                    @Html.DropDownList("SearchPublishedId", Model.AvailablePublishedOptions)
-                </td>
-            </tr>
-            <tr>
-                <td class="adminTitle">
-                    @Html.NopLabelFor(model => model.GoDirectlyToSku):
-                </td>
-                <td class="adminData">
-                    @Html.EditorFor(model => model.GoDirectlyToSku)
-                    <input type="submit" id="go-to-product-by-sku" name="go-to-product-by-sku" class="k-button" value="@T("Admin.Common.Go")" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="button" id="search-products" class="k-button" value="@T("Admin.Common.Search")" />
-                </td>
-            </tr>
-        </table>*@
+    <table width="100%">
+        <tr>
+            <td class="adminTitle">
+                @Html.Label("Group Deal Name"):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.SearchProductName)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchCategoryId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchCategoryId", Model.AvailableCategories)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchIncludeSubCategories):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.SearchIncludeSubCategories)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchManufacturerId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchManufacturerId", Model.AvailableManufacturers)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchStoreId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchStoreId", Model.AvailableStores)
+            </td>
+        </tr>
+        <tr @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchVendorId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchVendorId", Model.AvailableVendors)
+            </td>
+        </tr>
+        @*<tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchWarehouseId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchWarehouseId", Model.AvailableWarehouses)
+            </td>
+        </tr>*@
+        @*<tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchProductTypeId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchProductTypeId", Model.AvailableProductTypes)
+            </td>
+        </tr>*@
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.SearchPublishedId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownList("SearchPublishedId", Model.AvailablePublishedOptions)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.Label("Go directly to group deal SKU"):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.GoDirectlyToSku)
+                <input type="submit" id="go-to-product-by-sku" name="go-to-product-by-sku" class="k-button" value="@T("Admin.Common.Go")" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" id="search-products" class="k-button" value="@T("Admin.Common.Search")" />
+            </td>
+        </tr>
+    </table>
     <table class="adminContent">
         <tr>
             <td>
                 <div id="products-grid"></div>
-
                 <script>
                     $(document).ready(function() {
                         $("#products-grid").kendoGrid({
@@ -167,10 +165,10 @@
                                 type: "json",
                                 transport: {
                                     read: {
-                                        url: "@Html.Raw(Url.Action("List", "Groupdeals", new { area = "Admin" }))",
+                                        url: "@Html.Raw(Url.Action("GroupDealList", "GroupDeals", new { area = "Admin" }))",
                                         type: "POST",
                                         dataType: "json",
-                                        //data: additionalData
+                                        data: additionalData
                                     }
                                 },
                                 schema: {
@@ -250,7 +248,7 @@
                                     field: "Id",
                                     title: "@T("Admin.Common.Edit")",
                                     width: 100,
-                                    template: '<a href="/Admin/Groupdeals/Edit/#=Id#">@T("Admin.Common.Edit")</a>'
+                                    template: '<a href="/Admin/GroupDeals/Edit/#=Id#">@T("Admin.Common.Edit")</a>'
                                 }
                             ]
                         } );
@@ -278,7 +276,7 @@
                 return false;
             });
 
-            @*$("#@Html.FieldIdFor(model => model.SearchProductName)").keydown(function (event) {
+            $("#@Html.FieldIdFor(model => model.SearchProductName)").keydown(function (event) {
                 if (event.keyCode == 13) {
                     $("#search-products").click();
                     return false;
@@ -343,11 +341,11 @@
                     }
                 }
                 updateMasterCheckbox();
-            });*@
+            });
         });
 
         function additionalData() {
-            @*var data = {
+            var data = {
                 SearchProductName: $('#@Html.FieldIdFor(model => model.SearchProductName)').val(),
                 SearchCategoryId: $('#SearchCategoryId').val(),
                 SearchIncludeSubCategories: $('#@Html.FieldIdFor(model => model.SearchIncludeSubCategories)').is(':checked'),
@@ -359,7 +357,7 @@
                 SearchPublishedId: $('#SearchPublishedId').val()
             };
             addAntiForgeryToken(data);
-            return data;*@
+            return data;
         }
 
         function onDataBound(e) {
@@ -380,7 +378,6 @@
         }
     </script>
 }
-
 
 @*import products form*@
 <div id="importexcel-window" style="display:none;">
@@ -426,7 +423,6 @@
         });
     });
 </script>
-
 @*export selected (XML). We don't use GET approach because it's limited to 2K-4K chars and won't work for large number of entities*@
 @using (Html.BeginForm("ExportXmlSelected", "Product", FormMethod.Post, new { id = "export-xml-selected-form" }))
 {
@@ -434,6 +430,7 @@
     <input type="hidden" id="selectedIds" name="selectedIds" value="" />
 }
 <script type="text/javascript">
+
     $(document).ready(function () {
         $('#exportxml-selected').click(function (e) {
             e.preventDefault();
@@ -443,6 +440,7 @@
             return false;
         });
     });
+
 </script>
 @*export selected (Excel). We don't use GET approach because it's limited to 2K-4K chars and won't work for large number of entities*@
 @using (Html.BeginForm("ExportExcelSelected", "Product", FormMethod.Post, new { id = "export-excel-selected-form" }))
