@@ -41,28 +41,41 @@
     <container>
         Account Information
         <div class="row">
-            @Html.LabelFor(model => model.ShopName) :
-            @Html.EditorFor(model => model.ShopName)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.ShopName) :
+                @Html.EditorFor(model => model.ShopName)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.AttentionTo) :
-            @Html.EditorFor(model => model.AttentionTo)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.AttentionTo) :
+                @Html.EditorFor(model => model.AttentionTo)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.Email) :
-            @Html.EditorFor(model => model.Email)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.Email) :
+                @Html.EditorFor(model => model.Email)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.Password) :
-            @Html.EditorFor(model => model.Password)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.Password) :
+                @Html.EditorFor(model => model.Password)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.PhoneNumber) :
-            @Html.EditorFor(model => model.PhoneNumber)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.PhoneNumber) :
+                @Html.EditorFor(model => model.PhoneNumber)
+            </div>
+            
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.VacationMode) :
-            @Html.EditorFor(model => model.VacationMode)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.VacationMode) :
+                @Html.EditorFor(model => model.VacationMode)
+            </div>
         </div>
         @*<div class="row">
             @Html.LabelFor(model => model.VacationEndsAt) :
@@ -72,22 +85,30 @@
     <container>
         Shipping Origin Address
         <div class="row">
-            @Html.LabelFor(model => model.ShippingAddress.Address1) :
-            @Html.EditorFor(model => model.ShippingAddress.Address1)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.ShippingAddress.Address1) :
+                @Html.EditorFor(model => model.ShippingAddress.Address1)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.ShippingAddress.City) :
-            @Html.EditorFor(model => model.ShippingAddress.City)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.ShippingAddress.City) :
+                @Html.EditorFor(model => model.ShippingAddress.City)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.ShippingAddress.ZipPostalCode) :
-            @Html.EditorFor(model => model.ShippingAddress.ZipPostalCode)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.ShippingAddress.ZipPostalCode) :
+                @Html.EditorFor(model => model.ShippingAddress.ZipPostalCode)
+            </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.ShippingAddress.CountryId) :
-            @Html.DropDownListFor(model => model.ShippingAddress.CountryId, Model.AvailableCountries)
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.ShippingAddress.CountryId) :
+                @Html.DropDownListFor(model => model.ShippingAddress.CountryId, Model.AvailableCountries)
+            </div>
         </div>
     </container>
 
-    <input type="submit" value="Save" />
+    <input type="submit" value="Save"  class="btn btn-primary"/>
 }
