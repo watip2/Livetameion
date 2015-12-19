@@ -12,3 +12,4 @@ E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Nop.Plugin.T
 E:\GitHub\Livetameion\Presentation\Nop.Web\Plugins\Tameion.Auctions\Nop.Plugin.Tameion.Auctions.pdb
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.dll
 E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.pdb
+E:\GitHub\Livetameion\Plugins\Nop.Plugin.Tameion.Auctions\obj\Debug\Nop.Plugin.Tameion.Auctions.csprojResolveAssemblyReference.cache

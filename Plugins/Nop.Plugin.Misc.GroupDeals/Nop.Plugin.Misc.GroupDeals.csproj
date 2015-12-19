@@ -127,6 +127,7 @@
     <Compile Include="Models\GroupDealAttributes.cs" />
     <Compile Include="Models\GroupdealExtensions.cs" />
     <Compile Include="Models\GroupDealProduct.cs" />
+    <Compile Include="Models\GroupDealValidator.cs" />
     <Compile Include="Models\ModelsMapper.cs" />
     <Compile Include="Models\VendorAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

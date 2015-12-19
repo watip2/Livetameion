@@ -135,16 +135,16 @@ namespace Nop.Plugin.Misc.GroupDeals.DataAccess
 
         public void Uninstall()
         {
-            var dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupdealPicture>(this);
-            Database.ExecuteSqlCommand(dbScript);
+            //var dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupdealPicture>(this);
+            //Database.ExecuteSqlCommand(dbScript);
 
-            dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDeal>(this);
-            Database.ExecuteSqlCommand(dbScript);
+            //dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDeal>(this);
+            //Database.ExecuteSqlCommand(dbScript);
 
-            dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDealProduct>(this);
-            Database.ExecuteSqlCommand(dbScript);
+            //dbScript = "DROP TABLE " + PluginHelper.GetTableName<GroupDealProduct>(this);
+            //Database.ExecuteSqlCommand(dbScript);
 
-            SaveChanges();
+            //SaveChanges();
         }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity

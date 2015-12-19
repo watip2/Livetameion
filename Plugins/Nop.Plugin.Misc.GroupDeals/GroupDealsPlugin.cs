@@ -8,6 +8,7 @@ using System.Web.Routing;
 using Nop.Plugin.Misc.GroupDeals.Models;
 using Nop.Plugin.Misc.GroupDeals.DataAccess;
 using Nop.Plugin.Misc.GroupDeals.Helpers;
+using Nop.Services.Localization;
 
 namespace Nop.Plugin.Misc.GroupDeals
 {
@@ -86,9 +87,24 @@ namespace Nop.Plugin.Misc.GroupDeals
         {
             try
             {
-                _groupDealsContext.Install();
+                //_groupDealsContext.Install();
             }
             catch (Exception) {  }
+
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.Required", "This is a required field.");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.NameLabel", "GroupDeal Name");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.NameLabel.Hint", "Please provide name.");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CountryLabel", "Country");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CountryLabel.Hint", "Please provide country.");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StateOrProvinceLabel", "State/Province");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StateOrProvinceLabelHint", "Please provide state/province");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CityLabel", "City");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CityLabelHint", "Please provide city.");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.FinePrintLabel", "Fine Print");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.FinePrintLabelHint", "Please provide fine print.");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StatusLabel", "Status");
+            this.AddOrUpdatePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StatusLabelHint", "Please provide status.");
+
             base.Install();
         }
 
@@ -96,9 +112,24 @@ namespace Nop.Plugin.Misc.GroupDeals
         {
             try
             {
-                _groupDealsContext.Uninstall();
+                //_groupDealsContext.Uninstall();
             }
             catch (Exception) { }
+
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.Required");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.NameLabel");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.NameLabel.Hint");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CountryLabel");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CountryLabel.Hint");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StateOrProvinceLabel");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StateOrProvinceLabelHint");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CityLabel");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.CityLabelHint");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.FinePrintLabel");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.FinePrintLabelHint");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StatusLabel");
+            this.DeletePluginLocaleResource("Plugins.Widgets.GroupDeals.Fields.StatusLabelHint");
+
             base.Uninstall();
         }
 
