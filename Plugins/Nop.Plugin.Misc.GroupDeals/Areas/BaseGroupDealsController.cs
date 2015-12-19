@@ -38,6 +38,7 @@ using Nop.Core.Domain.Discounts;
 using Nop.Admin.Extensions;
 using System.Diagnostics;
 using Nop.Web.Framework;
+using Nop.Plugin.Misc.GroupDeals.Extensions;
 
 namespace Nop.Plugin.Misc.GroupDeals.Areas
 {
@@ -670,33 +671,49 @@ namespace Nop.Plugin.Misc.GroupDeals.Areas
         [ValidateAntiForgeryToken]
         public ActionResult Create(GroupDealViewModel model)
         {
+            //if (!_permissionService.Authorize(StandardPermissionProvider.ManageProducts))
+            //    return AccessDeniedView();
+
             if (ModelState.IsValid)
             {
+                //a vendor should have access only to his products
+                if (_workContext.CurrentVendor != null)
+                {
+                    model.VendorId = _workContext.CurrentVendor.Id;
+                }
+                //vendors cannot edit "Show on home page" property
+                if (_workContext.CurrentVendor != null && model.ShowOnHomePage)
+                {
+                    model.ShowOnHomePage = false;
+                }
+
                 //var groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, GroupDeal>(model);
-                var groupDeal = new ModelsMapper().CreateMap<GroupDealViewModel, Product>(model);
-                groupDeal.DisplayOrder = 1;
-                groupDeal.ProductType = ProductType.SimpleProduct;
-                groupDeal.OrderMaximumQuantity = 10;
-                groupDeal.OrderMinimumQuantity = 1;
-                groupDeal.Published = true;
+                var groupDealProduct = new ModelsMapper().CreateMap<GroupDealViewModel, Product>(model);
+                groupDealProduct.DisplayOrder = 1;
+                groupDealProduct.ProductType = ProductType.SimpleProduct;
+                groupDealProduct.OrderMaximumQuantity = 10;
+                groupDealProduct.OrderMinimumQuantity = 1;
+                groupDealProduct.Published = true;
 
                 // datetime fields
-                groupDeal.CreatedOnUtc = DateTime.UtcNow;
-                groupDeal.UpdatedOnUtc = DateTime.UtcNow;
-                groupDeal.AvailableEndDateTimeUtc = DateTime.Parse("01/01/2016");
-                groupDeal.AvailableStartDateTimeUtc = DateTime.UtcNow;
-                groupDeal.PreOrderAvailabilityStartDateTimeUtc = DateTime.Now;
-                groupDeal.SpecialPriceStartDateTimeUtc = DateTime.Now;
-                groupDeal.SpecialPriceEndDateTimeUtc = DateTime.Parse("01/01/2016");
-
+                groupDealProduct.CreatedOnUtc = DateTime.UtcNow;
+                groupDealProduct.UpdatedOnUtc = DateTime.UtcNow;
+                groupDealProduct.AvailableEndDateTimeUtc = DateTime.Parse("01/01/2016");
+                groupDealProduct.AvailableStartDateTimeUtc = DateTime.UtcNow;
+                groupDealProduct.PreOrderAvailabilityStartDateTimeUtc = DateTime.UtcNow;
+                groupDealProduct.SpecialPriceStartDateTimeUtc = DateTime.UtcNow;
+                groupDealProduct.SpecialPriceEndDateTimeUtc = DateTime.Parse("01/01/2016");
                 //_groupdealService.InsertGroupDeal(groupDeal);
-                _productService.InsertProduct(groupDeal);
+                _productService.InsertProduct(groupDealProduct);
 
-                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.IsGroupDeal, true);
-                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.Active, true);
-                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.FinePrint, model.FinePrint);
-                _genericAttributeService.SaveAttribute(groupDeal, GroupDealAttributes.SeName, "se-name-" + Guid.NewGuid());
+                //search engine name
+                model.SeName = groupDealProduct.ValidateSeName(model.SeName, groupDealProduct.Name, true);
+                _urlRecordService.SaveSlug(groupDealProduct, model.SeName, 0);
 
+                groupDealProduct.SetIsGroupDeal(true);
+                _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.Active, true);
+                _genericAttributeService.SaveAttribute(groupDealProduct, GroupDealAttributes.FinePrint, model.FinePrint);
+                
                 return RedirectToAction("Index", new { area = "Admin" });
             }
 

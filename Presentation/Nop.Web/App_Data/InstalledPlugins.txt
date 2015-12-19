@@ -28,6 +28,6 @@ Tax.CountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
 Misc.GroupDeals
-Tameion.Auctions
 Misc.VendorMembership
 Tameion.SupportTicketSystem
+Tameion.Auctions

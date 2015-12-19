@@ -10,6 +10,7 @@ namespace Nop.Plugin.Tameion.Auctions.Areas.Public.Controllers
 {
     public class AuctionsController : BasePluginController
     {
+        [HttpGet]
         public ActionResult Index()
         {
             return View();

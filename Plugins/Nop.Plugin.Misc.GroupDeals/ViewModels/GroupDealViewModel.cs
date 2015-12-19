@@ -1,4 +1,6 @@
-﻿using Nop.Admin.Models.Catalog;
+﻿using FluentValidation.Attributes;
+using Nop.Admin.Models.Catalog;
+using Nop.Admin.Validators.Catalog;
 using Nop.Plugin.Misc.GroupDeals.Enums;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Localization;
@@ -7,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Nop.Plugin.Misc.GroupDeals.ViewModels
 {
+    [Validator(typeof(ProductValidator))]
     public class GroupDealViewModel : ProductModel
     {
         public List<SelectListItem> AvailableCountries { get; set; }
@@ -31,7 +34,7 @@ namespace Nop.Plugin.Misc.GroupDeals.ViewModels
         public GroupdealPictureViewModel GroupdealPictureViewModel { get; set; }   
     }
 
-    public partial class GroupDealLocalizedModel : ProductLocalizedModel, ILocalizedModel
+    public partial class GroupDealLocalizedModel : ProductLocalizedModel
     {
 
     }

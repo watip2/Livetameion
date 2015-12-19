@@ -236,10 +236,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             accountModel.ShippingAddress.CountryId = address.CountryId;
 
             PrepareAccountModel(accountModel);
-
-            var vendorMembershipProduct = _productService.GetProductById(88);
-            _shoppingCartService.AddToCart(_workContext.CurrentCustomer, vendorMembershipProduct, ShoppingCartType.ShoppingCart, _storeContext.CurrentStore.Id);
-
+            
             return View(accountModel);
         }
 
