@@ -295,25 +295,28 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
                 //if (_customerSettings.StateProvinceEnabled)
                 {
                     //states
-                    var states = _stateProvinceService.GetStateProvincesByCountryId((int)model.ShippingAddress.CountryId).ToList();
-                    if (states.Count > 0)
+                    if (model.ShippingAddress.CountryId != null)
                     {
-                        model.AvailableStates.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectState"), Value = "0" });
-
-                        foreach (var s in states)
+                        var states = _stateProvinceService.GetStateProvincesByCountryId((int)model.ShippingAddress.CountryId).ToList();
+                        if (states.Count > 0)
                         {
-                            model.AvailableStates.Add(new SelectListItem { Text = s.GetLocalized(x => x.Name), Value = s.Id.ToString(), Selected = (s.Id == model.ShippingAddress.StateProvinceId) });
+                            model.AvailableStates.Add(new SelectListItem { Text = _localizationService.GetResource("Address.SelectState"), Value = "0" });
+
+                            foreach (var s in states)
+                            {
+                                model.AvailableStates.Add(new SelectListItem { Text = s.GetLocalized(x => x.Name), Value = s.Id.ToString(), Selected = (s.Id == model.ShippingAddress.StateProvinceId) });
+                            }
                         }
-                    }
-                    else
-                    {
-                        bool anyCountrySelected = model.AvailableCountries.Any(x => x.Selected);
-
-                        model.AvailableStates.Add(new SelectListItem
+                        else
                         {
-                            Text = _localizationService.GetResource(anyCountrySelected ? "Address.OtherNonUS" : "Address.SelectState"),
-                            Value = "0"
-                        });
+                            bool anyCountrySelected = model.AvailableCountries.Any(x => x.Selected);
+
+                            model.AvailableStates.Add(new SelectListItem
+                            {
+                                Text = _localizationService.GetResource(anyCountrySelected ? "Address.OtherNonUS" : "Address.SelectState"),
+                                Value = "0"
+                            });
+                        }
                     }
 
                 }
