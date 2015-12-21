@@ -105,6 +105,7 @@
     <Compile Include="ActionFilters\VendorAuthorize.cs" />
     <Compile Include="Areas\Admin\Controllers\MultitenancyController.cs" />
     <Compile Include="Areas\Admin\Controllers\VendorTypesController.cs" />
+    <Compile Include="Areas\Theme\Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
@@ -122,10 +123,12 @@
     <Compile Include="Services\IInvoiceService.cs" />
     <Compile Include="Services\InvoiceService.cs" />
     <Compile Include="Services\IMtProductService.cs" />
+    <Compile Include="Services\ISpecificationAttributeService.cs" />
     <Compile Include="Services\MtProductService.cs" />
     <Compile Include="Services\IVendorAddressService.cs" />
     <Compile Include="Services\VendorAddressService.cs" />
     <Compile Include="AdminAreaRegistration.cs" />
+    <Compile Include="ThemeAreaRegistration.cs" />
     <Compile Include="VendorAreaRegistration.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Data\EfStartUpTask.cs" />
@@ -180,6 +183,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Public\" />
+    <Folder Include="Areas\Theme\Content\" />
+    <Folder Include="Areas\Theme\Models\" />
+    <Folder Include="Areas\Theme\Script\" />
+    <Folder Include="Areas\Theme\ViewModels\" />
+    <Folder Include="Areas\Theme\Views\" />
     <Folder Include="Areas\Vendor\" />
     <Folder Include="Test\" />
   </ItemGroup>

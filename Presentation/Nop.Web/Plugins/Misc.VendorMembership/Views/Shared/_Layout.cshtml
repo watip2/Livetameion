@@ -65,145 +65,147 @@
     <div class="empty">&nbsp;</div>
     <div class="con_out fl clr">
         <div class="con_in">
-            <div class="con_body fl">
-                <div class="left_bar">
-                    <div class="header">
-                        <div class="merc_login">
-                            <div class="user_img">
-                                <img border="0" src="@Url.Content("~/Themes/NopShop/Content/css/images/merchant_user.png")" alt="" width="60" height="60">
-                            </div>
-                            <div class="user_d_left">
-                                <strong>Welcome</strong>
-                                @if (ViewBag.CurrentVendorEmail != null)
-                                {
-                                    <span>Logged in as @ViewBag.CurrentVendorEmail</span>
-                                    <a href="/Customer/Logout" class="logout_left" title="Logout">Log out</a>
-                                }
+            <div class="con_body">
+                @{
+                    if (Request.RawUrl == "/Vendor/Account/Register")
+                    {
 
+                        @RenderBody()
+
+                    }
+                    else {
+                        <div class="left_bar">
+                            <div class="header">
+                                <div class="merc_login">
+                                    <div class="user_img">
+                                        <img border="0" src="@Url.Content("~/Themes/NopShop/Content/css/images/merchant_user.png")" alt="" width="60" height="60">
+                                    </div>
+                                    <div class="user_d_left">
+                                        <strong>Welcome</strong>
+                                        @if (ViewBag.CurrentVendorEmail != null)
+                                        {
+                                            <span>Logged in as @ViewBag.CurrentVendorEmail</span>
+                                            <a href="/Customer/Logout" class="logout_left" title="Logout">Log out</a>
+                                        }
+
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+                                <ul class="main-nav">
+                                    @{
+
+                                        if (Request.RawUrl != null)
+                                        {
+                                            string s1 = Request.RawUrl;
+                                            string s2 = "Orders";
+                                            bool b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active">
+                                                    <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                                                </li>
+                                            }
+                                            else {
+                                                <li class="first">
+                                                    <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                                                </li>
+                                            }
+                                            s2 = "Invoices";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                                            }
+                                            else {
+                                                <li class="first"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                                            }
+                                            s2 = "Returns";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="first"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                                            }
+                                            s2 = "Stock";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="first"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                                            }
+                                            s2 = "Products";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                                            }
+                                            else {
+                                                <li class="first"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                                            }
+                                            s2 = "GroupDeals";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li class="first"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                                            }
+                                            s2 = "SelectSell";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                                            }
+                                            else {
+                                                <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                                            }
+                                            s2 = "Account";
+                                            b = s1.Contains(s2);
+                                            if (b)
+                                            {
+                                                <li class="first active"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                                            }
+                                            else {
+                                                <li class="first"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                                            }
+
+                                        }
+                                        else {
+                                            <li class="first">
+                                                <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
+                                            </li>
+                                            <li class="first"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
+                                            <li class="first"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
+                                            <li class="first"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
+                                            <li class="first"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
+                                            <li class="first"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
+                                            <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
+                                            <li class="first"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
+                                        }
+
+                                    }
+
+
+                                </ul>
                             </div>
-                           
                         </div>
-                        <div class="clear"></div>
-                        <ul class="main-nav">
-                            @{
+                        <div class="cont_rgt">
+                            @RenderBody()
 
-                                if (Request.RawUrl != null)
-                                {
-                                    string s1 = Request.RawUrl;
-                                    string s2 = "Orders";
-                                    bool b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active">
-                                            <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
-                                        </li>
-                                    }
-                                    else {
-                                        <li class="first">
-                                            <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
-                                        </li>
-                                    }
-                                    s2 = "Invoices";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
-                                    }
-                                    else {
-                                        <li class="first"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
-                                    }
-                                    s2 = "Returns";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
-                                    }
-                                    else
-                                    {
-                                        <li class="first"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
-                                    }
-                                    s2 = "Stock";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
-                                    }
-                                    else
-                                    {
-                                        <li class="first"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
-                                    }
-                                    s2 = "Products";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
-                                    }
-                                    else {
-                                        <li class="first"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
-                                    }
-                                    s2 = "GroupDeals";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
-                                    }
-                                    else
-                                    {
-                                        <li class="first"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
-                                    }
-                                    s2 = "SelectSell";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
-                                    }
-                                    else {
-                                        <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
-                                    }
-                                    s2 = "Support Tickets";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "Tickets", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Support Tickets</a></li>
-                                    }
-                                    else {
-                                        <li class="first"><a href="@Url.Action("Index", "Tickets", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Support Tickets</a></li>
-                                    }
-                                    s2 = "Account";
-                                    b = s1.Contains(s2);
-                                    if (b)
-                                    {
-                                        <li class="first active"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
-                                    }
-                                    else {
-                                        <li class="first"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
-                                    }
+                        </div>
+                                        }
+                }
 
-                                }
-                                else {
-                                    <li class="first">
-                                        <a href="@Url.Action("Index", "Orders", new { area = "Vendor" })"><i class="fa fa-dashboard"></i> Orders</a>
-                                    </li>
-                                    <li class="first"><a href="@Url.Action("Index", "Invoices", new { area = "Vendor" })"><i class="fa fa-tasks"></i> Invoices</a></li>
-                                    <li class="first"><a href="@Url.Action("Index", "Returns", new { area = "Vendor" })"><i class="fa fa-building"></i> Returns</a></li>
-                                    <li class="first"><a href="@Url.Action("Index", "Stock", new { area = "Vendor" })"><i class="fa fa-bars"></i> Stock</a></li>
-                                    <li class="first"><a href="@Url.Action("Index", "Products", new { area = "Vendor" })"><i class="fa fa-pencil-square"></i> Products</a></li>
-                                    <li class="first"><a href="@Url.Action("Index", "GroupDeals", new { area = "Vendor" })"><i class="fa fa-anchor"></i> Group Deals</a></li>
-                                    <li class="first"><a href="@Url.Action("Index", "SelectSell", new { area = "Vendor" })"><i class="fa  fa-bar-chart-o"></i> Select & Sell</a></li>
-                                    <li class="first"><a href="@Url.Action("Index", "Account", new { area = "Vendor" })"><i class="fa fa-share-alt-square"></i> Account</a></li>
-                                }
-
-                            }
-
-                                           
-                        </ul>
-                    </div>
-                </div>
-                <div class="cont_rgt">
-                     @RenderBody()
-                  
-               </div>
-             </div>
+            </div>
         </div>
     </div>
 

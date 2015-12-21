@@ -65,7 +65,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
         private readonly ILanguageService _languageService;
         private readonly ILocalizationService _localizationService;
         private readonly ILocalizedEntityService _localizedEntityService;
-        private readonly ISpecificationAttributeService _specificationAttributeService;
+        private readonly Nop.Services.Catalog.ISpecificationAttributeService _specificationAttributeService;
         private readonly IPictureService _pictureService;
         private readonly ITaxCategoryService _taxCategoryService;
         private readonly IProductTagService _productTagService;
@@ -109,7 +109,7 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
             ILanguageService languageService, 
             ILocalizationService localizationService, 
             ILocalizedEntityService localizedEntityService,
-            ISpecificationAttributeService specificationAttributeService, 
+            Nop.Services.Catalog.ISpecificationAttributeService specificationAttributeService, 
             IPictureService pictureService,
             ITaxCategoryService taxCategoryService, 
             IProductTagService productTagService,
@@ -193,7 +193,18 @@ namespace Nop.Plugin.Misc.VendorMembership.Controllers
 
 		public ActionResult Index()
 		{
-			return RedirectToAction("List");
+            var vehicleProductSpecAttributes = _specificationAttributeService.GetProductSpecificationAttributes(62)
+                .Where(a => a.SpecificationAttributeOption.Name.StartsWith("Vehicle"));
+            var engineAndTransmissionProductSpecAttributes = vehicleProductSpecAttributes
+                .Where(a => a.SpecificationAttributeOption.Name.Contains("EngineAndTransmission"));
+
+            foreach (var productSpecAttribute in engineAndTransmissionProductSpecAttributes)
+            {
+                var attributeName = productSpecAttribute.SpecificationAttributeOption.Name.Split('|')[1];
+
+            }
+
+            return RedirectToAction("List");
 		}
         
         [HttpGet]

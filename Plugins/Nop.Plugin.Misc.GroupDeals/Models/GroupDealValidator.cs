@@ -14,8 +14,14 @@ namespace Nop.Plugin.Misc.GroupDeals.Models
     {
         public GroupDealValidator(ILocalizationService localizationService)
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage(localizationService.GetResource("Plugins.Widgets.GroupDeals.Fields.Required"));
-            RuleFor(x => x.ShortDescription).NotEmpty().WithMessage(localizationService.GetResource("Plugins.Widgets.GroupDeals.Fields.Required"));
+            RuleFor(x => x.Name)
+                .NotEmpty().WithMessage(localizationService.GetResource("Plugins.Widgets.GroupDeals.Fields.Required"));
+
+            RuleFor(x => x.ShortDescription)
+                .NotEmpty().WithMessage(localizationService.GetResource("Plugins.Widgets.GroupDeals.Fields.Required"));
+
+            RuleFor(x => x.AvailableStartDateTimeUtc)
+                .NotEmpty().WithMessage(localizationService.GetResource("Plugins.Widgets.GroupDeals.Fields.Required"));
         }
     }
 }

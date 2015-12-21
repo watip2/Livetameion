@@ -91,6 +91,22 @@ namespace Nop.Plugin.Misc.VendorMembership
             routes.Remove(route);
             routes.Insert(0, route);
 
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Theme.Controllers",
+                "Theme/{controller}/{action}/{id}",
+                new { area = "Theme", controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Areas.Theme.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+
+            route = routes.MapRoute("Plugin.Misc.VendorMembership.Theme.Controllers",
+                "Theme",
+                new { area = "Theme", controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new[] { "Nop.Plugin.Misc.VendorMembership.Areas.Theme.Controllers" }
+            );
+            routes.Remove(route);
+            routes.Insert(0, route);
+
             ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }
     }

@@ -27,7 +27,7 @@ Tax.FixedRate
 Tax.CountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
-Misc.GroupDeals
 Misc.VendorMembership
 Tameion.SupportTicketSystem
 Tameion.Auctions
+Misc.GroupDeals
